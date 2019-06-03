@@ -90,8 +90,8 @@ copyright = "Andrew Wong (z5206677)"
 
   # Link custom CSS and JS assets
   #   (relative to /static/css and /static/js respectively)
-  customCSS = ['typedjs.shortcode.css']
-  customJS = ['typed.js@2.0.9', 'typedjs.shortcode.js']
+  customCSS = []
+  customJS = []
 
   [params.publicCDN]        # load these files from public cdn                          # 启用公共CDN，需自行定义
     enable = true

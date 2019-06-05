@@ -16,8 +16,10 @@ sequenceDiagrams:
 
 ---
 
-> Case Study: [The Deepwater Horizon Accident](../case-study-the-deepwater-horizon-accident)
+> Read the [case study](../case-study-the-deepwater-horizon-accident)  
+Read the [reflection](../reflections-case-study-the-deepwater-horizon-accident)  
 
+Leading Causes:
 * Oversight and ignorance of small issues - avalanche effect
 * Safety fatigue; Less failsafes = better fail-safing
 * Workers - Collaboration; shifts; handovers
@@ -50,13 +52,9 @@ Other groups:
 
 ---
 
-Lachlan's Caffeine Drips:
+Mentor's Ideas:
 
 * Less alarms (Do all of them matter)
 * Reduce the penalty for minor infractions (Be comfortable with self reporting)
 
 ---
-
-* Cyber  
-* Business-excellence
-* It is safe

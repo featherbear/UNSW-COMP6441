@@ -16,6 +16,11 @@ sequenceDiagrams:
 
 ---
 
+> Read the [class discussion](../lab01)  
+Read the [reflection](../reflections-case-study-the-deepwater-horizon-accident)
+
+---
+
 > On 20th April 2010, a blowout (uncontrolled release of oil or gas) caused an explosion on a mining rig that killed 11 people, and caused the largest oil spill in US history
 
 _What happened? What went so wrong..?_

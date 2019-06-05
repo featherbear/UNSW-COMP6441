@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reflections on COMP6441 Musings</title>
+    <link>/categories/reflections/</link>
+    <description>Recent content in Reflections on COMP6441 Musings</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Andrew Wong (z5206677)</copyright>
+    <lastBuildDate>Tue, 04 Jun 2019 14:00:40 +1000</lastBuildDate>
+    
+	<atom:link href="/categories/reflections/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Reflections - Week 1</title>
+      <link>/post/reflections01/</link>
+      <pubDate>Tue, 04 Jun 2019 14:00:40 +1000</pubDate>
+      
+      <guid>/post/reflections01/</guid>
+      <description>Imagine having two lectures of the same course, on the same day&amp;hellip; 6 hours apart&amp;hellip; Oh wait.</description>
+    </item>
+    
+  </channel>
+</rss>

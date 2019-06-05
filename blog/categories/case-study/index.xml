@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Case Study on COMP6441 Musings</title>
+    <link>/categories/case-study/</link>
+    <description>Recent content in Case Study on COMP6441 Musings</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Andrew Wong (z5206677)</copyright>
+    <lastBuildDate>Wed, 05 Jun 2019 13:47:26 +1000</lastBuildDate>
+    
+	<atom:link href="/categories/case-study/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Case Study: The Deepwater Horizon Accident</title>
+      <link>/post/case-study-the-deepwater-horizon-accident/</link>
+      <pubDate>Wed, 05 Jun 2019 13:47:26 +1000</pubDate>
+      
+      <guid>/post/case-study-the-deepwater-horizon-accident/</guid>
+      <description>On 20th April 2010, a blowout (uncontrolled release of oil or gas) caused an explosion on a mining rig that killed 11 people, and caused the largest oil spill in US history</description>
+    </item>
+    
+  </channel>
+</rss>

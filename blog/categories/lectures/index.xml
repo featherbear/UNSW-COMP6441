@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lectures on COMP6441 Musings</title>
+    <link>/categories/lectures/</link>
+    <description>Recent content in Lectures on COMP6441 Musings</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Andrew Wong (z5206677)</copyright>
+    <lastBuildDate>Tue, 04 Jun 2019 18:07:31 +1000</lastBuildDate>
+    
+	<atom:link href="/categories/lectures/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Lecture 2</title>
+      <link>/post/lec02/</link>
+      <pubDate>Tue, 04 Jun 2019 18:07:31 +1000</pubDate>
+      
+      <guid>/post/lec02/</guid>
+      <description>Threat Analysis // Case Study</description>
+    </item>
+    
+    <item>
+      <title>Lecture 1</title>
+      <link>/post/lec01/</link>
+      <pubDate>Tue, 04 Jun 2019 10:09:55 +1000</pubDate>
+      
+      <guid>/post/lec01/</guid>
+      <description>&amp;ldquo;If something is too complicated, there is bound to be oversights&amp;rdquo;</description>
+    </item>
+    
+  </channel>
+</rss>

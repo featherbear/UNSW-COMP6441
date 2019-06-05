@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Weakness of the Week on COMP6441 Musings</title>
+    <link>/categories/weakness-of-the-week/</link>
+    <description>Recent content in Weakness of the Week on COMP6441 Musings</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Andrew Wong (z5206677)</copyright>
+    <lastBuildDate>Tue, 04 Jun 2019 19:12:36 +1000</lastBuildDate>
+    
+	<atom:link href="/categories/weakness-of-the-week/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Weakness of the Week - 01</title>
+      <link>/post/weakness-of-the-week-01/</link>
+      <pubDate>Tue, 04 Jun 2019 19:12:36 +1000</pubDate>
+      
+      <guid>/post/weakness-of-the-week-01/</guid>
+      <description>Changing your frame of mind It&amp;rsquo;s often hard to enter a new way of thought.</description>
+    </item>
+    
+  </channel>
+</rss>

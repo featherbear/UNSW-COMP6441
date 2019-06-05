@@ -22,7 +22,7 @@ sequenceDiagrams:
 It's often hard to enter a new way of thought.  
 Humans love familiarity: rhythm, pattern, order. We enjoy residing in a bubble of comfort. Accustomed to the buzzing streets of the city, the starry night skies, the everyday routine that we find ourselves in.
 
-![](https://pbs.twimg.com/media/D2207g2WwAEUHDE.jpg)
+![](./D2207g2WwAEUHDE.jpg)
 
 But this enjoyment of safety, it leads to human complacency.  
 We drown ourselves in the normal, and lose sensitivity and awareness of the world around us.

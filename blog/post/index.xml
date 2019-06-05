@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Wed, 05 Jun 2019 17:12:04 +1000</lastBuildDate>
+    <lastBuildDate>Wed, 05 Jun 2019 23:55:30 +1000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Reflections: The Deepwater Horizon Accident</title>
+      <link>/post/reflections-case-study-the-deepwater-horizon-accident/</link>
+      <pubDate>Wed, 05 Jun 2019 23:55:30 +1000</pubDate>
+      
+      <guid>/post/reflections-case-study-the-deepwater-horizon-accident/</guid>
+      <description>Read the case study</description>
+    </item>
     
     <item>
       <title>Lab 01</title>
@@ -18,7 +27,7 @@
       <pubDate>Wed, 05 Jun 2019 17:12:04 +1000</pubDate>
       
       <guid>/post/lab01/</guid>
-      <description>Case Study: The Deepwater Horizon Accident</description>
+      <description>Read the case study</description>
     </item>
     
     <item>
@@ -27,7 +36,7 @@
       <pubDate>Wed, 05 Jun 2019 13:47:26 +1000</pubDate>
       
       <guid>/post/case-study-the-deepwater-horizon-accident/</guid>
-      <description>On 20th April 2010, a blowout (uncontrolled release of oil or gas) caused an explosion on a mining rig that killed 11 people, and caused the largest oil spill in US history</description>
+      <description>Read the class discussion</description>
     </item>
     
     <item>

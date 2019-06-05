@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Tue, 04 Jun 2019 14:00:40 +1000</lastBuildDate>
+    <lastBuildDate>Wed, 05 Jun 2019 23:55:30 +1000</lastBuildDate>
     
 	<atom:link href="/categories/reflections/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Reflections: The Deepwater Horizon Accident</title>
+      <link>/post/reflections-case-study-the-deepwater-horizon-accident/</link>
+      <pubDate>Wed, 05 Jun 2019 23:55:30 +1000</pubDate>
+      
+      <guid>/post/reflections-case-study-the-deepwater-horizon-accident/</guid>
+      <description>Read the case study</description>
+    </item>
     
     <item>
       <title>Reflections - Week 1</title>

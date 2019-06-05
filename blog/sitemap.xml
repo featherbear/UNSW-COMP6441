@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/post/reflections-case-study-the-deepwater-horizon-accident/</loc>
+    <lastmod>2019-06-05T23:55:30+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/lab01/</loc>
     <lastmod>2019-06-05T17:12:04+10:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -46,7 +53,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-06-05T17:12:04+10:00</lastmod>
+    <lastmod>2019-06-05T23:55:30+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -81,14 +88,14 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-06-05T17:12:04+10:00</lastmod>
+    <lastmod>2019-06-05T23:55:30+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/reflections/</loc>
-    <lastmod>2019-06-04T14:00:40+10:00</lastmod>
+    <lastmod>2019-06-05T23:55:30+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

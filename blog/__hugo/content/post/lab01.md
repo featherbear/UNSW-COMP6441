@@ -57,4 +57,3 @@ Mentor's Ideas:
 * Less alarms (Do all of them matter)
 * Reduce the penalty for minor infractions (Be comfortable with self reporting)
 
----

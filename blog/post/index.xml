@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Wed, 05 Jun 2019 23:55:30 +1000</lastBuildDate>
+    <lastBuildDate>Thu, 06 Jun 2019 14:09:28 +1000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Security Everywhere: ANU Data Breach</title>
+      <link>/post/security-everywhere-anu-data-breach/</link>
+      <pubDate>Thu, 06 Jun 2019 14:09:28 +1000</pubDate>
+      
+      <guid>/post/security-everywhere-anu-data-breach/</guid>
+      <description>If I had a dollar for every time the ANU data breach was said to be &amp;ldquo;sophisticated&amp;rdquo;&amp;hellip;  Sometime this week (6th June 2019) (or even earlier&amp;hellip;), an alleged 19 years worth of records and data was reported to have been accessed and stolen.</description>
+    </item>
     
     <item>
       <title>Reflections: The Deepwater Horizon Accident</title>

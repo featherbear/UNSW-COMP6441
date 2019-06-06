@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/post/security-everywhere-anu-data-breach/</loc>
+    <lastmod>2019-06-06T14:09:28+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/reflections-case-study-the-deepwater-horizon-accident/</loc>
     <lastmod>2019-06-05T23:55:30+10:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -53,7 +60,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-06-05T23:55:30+10:00</lastmod>
+    <lastmod>2019-06-06T14:09:28+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -88,7 +95,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-06-05T23:55:30+10:00</lastmod>
+    <lastmod>2019-06-06T14:09:28+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -96,6 +103,13 @@
   <url>
     <loc>/categories/reflections/</loc>
     <lastmod>2019-06-05T23:55:30+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/security-everywhere/</loc>
+    <lastmod>2019-06-06T14:09:28+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Security Everywhere: ANU Data Breach - COMP6441 Musings</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="z5206677" /><meta name="description" content="If I had a dollar for every time the ANU data breach was said to be &#34;sophisticated&#34;..." /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="../../post/security-everywhere-anu-data-breach/" />
+<link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+<link rel="manifest" href="../../manifest.json">
+<link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="../../dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Security Everywhere: ANU Data Breach" />
+<meta property="og:description" content="If I had a dollar for every time the ANU data breach was said to be &#34;sophisticated&#34;..." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/security-everywhere-anu-data-breach/" />
+<meta property="article:published_time" content="2019-06-06T14:09:28&#43;10:00"/>
+<meta property="article:modified_time" content="2019-06-06T14:09:28&#43;10:00"/>
+
+<meta itemprop="name" content="Security Everywhere: ANU Data Breach">
+<meta itemprop="description" content="If I had a dollar for every time the ANU data breach was said to be &#34;sophisticated&#34;...">
+
+
+<meta itemprop="datePublished" content="2019-06-06T14:09:28&#43;10:00" />
+<meta itemprop="dateModified" content="2019-06-06T14:09:28&#43;10:00" />
+<meta itemprop="wordCount" content="358">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Security Everywhere: ANU Data Breach"/>
+<meta name="twitter:description" content="If I had a dollar for every time the ANU data breach was said to be &#34;sophisticated&#34;..."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="../../" class="logo">COMP6441 Musings</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="../../">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="https://github.com/featherbear/UNSW-COMP6441">
+        <li class="mobile-menu-item">GitHub</li>
+      </a><a href="../../categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="../../" class="logo">COMP6441 Musings</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="../../">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://github.com/featherbear/UNSW-COMP6441">GitHub</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="../../categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Security Everywhere: ANU Data Breach</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-06-06 </span>
+        <div class="post-category">
+            <a href="../../categories/security-everywhere/"> Security Everywhere </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#pew-pew-who-s-to-blame">Pew pew! 🔫 Who&rsquo;s to blame?</a></li>
+<li><a href="#what-can-we-learn-from-this">What can we learn from this?</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<blockquote>
+<p>If I had a dollar for every time the ANU data breach was said to be &ldquo;sophisticated&rdquo;&hellip;
+<img src="sophisticated.gif" alt="" /></p>
+</blockquote>
+
+<p>Sometime this week (6th June 2019) (or even earlier&hellip;), an alleged 19 years worth of records and data was reported to have been accessed and stolen.</p>
+
+<p>One question that immediately strikes me.</p>
+
+<p><strong>Nineteen years&hellip;!?</strong><br />
+That&rsquo;s alot of data. Why was there nineteen years worth of data kept online?</p>
+
+<p>Sure it&rsquo;s important to keep a record. But at least to me, there should be no need to maintain old data. It&rsquo;s most likely out of date, and hence useless. If you want records to boast the number of records&hellip; just make your program <code>+= 1000</code></p>
+
+<p>It&rsquo;d be nice if Australia had some sort of data retention policy - an Australian GDPR of sorts <em>(but even then, GDPR <a href="https://www.siliconrepublic.com/enterprise/gdpr-data-retention">supposedly</a> doesn&rsquo;t cover all data)</em></p>
+
+<h1 id="pew-pew-who-s-to-blame">Pew pew! 🔫 Who&rsquo;s to blame?</h1>
+
+<p>Whilst alot of articles suggest China as the culprit - there is no conclusive evidence apart from just speculation.</p>
+
+<p>From a legal point of view, identifying the attacker is important in seeking retribution&hellip;<br />
+But we should also consider, how were we attacked, what was attacked, and how to do prevent this from happening (for a third time smh&hellip;)</p>
+
+<h1 id="what-can-we-learn-from-this">What can we learn from this?</h1>
+
+<ul>
+<li><p><strong>Better security</strong><br />
+Well I guess that&rsquo;s pretty obvious right.<br />
+Improve your firewalls, access policies, those things&hellip;</p></li>
+
+<li><p><strong>Offline storage of data</strong><br />
+You can&rsquo;t access data if it&rsquo;s not accessible&hellip; right..?<br />
+&nbsp;<br />
+Take the databases off the intranet network. You don&rsquo;t <em>really</em> need access to these things remotely right? You&rsquo;re not going to view records in your bed at home&hellip; right&hellip;&hellip;<br />
+&nbsp;<br />
+Or even, dump the data into storage tapes, where they are physically disconnected from any computer system.</p></li>
+</ul>
+
+<hr />
+
+<p>Computers will never truly be secure. The more we implement a system, the more that system can be exploited and misused</p>
+
+<p>In this day and age, we&rsquo;re trading privacy for convenience - when in reality we should just stop being lazy.</p>
+
+<hr />
+
+<p><em>Don&rsquo;t you reckon that all news sources sort of just copy facts from each other. How do you really find out the truth if the truth is the first publish source. Mmm&hellip;</em></p>
+
+    </div>
+
+    <footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="../../post/reflections-case-study-the-deepwater-horizon-accident/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Reflections: The Deepwater Horizon Accident</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:z5206677@student.unsw.edu.au" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.linkedin.com/in/andrewjinmengwong/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/featherbear" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/_andrewjwong/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="../../index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Andrew Wong (z5206677)</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="../../dist/even.26188efa.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-107434487-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

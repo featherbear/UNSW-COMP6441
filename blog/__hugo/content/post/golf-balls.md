@@ -41,7 +41,7 @@ If you don't know it is, you're going to have a very very hard time trying to br
 
 # Method One - Be smart
 _(Arguably the best method if you don't know what to do)_  
-_(Also probably the only actual decent method, except for [method five](#method-five-ascension)_
+_(Also probably the only actual decent method, except for [method five](#method-five-ascension))_
 
 * **Identify the single letter words.**  
 You've got one of two choices, "A" or "I" (well you could also have "O" too)

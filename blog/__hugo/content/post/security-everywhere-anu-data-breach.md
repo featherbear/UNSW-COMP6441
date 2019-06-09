@@ -4,7 +4,7 @@ date: 2019-06-06T14:09:28+10:00
 
 description: 'If I had a dollar for every time the ANU data breach was said to be "sophisticated"...'
 
-categories: ["Security Everywhere"]
+categories: ["Security Everywhere", "Case Study"]
 hiddenFromHomePage: false
 postMetaInFooter: false
 

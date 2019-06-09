@@ -1,8 +1,8 @@
 ---
-title: "Lab 01"
+title: "Lab 01 - Looking at the Deepwater Horizon Accident"
 date: 2019-06-05T17:12:04+10:00
 
-categories: ["Labs"]
+categories: ["Labs", "Case Study"]
 hiddenFromHomePage: false
 postMetaInFooter: false
 

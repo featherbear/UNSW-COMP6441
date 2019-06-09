@@ -3,6 +3,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/post/something-awesome-musings/</loc>
+    <lastmod>2019-06-09T18:03:07+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/fear-and-tension/</loc>
+    <lastmod>2019-06-09T17:27:24+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/tumblr4uni/</loc>
+    <lastmod>2019-06-09T17:20:58+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/golf-balls/</loc>
+    <lastmod>2019-06-06T21:32:04+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/security-everywhere-anu-data-breach/</loc>
     <lastmod>2019-06-06T14:09:28+10:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -60,7 +88,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-06-06T14:09:28+10:00</lastmod>
+    <lastmod>2019-06-09T18:03:07+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -94,8 +122,15 @@
   </url>
   
   <url>
+    <loc>/categories/musings/</loc>
+    <lastmod>2019-06-09T18:03:07+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/post/</loc>
-    <lastmod>2019-06-06T14:09:28+10:00</lastmod>
+    <lastmod>2019-06-09T18:03:07+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

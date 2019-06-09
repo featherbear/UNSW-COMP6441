@@ -7,10 +7,46 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Thu, 06 Jun 2019 14:09:28 +1000</lastBuildDate>
+    <lastBuildDate>Sun, 09 Jun 2019 18:03:07 +1000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Something Awesome - Musings</title>
+      <link>/post/something-awesome-musings/</link>
+      <pubDate>Sun, 09 Jun 2019 18:03:07 +1000</pubDate>
+      
+      <guid>/post/something-awesome-musings/</guid>
+      <description>A major component of this course grade is the &amp;ldquo;Something Awesome&amp;rdquo; project.</description>
+    </item>
+    
+    <item>
+      <title>Fear and Tension</title>
+      <link>/post/fear-and-tension/</link>
+      <pubDate>Sun, 09 Jun 2019 17:27:24 +1000</pubDate>
+      
+      <guid>/post/fear-and-tension/</guid>
+      <description>Fear is subjective, tension is objective - Some YouTube video.</description>
+    </item>
+    
+    <item>
+      <title>Tumblr 4 Uni</title>
+      <link>/post/tumblr4uni/</link>
+      <pubDate>Sun, 09 Jun 2019 17:20:58 +1000</pubDate>
+      
+      <guid>/post/tumblr4uni/</guid>
+      <description>So this course I&amp;rsquo;m doing wants me to use Tumblr as a means of blogging.</description>
+    </item>
+    
+    <item>
+      <title>Golf Balls!</title>
+      <link>/post/golf-balls/</link>
+      <pubDate>Thu, 06 Jun 2019 21:32:04 +1000</pubDate>
+      
+      <guid>/post/golf-balls/</guid>
+      <description>Did you know: The average golf ball has 336 dimples?</description>
+    </item>
     
     <item>
       <title>Security Everywhere: ANU Data Breach</title>
@@ -18,7 +54,7 @@
       <pubDate>Thu, 06 Jun 2019 14:09:28 +1000</pubDate>
       
       <guid>/post/security-everywhere-anu-data-breach/</guid>
-      <description>If I had a dollar for every time the ANU data breach was said to be &amp;ldquo;sophisticated&amp;rdquo;&amp;hellip;  Sometime this week (6th June 2019) (or even earlier&amp;hellip;), an alleged 19 years worth of records and data was reported to have been accessed and stolen.</description>
+      <description>If I had a dollar for every time the ANU data breach was said to be &amp;ldquo;sophisticated&amp;rdquo;&amp;hellip;  On the 17th May 2019, an alleged 19 years worth of records and data was reported to have been accessed and stolen.</description>
     </item>
     
     <item>

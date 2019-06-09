@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Sun, 09 Jun 2019 18:03:07 +1000</lastBuildDate>
+    <lastBuildDate>Sun, 09 Jun 2019 20:24:13 +1000</lastBuildDate>
     
 	<atom:link href="/categories/musings/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>OpenLearning - Security</title>
+      <link>/post/openlearning-security/</link>
+      <pubDate>Sun, 09 Jun 2019 20:24:13 +1000</pubDate>
+      
+      <guid>/post/openlearning-security/</guid>
+      <description>So I had forgotten my login credential to my OpenLearning account, so I had to do a password rese-</description>
+    </item>
     
     <item>
       <title>Something Awesome - Musings</title>

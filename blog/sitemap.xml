@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/post/openlearning-security/</loc>
+    <lastmod>2019-06-09T20:24:13+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/something-awesome-musings/</loc>
     <lastmod>2019-06-09T18:03:07+10:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -88,21 +95,21 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-06-09T18:03:07+10:00</lastmod>
+    <lastmod>2019-06-09T20:24:13+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/case-study/</loc>
-    <lastmod>2019-06-05T13:47:26+10:00</lastmod>
+    <lastmod>2019-06-06T14:09:28+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2019-06-05T13:47:26+10:00</lastmod>
+    <lastmod>2019-06-06T14:09:28+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -123,14 +130,14 @@
   
   <url>
     <loc>/categories/musings/</loc>
-    <lastmod>2019-06-09T18:03:07+10:00</lastmod>
+    <lastmod>2019-06-09T20:24:13+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-06-09T18:03:07+10:00</lastmod>
+    <lastmod>2019-06-09T20:24:13+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

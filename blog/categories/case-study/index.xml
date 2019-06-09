@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Wed, 05 Jun 2019 13:47:26 +1000</lastBuildDate>
+    <lastBuildDate>Thu, 06 Jun 2019 14:09:28 +1000</lastBuildDate>
     
 	<atom:link href="/categories/case-study/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Security Everywhere: ANU Data Breach</title>
+      <link>/post/security-everywhere-anu-data-breach/</link>
+      <pubDate>Thu, 06 Jun 2019 14:09:28 +1000</pubDate>
+      
+      <guid>/post/security-everywhere-anu-data-breach/</guid>
+      <description>If I had a dollar for every time the ANU data breach was said to be &amp;ldquo;sophisticated&amp;rdquo;&amp;hellip;  On the 17th May 2019, an alleged 19 years worth of records and data was reported to have been accessed and stolen.</description>
+    </item>
+    
+    <item>
+      <title>Lab 01 - Looking at the Deepwater Horizon Accident</title>
+      <link>/post/lab01/</link>
+      <pubDate>Wed, 05 Jun 2019 17:12:04 +1000</pubDate>
+      
+      <guid>/post/lab01/</guid>
+      <description>Read the case study</description>
+    </item>
     
     <item>
       <title>Case Study: The Deepwater Horizon Accident</title>

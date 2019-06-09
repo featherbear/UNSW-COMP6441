@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Wed, 05 Jun 2019 13:47:26 +1000</lastBuildDate>
+    <lastBuildDate>Thu, 06 Jun 2019 14:09:28 +1000</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Case Study</title>
       <link>/categories/case-study/</link>
-      <pubDate>Wed, 05 Jun 2019 13:47:26 +1000</pubDate>
+      <pubDate>Thu, 06 Jun 2019 14:09:28 +1000</pubDate>
       
       <guid>/categories/case-study/</guid>
       <description></description>
@@ -42,7 +42,7 @@
     <item>
       <title>Musings</title>
       <link>/categories/musings/</link>
-      <pubDate>Sun, 09 Jun 2019 18:03:07 +1000</pubDate>
+      <pubDate>Sun, 09 Jun 2019 20:24:13 +1000</pubDate>
       
       <guid>/categories/musings/</guid>
       <description></description>

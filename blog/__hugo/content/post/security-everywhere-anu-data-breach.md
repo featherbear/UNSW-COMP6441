@@ -21,7 +21,7 @@ sequenceDiagrams:
 > If I had a dollar for every time the ANU data breach was said to be "sophisticated"...
 ![](sophisticated.gif)
 
-Sometime this week (6th June 2019) (or even earlier...), an alleged 19 years worth of records and data was reported to have been accessed and stolen. 
+On the 17th May 2019, an alleged 19 years worth of records and data was reported to have been accessed and stolen. 
 
 One question that immediately strikes me.
 

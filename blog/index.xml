@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Mon, 10 Jun 2019 23:11:23 +1000</lastBuildDate>
+    <lastBuildDate>Mon, 10 Jun 2019 23:49:22 +1000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Paper Shredders</title>
+      <link>/post/paper-shredders/</link>
+      <pubDate>Mon, 10 Jun 2019 23:49:22 +1000</pubDate>
+      
+      <guid>/post/paper-shredders/</guid>
+      <description>Paper shredders are cool&amp;hellip;</description>
+    </item>
     
     <item>
       <title>Activity: A Simple Crypto</title>

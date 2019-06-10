@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/post/module_2_simple_crypto/</loc>
+    <lastmod>2019-06-10T23:11:23+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/openlearning-security/</loc>
     <lastmod>2019-06-09T20:24:13+10:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -95,7 +102,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-06-09T20:24:13+10:00</lastmod>
+    <lastmod>2019-06-10T23:11:23+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -130,14 +137,14 @@
   
   <url>
     <loc>/categories/musings/</loc>
-    <lastmod>2019-06-09T20:24:13+10:00</lastmod>
+    <lastmod>2019-06-10T23:11:23+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-06-09T20:24:13+10:00</lastmod>
+    <lastmod>2019-06-10T23:11:23+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

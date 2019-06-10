@@ -43,7 +43,7 @@ But to my dismay...
 
 
 ![](Snipaste_2019-06-09_20-38-06.png)
-My actual email account was displayed!!! (censored obviously)
+My actual email account was displayed!!!
 
 ---
 
@@ -52,7 +52,14 @@ One could possibly say that this is a security concern.
 It should probably say something like  
 _"An email has been sent to **the address associated with this account** with instructions to reset your password"._  
 
-Of course, it could be helpful to those with several emails to specify which one...
+Of course, it could be helpful to those with several emails to specify which one.
 
 What Microsoft does with their account verification process is to only display some of the letters.  
 i.e. to show `m**ac***l@e****.acc****`
+
+---
+
+Anyway so that was a tangent.  
+Pretty much, those emails never arrived in my inbox... (Or maybe, they were never sent! :o)
+
+I ended up just [copying my browser cookies](https://cookie-editor.cgagnier.ca/) from one machine to another!

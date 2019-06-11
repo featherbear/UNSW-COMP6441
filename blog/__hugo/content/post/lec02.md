@@ -33,8 +33,12 @@ Bits - binary digit
 Mainly by encryption
 
 
-* Integrity - Correctness of the data
-* Authentication - Correct access to data
+## Integrity - Correctness of the data
+
+## Authentication - Correct access to data
+
+
+---
 
 - Steganography - hiding the existence of the message 
 
@@ -52,8 +56,8 @@ Transposition Cipher
 
 
 ---
-<!-- 
-Kerckhoff's principles:
+**Kerckhoff's principle** - A cryptographic system should be designed to be secure, even if all its details, except for the key, are publicly known.
 
 * The system must be practically, if not mathematically, indecipherable.
-* -->
+
+<!-- TODO: CIA Principles>

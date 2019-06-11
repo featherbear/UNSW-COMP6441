@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Tue, 04 Jun 2019 18:07:31 +1000</lastBuildDate>
+    <lastBuildDate>Tue, 11 Jun 2019 18:17:14 +1000</lastBuildDate>
     
 	<atom:link href="/categories/lectures/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Lecture 4</title>
+      <link>/post/lec04/</link>
+      <pubDate>Tue, 11 Jun 2019 18:17:14 +1000</pubDate>
+      
+      <guid>/post/lec04/</guid>
+      <description>Vignere cipher (letters shifted by different amounts) sausageP is a common comical term, Pegasus backwards.</description>
+    </item>
+    
+    <item>
+      <title>Lecture 3</title>
+      <link>/post/lec03/</link>
+      <pubDate>Tue, 11 Jun 2019 10:07:23 +1000</pubDate>
+      
+      <guid>/post/lec03/</guid>
+      <description>Security is an on-going process of strengthening defenses.</description>
+    </item>
     
     <item>
       <title>Lecture 2</title>

@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Thu, 06 Jun 2019 14:09:28 +1000</lastBuildDate>
+    <lastBuildDate>Tue, 11 Jun 2019 18:19:02 +1000</lastBuildDate>
     
 	<atom:link href="/categories/case-study/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Case Study: Harry Houdini</title>
+      <link>/post/case-study-harry-houdini/</link>
+      <pubDate>Tue, 11 Jun 2019 18:19:02 +1000</pubDate>
+      
+      <guid>/post/case-study-harry-houdini/</guid>
+      <description>Spiritualism</description>
+    </item>
     
     <item>
       <title>Security Everywhere: ANU Data Breach</title>

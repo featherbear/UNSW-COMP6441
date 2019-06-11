@@ -7,10 +7,73 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Mon, 10 Jun 2019 23:49:22 +1000</lastBuildDate>
+    <lastBuildDate>Wed, 12 Jun 2019 00:57:06 +1000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Index of Coincidence</title>
+      <link>/post/index-of-coincidence/</link>
+      <pubDate>Wed, 12 Jun 2019 00:57:06 +1000</pubDate>
+      
+      <guid>/post/index-of-coincidence/</guid>
+      <description>The IC is a mathematical analysis of the relationship between letter pairs.</description>
+    </item>
+    
+    <item>
+      <title>The Vigenère Cipher</title>
+      <link>/post/the-vigenere-cipher/</link>
+      <pubDate>Tue, 11 Jun 2019 23:59:47 +1000</pubDate>
+      
+      <guid>/post/the-vigenere-cipher/</guid>
+      <description>The Vigenère Cipher is a polyalphabetic substitution cipher, where a plain-text phrase would be encrypted and decrypted through a keyword, which would serve as a lookup for how many shifts would be performed on a character.</description>
+    </item>
+    
+    <item>
+      <title>Weakness of the Week - 02</title>
+      <link>/post/weakness-of-the-week-02/</link>
+      <pubDate>Tue, 11 Jun 2019 19:54:21 +1000</pubDate>
+      
+      <guid>/post/weakness-of-the-week-02/</guid>
+      <description>&amp;ldquo;Bet on self interest, it&amp;rsquo;s a horse that&amp;rsquo;s always trying&amp;rdquo; - Jack Liang</description>
+    </item>
+    
+    <item>
+      <title>A Good Talk</title>
+      <link>/post/a-good-talk/</link>
+      <pubDate>Tue, 11 Jun 2019 19:53:00 +1000</pubDate>
+      
+      <guid>/post/a-good-talk/</guid>
+      <description>Don&amp;rsquo;t do live demonstrations!</description>
+    </item>
+    
+    <item>
+      <title>Case Study: Harry Houdini</title>
+      <link>/post/case-study-harry-houdini/</link>
+      <pubDate>Tue, 11 Jun 2019 18:19:02 +1000</pubDate>
+      
+      <guid>/post/case-study-harry-houdini/</guid>
+      <description>Spiritualism</description>
+    </item>
+    
+    <item>
+      <title>Lecture 4</title>
+      <link>/post/lec04/</link>
+      <pubDate>Tue, 11 Jun 2019 18:17:14 +1000</pubDate>
+      
+      <guid>/post/lec04/</guid>
+      <description>Vignere cipher (letters shifted by different amounts) sausageP is a common comical term, Pegasus backwards.</description>
+    </item>
+    
+    <item>
+      <title>Lecture 3</title>
+      <link>/post/lec03/</link>
+      <pubDate>Tue, 11 Jun 2019 10:07:23 +1000</pubDate>
+      
+      <guid>/post/lec03/</guid>
+      <description>Security is an on-going process of strengthening defenses.</description>
+    </item>
     
     <item>
       <title>Paper Shredders</title>

@@ -7,10 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Mon, 10 Jun 2019 23:49:22 +1000</lastBuildDate>
+    <lastBuildDate>Wed, 12 Jun 2019 00:57:06 +1000</lastBuildDate>
     
 	<atom:link href="/categories/musings/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Index of Coincidence</title>
+      <link>/post/index-of-coincidence/</link>
+      <pubDate>Wed, 12 Jun 2019 00:57:06 +1000</pubDate>
+      
+      <guid>/post/index-of-coincidence/</guid>
+      <description>The IC is a mathematical analysis of the relationship between letter pairs.</description>
+    </item>
+    
+    <item>
+      <title>The Vigenère Cipher</title>
+      <link>/post/the-vigenere-cipher/</link>
+      <pubDate>Tue, 11 Jun 2019 23:59:47 +1000</pubDate>
+      
+      <guid>/post/the-vigenere-cipher/</guid>
+      <description>The Vigenère Cipher is a polyalphabetic substitution cipher, where a plain-text phrase would be encrypted and decrypted through a keyword, which would serve as a lookup for how many shifts would be performed on a character.</description>
+    </item>
+    
+    <item>
+      <title>A Good Talk</title>
+      <link>/post/a-good-talk/</link>
+      <pubDate>Tue, 11 Jun 2019 19:53:00 +1000</pubDate>
+      
+      <guid>/post/a-good-talk/</guid>
+      <description>Don&amp;rsquo;t do live demonstrations!</description>
+    </item>
     
     <item>
       <title>Paper Shredders</title>

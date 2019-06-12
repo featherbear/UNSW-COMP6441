@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Wed, 12 Jun 2019 17:09:17 +1000</lastBuildDate>
+    <lastBuildDate>Wed, 12 Jun 2019 23:33:41 +1000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Dumpster Dive</title>
+      <link>/post/dumpster-dive/</link>
+      <pubDate>Wed, 12 Jun 2019 23:33:41 +1000</pubDate>
+      
+      <guid>/post/dumpster-dive/</guid>
+      <description>&amp;ldquo;Don&amp;rsquo;t worry&amp;rdquo;, they said.</description>
+    </item>
     
     <item>
       <title>Reflections - Harry Houdini</title>

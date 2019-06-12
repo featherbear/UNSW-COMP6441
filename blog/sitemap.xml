@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/post/dumpster-dive/</loc>
+    <lastmod>2019-06-12T23:33:41+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/reflections-case-study-harry-houdini/</loc>
     <lastmod>2019-06-12T17:09:17+10:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -171,8 +178,15 @@
   </url>
   
   <url>
+    <loc>/categories/assessments/</loc>
+    <lastmod>2019-06-12T02:01:33+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/</loc>
-    <lastmod>2019-06-12T17:09:17+10:00</lastmod>
+    <lastmod>2019-06-12T23:33:41+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -186,7 +200,7 @@
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2019-06-11T18:19:02+10:00</lastmod>
+    <lastmod>2019-06-12T02:01:33+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -207,21 +221,21 @@
   
   <url>
     <loc>/categories/musings/</loc>
-    <lastmod>2019-06-12T00:57:06+10:00</lastmod>
+    <lastmod>2019-06-12T23:33:41+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-06-12T17:09:17+10:00</lastmod>
+    <lastmod>2019-06-12T23:33:41+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/reflections/</loc>
-    <lastmod>2019-06-05T23:55:30+10:00</lastmod>
+    <lastmod>2019-06-12T17:09:17+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

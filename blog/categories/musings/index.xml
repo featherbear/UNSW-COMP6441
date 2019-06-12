@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Wed, 12 Jun 2019 00:57:06 +1000</lastBuildDate>
+    <lastBuildDate>Wed, 12 Jun 2019 23:33:41 +1000</lastBuildDate>
     
 	<atom:link href="/categories/musings/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Dumpster Dive</title>
+      <link>/post/dumpster-dive/</link>
+      <pubDate>Wed, 12 Jun 2019 23:33:41 +1000</pubDate>
+      
+      <guid>/post/dumpster-dive/</guid>
+      <description>&amp;ldquo;Don&amp;rsquo;t worry&amp;rdquo;, they said.</description>
+    </item>
+    
+    <item>
+      <title>Something Awesome - Proposal</title>
+      <link>/post/something-awesome-proposal/</link>
+      <pubDate>Wed, 12 Jun 2019 02:01:33 +1000</pubDate>
+      
+      <guid>/post/something-awesome-proposal/</guid>
+      <description>Abstract / Introduction Remote Administration Tools help sysadmins and support staff to operate and/or troubleshoot remote computer systems wherever they may be.</description>
+    </item>
     
     <item>
       <title>Index of Coincidence</title>

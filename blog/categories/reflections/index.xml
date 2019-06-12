@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Wed, 05 Jun 2019 23:55:30 +1000</lastBuildDate>
+    <lastBuildDate>Wed, 12 Jun 2019 17:09:17 +1000</lastBuildDate>
     
 	<atom:link href="/categories/reflections/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Reflections - Harry Houdini</title>
+      <link>/post/reflections-case-study-harry-houdini/</link>
+      <pubDate>Wed, 12 Jun 2019 17:09:17 +1000</pubDate>
+      
+      <guid>/post/reflections-case-study-harry-houdini/</guid>
+      <description>Read up here</description>
+    </item>
     
     <item>
       <title>Reflections: The Deepwater Horizon Accident</title>

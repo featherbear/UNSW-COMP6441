@@ -45,7 +45,7 @@ The task for this project is to create a **RAT** that can remotely connect to a 
 <!-- * Hidden execution -->
 <!-- * Remote code execution -->
 
-# If you're bored (worth no marks)
+# If you&apos;re bored (worth no marks)
 
 * Make the GUI for the client software pretty! (_Perhaps learn Electron_)
 * Virus-like behaviour (self replication, auto-start)

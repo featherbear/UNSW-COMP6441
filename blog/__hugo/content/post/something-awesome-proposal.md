@@ -2,6 +2,8 @@
 title: "Something Awesome - Proposal"
 date: 2019-06-12T02:01:33+10:00
 description: "I decided to make a RAT for my Something Awesome project..."
+
+categories: ["Musings", "Assessments"]
 hiddenFromHomePage: false
 postMetaInFooter: false
 

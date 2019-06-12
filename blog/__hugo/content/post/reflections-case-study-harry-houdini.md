@@ -2,6 +2,8 @@
 title: "Reflections - Harry Houdini"
 date: 2019-06-12T17:09:17+10:00
 
+categories: ["Reflections"]
+
 hiddenFromHomePage: false
 postMetaInFooter: false
 

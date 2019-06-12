@@ -3,6 +3,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/post/reflections-case-study-harry-houdini/</loc>
+    <lastmod>2019-06-12T17:09:17+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/something-awesome-proposal/</loc>
+    <lastmod>2019-06-12T02:01:33+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/index-of-coincidence/</loc>
     <lastmod>2019-06-12T00:57:06+10:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -158,7 +172,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-06-12T00:57:06+10:00</lastmod>
+    <lastmod>2019-06-12T17:09:17+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -200,7 +214,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-06-12T00:57:06+10:00</lastmod>
+    <lastmod>2019-06-12T17:09:17+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

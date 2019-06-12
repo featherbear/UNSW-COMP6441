@@ -25,7 +25,7 @@ That tiny voice that's always talking to you..
 
 Sometimes it's so inconspicuous, but it is _for a fact_ there... living in your subconscious, our self-interest aligns our thoughts and desires to what we _want_.
 
-It's crazy to see identify it in our lives until we humble ourselves and take a step back to realise how much of our actions, thoughts and decision are shaped by self-gratification. It's an amazing virus that we don't even realise existed in our system.
+It's so crazily hard to identify it in our own lives until we humble ourselves and take a step back to realise how much of our actions, thoughts and decision are shaped by self-gratification. It's a terrifying virus that we don't even realise existed in our system.
 
 Maybe it's not what we _want_ though.  
 We might get what we want, but not what we truly need.

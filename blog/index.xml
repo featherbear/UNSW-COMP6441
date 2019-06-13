@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Wed, 12 Jun 2019 23:33:41 +1000</lastBuildDate>
+    <lastBuildDate>Thu, 13 Jun 2019 17:33:43 +1000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Shoplifting Prevention</title>
+      <link>/post/shoplifting-prevention/</link>
+      <pubDate>Thu, 13 Jun 2019 17:33:43 +1000</pubDate>
+      
+      <guid>/post/shoplifting-prevention/</guid>
+      <description>Offense is the best defense.</description>
+    </item>
+    
+    <item>
+      <title>Security Everywhere: JB Hi-fi &amp; Bing Lee Raids</title>
+      <link>/post/security-everywhere-jb-hifi-bing-lee-raids/</link>
+      <pubDate>Thu, 13 Jun 2019 13:46:21 +1000</pubDate>
+      
+      <guid>/post/security-everywhere-jb-hifi-bing-lee-raids/</guid>
+      <description>Over a weekend, several JB Hi-Fi and Bing Lee stores were raided, having lots and lots of electronics and appliances stolen.</description>
+    </item>
     
     <item>
       <title>Dumpster Dive</title>

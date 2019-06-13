@@ -57,18 +57,18 @@ This prevents products from being 'accidentally' placed into the bags.
 _Though, are these policies ever really enforced these days_
 
 # Product Security
-* **Electronic Article Surveillance**
+* **Electronic Article Surveillance**  
 There are many different types of EAS systems that utilise a whole range of different technologies.  
 &nbsp;  
 One of such systems use **electro-acoustic technology** which causes a tag to resonate an inaudible tone which sensors can detect.  
 When the tag comes into the magnetic field created by the security checkpoints, a metallic strip inside the tag vibrates.  
-_To circumvent this system, you could get a really powerful magnet to deform the strip, or to even hold it in place while you walk out..._
+_(To circumvent this system, you could get a really powerful magnet to deform the strip, or to even hold it in place while you walk out...)_
 &nbsp;  
 
 * **Security Chains**  
 A physical tether of a product to the store.  
-Often these chains are additionally armed with an alarm that sounds when disconnected.
-
+Often these chains are additionally armed with an alarm that sounds when disconnected.  
+&nbsp;  
 But there are issues with this, discussed [in this post](../security-everywhere-jb-hifi-bing-lee-raids#what-went-wrong)
 
 * **Cabinets**  
@@ -105,6 +105,48 @@ Half the time when I enter a store, I observe the security guard, and come to th
 
 To prevent price tag switching, it may be worthwhile in training staff to know the correct prices of products.  
 Even if a barcode is used instead of a price tag, one might overlay an altered barcode - so it is important for the staff to _know what they're selling_.
+
+# Ridiculous Ideas
+> Hey, they're valid still, right?
+
+The simple steps to stop a theft
+---
+
+Ultimately what you need to do is to hide the exit from the shoplifter.  
+One effective way to do this is by disorientating them - aka changing the environment
+
+1) **Smoke cloak**
+Smoke cloaks are a mechanism where a thick cloud of smoke is deployed, greatly reducing visibility of the exit - aimed to disorientate the shoplifter, so that their environment is now foreign.  
+&nbsp;  
+_> Possible health risks but eh_
+
+2) **Lights, cameras, action!**
+Turn off, or dim the lights.  
+(Maybe add strobe lights as blinders... or even... lazers. hmmm)  
+&nbsp;  
+_> Also possible health risks but eh_
+
+3) **R A V E**  
+Dim the lights, turn on the hazer, and grab the closest guy with a pair of V-Moda or Audio-Technica headphones and throw him onto the DJ deck.  
+&nbsp;  
+PARTY HARD.  
+&nbsp;  
+BLAST SOUND, LIGHTS, SMOKE  
+&nbsp;  
+...  
+&nbsp;  
+_> Definitely a health risk. Oh well!_
+
+Be even more esoteric
+---
+It's not legal in Australia, but what if you liquidise some medication or some other drug and let it infuse within the air system...  
+&nbsp;  
+3 2 1 \*snap\* goodnight
+
+Defeat them with love and affection
+---
+Deploy and overpower them with cute newborn puppers and overpower them with cute puppers! <3
+
 
 ---
 

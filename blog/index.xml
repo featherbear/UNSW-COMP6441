@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Thu, 13 Jun 2019 17:33:43 +1000</lastBuildDate>
+    <lastBuildDate>Thu, 13 Jun 2019 23:22:23 +1000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Futility</title>
+      <link>/post/futility/</link>
+      <pubDate>Thu, 13 Jun 2019 23:22:23 +1000</pubDate>
+      
+      <guid>/post/futility/</guid>
+      <description>I recently watched WarGames, and the final segment of the movie was quite intruiging.</description>
+    </item>
     
     <item>
       <title>Shoplifting Prevention</title>

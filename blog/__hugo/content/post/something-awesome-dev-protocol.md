@@ -56,22 +56,10 @@ Data: ID, Password / other auth token
 Source: Client / Relay  
 Destination: Relay / Host
 
-* `r_hello`
-Description: Hello response  
-Data: true/false  
-Source: Host / Relay  
-Destination: Relay / Client
-
 * `list`  
 Description: Request the computers connected to the relay  
 Source: Client  
 Destination: Relay  
-
-* `r_list`  
-Description: Returns a list of computers connected to the relay  
-Data: Object of computers
-Source: Relay  
-Destination: Client  
 
 * `poll`  
 Description: Broadcast presence to a relay server. Latency also recorded by the relay server. No reply  
@@ -111,6 +99,19 @@ Description: Lock the host machine
 <!-- * `shell` / `rce` - Access a shell / terminal (netcat) -->
 
 ## Data Messages (Response)
+
+* `r_hello`
+Description: Hello response  
+Data: true/false  
+Source: Host / Relay  
+Destination: Relay / Client
+
+
+* `r_list`  
+Description: Returns a list of computers connected to the relay  
+Data: Object of computers
+Source: Relay  
+Destination: Client  
 
 * `r_display` - Display stream data
 * `r_screenshot` - Screenshot data

@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Thu, 13 Jun 2019 13:46:21 +1000</lastBuildDate>
+    <lastBuildDate>Wed, 19 Jun 2019 01:54:04 +1000</lastBuildDate>
     
 	<atom:link href="/categories/security-everywhere/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Security Everywhere: Google Calendar Outage</title>
+      <link>/post/security-everywhere-google-calendar-outage/</link>
+      <pubDate>Wed, 19 Jun 2019 01:54:04 +1000</pubDate>
+      
+      <guid>/post/security-everywhere-google-calendar-outage/</guid>
+      <description>So about an hour ago, Google&amp;rsquo;s web services for its Google Calendar product went down, and gave users a &amp;lsquo;friendly&amp;rsquo; 404 (/s)</description>
+    </item>
     
     <item>
       <title>Security Everywhere: JB Hi-fi &amp; Bing Lee Raids</title>

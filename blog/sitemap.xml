@@ -3,8 +3,29 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/post/security-everywhere-google-calendar-outage/</loc>
+    <lastmod>2019-06-19T01:54:04+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/weakness-of-the-week-03/</loc>
     <lastmod>2019-06-18T18:45:41+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/case-study-plane-doors/</loc>
+    <lastmod>2019-06-18T18:20:59+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/lec06/</loc>
+    <lastmod>2019-06-18T18:18:32+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -40,6 +61,13 @@
   <url>
     <loc>/post/highs-and-lows-a-game-of-probability/</loc>
     <lastmod>2019-06-18T17:23:44+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/lec05/</loc>
+    <lastmod>2019-06-18T10:31:58+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -340,14 +368,14 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-06-18T18:45:41+10:00</lastmod>
+    <lastmod>2019-06-19T01:54:04+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/case-study/</loc>
-    <lastmod>2019-06-13T13:46:21+10:00</lastmod>
+    <lastmod>2019-06-19T01:54:04+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -375,21 +403,21 @@
   
   <url>
     <loc>/categories/lectures/</loc>
-    <lastmod>2019-06-11T18:17:14+10:00</lastmod>
+    <lastmod>2019-06-18T18:18:32+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/musings/</loc>
-    <lastmod>2019-06-18T18:15:55+10:00</lastmod>
+    <lastmod>2019-06-19T01:54:04+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-06-18T18:45:41+10:00</lastmod>
+    <lastmod>2019-06-19T01:54:04+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -403,7 +431,7 @@
   
   <url>
     <loc>/categories/security-everywhere/</loc>
-    <lastmod>2019-06-13T13:46:21+10:00</lastmod>
+    <lastmod>2019-06-19T01:54:04+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

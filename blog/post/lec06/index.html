@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Archive - COMP6441 Musings</title>
+  <title>Lecture 6 - COMP6441 Musings</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="z5206677" /><meta name="description" content="Musings of a COMP6441 student" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="z5206677" /><meta name="description" content=" Merkle Puzzles - Link Public/Private Key Encryption with RSA - Link  " /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,33 +26,39 @@
 <meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
 
 
-<link rel="canonical" href="../../../post/" />
-  <link href="../../../post/index.xml" rel="alternate" type="application/rss+xml" title="COMP6441 Musings" />
-  <link href="../../../post/index.xml" rel="feed" type="application/rss+xml" title="COMP6441 Musings" />
-<link rel="apple-touch-icon" sizes="180x180" href="../../../apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
-<link rel="manifest" href="../../../manifest.json">
-<link rel="mask-icon" href="../../../safari-pinned-tab.svg" color="#5bbad5">
+<link rel="canonical" href="../../post/lec06/" />
+<link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+<link rel="manifest" href="../../manifest.json">
+<link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#5bbad5">
 
 
-<link href="../../../dist/even.c2a46f00.min.css" rel="stylesheet">
+<link href="../../dist/even.c2a46f00.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Posts" />
-<meta property="og:description" content="Musings of a COMP6441 student" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/post/" />
+<meta property="og:title" content="Lecture 6" />
+<meta property="og:description" content=" Merkle Puzzles - Link Public/Private Key Encryption with RSA - Link  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/lec06/" />
+<meta property="article:published_time" content="2019-06-18T18:18:32&#43;10:00"/>
+<meta property="article:modified_time" content="2019-06-18T18:18:32&#43;10:00"/>
 
-<meta property="og:updated_time" content="2019-06-10T23:11:23&#43;10:00"/>
+<meta itemprop="name" content="Lecture 6">
+<meta itemprop="description" content=" Merkle Puzzles - Link Public/Private Key Encryption with RSA - Link  ">
 
-<meta itemprop="name" content="Posts">
-<meta itemprop="description" content="Musings of a COMP6441 student">
 
+<meta itemprop="datePublished" content="2019-06-18T18:18:32&#43;10:00" />
+<meta itemprop="dateModified" content="2019-06-18T18:18:32&#43;10:00" />
+<meta itemprop="wordCount" content="11">
+
+
+
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Posts"/>
-<meta name="twitter:description" content="Musings of a COMP6441 student"/>
+<meta name="twitter:title" content="Lecture 6"/>
+<meta name="twitter:description" content=" Merkle Puzzles - Link Public/Private Key Encryption with RSA - Link  "/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -67,7 +73,7 @@
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="../../../" class="logo">COMP6441 Musings</a>
+    <a href="../../" class="logo">COMP6441 Musings</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -77,11 +83,11 @@
 </div>
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
   <ul class="mobile-menu-list">
-    <a href="../../../">
+    <a href="../../">
         <li class="mobile-menu-item">Home</li>
       </a><a href="https://github.com/featherbear/UNSW-COMP6441">
         <li class="mobile-menu-item">GitHub</li>
-      </a><a href="../../../categories/">
+      </a><a href="../../categories/">
         <li class="mobile-menu-item">Categories</li>
       </a>
   </ul>
@@ -89,17 +95,17 @@
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
-  <a href="../../../" class="logo">COMP6441 Musings</a>
+  <a href="../../" class="logo">COMP6441 Musings</a>
 </div>
 
 <nav class="site-navbar">
   <ul id="menu" class="menu">
     <li class="menu-item">
-        <a class="menu-item-link" href="../../../">Home</a>
+        <a class="menu-item-link" href="../../">Home</a>
       </li><li class="menu-item">
         <a class="menu-item-link" href="https://github.com/featherbear/UNSW-COMP6441">GitHub</a>
       </li><li class="menu-item">
-        <a class="menu-item-link" href="../../../categories/">Categories</a>
+        <a class="menu-item-link" href="../../categories/">Categories</a>
       </li>
   </ul>
 </nav>
@@ -108,77 +114,54 @@
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          
-<section id="archive" class="archive">
-      <div class="collection-title">
-        <h2 class="archive-year">2019</h2>
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Lecture 6</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-06-18 </span>
+        <div class="post-category">
+            <a href="../../categories/lectures/"> Lectures </a>
+            </div>
+        
       </div>
+    </header>
 
-    <div class="archive-post">
-      <span class="archive-post-time">
-        06-10
-      </span>
-      <span class="archive-post-title">
-        <a href="../../../post/module_2_simple_crypto/" class="archive-post-link">
-          Activity: A Simple Crypto
-        </a>
-      </span>
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    
+  </div>
+</div>
+    <div class="post-content">
+      <!-- Storage of previous work can help improve the efficiency
+
+Possibly even half the number of bits of work -->
+
+<ul>
+<li>Merkle Puzzles - <a href="../merkle-puzzles">Link</a></li>
+<li>Public/Private Key Encryption with RSA - <a href="../RSA-crypto">Link</a></li>
+</ul>
+
     </div>
 
-    <div class="archive-post">
-      <span class="archive-post-time">
-        06-09
-      </span>
-      <span class="archive-post-title">
-        <a href="../../../post/openlearning-security/" class="archive-post-link">
-          OpenLearning - Security
-        </a>
-      </span>
-    </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        06-09
-      </span>
-      <span class="archive-post-title">
-        <a href="../../../post/something-awesome-musings/" class="archive-post-link">
-          Something Awesome: Musings
-        </a>
-      </span>
-    </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        06-09
-      </span>
-      <span class="archive-post-title">
-        <a href="../../../post/fear-and-tension/" class="archive-post-link">
-          Fear and Tension
-        </a>
-      </span>
-    </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        06-09
-      </span>
-      <span class="archive-post-title">
-        <a href="../../../post/tumblr4uni/" class="archive-post-link">
-          Tumblr 4 Uni
-        </a>
-      </span>
-    </div></section>
-
-<nav class="pagination">
-  <a class="prev" href="../../../post/page/7/">
-      <i class="iconfont icon-left"></i>
-      <span class="prev-text">Prev</span>
-    </a>
-  <a class="next" href="../../../post/page/9/">
-      <span class="next-text">Next</span>
-      <i class="iconfont icon-right"></i>
-    </a>
-</nav>
+    <footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="../../post/rsa-crypto/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">RSA Crypto</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="../../post/case-study-plane-doors/">
+            <span class="next-text nav-default">Case Study: Plane Doors</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
         </div>
         
 
@@ -191,7 +174,7 @@
       <a href="https://www.linkedin.com/in/andrewjinmengwong/" class="iconfont icon-linkedin" title="linkedin"></a>
       <a href="https://github.com/featherbear" class="iconfont icon-github" title="github"></a>
       <a href="https://www.instagram.com/_andrewjwong/" class="iconfont icon-instagram" title="instagram"></a>
-  <a href="../../../index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  <a href="../../index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
 </div>
 
 <div class="copyright">
@@ -225,7 +208,7 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../../dist/even.26188efa.min.js"></script>
+<script type="text/javascript" src="../../dist/even.26188efa.min.js"></script>
 
 
 <script type="application/javascript">

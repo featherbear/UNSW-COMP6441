@@ -16,7 +16,7 @@ sequenceDiagrams:
 
 ---
 
-[.dev]: (https://domains.google/tld/dev/)
+[.dev]: https://domains.google/tld/dev/
 
 My friend recently purchased a [domain name from Google](https://domains.google/tld/dev/).
 
@@ -41,4 +41,4 @@ So because of that, we were not able to access port 80.
 
 Setting up the server for HTTPS/443 fixed the issue, and we were able to connect to server!
 
-Because we were lazy, we used [nginx](https://hstspreload.org/) as a HTTPS proxy to the HTTP application server.
+Because we were lazy, we used [nginx](https://www.nginx.com/) as a HTTPS proxy to the HTTP application server.

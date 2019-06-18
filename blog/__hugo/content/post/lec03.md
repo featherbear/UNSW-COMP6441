@@ -55,7 +55,7 @@ This is a good thing, a `dual control` system. Two separate individuals would ha
 
 Destroying a printed document [could be easy](https://featherbear.github.io/UNSW-COMP6441/blog/post/paper-shredders/). You'd [_just_](https://featherbear.github.io/UNSW-COMP6441/blog/post/paper-shredders/) cut it up... [\*cough\*](https://featherbear.github.io/UNSW-COMP6441/blog/post/paper-shredders/), but what about deleting digital data?
 
-On a storag medium, deleting a file from a disk only removes the file entry the directory table, _not_ the physical platten (or flash). You'd need to write to the platten in a lowlevel fashion...
+On a storage medium, deleting a file from a disk only removes the file entry the directory table, _not_ the physical platten (or flash). You'd need to write to the platten in a lowlevel fashion...
 
 But what about online data? Once something goes online, you don't know what's been done with it. Deleting a post, doesn't truly remove it. It exists... just somewhere.
 

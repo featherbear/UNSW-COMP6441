@@ -1,9 +1,9 @@
 ---
-title: "Something Awesome - Proposal"
+title: "Something Awesome: Proposal"
 date: 2019-06-12T02:01:33+10:00
 description: "I decided to make a RAT for my Something Awesome project..."
 
-categories: ["Musings", "Assessments"]
+categories: ["Assessments", "Something Awesome"]
 hiddenFromHomePage: false
 postMetaInFooter: false
 
@@ -52,7 +52,6 @@ The task for this project is to create a **RAT** that can remotely connect to a 
 * Make the GUI for the client software pretty! (_Perhaps learn Electron_)
 * Virus-like behaviour (self replication, auto-start)
 
-
 # Task Outcomes
 
 * Learn how to write client-server software
@@ -63,7 +62,7 @@ The task for this project is to create a **RAT** that can remotely connect to a 
 * Make something awesome!
 
 # Marking Criteria
-HD - 85-100 - Compulsory features working with at least 4 additional features  
+HD - 85-100 - Compulsory features working with at least 3 additional features  
 DN - 75-84 - Compulsory features working with 2 additional features  
 CR - 65-74 - Compulsory features working with 1 additional feature  
 PS - 50-64 - Compulsory features working  

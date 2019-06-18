@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Extended Security on COMP6441 Musings</title>
+    <link>/categories/extended-security/</link>
+    <description>Recent content in Extended Security on COMP6441 Musings</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Andrew Wong (z5206677)</copyright>
+    <lastBuildDate>Tue, 18 Jun 2019 18:00:00 +1000</lastBuildDate>
+    
+	<atom:link href="/categories/extended-security/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Attacking Locks</title>
+      <link>/post/attacking-locks/</link>
+      <pubDate>Tue, 18 Jun 2019 18:00:00 +1000</pubDate>
+      
+      <guid>/post/attacking-locks/</guid>
+      <description>This week (week 3) during the evening lecture, one of the extended security workshop groups presented a talk about lock picking!</description>
+    </item>
+    
+  </channel>
+</rss>

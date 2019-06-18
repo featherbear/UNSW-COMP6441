@@ -7,10 +7,163 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Thu, 13 Jun 2019 23:22:23 +1000</lastBuildDate>
+    <lastBuildDate>Tue, 18 Jun 2019 18:45:41 +1000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Weakness of the Week - 03</title>
+      <link>/post/weakness-of-the-week-03/</link>
+      <pubDate>Tue, 18 Jun 2019 18:45:41 +1000</pubDate>
+      
+      <guid>/post/weakness-of-the-week-03/</guid>
+      <description>Corruption.</description>
+    </item>
+    
+    <item>
+      <title>Attacking Locks</title>
+      <link>/post/attacking-locks/</link>
+      <pubDate>Tue, 18 Jun 2019 18:00:00 +1000</pubDate>
+      
+      <guid>/post/attacking-locks/</guid>
+      <description>This week (week 3) during the evening lecture, one of the extended security workshop groups presented a talk about lock picking!</description>
+    </item>
+    
+    <item>
+      <title>Merkle Puzzles</title>
+      <link>/post/merkle-puzzles/</link>
+      <pubDate>Tue, 18 Jun 2019 17:34:37 +1000</pubDate>
+      
+      <guid>/post/merkle-puzzles/</guid>
+      <description>Incoming copy pasta:</description>
+    </item>
+    
+    <item>
+      <title>How to Steal a Penguin</title>
+      <link>/post/how-to-steal-a-penguin/</link>
+      <pubDate>Tue, 18 Jun 2019 17:27:55 +1000</pubDate>
+      
+      <guid>/post/how-to-steal-a-penguin/</guid>
+      <description>If you were to steal a penguin from a wildlife park, what would you do?</description>
+    </item>
+    
+    <item>
+      <title>Highs and Lows - A Game of Probability</title>
+      <link>/post/highs-and-lows-a-game-of-probability/</link>
+      <pubDate>Tue, 18 Jun 2019 17:23:44 +1000</pubDate>
+      
+      <guid>/post/highs-and-lows-a-game-of-probability/</guid>
+      <description>Low Probability, High Impact - An event that has a low chance of occuring, but will have drastic events if it occurs.</description>
+    </item>
+    
+    <item>
+      <title>Google Domains and HSTS</title>
+      <link>/post/google-tld-hsts/</link>
+      <pubDate>Tue, 18 Jun 2019 02:23:13 +1000</pubDate>
+      
+      <guid>/post/google-tld-hsts/</guid>
+      <description>My friend recently purchased a domain name from Google.</description>
+    </item>
+    
+    <item>
+      <title>Type I &amp; Type II Errors</title>
+      <link>/post/type_i_type_ii_errors/</link>
+      <pubDate>Mon, 17 Jun 2019 19:33:19 +1000</pubDate>
+      
+      <guid>/post/type_i_type_ii_errors/</guid>
+      <description>Lecture 4 introduced Type I and Type II errors.</description>
+    </item>
+    
+    <item>
+      <title>Reflections - Week 2</title>
+      <link>/post/reflections02/</link>
+      <pubDate>Sun, 16 Jun 2019 17:07:28 +1000</pubDate>
+      
+      <guid>/post/reflections02/</guid>
+      <description>Often security is thought of as an afterthought, that only after a system has been designed that security implications are considered.</description>
+    </item>
+    
+    <item>
+      <title>Something Awesome: Research - Keylogging</title>
+      <link>/post/something-awesome-research-keylogging/</link>
+      <pubDate>Sat, 15 Jun 2019 22:07:10 +1000</pubDate>
+      
+      <guid>/post/something-awesome-research-keylogging/</guid>
+      <description>A keylogger essentially logs the keys that you press.</description>
+    </item>
+    
+    <item>
+      <title>Something Awesome: Research - Display Capture</title>
+      <link>/post/something-awesome-research-display-capture/</link>
+      <pubDate>Sat, 15 Jun 2019 22:04:15 +1000</pubDate>
+      
+      <guid>/post/something-awesome-research-display-capture/</guid>
+      <description>Single Still Frame &amp;nbsp;&amp;bull; bencevans/screenshot-desktop Cross-platform support:</description>
+    </item>
+    
+    <item>
+      <title>Something Awesome: Research - Security</title>
+      <link>/post/something-awesome-research-security/</link>
+      <pubDate>Sat, 15 Jun 2019 19:14:06 +1000</pubDate>
+      
+      <guid>/post/something-awesome-research-security/</guid>
+      <description>Security - Keeping data secured There are two main ways to encrypt data</description>
+    </item>
+    
+    <item>
+      <title>Something Awesome: Research - Authentication</title>
+      <link>/post/something-awesome-research-authentication/</link>
+      <pubDate>Sat, 15 Jun 2019 16:47:24 +1000</pubDate>
+      
+      <guid>/post/something-awesome-research-authentication/</guid>
+      <description>Authentication - LET MEEE INNNN Here are some possibilities of authentication mechanisms that I could implement:</description>
+    </item>
+    
+    <item>
+      <title>Something Awesome: Protocol Specification</title>
+      <link>/post/something-awesome-dev-protocol/</link>
+      <pubDate>Sat, 15 Jun 2019 15:43:30 +1000</pubDate>
+      
+      <guid>/post/something-awesome-dev-protocol/</guid>
+      <description>Connection Connection to Host  Client sends hello to host  If bad auth, return r_hello::false Establish connection  Every interval, client sends keepAlive to host Client sends command to host  Host returns command   Relay The relay server does not exchange party connection details unless a connection is authorised.</description>
+    </item>
+    
+    <item>
+      <title>Something Awesome: Research - Transport</title>
+      <link>/post/something-awesome-research-transport/</link>
+      <pubDate>Sat, 15 Jun 2019 15:10:03 +1000</pubDate>
+      
+      <guid>/post/something-awesome-research-transport/</guid>
+      <description>I should really take COMP3331 first maybe idk</description>
+    </item>
+    
+    <item>
+      <title>Something Awesome: Research - Language</title>
+      <link>/post/something-awesome-research-language/</link>
+      <pubDate>Sat, 15 Jun 2019 14:41:33 +1000</pubDate>
+      
+      <guid>/post/something-awesome-research-language/</guid>
+      <description>Language - What language should I write my RAT in?</description>
+    </item>
+    
+    <item>
+      <title>Something Awesome: Project Plan</title>
+      <link>/post/something-awesome-project-plan/</link>
+      <pubDate>Fri, 14 Jun 2019 22:16:14 +1000</pubDate>
+      
+      <guid>/post/something-awesome-project-plan/</guid>
+      <description>Terminology  Host - The target machine Client - The operator&amp;rsquo;s machine Relay - A third server which aids in establishing a direct connection between the host and client.</description>
+    </item>
+    
+    <item>
+      <title>Something Awesome: Research Plan</title>
+      <link>/post/something-awesome-research-plan/</link>
+      <pubDate>Fri, 14 Jun 2019 15:46:35 +1000</pubDate>
+      
+      <guid>/post/something-awesome-research-plan/</guid>
+      <description>Terminology  Host - The target machine Client - The operator&amp;rsquo;s machine Relay - A third server which aids in establishing a direct connection between the host and client.</description>
+    </item>
     
     <item>
       <title>Futility</title>
@@ -58,7 +211,7 @@
     </item>
     
     <item>
-      <title>Something Awesome - Proposal</title>
+      <title>Something Awesome: Proposal</title>
       <link>/post/something-awesome-proposal/</link>
       <pubDate>Wed, 12 Jun 2019 02:01:33 +1000</pubDate>
       
@@ -91,15 +244,6 @@
       
       <guid>/post/weakness-of-the-week-02/</guid>
       <description>&amp;ldquo;Bet on self interest, it&amp;rsquo;s a horse that&amp;rsquo;s always trying&amp;rdquo; - Jack Liang</description>
-    </item>
-    
-    <item>
-      <title>A Good Talk</title>
-      <link>/post/a-good-talk/</link>
-      <pubDate>Tue, 11 Jun 2019 19:53:00 +1000</pubDate>
-      
-      <guid>/post/a-good-talk/</guid>
-      <description>Don&amp;rsquo;t do live demonstrations!</description>
     </item>
     
     <item>
@@ -157,7 +301,7 @@
     </item>
     
     <item>
-      <title>Something Awesome - Musings</title>
+      <title>Something Awesome: Musings</title>
       <link>/post/something-awesome-musings/</link>
       <pubDate>Sun, 09 Jun 2019 18:03:07 +1000</pubDate>
       
@@ -262,6 +406,24 @@
       
       <guid>/post/lec01/</guid>
       <description>&amp;ldquo;If something is too complicated, there is bound to be oversights&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>Something Awesome: Research - Connection Time</title>
+      <link>/post/something-awesome-research-connection/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +1000</pubDate>
+      
+      <guid>/post/something-awesome-research-connection/</guid>
+      <description>Connection Time - Establishing a connection over the internet A client-server involves the client computer to be able to contact to a host over an open port on the internet.</description>
+    </item>
+    
+    <item>
+      <title>Something Awesome: Technical Aspects</title>
+      <link>/post/something-awesome-technical-aspects/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +1000</pubDate>
+      
+      <guid>/post/something-awesome-technical-aspects/</guid>
+      <description>Software Architecture  Language: node.</description>
     </item>
     
   </channel>

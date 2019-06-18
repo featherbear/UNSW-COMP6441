@@ -7,10 +7,64 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Thu, 13 Jun 2019 23:22:23 +1000</lastBuildDate>
+    <lastBuildDate>Tue, 18 Jun 2019 18:00:00 +1000</lastBuildDate>
     
 	<atom:link href="/categories/musings/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Attacking Locks</title>
+      <link>/post/attacking-locks/</link>
+      <pubDate>Tue, 18 Jun 2019 18:00:00 +1000</pubDate>
+      
+      <guid>/post/attacking-locks/</guid>
+      <description>This week (week 3) during the evening lecture, one of the extended security workshop groups presented a talk about lock picking!</description>
+    </item>
+    
+    <item>
+      <title>Merkle Puzzles</title>
+      <link>/post/merkle-puzzles/</link>
+      <pubDate>Tue, 18 Jun 2019 17:34:37 +1000</pubDate>
+      
+      <guid>/post/merkle-puzzles/</guid>
+      <description>Incoming copy pasta:</description>
+    </item>
+    
+    <item>
+      <title>How to Steal a Penguin</title>
+      <link>/post/how-to-steal-a-penguin/</link>
+      <pubDate>Tue, 18 Jun 2019 17:27:55 +1000</pubDate>
+      
+      <guid>/post/how-to-steal-a-penguin/</guid>
+      <description>If you were to steal a penguin from a wildlife park, what would you do?</description>
+    </item>
+    
+    <item>
+      <title>Highs and Lows - A Game of Probability</title>
+      <link>/post/highs-and-lows-a-game-of-probability/</link>
+      <pubDate>Tue, 18 Jun 2019 17:23:44 +1000</pubDate>
+      
+      <guid>/post/highs-and-lows-a-game-of-probability/</guid>
+      <description>Low Probability, High Impact - An event that has a low chance of occuring, but will have drastic events if it occurs.</description>
+    </item>
+    
+    <item>
+      <title>Google Domains and HSTS</title>
+      <link>/post/google-tld-hsts/</link>
+      <pubDate>Tue, 18 Jun 2019 02:23:13 +1000</pubDate>
+      
+      <guid>/post/google-tld-hsts/</guid>
+      <description>My friend recently purchased a domain name from Google.</description>
+    </item>
+    
+    <item>
+      <title>Type I &amp; Type II Errors</title>
+      <link>/post/type_i_type_ii_errors/</link>
+      <pubDate>Mon, 17 Jun 2019 19:33:19 +1000</pubDate>
+      
+      <guid>/post/type_i_type_ii_errors/</guid>
+      <description>Lecture 4 introduced Type I and Type II errors.</description>
+    </item>
     
     <item>
       <title>Futility</title>
@@ -40,15 +94,6 @@
     </item>
     
     <item>
-      <title>Something Awesome - Proposal</title>
-      <link>/post/something-awesome-proposal/</link>
-      <pubDate>Wed, 12 Jun 2019 02:01:33 +1000</pubDate>
-      
-      <guid>/post/something-awesome-proposal/</guid>
-      <description>Abstract / Introduction Remote Administration Tools help sysadmins and support staff to operate and/or troubleshoot remote computer systems wherever they may be.</description>
-    </item>
-    
-    <item>
       <title>Index of Coincidence</title>
       <link>/post/index-of-coincidence/</link>
       <pubDate>Wed, 12 Jun 2019 00:57:06 +1000</pubDate>
@@ -64,15 +109,6 @@
       
       <guid>/post/the-vigenere-cipher/</guid>
       <description>The Vigenère Cipher is a polyalphabetic substitution cipher, where a plain-text phrase would be encrypted and decrypted through a keyword, which would serve as a lookup for how many shifts would be performed on a character.</description>
-    </item>
-    
-    <item>
-      <title>A Good Talk</title>
-      <link>/post/a-good-talk/</link>
-      <pubDate>Tue, 11 Jun 2019 19:53:00 +1000</pubDate>
-      
-      <guid>/post/a-good-talk/</guid>
-      <description>Don&amp;rsquo;t do live demonstrations!</description>
     </item>
     
     <item>
@@ -103,7 +139,7 @@
     </item>
     
     <item>
-      <title>Something Awesome - Musings</title>
+      <title>Something Awesome: Musings</title>
       <link>/post/something-awesome-musings/</link>
       <pubDate>Sun, 09 Jun 2019 18:03:07 +1000</pubDate>
       

@@ -3,6 +3,125 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/post/weakness-of-the-week-03/</loc>
+    <lastmod>2019-06-18T18:45:41+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/attacking-locks/</loc>
+    <lastmod>2019-06-18T18:00:00+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/merkle-puzzles/</loc>
+    <lastmod>2019-06-18T17:34:37+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/how-to-steal-a-penguin/</loc>
+    <lastmod>2019-06-18T17:27:55+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/highs-and-lows-a-game-of-probability/</loc>
+    <lastmod>2019-06-18T17:23:44+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/google-tld-hsts/</loc>
+    <lastmod>2019-06-18T02:23:13+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/type_i_type_ii_errors/</loc>
+    <lastmod>2019-06-17T19:33:19+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/reflections02/</loc>
+    <lastmod>2019-06-16T17:07:28+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/something-awesome-research-keylogging/</loc>
+    <lastmod>2019-06-15T22:07:10+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/something-awesome-research-display-capture/</loc>
+    <lastmod>2019-06-15T22:04:15+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/something-awesome-research-security/</loc>
+    <lastmod>2019-06-15T19:14:06+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/something-awesome-research-authentication/</loc>
+    <lastmod>2019-06-15T16:47:24+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/something-awesome-dev-protocol/</loc>
+    <lastmod>2019-06-15T15:43:30+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/something-awesome-research-transport/</loc>
+    <lastmod>2019-06-15T15:10:03+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/something-awesome-research-language/</loc>
+    <lastmod>2019-06-15T14:41:33+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/something-awesome-project-plan/</loc>
+    <lastmod>2019-06-14T22:16:14+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/something-awesome-research-plan/</loc>
+    <lastmod>2019-06-14T15:46:35+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/futility/</loc>
     <lastmod>2019-06-13T23:22:23+10:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -61,13 +180,6 @@
   <url>
     <loc>/post/weakness-of-the-week-02/</loc>
     <lastmod>2019-06-11T19:54:21+10:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/post/a-good-talk/</loc>
-    <lastmod>2019-06-11T19:53:00+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -199,15 +311,29 @@
   </url>
   
   <url>
+    <loc>/post/something-awesome-research-connection/</loc>
+    <lastmod>2017-01-01T00:00:00+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/something-awesome-technical-aspects/</loc>
+    <lastmod>2017-01-01T00:00:00+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/categories/assessments/</loc>
-    <lastmod>2019-06-12T02:01:33+10:00</lastmod>
+    <lastmod>2019-06-15T22:07:10+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-06-13T23:22:23+10:00</lastmod>
+    <lastmod>2019-06-18T18:45:41+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -221,7 +347,14 @@
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2019-06-12T02:01:33+10:00</lastmod>
+    <lastmod>2019-06-15T22:07:10+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/extended-security/</loc>
+    <lastmod>2019-06-18T18:00:00+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -242,21 +375,21 @@
   
   <url>
     <loc>/categories/musings/</loc>
-    <lastmod>2019-06-13T23:22:23+10:00</lastmod>
+    <lastmod>2019-06-18T18:00:00+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-06-13T23:22:23+10:00</lastmod>
+    <lastmod>2019-06-18T18:45:41+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/reflections/</loc>
-    <lastmod>2019-06-12T17:09:17+10:00</lastmod>
+    <lastmod>2019-06-16T17:07:28+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -269,6 +402,13 @@
   </url>
   
   <url>
+    <loc>/categories/something-awesome/</loc>
+    <lastmod>2019-06-15T22:07:10+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/</loc>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -276,7 +416,7 @@
   
   <url>
     <loc>/categories/weakness-of-the-week/</loc>
-    <lastmod>2019-06-11T19:54:21+10:00</lastmod>
+    <lastmod>2019-06-18T18:45:41+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

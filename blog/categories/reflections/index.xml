@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Wed, 12 Jun 2019 17:09:17 +1000</lastBuildDate>
+    <lastBuildDate>Sun, 16 Jun 2019 17:07:28 +1000</lastBuildDate>
     
 	<atom:link href="/categories/reflections/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Reflections - Week 2</title>
+      <link>/post/reflections02/</link>
+      <pubDate>Sun, 16 Jun 2019 17:07:28 +1000</pubDate>
+      
+      <guid>/post/reflections02/</guid>
+      <description>Often security is thought of as an afterthought, that only after a system has been designed that security implications are considered.</description>
+    </item>
     
     <item>
       <title>Reflections - Harry Houdini</title>

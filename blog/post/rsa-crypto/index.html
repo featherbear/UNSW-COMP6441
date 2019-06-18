@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Attacking Locks - COMP6441 Musings</title>
+  <title>RSA Crypto - COMP6441 Musings</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="z5206677" /><meta name="description" content="This week (week 3) during the evening lecture, one of the extended security workshop groups presented a talk about lock picking!" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="z5206677" /><meta name="description" content="I wrote a little bit about public/private key crypto here" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
 
 
-<link rel="canonical" href="../../post/attacking-locks/" />
+<link rel="canonical" href="../../post/rsa-crypto/" />
 <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
@@ -38,27 +38,27 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Attacking Locks" />
-<meta property="og:description" content="This week (week 3) during the evening lecture, one of the extended security workshop groups presented a talk about lock picking!" />
+<meta property="og:title" content="RSA Crypto" />
+<meta property="og:description" content="I wrote a little bit about public/private key crypto here" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/attacking-locks/" />
-<meta property="article:published_time" content="2019-06-18T18:00:00&#43;10:00"/>
-<meta property="article:modified_time" content="2019-06-18T18:00:00&#43;10:00"/>
+<meta property="og:url" content="/post/rsa-crypto/" />
+<meta property="article:published_time" content="2019-06-18T18:15:55&#43;10:00"/>
+<meta property="article:modified_time" content="2019-06-18T18:15:55&#43;10:00"/>
 
-<meta itemprop="name" content="Attacking Locks">
-<meta itemprop="description" content="This week (week 3) during the evening lecture, one of the extended security workshop groups presented a talk about lock picking!">
+<meta itemprop="name" content="RSA Crypto">
+<meta itemprop="description" content="I wrote a little bit about public/private key crypto here">
 
 
-<meta itemprop="datePublished" content="2019-06-18T18:00:00&#43;10:00" />
-<meta itemprop="dateModified" content="2019-06-18T18:00:00&#43;10:00" />
-<meta itemprop="wordCount" content="334">
+<meta itemprop="datePublished" content="2019-06-18T18:15:55&#43;10:00" />
+<meta itemprop="dateModified" content="2019-06-18T18:15:55&#43;10:00" />
+<meta itemprop="wordCount" content="445">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Attacking Locks"/>
-<meta name="twitter:description" content="This week (week 3) during the evening lecture, one of the extended security workshop groups presented a talk about lock picking!"/>
+<meta name="twitter:title" content="RSA Crypto"/>
+<meta name="twitter:description" content="I wrote a little bit about public/private key crypto here"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -117,13 +117,12 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Attacking Locks</h1>
+      <h1 class="post-title">RSA Crypto</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2019-06-18 </span>
         <div class="post-category">
             <a href="../../categories/musings/"> Musings </a>
-            <a href="../../categories/extended-security/"> Extended Security </a>
             </div>
         
       </div>
@@ -134,12 +133,10 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
 <ul>
-<li>
-<ul>
-<li><a href="#pin-tumbler-lock">Pin Tumbler Lock</a></li>
-<li><a href="#combination-locks">Combination Locks</a></li>
-</ul></li>
-<li><a href="#electronic-locks">Electronic Locks</a></li>
+<li><a href="#rationale">Rationale</a></li>
+<li><a href="#generating-a-key">Generating a key</a></li>
+<li><a href="#encrypting">Encrypting</a></li>
+<li><a href="#decrypting">Decrypting</a></li>
 </ul>
 </nav>
   </div>
@@ -147,50 +144,90 @@
     <div class="post-content">
       
 
-<p>This week (week 3) during the evening lecture, one of the extended security workshop groups presented a talk about lock picking!<br />
-A few technical hitches with the presentation, but nonetheless they did a great job!</p>
+<blockquote>
+<p>I wrote a little bit about public/private key crypto <a href="../something-awesome-research-security">here</a></p>
+</blockquote>
 
-<p>They introduced different types of locks, and ways to counter them.</p>
+<hr />
 
-<h2 id="pin-tumbler-lock">Pin Tumbler Lock</h2>
+<p>If you consider the <a href="../merkle-puzzles">Merkle puzzles</a>, the key (pun not intended) takeaway is the work effort required.</p>
 
-<p><img src="https://i.kinja-img.com/gawker-media/image/upload/c_lfill,w_768,q_90/18c7sna7bc6spgif.gif" alt="" /></p>
+<p>For initial communication, the second party needs to crack the ID/key pair (let&rsquo;s say it takes a minute).<br />
+After that initial time required, consequential message encryption and decryption will be fast.</p>
 
-<p>One of the most common lock types is the pin tumbler lock.<br />
-They&rsquo;re used in most padlocks, and door locks.</p>
+<p>To an attacker, however, if there are 10000 ID/key pairs - it will take them a long time (5000 tries on average).<br />
+And at a rate of 1 ID/key pair per minute, that&rsquo;s 5000 minutes. 83 hours. <em>Three and a half days</em>.</p>
 
-<p>Essentially, when the correct key is inserted into the key barrel, the grooves on the key cause the spring-loaded pins to move into their correct place. When the key turns, as the shear line is unobstructed the barrel turns freely, opening the lock.</p>
+<p>If the ID/key pair was to change frequently - our poor attacker here is going to have a miserable time :(. Yess, secure!!</p>
 
-<p>So, how would you break this lock security?</p>
+<blockquote>
+<p>The idea to gain from this is that, it is much more difficult and time consuming to brute force the correct details - especially when the key space is massively large.</p>
+</blockquote>
+
+<hr />
+
+<p><em>Trivia: RSA is short for Rivest-Shamir-Adleman, the trio of cryptographers who had &lsquo;invented&rsquo; the algorithm in 1977.</em></p>
+
+<p>RSA encryption takes hold of this work ratio notion</p>
+
+<p>With public/private encryption, one key is used to encrypt a plaintext message, and another key is used to recover the plaintext message.<br />
+This works because of fancy maths, which we&rsquo;ll look at now!</p>
+
+<h1 id="rationale">Rationale</h1>
+
+<p>The basic principle that RSA uses, is the mathematical congruence<br />
+<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/98b7f857d10d5b056d5db624bd3a475d2cb475cd" alt="m^e^d === m (mod n)" /></p>
+
+<p>That even if some terms are known, it is extremely difficult to determine the other unknown terms, as each change of value in a term may give a solution (albeit incorrect).<br />
+Only by knowing the correct values (ie our private key) does finding the solution to the problem becamse feasible.</p>
+
+<h1 id="generating-a-key">Generating a key</h1>
+
+<ol>
+<li>Choose two different large prime numbers, <code>p</code> and <code>q</code> (and keep them safe)</li>
+<li>Compute the term <code>n</code>, which will be used as the modulo value. <code>n = p x q</code></li>
+<li>Calculate Euler&rsquo;s totient (<code>ϕ</code>), which is used in the private key (keep it safe). <code>ϕ = p-1 x q-1</code></li>
+<li>Choose a prime number <code>e</code> smaller than <code>ϕ</code> which is co-prime with <code>ϕ</code>. (Not divisible by <code>ϕ</code>)</li>
+<li>Chose a value <code>d</code> where <code>e x d mod ϕ = 1</code></li>
+</ol>
+
+<h1 id="encrypting">Encrypting</h1>
 
 <ul>
-<li><p>A systematic approach to lockpicking, would be to use a tension wrench (to apply a turning torque) with a pick.<br />
-Effectively you work your way trying to lift the pins into place.<br />
-At each stage, one of the pins will have the highest resistance to being moved - so we want to locate that pin and move it.</p></li>
-
-<li><p>Another method (pretty fun) involved shoving a tool called a <em>rake</em> into the keyhole, and vigorously reinserting it and turning until the pins &lsquo;fall into place&rsquo;</p></li>
-
-<li><p><em>Bump keys</em> are similar to the <em>rake</em>, and also aim to &lsquo;bump&rsquo; the pins into the right position</p></li>
-
-<li><p><em>Shims</em> allow you to release the locking mechanism, overcoming the need to actually get the pins into the right position</p></li>
-
-<li><p>As lock components are usually magnetic, applying a strong opposite magnetic force on a lock may be enough to open the lock</p></li>
+<li>Public key has <code>e</code> and <code>n</code></li>
+<li>We convert the message character into its ascii (ie <code>A = 65</code>)</li>
+<li><code>c = m^e % n</code></li>
 </ul>
 
-<h2 id="combination-locks">Combination Locks</h2>
-
-<p><img src="https://www.kmart.com.au/wcsstore/Kmart/images/ncatalog/sz/4/42048404-2-sz.jpg" alt="" /></p>
-
-<p>Combination locks have a series of coded dials that allow you to specify a combination which unlocks the lock.<br />
-We can break these by applying a constant force on the shackle, and turning the dial with the most resistance until we hear something &lsquo;click&rsquo; into place (both audibly and mechanically)</p>
-
-<h1 id="electronic-locks">Electronic Locks</h1>
+<h1 id="decrypting">Decrypting</h1>
 
 <ul>
-<li>Key wear and tear (weathered button markings)</li>
-<li>Thermal imaging (heatprint)</li>
-<li>Oil smudges</li>
-<li>RFID card -&gt; cloning</li>
+<li>Private key has <code>d</code> and <code>n</code></li>
+<li><code>m = c^d % n</code></li>
+</ul>
+
+<hr />
+
+<p><img src="./Snipaste_2019-06-19_01-19-31.png" alt="" /></p>
+
+<p>Note: This repetition doesn&rsquo;t happen in actual proper implementations (I think?)</p>
+
+<hr />
+
+<p>As I had mentioned <a href="../something-awesome-research-security">before</a>, asymmetric key crypto is more resource intenseful than symmetric key crypto.<br />
+So usually, RSA is used to securely exchange a symmetric key, rather than to actually be used for encrypting messages.</p>
+
+<hr />
+
+<p>Links:</p>
+
+<ul>
+<li><a href="http://comp6445-curlybracket-letsmakeflagsgreatagain-curlybracket.bid/challenges/rsa/rsa.html">http://comp6445-curlybracket-letsmakeflagsgreatagain-curlybracket.bid/challenges/rsa/rsa.html</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Public-key_cryptography">https://en.wikipedia.org/wiki/Public-key_cryptography</a></li>
+<li><a href="https://www.nku.edu/~christensen/section%2026%20RSA.pdf">https://www.nku.edu/~christensen/section%2026%20RSA.pdf</a></li>
+<li><a href="https://people.csail.mit.edu/rivest/Rsapaper.pdf">https://people.csail.mit.edu/rivest/Rsapaper.pdf</a></li>
+<li><a href="https://web.archive.org/web/20130829080627/http://doctrina.org/Why-RSA-Works-Three-Fundamental-Questions-Answered.html">https://web.archive.org/web/20130829080627/http://doctrina.org/Why-RSA-Works-Three-Fundamental-Questions-Answered.html</a></li>
+<li><a href="https://web.archive.org/web/20170602054430/https://www.cs.virginia.edu/~kam6zx/rsa/a-worked-example/">https://web.archive.org/web/20170602054430/https://www.cs.virginia.edu/~kam6zx/rsa/a-worked-example/</a></li>
 </ul>
 
     </div>
@@ -198,13 +235,13 @@ We can break these by applying a constant force on the shackle, and turning the 
     <footer class="post-footer">
       
       <nav class="post-nav">
-        <a class="prev" href="../../post/merkle-puzzles/">
+        <a class="prev" href="../../post/attacking-locks/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Merkle Puzzles</span>
+            <span class="prev-text nav-default">Attacking Locks</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        <a class="next" href="../../post/rsa-crypto/">
-            <span class="next-text nav-default">RSA Crypto</span>
+        <a class="next" href="../../post/weakness-of-the-week-03/">
+            <span class="next-text nav-default">Weakness of the Week - 03</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>

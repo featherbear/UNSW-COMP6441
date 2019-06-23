@@ -1,6 +1,6 @@
 ---
 title: "Something Awesome: Research - Security"
-date: 2019-06-15T19:14:06+10:00
+date: 2019-06-14T19:14:06+10:00
 
 description: "Keeping data secured"
 categories: ["Assessments", "Something Awesome"]

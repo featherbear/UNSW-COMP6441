@@ -22,7 +22,7 @@ sequenceDiagrams:
 
 * Client sends `hello` to host
   * If bad auth, return `r_hello`::false
-  * Establish connection
+  * Establish connection, return `r_hello`::true
 * Every interval, client sends `keepAlive` to host
 * Client sends command to host
   * Host returns command

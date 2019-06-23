@@ -1,8 +1,8 @@
 ---
-title: "Security Everywhere: JB Hi-fi & Bing Lee Raids"
+title: "Security Everywhere: JB Hi-Fi & Bing Lee Raids"
 date: 2019-06-13T13:46:21+10:00
 
-description: "All your phones are belong to us"
+description: "All your security are belong to us"
 categories: ["Security Everywhere", "Case Study"]
 hiddenFromHomePage: false
 postMetaInFooter: false

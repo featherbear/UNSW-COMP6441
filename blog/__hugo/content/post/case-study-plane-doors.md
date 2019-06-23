@@ -69,7 +69,7 @@ LIKE YEAH SURE IT'S ON AUTOPILOT - BUT THIS IS A NEGLECTION OF DUTY.
 Also, I don't think that any change in the plane control should be able to be done by 'accident'.  
 Controls should only be able to be toggled via a forceful, intentional movement.
 
-# How do airlines keep their cockpit crew safe?
+# [Airbus Reinforced Cockpit Door Description and Procedure](https://www.youtube.com/watch?v=ixEHV7c3VXs)
 
 > Video Source: YouTube - [Airbus Reinforced Cockpit Door Description and Procedure](https://www.youtube.com/watch?v=ixEHV7c3VXs)
 
@@ -87,3 +87,12 @@ Controls should only be able to be toggled via a forceful, intentional movement.
 * External keypad
 * Can request access
 * Emergency unlock code
+
+# [Pilots make miraculous landing after aeroplane is smashed in hailstorm](https://www.news.com.au/travel/travel-updates/incidents/pilots-make-miraculous-landing-after-aeroplane-is-smashed-in-hailstorm/news-story/ea2a700a58bb85312c1b902015cf62fe)
+
+* Windshield was severely cracked by the hailstorm
+* Auto-land
+
+**Thoughts** - It's good that the aircraft had an inbuilt autolanding mechanism - especially if the pilots had no forwards visibility due to their impaired vision. I guess something to consider was, were the crew aware of the hail storm that they were heading into - and if they knew the limit to how much impact the windshields could withstand, why didn't they reroute their course?
+
+

@@ -1,6 +1,6 @@
 ---
 title: "How to Steal a Penguin"
-date: 2019-06-18T17:27:55+10:00
+date: 2019-06-17T17:27:55+10:00
 
 description: "It's like taking candy from a ... erm nestling..."
 categories: ["Musings"]

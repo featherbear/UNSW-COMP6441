@@ -85,4 +85,4 @@ And it supposedly running on Windows... yeah
 
 Oh, also [Google Calendar went down](../security-everywhere-google-calendar-outage) for a few hours this week - I'd assume it was some misconfigured deployment, but there isn't any publicly released technical analysis of what happened
 
-Speaking of Google, their [domains force HTTPS](../google-tld-hosts) - which is cool!
+Speaking of Google, their [domains force HTTPS](../google-tld-hsts) - which is cool!

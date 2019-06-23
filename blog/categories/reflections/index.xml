@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Sun, 16 Jun 2019 17:07:28 +1000</lastBuildDate>
+    <lastBuildDate>Sun, 23 Jun 2019 11:15:23 +1000</lastBuildDate>
     
 	<atom:link href="/categories/reflections/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Reflections - Week 3</title>
+      <link>/post/reflections03/</link>
+      <pubDate>Sun, 23 Jun 2019 11:15:23 +1000</pubDate>
+      
+      <guid>/post/reflections03/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reflections - Plane Doors</title>
+      <link>/post/reflections-case-study-plane-doors/</link>
+      <pubDate>Wed, 19 Jun 2019 19:00:00 +1000</pubDate>
+      
+      <guid>/post/reflections-case-study-plane-doors/</guid>
+      <description>Read up here</description>
+    </item>
     
     <item>
       <title>Reflections - Week 2</title>

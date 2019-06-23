@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>ATM Machine Security - COMP6441 Musings</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="z5206677" /><meta name="description" content="So uh, we call them ATM Machines," /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="../../post/atm-machine-security/" />
+<link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+<link rel="manifest" href="../../manifest.json">
+<link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="../../dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="ATM Machine Security" />
+<meta property="og:description" content="So uh, we call them ATM Machines," />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/atm-machine-security/" />
+<meta property="article:published_time" content="2019-06-21T17:25:04&#43;10:00"/>
+<meta property="article:modified_time" content="2019-06-21T17:25:04&#43;10:00"/>
+
+<meta itemprop="name" content="ATM Machine Security">
+<meta itemprop="description" content="So uh, we call them ATM Machines,">
+
+
+<meta itemprop="datePublished" content="2019-06-21T17:25:04&#43;10:00" />
+<meta itemprop="dateModified" content="2019-06-21T17:25:04&#43;10:00" />
+<meta itemprop="wordCount" content="1013">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ATM Machine Security"/>
+<meta name="twitter:description" content="So uh, we call them ATM Machines,"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="../../" class="logo">COMP6441 Musings</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="../../">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="https://github.com/featherbear/UNSW-COMP6441">
+        <li class="mobile-menu-item">GitHub</li>
+      </a><a href="../../categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="../../" class="logo">COMP6441 Musings</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="../../">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://github.com/featherbear/UNSW-COMP6441">GitHub</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="../../categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">ATM Machine Security</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-06-21 </span>
+        <div class="post-category">
+            <a href="../../categories/musings/"> Musings </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#atm-machine-security">ATM Machine Security</a></li>
+<li><a href="#attacks">Attacks</a>
+<ul>
+<li><a href="#physical-cameras">Physical | Cameras</a></li>
+<li><a href="#physical-card-skimmers">Physical | Card Skimmers</a></li>
+<li><a href="#physical-heat-reading">Physical | Heat Reading</a></li>
+<li><a href="#technical-blackbox-attacks">Technical | Blackbox Attacks</a></li>
+<li><a href="#technical-on-line-malware">Technical | On-line Malware</a></li>
+<li><a href="#technical-off-line-malware">Technical | Off-line Malware</a></li>
+<li><a href="#technical-network-mitm">Technical | Network MITM</a></li>
+<li><a href="#technical-software-distribution">Technical | Software Distribution</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<blockquote>
+<p>So uh, we call them ATM Machines,<br />
+but the acronym for ATM is Automatic Teller Machine&hellip;<br />
+&nbsp;<br />
+So they&rsquo;re actually <em>Automatic Teller Machine Machines</em>!?!?</p>
+</blockquote>
+
+<p>Anyway&hellip;</p>
+
+<h1 id="atm-machine-security">ATM Machine Security</h1>
+
+<p>ATM machines are a common necessity for people who need to convenient withdraw money without needing to go to the bank.</p>
+
+<p><img src="Snipaste_2019-06-21_15-51-22.png" alt="" /></p>
+
+<p>This diagram explains the architecture of the ATM system. Each ATM has a computer inside it (supposedly Windows!?), and is connected to the banking network. Being a computer on the network, there is functionality for remote management and software distribution.</p>
+
+<p>ATMs have a numerical keypad, used for the entry of your PIN and general navigation of the interface.</p>
+
+<p>Okay that&rsquo;s enough, you&rsquo;ve seen them before.<br />
+How would you compromise an ATM?</p>
+
+<h1 id="attacks">Attacks</h1>
+
+<h2 id="physical-cameras">Physical | Cameras</h2>
+
+<p>Ye good ol&rsquo; camera solution.<br />
+These can be discretly installed anywhere around the machine, for example above the screen, or even right where the keypad is.</p>
+
+<p><strong>Defense</strong><br />
+Cover the touchpad. Duh.</p>
+
+<h2 id="physical-card-skimmers">Physical | Card Skimmers</h2>
+
+<p>Card skimmers are devices which disecretely capture your card details.</p>
+
+<p><strong>Defense</strong><br />
+Modern ATMs often have an obscurely shaped card ready, to prevent such devices from being installed securely.<br />
+Additionally, the readers are translucent, and have a LED that lights up - So you would be able to see if there was some sort of malicious chip or device embedded.</p>
+
+<p>It&rsquo;s a good practice to always give a tug on the card reader to make sure that there&rsquo;s no devie installed.</p>
+
+<h2 id="physical-heat-reading">Physical | Heat Reading</h2>
+
+<p>A way that PIN numbers (or keypresses in general) can be read is through an analysis of which buttons were pressed.<br />
+Our fingers have heat, which is transferred to other objects when we come into physical contact.<br />
+And that means, with a heat sensor you would be able to deduce which keys were pressed; and in which order.</p>
+
+<p><strong>Defense</strong><br />
+Wipe the keypad after you use the machine.<br />
+Additionally (or optionally) - press the keys with your clothing.<br />
+Better yet, <strong>press random buttons</strong> (and press <em>all</em> of them)</p>
+
+<h2 id="technical-blackbox-attacks">Technical | Blackbox Attacks</h2>
+
+<p>Think of a blackbox on a plane. It does a whole bunch of stuff, but we don&rsquo;t really know what exactly.<br />
+It&rsquo;s sort of like that with computer blackboxes - we don&rsquo;t know how it functions, but we ask it to do something, and it performs that task.</p>
+
+<p>An ATM blackbox attack involves firstly physically compromising the ATM, and taking out the cash dispenser.<br />
+The cash dispenser is controlled with digital signals which are sent from the ATM&rsquo;s logic board.<br />
+By connecting the dispenser&rsquo;s cable to our own board, we would (theoretically) be able to issue the correct signal to the dispenser to give us the dosh.</p>
+
+<p>But easier said than done right.</p>
+
+<p><strong>Defense</strong><br />
+According to <a href="https://www.youtube.com/watch?v=Rsx3JD2Rk-c">this video</a>, the dispenser unit has a three level multilayered encryption scheme.<br />
+Basically that means, the command message is encrypted, then encrypted again, then encrypted another time.<br />
+In order to forge the message, you would have to know all three encryption details&hellip; A very low chance.</p>
+
+<h2 id="technical-on-line-malware">Technical | On-line Malware</h2>
+
+<p>Online malware attacks refer to attacks that are performed on a live system.</p>
+
+<p>The term <em>online</em> refers to if a system is up/on or down/off, rather than if it is connected to the internet.<br />
+This is probably the most common type of malware - <em>that is</em> - the malware is opened by, and operates on the system which launched in.<br />
+Now having access to the system, you would be able to gain remote access, and issue commands to be performed.</p>
+
+<p><strong>Defense</strong><br />
+1) Change your admin passwords<br />
+2) Have a softwre restriction policy to whitelist programs<br />
+3) Disable uneeded services and features</p>
+
+<p>I remember that Windows has a software restriction policy which you can set up to only allow certain files to run.</p>
+
+<h2 id="technical-off-line-malware">Technical | Off-line Malware</h2>
+
+<p>Offline malware attacks refer to attacks that are performed on a system while it is offline.<br />
+ATMs and computers alike, these attacks could involve rebooting a system to boot into a Live OS on a USB drive or DVD.<br />
+One could then mount the system drive, and drop a virus in.</p>
+
+<p><strong>Defense</strong><br />
+1) Encrypt your drive. This way you won&rsquo;t be able to access the disk without the decryption key.<br />
+2) Set up a password to access the BIOS settings (<em>and hope the CMOS battery has enough charge :&lsquo;)</em>)<br />
+3) Configure your boot devices, and prevent unauthorised boot devices<br />
+4) Secure Boot is a thing&hellip;</p>
+
+<h2 id="technical-network-mitm">Technical | Network MITM</h2>
+
+<p>MITM stands for Man-In-The-Middle - a form of eavesdropping and attack where you intercept messages (network packets) between two hosts, being able to read, or even modify the data.</p>
+
+<p><em>I made a <a href="https://github.com/featherbear/UNSW-CompClub2019Summer-SecurityWorkshop/tree/master/http_mitm">HTTP MITM demonstration</a> for UNSW&rsquo;s CSE CompClub 2019 Summer Security workshop, but I never got around towards presenting it due to running out of time. hah!</em></p>
+
+<p><strong>Defense</strong><br />
+It should be evident by now, but encrypt your data.<br />
+Your hard drive, your messages, your encrypted messages, and even encrypted versions of your encrypted messages&hellip;<br />
+You might also using a VPN  (though that too is encryption, built alongside with routing)</p>
+
+<h2 id="technical-software-distribution">Technical | Software Distribution</h2>
+
+<p>Distributed systems (even systems in the same area) often have their software managed by a software deployment system - where a package can be sent and automatically installed on each computer. (Think of the update centre on your smart phone, or laptop..)</p>
+
+<p>An issue that we could run into, is if a malicious application were to find its way to the list of software that your computers would install&hellip;</p>
+
+<p><strong>Defense</strong><br />
+A common practice is to sign your packages with some sort of certificate file that can prove the authenticity of the package.</p>
+
+<hr />
+
+<hr />
+
+<p>By the way, the Commonwealth Bank ATMs are actually really annoying.<br />
+The audible feedback that is heard when the keypad is pressed, has a long enough delay to throw me off.<br />
+So I keep a collection of 3.5mm jacks and plug them in to every machine I use :)</p>
+
+<p>It&rsquo;s safe!</p>
+
+<p>I wonder though, would you be able to sidechannel attack an ATM machine?<br />
+Maybe each keypad button produces a different tone.</p>
+
+<p>Maybe we could write and play music on the keypad&hellip;</p>
+
+    </div>
+
+    <footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="../../post/the-thinning/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">The Thinning</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="../../post/something-awesome-research-virus-behaviour/">
+            <span class="next-text nav-default">Something Awesome: Research - Virus Behaviour</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:z5206677@student.unsw.edu.au" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.linkedin.com/in/andrewjinmengwong/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/featherbear" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/_andrewjwong/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="../../index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Andrew Wong (z5206677)</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="../../dist/even.26188efa.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-107434487-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

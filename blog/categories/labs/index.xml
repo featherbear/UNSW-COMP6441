@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Wed, 05 Jun 2019 17:12:04 +1000</lastBuildDate>
+    <lastBuildDate>Wed, 19 Jun 2019 17:00:00 +1000</lastBuildDate>
     
 	<atom:link href="/categories/labs/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Lab 03 - Looking at Doors of Planes</title>
+      <link>/post/lab03/</link>
+      <pubDate>Wed, 19 Jun 2019 17:00:00 +1000</pubDate>
+      
+      <guid>/post/lab03/</guid>
+      <description>Read the case study</description>
+    </item>
     
     <item>
       <title>Lab 01 - Looking at the Deepwater Horizon Accident</title>

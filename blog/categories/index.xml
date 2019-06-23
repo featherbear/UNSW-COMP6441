@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Sat, 15 Jun 2019 22:07:10 +1000</lastBuildDate>
+    <lastBuildDate>Sat, 22 Jun 2019 14:12:33 +1000</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Assessments</title>
       <link>/categories/assessments/</link>
-      <pubDate>Sat, 15 Jun 2019 22:07:10 +1000</pubDate>
+      <pubDate>Sat, 22 Jun 2019 14:12:33 +1000</pubDate>
       
       <guid>/categories/assessments/</guid>
       <description></description>
@@ -24,7 +24,7 @@
     <item>
       <title>Case Study</title>
       <link>/categories/case-study/</link>
-      <pubDate>Wed, 19 Jun 2019 01:54:04 +1000</pubDate>
+      <pubDate>Thu, 20 Jun 2019 01:54:04 +1000</pubDate>
       
       <guid>/categories/case-study/</guid>
       <description></description>
@@ -42,7 +42,7 @@
     <item>
       <title>Labs</title>
       <link>/categories/labs/</link>
-      <pubDate>Wed, 05 Jun 2019 17:12:04 +1000</pubDate>
+      <pubDate>Wed, 19 Jun 2019 17:00:00 +1000</pubDate>
       
       <guid>/categories/labs/</guid>
       <description></description>
@@ -60,7 +60,7 @@
     <item>
       <title>Musings</title>
       <link>/categories/musings/</link>
-      <pubDate>Wed, 19 Jun 2019 01:54:04 +1000</pubDate>
+      <pubDate>Fri, 21 Jun 2019 17:25:04 +1000</pubDate>
       
       <guid>/categories/musings/</guid>
       <description></description>
@@ -69,7 +69,7 @@
     <item>
       <title>Reflections</title>
       <link>/categories/reflections/</link>
-      <pubDate>Sun, 16 Jun 2019 17:07:28 +1000</pubDate>
+      <pubDate>Sun, 23 Jun 2019 11:15:23 +1000</pubDate>
       
       <guid>/categories/reflections/</guid>
       <description></description>
@@ -78,7 +78,7 @@
     <item>
       <title>Security Everywhere</title>
       <link>/categories/security-everywhere/</link>
-      <pubDate>Wed, 19 Jun 2019 01:54:04 +1000</pubDate>
+      <pubDate>Fri, 21 Jun 2019 11:43:05 +1000</pubDate>
       
       <guid>/categories/security-everywhere/</guid>
       <description></description>
@@ -87,7 +87,7 @@
     <item>
       <title>Something Awesome</title>
       <link>/categories/something-awesome/</link>
-      <pubDate>Sat, 15 Jun 2019 22:07:10 +1000</pubDate>
+      <pubDate>Sat, 22 Jun 2019 14:12:33 +1000</pubDate>
       
       <guid>/categories/something-awesome/</guid>
       <description></description>

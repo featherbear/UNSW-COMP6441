@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="z5206677" /><meta name="description" content="Connection Connection to Host  Client sends hello to host  If bad auth, return r_hello::false Establish connection  Every interval, client sends keepAlive to host Client sends command to host  Host returns command   Relay The relay server does not exchange party connection details unless a connection is authorised." /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="z5206677" /><meta name="description" content="Connection Connection to Host  Client sends hello to host  If bad auth, return r_hello::false Establish connection, return r_hello::true  Every interval, client sends keepAlive to host Client sends command to host  Host returns command   Relay The relay server does not exchange party connection details unless a connection is authorised." /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -39,26 +39,26 @@
 
 
 <meta property="og:title" content="Something Awesome: Protocol Specification" />
-<meta property="og:description" content="Connection Connection to Host  Client sends hello to host  If bad auth, return r_hello::false Establish connection  Every interval, client sends keepAlive to host Client sends command to host  Host returns command   Relay The relay server does not exchange party connection details unless a connection is authorised." />
+<meta property="og:description" content="Connection Connection to Host  Client sends hello to host  If bad auth, return r_hello::false Establish connection, return r_hello::true  Every interval, client sends keepAlive to host Client sends command to host  Host returns command   Relay The relay server does not exchange party connection details unless a connection is authorised." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/something-awesome-dev-protocol/" />
 <meta property="article:published_time" content="2019-06-15T15:43:30&#43;10:00"/>
 <meta property="article:modified_time" content="2019-06-15T15:43:30&#43;10:00"/>
 
 <meta itemprop="name" content="Something Awesome: Protocol Specification">
-<meta itemprop="description" content="Connection Connection to Host  Client sends hello to host  If bad auth, return r_hello::false Establish connection  Every interval, client sends keepAlive to host Client sends command to host  Host returns command   Relay The relay server does not exchange party connection details unless a connection is authorised.">
+<meta itemprop="description" content="Connection Connection to Host  Client sends hello to host  If bad auth, return r_hello::false Establish connection, return r_hello::true  Every interval, client sends keepAlive to host Client sends command to host  Host returns command   Relay The relay server does not exchange party connection details unless a connection is authorised.">
 
 
 <meta itemprop="datePublished" content="2019-06-15T15:43:30&#43;10:00" />
 <meta itemprop="dateModified" content="2019-06-15T15:43:30&#43;10:00" />
-<meta itemprop="wordCount" content="289">
+<meta itemprop="wordCount" content="291">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Something Awesome: Protocol Specification"/>
-<meta name="twitter:description" content="Connection Connection to Host  Client sends hello to host  If bad auth, return r_hello::false Establish connection  Every interval, client sends keepAlive to host Client sends command to host  Host returns command   Relay The relay server does not exchange party connection details unless a connection is authorised."/>
+<meta name="twitter:description" content="Connection Connection to Host  Client sends hello to host  If bad auth, return r_hello::false Establish connection, return r_hello::true  Every interval, client sends keepAlive to host Client sends command to host  Host returns command   Relay The relay server does not exchange party connection details unless a connection is authorised."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -161,7 +161,7 @@
 
 <ul>
 <li>If bad auth, return <code>r_hello</code>::false</li>
-<li>Establish connection</li>
+<li>Establish connection, return <code>r_hello</code>::true</li>
 </ul></li>
 <li>Every interval, client sends <code>keepAlive</code> to host</li>
 <li>Client sends command to host

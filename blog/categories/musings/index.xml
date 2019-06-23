@@ -7,18 +7,36 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Wed, 19 Jun 2019 01:54:04 +1000</lastBuildDate>
+    <lastBuildDate>Fri, 21 Jun 2019 17:25:04 +1000</lastBuildDate>
     
 	<atom:link href="/categories/musings/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>ATM Machine Security</title>
+      <link>/post/atm-machine-security/</link>
+      <pubDate>Fri, 21 Jun 2019 17:25:04 +1000</pubDate>
+      
+      <guid>/post/atm-machine-security/</guid>
+      <description>So uh, we call them ATM Machines,</description>
+    </item>
+    
+    <item>
+      <title>The Thinning</title>
+      <link>/post/the-thinning/</link>
+      <pubDate>Fri, 21 Jun 2019 11:43:05 +1000</pubDate>
+      
+      <guid>/post/the-thinning/</guid>
+      <description>I got bored last week and watched The Thinning (2016).</description>
+    </item>
+    
+    <item>
       <title>Security Everywhere: Google Calendar Outage</title>
       <link>/post/security-everywhere-google-calendar-outage/</link>
-      <pubDate>Wed, 19 Jun 2019 01:54:04 +1000</pubDate>
+      <pubDate>Thu, 20 Jun 2019 01:54:04 +1000</pubDate>
       
       <guid>/post/security-everywhere-google-calendar-outage/</guid>
-      <description>So about an hour ago, Google&amp;rsquo;s web services for its Google Calendar product went down, and gave users a &amp;lsquo;friendly&amp;rsquo; 404 (/s)</description>
+      <description>It was 1:54am, and I was about to prepare to go to sleep.</description>
     </item>
     
     <item>
@@ -49,12 +67,12 @@
     </item>
     
     <item>
-      <title>How to Steal a Penguin</title>
-      <link>/post/how-to-steal-a-penguin/</link>
-      <pubDate>Tue, 18 Jun 2019 17:27:55 +1000</pubDate>
+      <title>Hardware Security Modules</title>
+      <link>/post/hardware-security-modules/</link>
+      <pubDate>Tue, 18 Jun 2019 17:24:44 +1000</pubDate>
       
-      <guid>/post/how-to-steal-a-penguin/</guid>
-      <description>If you were to steal a penguin from a wildlife park, what would you do?</description>
+      <guid>/post/hardware-security-modules/</guid>
+      <description>A hardware security module is a physical device dedicated for performing cryptographic computations such as key management, encryption and decryption.</description>
     </item>
     
     <item>
@@ -82,6 +100,15 @@
       
       <guid>/post/type_i_type_ii_errors/</guid>
       <description>Lecture 4 introduced Type I and Type II errors.</description>
+    </item>
+    
+    <item>
+      <title>How to Steal a Penguin</title>
+      <link>/post/how-to-steal-a-penguin/</link>
+      <pubDate>Mon, 17 Jun 2019 17:27:55 +1000</pubDate>
+      
+      <guid>/post/how-to-steal-a-penguin/</guid>
+      <description>If you were to steal a penguin from a wildlife park, what would you do?</description>
     </item>
     
     <item>

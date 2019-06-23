@@ -7,18 +7,72 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Wed, 19 Jun 2019 01:54:04 +1000</lastBuildDate>
+    <lastBuildDate>Sun, 23 Jun 2019 11:15:23 +1000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Reflections - Week 3</title>
+      <link>/post/reflections03/</link>
+      <pubDate>Sun, 23 Jun 2019 11:15:23 +1000</pubDate>
+      
+      <guid>/post/reflections03/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Something Awesome: Research - Virus Behaviour</title>
+      <link>/post/something-awesome-research-virus-behaviour/</link>
+      <pubDate>Sat, 22 Jun 2019 14:12:33 +1000</pubDate>
+      
+      <guid>/post/something-awesome-research-virus-behaviour/</guid>
+      <description>Do I sound like I know what I&amp;rsquo;m talking about?</description>
+    </item>
+    
+    <item>
+      <title>ATM Machine Security</title>
+      <link>/post/atm-machine-security/</link>
+      <pubDate>Fri, 21 Jun 2019 17:25:04 +1000</pubDate>
+      
+      <guid>/post/atm-machine-security/</guid>
+      <description>So uh, we call them ATM Machines,</description>
+    </item>
+    
+    <item>
+      <title>The Thinning</title>
+      <link>/post/the-thinning/</link>
+      <pubDate>Fri, 21 Jun 2019 11:43:05 +1000</pubDate>
+      
+      <guid>/post/the-thinning/</guid>
+      <description>I got bored last week and watched The Thinning (2016).</description>
+    </item>
+    
+    <item>
       <title>Security Everywhere: Google Calendar Outage</title>
       <link>/post/security-everywhere-google-calendar-outage/</link>
-      <pubDate>Wed, 19 Jun 2019 01:54:04 +1000</pubDate>
+      <pubDate>Thu, 20 Jun 2019 01:54:04 +1000</pubDate>
       
       <guid>/post/security-everywhere-google-calendar-outage/</guid>
-      <description>So about an hour ago, Google&amp;rsquo;s web services for its Google Calendar product went down, and gave users a &amp;lsquo;friendly&amp;rsquo; 404 (/s)</description>
+      <description>It was 1:54am, and I was about to prepare to go to sleep.</description>
+    </item>
+    
+    <item>
+      <title>Reflections - Plane Doors</title>
+      <link>/post/reflections-case-study-plane-doors/</link>
+      <pubDate>Wed, 19 Jun 2019 19:00:00 +1000</pubDate>
+      
+      <guid>/post/reflections-case-study-plane-doors/</guid>
+      <description>Read up here</description>
+    </item>
+    
+    <item>
+      <title>Lab 03 - Looking at Doors of Planes</title>
+      <link>/post/lab03/</link>
+      <pubDate>Wed, 19 Jun 2019 17:00:00 +1000</pubDate>
+      
+      <guid>/post/lab03/</guid>
+      <description>Read the case study</description>
     </item>
     
     <item>
@@ -76,12 +130,12 @@
     </item>
     
     <item>
-      <title>How to Steal a Penguin</title>
-      <link>/post/how-to-steal-a-penguin/</link>
-      <pubDate>Tue, 18 Jun 2019 17:27:55 +1000</pubDate>
+      <title>Hardware Security Modules</title>
+      <link>/post/hardware-security-modules/</link>
+      <pubDate>Tue, 18 Jun 2019 17:24:44 +1000</pubDate>
       
-      <guid>/post/how-to-steal-a-penguin/</guid>
-      <description>If you were to steal a penguin from a wildlife park, what would you do?</description>
+      <guid>/post/hardware-security-modules/</guid>
+      <description>A hardware security module is a physical device dedicated for performing cryptographic computations such as key management, encryption and decryption.</description>
     </item>
     
     <item>
@@ -121,6 +175,15 @@
     </item>
     
     <item>
+      <title>How to Steal a Penguin</title>
+      <link>/post/how-to-steal-a-penguin/</link>
+      <pubDate>Mon, 17 Jun 2019 17:27:55 +1000</pubDate>
+      
+      <guid>/post/how-to-steal-a-penguin/</guid>
+      <description>If you were to steal a penguin from a wildlife park, what would you do?</description>
+    </item>
+    
+    <item>
       <title>Reflections - Week 2</title>
       <link>/post/reflections02/</link>
       <pubDate>Sun, 16 Jun 2019 17:07:28 +1000</pubDate>
@@ -148,15 +211,6 @@
     </item>
     
     <item>
-      <title>Something Awesome: Research - Security</title>
-      <link>/post/something-awesome-research-security/</link>
-      <pubDate>Sat, 15 Jun 2019 19:14:06 +1000</pubDate>
-      
-      <guid>/post/something-awesome-research-security/</guid>
-      <description>Security - Keeping data secured There are two main ways to encrypt data</description>
-    </item>
-    
-    <item>
       <title>Something Awesome: Research - Authentication</title>
       <link>/post/something-awesome-research-authentication/</link>
       <pubDate>Sat, 15 Jun 2019 16:47:24 +1000</pubDate>
@@ -171,7 +225,7 @@
       <pubDate>Sat, 15 Jun 2019 15:43:30 +1000</pubDate>
       
       <guid>/post/something-awesome-dev-protocol/</guid>
-      <description>Connection Connection to Host  Client sends hello to host  If bad auth, return r_hello::false Establish connection  Every interval, client sends keepAlive to host Client sends command to host  Host returns command   Relay The relay server does not exchange party connection details unless a connection is authorised.</description>
+      <description>Connection Connection to Host  Client sends hello to host  If bad auth, return r_hello::false Establish connection, return r_hello::true  Every interval, client sends keepAlive to host Client sends command to host  Host returns command   Relay The relay server does not exchange party connection details unless a connection is authorised.</description>
     </item>
     
     <item>
@@ -202,6 +256,15 @@
     </item>
     
     <item>
+      <title>Something Awesome: Research - Security</title>
+      <link>/post/something-awesome-research-security/</link>
+      <pubDate>Fri, 14 Jun 2019 19:14:06 +1000</pubDate>
+      
+      <guid>/post/something-awesome-research-security/</guid>
+      <description>Security - Keeping data secured There are two main ways to encrypt data</description>
+    </item>
+    
+    <item>
       <title>Something Awesome: Research Plan</title>
       <link>/post/something-awesome-research-plan/</link>
       <pubDate>Fri, 14 Jun 2019 15:46:35 +1000</pubDate>
@@ -229,7 +292,7 @@
     </item>
     
     <item>
-      <title>Security Everywhere: JB Hi-fi &amp; Bing Lee Raids</title>
+      <title>Security Everywhere: JB Hi-Fi &amp; Bing Lee Raids</title>
       <link>/post/security-everywhere-jb-hifi-bing-lee-raids/</link>
       <pubDate>Thu, 13 Jun 2019 13:46:21 +1000</pubDate>
       

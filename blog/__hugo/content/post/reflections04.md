@@ -1,6 +1,6 @@
 ---
 title: "Reflections - Week 4"
-date: 2019-06-28T20:08:51+10:00
+date: 2019-06-29T02:08:51+10:00
 
 categories: ["Reflections"]
 hiddenFromHomePage: false
@@ -41,8 +41,8 @@ This week, we were given time to individually think how to secure a site for a s
 
 My top ideas were to:
 
-1) Time-lock the access to the system (only able to access data during working hours
-2) Keep the external appearance of the research building modest - don't hold up signs saying "Break into me", but also don't hold up signs saying "You _can't_ break into me"
+1) Time-lock the access to the system (only able to access data during working hours  
+2) Keep the external appearance of the research building modest - don't hold up signs saying "Break into me", but also don't hold up signs saying "You _can't_ break into me"  
 3) Surveillance (security cameras + nearby response unit)
 
 Aaah, it's a Pandora's box.
@@ -74,7 +74,9 @@ A few of the attacks on hashing functions are:
 * Collision attack - Find m and m' where h(m) = h(m')
 * [Length extension attack](#length-extension-attacks) - Generating the hash of appended data by using the previous hash result
 
-**Message Authentication Codes** validate the integrity of data, and often use cryptographic hash functions in their implementation. However as they are vulnerable to the above attacks, we often used **Hash-based Message Authentication Codes** (**HMAC**) instead, which has the functionality `HMAC = hash(key + hash(key + message))`.
+**Message Authentication Codes** validate the integrity of data, and often use cryptographic hash functions in their implementation. However as they are vulnerable to the above attacks.
+
+Nowadays, we often use **Hash-based Message Authentication Codes** (**HMAC**) instead, which has the functionality `HMAC = hash(key + hash(key + message))`.
 
 
 > # [Something Awesome](https://featherbear.github.io/UNSW-COMP6441/blog/categories/something-awesome/)

@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/post/reflections04/</loc>
+    <lastmod>2019-06-29T02:08:51+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/hashes/</loc>
     <lastmod>2019-06-28T21:24:21+10:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -12,13 +19,6 @@
   <url>
     <loc>/post/weakness-of-the-week-04/</loc>
     <lastmod>2019-06-28T20:11:22+10:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/post/reflections04/</loc>
-    <lastmod>2019-06-28T20:08:51+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -466,7 +466,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-06-28T21:24:21+10:00</lastmod>
+    <lastmod>2019-06-29T02:08:51+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -515,14 +515,14 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-06-28T21:24:21+10:00</lastmod>
+    <lastmod>2019-06-29T02:08:51+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/reflections/</loc>
-    <lastmod>2019-06-28T20:08:51+10:00</lastmod>
+    <lastmod>2019-06-29T02:08:51+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

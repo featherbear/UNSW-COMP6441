@@ -26,38 +26,50 @@ Dits - decimal digit (number of digits to represent a decimal) (ie 1000000 is 7 
 Bits - binary digit
 
 
-# CIA (Confidentiality, Integrity, Authentication ) Properties
+# CIA Properties
 
-## Confidentiality - Security and privacy of the data
+## Confidentiality  
 
-Mainly by encryption
+The data is secured and private  
+(ie by encryption)
 
+## Integrity  
 
-## Integrity - Correctness of the data
+Correct of the data  
+(the data has not been modified)
 
-## Authentication - Correct access to data
+## Authentication  
+
+Correct access to data
 
 
 ---
 
 - Steganography - hiding the existence of the message 
 
+* Secrets are only secrets when not distributed.
 
-Secrets are only secrets when not distributed.
 
+# Code or Cipher?
 
-Codes - Arbitrary mapping  
-Ciphers - Patterns
+* Codes - Arbitrary mapping  
+* Ciphers - Patterns
 
-Substitution Cipher
-Transposition Cipher 
+* Substitution Cipher  
+* Caesar Cipher - Shift each letter by `n`  
+* Transposition Cipher - Shift letter position
 
 > Fun fact: Code Talkers were native people used to communicate messages during war. They were effective as their native language was almost impossible to understand without immense practice.
 
-
 ---
-**Kerckhoff's principle** - A cryptographic system should be designed to be secure, even if all its details, except for the key, are publicly known.
 
-* The system must be practically, if not mathematically, indecipherable.
+# Kerckhoff's principles
 
-<!-- TODO: CIA Principles>
+**The main one** - A cryptographic system should be designed to be secure, even if all its details, except for the key, are publicly known.
+
+* The system must be practically, if not mathematically, indecipherable;
+* The algorithm should not require secrecy, and it should not be a problem if it falls into enemy hands;
+* It must be possible to communicate and remember the key without using written notes, and correspondents must be able to change or modify it at will;
+* It must be applicable to telegraph communications;
+* It must be portable, and should not require several persons to handle or operate;
+* Lastly, given the circumstances in which it is to be used, the system must be easy to use and should not be stressful to use or require its users to know and comply with a long list of rules.

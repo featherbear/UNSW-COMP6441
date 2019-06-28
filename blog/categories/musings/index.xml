@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Fri, 21 Jun 2019 17:25:04 +1000</lastBuildDate>
+    <lastBuildDate>Fri, 28 Jun 2019 21:24:21 +1000</lastBuildDate>
     
 	<atom:link href="/categories/musings/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hashes</title>
+      <link>/post/hashes/</link>
+      <pubDate>Fri, 28 Jun 2019 21:24:21 +1000</pubDate>
+      
+      <guid>/post/hashes/</guid>
+      <description>Hashes.</description>
+    </item>
+    
+    <item>
+      <title>Social Engineering</title>
+      <link>/post/social-engineering/</link>
+      <pubDate>Tue, 25 Jun 2019 18:06:26 +1000</pubDate>
+      
+      <guid>/post/social-engineering/</guid>
+      <description>What is social engineering  The art of learning and lying Targets both physical and digital security Psychological attack Phishing, ransomware, baiting  Stage 1) Investigation/Recon 2) Hook - approach 3) Play - game on 4) Exit - lolkbyeee?</description>
+    </item>
     
     <item>
       <title>ATM Machine Security</title>

@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-06-04T18:07:31&#43;10:00" />
 <meta itemprop="dateModified" content="2019-06-04T18:07:31&#43;10:00" />
-<meta itemprop="wordCount" content="155">
+<meta itemprop="wordCount" content="273">
 
 
 
@@ -133,12 +133,14 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#cia-confidentiality-integrity-authentication-properties">CIA (Confidentiality, Integrity, Authentication ) Properties</a>
+<li><a href="#cia-properties">CIA Properties</a>
 <ul>
-<li><a href="#confidentiality-security-and-privacy-of-the-data">Confidentiality - Security and privacy of the data</a></li>
-<li><a href="#integrity-correctness-of-the-data">Integrity - Correctness of the data</a></li>
-<li><a href="#authentication-correct-access-to-data">Authentication - Correct access to data</a></li>
+<li><a href="#confidentiality">Confidentiality</a></li>
+<li><a href="#integrity">Integrity</a></li>
+<li><a href="#authentication">Authentication</a></li>
 </ul></li>
+<li><a href="#code-or-cipher">Code or Cipher?</a></li>
+<li><a href="#kerckhoff-s-principles">Kerckhoff&rsquo;s principles</a></li>
 </ul>
 </nav>
   </div>
@@ -156,29 +158,43 @@
 <p>Dits - decimal digit (number of digits to represent a decimal) (ie 1000000 is 7 &lsquo;dits&rsquo;)<br />
 Bits - binary digit</p>
 
-<h1 id="cia-confidentiality-integrity-authentication-properties">CIA (Confidentiality, Integrity, Authentication ) Properties</h1>
+<h1 id="cia-properties">CIA Properties</h1>
 
-<h2 id="confidentiality-security-and-privacy-of-the-data">Confidentiality - Security and privacy of the data</h2>
+<h2 id="confidentiality">Confidentiality</h2>
 
-<p>Mainly by encryption</p>
+<p>The data is secured and private<br />
+(ie by encryption)</p>
 
-<h2 id="integrity-correctness-of-the-data">Integrity - Correctness of the data</h2>
+<h2 id="integrity">Integrity</h2>
 
-<h2 id="authentication-correct-access-to-data">Authentication - Correct access to data</h2>
+<p>Correct of the data<br />
+(the data has not been modified)</p>
+
+<h2 id="authentication">Authentication</h2>
+
+<p>Correct access to data</p>
 
 <hr />
 
 <ul>
-<li>Steganography - hiding the existence of the message</li>
+<li><p>Steganography - hiding the existence of the message</p></li>
+
+<li><p>Secrets are only secrets when not distributed.</p></li>
 </ul>
 
-<p>Secrets are only secrets when not distributed.</p>
+<h1 id="code-or-cipher">Code or Cipher?</h1>
 
-<p>Codes - Arbitrary mapping<br />
-Ciphers - Patterns</p>
+<ul>
+<li>Codes - Arbitrary mapping<br /></li>
 
-<p>Substitution Cipher
-Transposition Cipher</p>
+<li><p>Ciphers - Patterns</p></li>
+
+<li><p>Substitution Cipher</p></li>
+
+<li><p>Caesar Cipher - Shift each letter by <code>n</code></p></li>
+
+<li><p>Transposition Cipher - Shift letter position</p></li>
+</ul>
 
 <blockquote>
 <p>Fun fact: Code Talkers were native people used to communicate messages during war. They were effective as their native language was almost impossible to understand without immense practice.</p>
@@ -186,13 +202,18 @@ Transposition Cipher</p>
 
 <hr />
 
-<p><strong>Kerckhoff&rsquo;s principle</strong> - A cryptographic system should be designed to be secure, even if all its details, except for the key, are publicly known.</p>
+<h1 id="kerckhoff-s-principles">Kerckhoff&rsquo;s principles</h1>
+
+<p><strong>The main one</strong> - A cryptographic system should be designed to be secure, even if all its details, except for the key, are publicly known.</p>
 
 <ul>
-<li>The system must be practically, if not mathematically, indecipherable.</li>
+<li>The system must be practically, if not mathematically, indecipherable;</li>
+<li>The algorithm should not require secrecy, and it should not be a problem if it falls into enemy hands;</li>
+<li>It must be possible to communicate and remember the key without using written notes, and correspondents must be able to change or modify it at will;</li>
+<li>It must be applicable to telegraph communications;</li>
+<li>It must be portable, and should not require several persons to handle or operate;</li>
+<li>Lastly, given the circumstances in which it is to be used, the system must be easy to use and should not be stressful to use or require its users to know and comply with a long list of rules.</li>
 </ul>
-
-<p>&lt;!&ndash; TODO: CIA Principles&gt;</p>
 
     </div>
 

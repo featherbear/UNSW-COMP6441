@@ -7,10 +7,73 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Sun, 23 Jun 2019 11:15:23 +1000</lastBuildDate>
+    <lastBuildDate>Fri, 28 Jun 2019 21:24:21 +1000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hashes</title>
+      <link>/post/hashes/</link>
+      <pubDate>Fri, 28 Jun 2019 21:24:21 +1000</pubDate>
+      
+      <guid>/post/hashes/</guid>
+      <description>Hashes.</description>
+    </item>
+    
+    <item>
+      <title>Weakness of the Week - 04</title>
+      <link>/post/weakness-of-the-week-04/</link>
+      <pubDate>Fri, 28 Jun 2019 20:11:22 +1000</pubDate>
+      
+      <guid>/post/weakness-of-the-week-04/</guid>
+      <description>&amp;ldquo;I donno wat I stay doing.</description>
+    </item>
+    
+    <item>
+      <title>Reflections - Week 4</title>
+      <link>/post/reflections04/</link>
+      <pubDate>Fri, 28 Jun 2019 20:08:51 +1000</pubDate>
+      
+      <guid>/post/reflections04/</guid>
+      <description>Lectures  I feel like the lectures are abit chaotic.</description>
+    </item>
+    
+    <item>
+      <title>Lab 04</title>
+      <link>/post/lab04/</link>
+      <pubDate>Wed, 26 Jun 2019 17:10:16 +1000</pubDate>
+      
+      <guid>/post/lab04/</guid>
+      <description>Bits of Security 2^10 = 1024 ~= 1000</description>
+    </item>
+    
+    <item>
+      <title>Social Engineering</title>
+      <link>/post/social-engineering/</link>
+      <pubDate>Tue, 25 Jun 2019 18:06:26 +1000</pubDate>
+      
+      <guid>/post/social-engineering/</guid>
+      <description>What is social engineering  The art of learning and lying Targets both physical and digital security Psychological attack Phishing, ransomware, baiting  Stage 1) Investigation/Recon 2) Hook - approach 3) Play - game on 4) Exit - lolkbyeee?</description>
+    </item>
+    
+    <item>
+      <title>Lecture 8</title>
+      <link>/post/lec08/</link>
+      <pubDate>Tue, 25 Jun 2019 18:05:44 +1000</pubDate>
+      
+      <guid>/post/lec08/</guid>
+      <description>Social Engineering</description>
+    </item>
+    
+    <item>
+      <title>Lecture 7</title>
+      <link>/post/lec07/</link>
+      <pubDate>Tue, 25 Jun 2019 10:26:59 +1000</pubDate>
+      
+      <guid>/post/lec07/</guid>
+      <description>Q: If step A takes 10 bits of work, and step B takes 20 bits, then how much to do both steps A then B?</description>
+    </item>
     
     <item>
       <title>Reflections - Week 3</title>

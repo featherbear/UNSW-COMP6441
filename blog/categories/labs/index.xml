@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Wed, 19 Jun 2019 17:00:00 +1000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Jun 2019 17:10:16 +1000</lastBuildDate>
     
 	<atom:link href="/categories/labs/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Lab 04</title>
+      <link>/post/lab04/</link>
+      <pubDate>Wed, 26 Jun 2019 17:10:16 +1000</pubDate>
+      
+      <guid>/post/lab04/</guid>
+      <description>Bits of Security 2^10 = 1024 ~= 1000</description>
+    </item>
     
     <item>
       <title>Lab 03 - Looking at Doors of Planes</title>

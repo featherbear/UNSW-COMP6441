@@ -70,7 +70,7 @@ On the topic of passwords, if you **forget your password** you often go through 
 _Also you better hope that the [password reset functionality works](https://featherbear.github.io/UNSW-COMP6441/blog/post/openlearning-security/)_.
 
 # Try it out
-> More of a visual learner? Perhaps look at this [password strength visualiser](https://featherbear.github.io/UNSW-COMP6441/blog/post/passwords)[.](https://github.com/codrops/PasswordStrengthVisualization/)
+> More of a visual learner? Perhaps try out the password strength visualiser below[!](https://github.com/codrops/PasswordStrengthVisualization/)
 
 <div class="passwordInput-wrap">
   <input class="passwordInput" type="text" name="password" id="password" placeholder="> Test your password here! <">

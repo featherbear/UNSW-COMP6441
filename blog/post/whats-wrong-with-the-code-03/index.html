@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>What&#39;s Wrong With the Code - 03 - COMP6441 Musings</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="z5206677" /><meta name="description" content="1 2 3 4 5 6 7 8  unsigned short int f; char mybuf[1024]; char* userstr = getuserstr(); f = strlen(userstr); if (f &amp;gt; sizeof(mybuf)-5) die(&amp;#34;string too long!" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="../../post/whats-wrong-with-the-code-03/" />
+<link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+<link rel="manifest" href="../../manifest.json">
+<link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="../../dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="What&#39;s Wrong With the Code - 03" />
+<meta property="og:description" content="1 2 3 4 5 6 7 8  unsigned short int f; char mybuf[1024]; char* userstr = getuserstr(); f = strlen(userstr); if (f &gt; sizeof(mybuf)-5) die(&#34;string too long!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/whats-wrong-with-the-code-03/" />
+<meta property="article:published_time" content="2019-07-01T16:18:46&#43;10:00"/>
+<meta property="article:modified_time" content="2019-07-01T16:18:46&#43;10:00"/>
+
+<meta itemprop="name" content="What&#39;s Wrong With the Code - 03">
+<meta itemprop="description" content="1 2 3 4 5 6 7 8  unsigned short int f; char mybuf[1024]; char* userstr = getuserstr(); f = strlen(userstr); if (f &gt; sizeof(mybuf)-5) die(&#34;string too long!">
+
+
+<meta itemprop="datePublished" content="2019-07-01T16:18:46&#43;10:00" />
+<meta itemprop="dateModified" content="2019-07-01T16:18:46&#43;10:00" />
+<meta itemprop="wordCount" content="333">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="What&#39;s Wrong With the Code - 03"/>
+<meta name="twitter:description" content="1 2 3 4 5 6 7 8  unsigned short int f; char mybuf[1024]; char* userstr = getuserstr(); f = strlen(userstr); if (f &gt; sizeof(mybuf)-5) die(&#34;string too long!"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="../../" class="logo">COMP6441 Musings</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="../../">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="https://github.com/featherbear/UNSW-COMP6441">
+        <li class="mobile-menu-item">GitHub</li>
+      </a><a href="../../categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="../../" class="logo">COMP6441 Musings</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="../../">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://github.com/featherbear/UNSW-COMP6441">GitHub</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="../../categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">What&#39;s Wrong With the Code - 03</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-07-01 </span>
+        <div class="post-category">
+            <a href="../../categories/musings/"> Musings </a>
+            <a href="../../categories/extended-security/"> Extended Security </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#what-pos-s-wrong-with-the-code">What&pos;s wrong with the code?</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">unsigned</span> <span class="kt">short</span> <span class="kt">int</span> <span class="n">f</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">mybuf</span><span class="p">[</span><span class="mi">1024</span><span class="p">];</span>
+
+<span class="kt">char</span><span class="o">*</span> <span class="n">userstr</span> <span class="o">=</span> <span class="n">getuserstr</span><span class="p">();</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">userstr</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">f</span> <span class="o">&gt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">mybuf</span><span class="p">)</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span> <span class="n">die</span><span class="p">(</span><span class="s">&#34;string too long!&#34;</span><span class="p">);</span>
+<span class="n">strcpy</span><span class="p">(</span><span class="n">mybuf</span><span class="p">,</span> <span class="n">userstr</span><span class="p">);</span> </code></pre></td></tr></table>
+</div>
+</div>
+<h1 id="what-pos-s-wrong-with-the-code">What&pos;s wrong with the code?</h1>
+
+<p><em>strlen</em>.</p>
+
+<p>A <code>short</code> is 2 bytes long, so 2^16 different values.<br />
+An <code>unsigned short</code> has the range <code>0 - 65535</code>.</p>
+
+<p>Perhaps it&rsquo;s good to take peek into <a href="https://github.com/torvalds/linux/blob/6fbc7275c7a9ba97877050335f290341a1fd8dbf/lib/string.c#L512-L519"><code>string.c</code></a> to see how <a href="https://github.com/torvalds/linux/blob/6fbc7275c7a9ba97877050335f290341a1fd8dbf/lib/string.c#L512-L519"><code>strlen</code></a> works.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="cm">/**
+</span><span class="cm"> * strlen - Find the length of a string
+</span><span class="cm"> * @s: The string to be sized
+</span><span class="cm"> */</span>
+<span class="n">size_t</span> <span class="nf">strlen</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">s</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">sc</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="n">sc</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span> <span class="o">*</span><span class="n">sc</span> <span class="o">!=</span> <span class="sc">&#39;\0&#39;</span><span class="p">;</span> <span class="o">++</span><span class="n">sc</span><span class="p">)</span>
+        <span class="cm">/* nothing */</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">sc</span> <span class="o">-</span> <span class="n">s</span><span class="p">;</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>We create a <code>char</code> pointer <code>sc</code>, set to <code>s</code>, and increase <code>sc</code> until it contains a null terminator/byte.<br />
+Then, we return the difference between the final and starting address as an <code>unsigned int</code> (32-bit), or an <code>unsigned long long</code> (64-bit)</p>
+
+<p>Let&rsquo;s consider the 32-bit variant, an <code>unsigned int</code>.<br />
+An <code>int</code> is 4 bytes long, 2^32 different values.<br />
+So for an <code>unsigned int</code>, it has the range <code>0 - 4294967295</code></p>
+
+<p>What happens when you compare an <code>unsigned short</code> with an <code>unsigned int</code>?<br />
+Well if you&rsquo;ve read the <a href="../whats-wrong-with-the-code-01">first &ldquo;What&rsquo;s Wrong With the Code&rdquo;</a> post - <strong>type coercions</strong> are nightmares.</p>
+
+<p>So back into the code, storing a <code>size_t</code> type value (4 bytes on a 32-bit machine) into a <code>short</code> type variable (2 bytes on a 32-bit machine) will cause <strong>truncation issues</strong>.
+Storing a number greater than <code>65535</code> into an <code>unsigned short</code> will cause that number to be wrapped (sort of like <code>n % 65536</code>).</p>
+
+<p>So if we were to try store <code>66666</code> (<em>i.e <code>unsigned short v = 66666</code></em>), we would actually see <code>v = 1131</code></p>
+
+<p>So in application of this problematic code, if the length of <code>userstr</code> were to be greater than <code>65535</code>, the number would be wrapped to a small number, and therefore the program termination will not happen.<br />
+Inbound buffer overflow.</p>
+
+    </div>
+
+    <footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="../../post/whats-wrong-with-the-code-02/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">What&#39;s Wrong With the Code - 02</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="../../post/passwords/">
+            <span class="next-text nav-default">Passwords</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:z5206677@student.unsw.edu.au" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.linkedin.com/in/andrewjinmengwong/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/featherbear" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/_andrewjwong/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="../../index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Andrew Wong (z5206677)</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="../../dist/even.26188efa.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-107434487-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

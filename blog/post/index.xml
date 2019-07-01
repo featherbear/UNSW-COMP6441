@@ -7,10 +7,46 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Sat, 29 Jun 2019 02:08:51 +1000</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jul 2019 00:00:54 +1000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Passwords</title>
+      <link>/post/passwords/</link>
+      <pubDate>Tue, 02 Jul 2019 00:00:54 +1000</pubDate>
+      
+      <guid>/post/passwords/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>What&#39;s Wrong With the Code - 03</title>
+      <link>/post/whats-wrong-with-the-code-03/</link>
+      <pubDate>Mon, 01 Jul 2019 16:18:46 +1000</pubDate>
+      
+      <guid>/post/whats-wrong-with-the-code-03/</guid>
+      <description>1 2 3 4 5 6 7 8  unsigned short int f; char mybuf[1024]; char* userstr = getuserstr(); f = strlen(userstr); if (f &amp;gt; sizeof(mybuf)-5) die(&amp;#34;string too long!</description>
+    </item>
+    
+    <item>
+      <title>What&#39;s Wrong With the Code - 02</title>
+      <link>/post/whats-wrong-with-the-code-02/</link>
+      <pubDate>Mon, 01 Jul 2019 16:18:45 +1000</pubDate>
+      
+      <guid>/post/whats-wrong-with-the-code-02/</guid>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28  char *read_username(int sockfd) { char *buffer, *style, userstring[1024]; int i; buffer = (char*) malloc(1024); if (!</description>
+    </item>
+    
+    <item>
+      <title>What&#39;s Wrong With the Code - 01</title>
+      <link>/post/whats-wrong-with-the-code-01/</link>
+      <pubDate>Mon, 01 Jul 2019 16:18:44 +1000</pubDate>
+      
+      <guid>/post/whats-wrong-with-the-code-01/</guid>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  int read_data(int sockfd) { char buf[1024]; unsigned short max = sizeof(buf); short length; length = get_network_short(sockfd); if (length &amp;gt; max) { error(&amp;#34;bad length: %d\n&amp;#34;, length); return 1; } if(read(sockfd, buf, length) &amp;lt; 0){ error(&amp;#34;read: %m&amp;#34;); return 1; } .</description>
+    </item>
     
     <item>
       <title>Reflections - Week 4</title>

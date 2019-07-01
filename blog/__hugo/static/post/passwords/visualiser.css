@@ -1,0 +1,45 @@
+.canvas-wrap {
+  text-align: center;
+	margin: 0 auto;
+	width: 100vw;
+	height: 100vh;
+	max-width: 500px;
+	max-height: 500px;
+}
+
+canvas {
+	image-rendering: optimizeSpeed;
+	image-rendering: -moz-crisp-edges;
+	image-rendering: -webkit-optimize-contrast;
+	image-rendering: -o-crisp-edges;
+	image-rendering: crisp-edges;
+	-ms-interpolation-mode: nearest-neighbor;
+}
+
+.passwordInput {
+	padding: 1rem;
+	width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+	border: 1px solid #ddd;
+	font-weight: bold;
+	text-align: center;
+}
+
+.passwordInput-wrap {
+	text-align: center;
+}
+
+.passwordInput:hover {
+  border-color: #A7A7A7;
+}
+.passwordInput:focus {
+	border-color: #000;
+	outline: none;
+}
+
+.passwordStrength {
+	font-size: 0.75rem;
+	height: 20px;
+}

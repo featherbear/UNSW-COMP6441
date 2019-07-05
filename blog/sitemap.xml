@@ -3,6 +3,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/post/lab05/</loc>
+    <lastmod>2019-07-03T17:28:31+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/lightning-talk-http-https-security/</loc>
+    <lastmod>2019-07-03T17:10:07+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/lec10/</loc>
+    <lastmod>2019-07-02T18:52:35+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/passwords/</loc>
     <lastmod>2019-07-02T00:00:54+10:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -494,14 +515,14 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-07-02T00:00:54+10:00</lastmod>
+    <lastmod>2019-07-03T17:28:31+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/case-study/</loc>
-    <lastmod>2019-06-26T17:10:16+10:00</lastmod>
+    <lastmod>2019-07-03T17:28:31+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -522,28 +543,28 @@
   
   <url>
     <loc>/categories/labs/</loc>
-    <lastmod>2019-06-26T17:10:16+10:00</lastmod>
+    <lastmod>2019-07-03T17:28:31+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/lectures/</loc>
-    <lastmod>2019-06-25T18:05:44+10:00</lastmod>
+    <lastmod>2019-07-02T18:52:35+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/musings/</loc>
-    <lastmod>2019-07-02T00:00:54+10:00</lastmod>
+    <lastmod>2019-07-03T17:10:07+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-07-02T00:00:54+10:00</lastmod>
+    <lastmod>2019-07-03T17:28:31+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

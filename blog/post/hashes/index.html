@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-06-28T21:24:21&#43;10:00" />
 <meta itemprop="dateModified" content="2019-06-28T21:24:21&#43;10:00" />
-<meta itemprop="wordCount" content="1717">
+<meta itemprop="wordCount" content="1879">
 
 
 
@@ -144,6 +144,8 @@
 </ul></li>
 </ul></li>
 <li><a href="#solution-hash-it-again">Solution? Hash it again</a></li>
+<li><a href="#salts">Salts</a></li>
+<li><a href="#rainbow-tables">Rainbow Tables</a></li>
 </ul></li>
 <li><a href="#making-cracking-harder-with-modulos">Making cracking harder with modulos</a></li>
 </ul>
@@ -364,6 +366,22 @@ Or hash the hash that was hashed from the hash of the hash of a hash?</p>
 <p><em>i.e.</em><br />
 if <code>h(X) =&gt; hash</code> takes 1 second, h(h(h(X))) would take 3 seconds.<br />
 if <code>H(x) =&gt; plain</code> takes 5 seconds, H(H(H(x))) would take 15 (or 125) seconds</p>
+
+<h2 id="salts">Salts</h2>
+
+<p>Salts are arbitrary strings of text that are either appended or prepended to a message before it is all hashed. This means that given two different salts, the hash of the same message and a different salt would produce two hashes that are not the same!!</p>
+
+<p><code>md5(AAApassword) = D5581DAEF8238853D0EDFBDA8361562F</code><br />
+<code>md5(BBBpassword) = 2DA397558A2C230E0B38FB75B0BC519A</code></p>
+
+<p>Salts (ie <code>AAA</code>, and <code>BBB</code>) do not need to be stored privately and could just be left as plain-text inside a database (although that&rsquo;s always a nice idea)</p>
+
+<h2 id="rainbow-tables">Rainbow Tables</h2>
+
+<p>Rainbow tables are precomputed hashes of many many many different password combinations. They essentially save us the effort of having to compute the hashes ourselves - for the tradeoff of really massive rainbow table files (in multitudes of tens to thousands of gigabytes)</p>
+
+<p>They however become somewhat useless if a password was hashed with a salt.<br />
+A new rainbow table would need to be generated with that salt in mind - quickly making cracking of salted hashes very unfeasible.</p>
 
 <h1 id="making-cracking-harder-with-modulos">Making cracking harder with modulos</h1>
 

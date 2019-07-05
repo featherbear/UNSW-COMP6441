@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Tue, 02 Jul 2019 00:00:54 +1000</lastBuildDate>
+    <lastBuildDate>Wed, 03 Jul 2019 17:10:07 +1000</lastBuildDate>
     
 	<atom:link href="/categories/musings/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Lightning Talk: HTTP(S) Security</title>
+      <link>/post/lightning-talk-http-https-security/</link>
+      <pubDate>Wed, 03 Jul 2019 17:10:07 +1000</pubDate>
+      
+      <guid>/post/lightning-talk-http-https-security/</guid>
+      <description>During my lab this week, I gave a quick talk on HTTP(S) Security - about the importance of why it is important to use a HTTPS connection when authenticating to systems.</description>
+    </item>
     
     <item>
       <title>Passwords</title>

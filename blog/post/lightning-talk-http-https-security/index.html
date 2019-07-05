@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Lightning Talk: HTTP(S) Security - COMP6441 Musings</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="z5206677" /><meta name="description" content="During my lab this week, I gave a quick talk on HTTP(S) Security - about the importance of why it is important to use a HTTPS connection when authenticating to systems." /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="../../post/lightning-talk-http-https-security/" />
+<link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+<link rel="manifest" href="../../manifest.json">
+<link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="../../dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Lightning Talk: HTTP(S) Security" />
+<meta property="og:description" content="During my lab this week, I gave a quick talk on HTTP(S) Security - about the importance of why it is important to use a HTTPS connection when authenticating to systems." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/lightning-talk-http-https-security/" />
+<meta property="article:published_time" content="2019-07-03T17:10:07&#43;10:00"/>
+<meta property="article:modified_time" content="2019-07-03T17:10:07&#43;10:00"/>
+
+<meta itemprop="name" content="Lightning Talk: HTTP(S) Security">
+<meta itemprop="description" content="During my lab this week, I gave a quick talk on HTTP(S) Security - about the importance of why it is important to use a HTTPS connection when authenticating to systems.">
+
+
+<meta itemprop="datePublished" content="2019-07-03T17:10:07&#43;10:00" />
+<meta itemprop="dateModified" content="2019-07-03T17:10:07&#43;10:00" />
+<meta itemprop="wordCount" content="1188">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Lightning Talk: HTTP(S) Security"/>
+<meta name="twitter:description" content="During my lab this week, I gave a quick talk on HTTP(S) Security - about the importance of why it is important to use a HTTPS connection when authenticating to systems."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="../../" class="logo">COMP6441 Musings</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="../../">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="https://github.com/featherbear/UNSW-COMP6441">
+        <li class="mobile-menu-item">GitHub</li>
+      </a><a href="../../categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="../../" class="logo">COMP6441 Musings</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="../../">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://github.com/featherbear/UNSW-COMP6441">GitHub</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="../../categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Lightning Talk: HTTP(S) Security</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-07-03 </span>
+        <div class="post-category">
+            <a href="../../categories/musings/"> Musings </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#the-server">The Server</a></li>
+<li><a href="#the-prologue">The Prologue</a></li>
+<li><a href="#the-story">The Story</a></li>
+<li><a href="#the-epilogue">The Epilogue</a>
+<ul>
+<li><a href="#attacks">Attacks</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<p>During my lab this week, I gave a quick talk on HTTP(S) Security - about the importance of why it is important to use a HTTPS connection when authenticating to systems.</p>
+
+<p>In this post I&rsquo;ll go over what I talked about.</p>
+
+<p>I had written a demo server and interface to accompany this talk, which you can try yourself <a href="https://github.com/featherbear/UNSW-CompClub2019Summer-SecurityWorkshop/tree/master/http_mitm">here</a>.<br />
+<em>Actually, I had written this talk for the UNSW CSESoc CompClub Summer 2019 workshop, but we were short on time and I couldn&rsquo;t present it. So I&rsquo;m glad I was able to finally give the talk!</em></p>
+
+<blockquote>
+<p><strong>Have a look for yourself</strong><br />
+Slides: <a href="https://docs.google.com/presentation/d/1ykIUm1xAKMforvTPeqvXMdC4DZlnWOg604ekaybhiOs/edit?usp=sharing">docs.google.com/&hellip;</a><br />
+Software: <a href="https://github.com/featherbear/UNSW-CompClub2019Summer-SecurityWorkshop/tree/master/http_mitm">github.com/featherbear/&hellip;</a></p>
+</blockquote>
+
+<h1 id="the-server">The Server</h1>
+
+<blockquote>
+<p><a href="https://github.com/featherbear/UNSW-CompClub2019Summer-SecurityWorkshop/tree/master/http_mitm">GitHub Repo</a></p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">Super secret logon details are:
+-------------------------------
+Username:   admin
+Plain Text: c4nt_t0uch_m3
+Password Hash:  81e3135678f1bf94468800502cdace69
+
+Username:   john
+Plain Text: citizen
+Password Hash:  801c07d82d0bce07de9c57fedd87a46f
+
+Username:   andrew
+Plain Text: ***hidden***
+Password Hash:  5f4dcc3b5aa765d61d8327deb882cf99
+
+Username:   alicia
+Plain Text: piano
+Password Hash:  d113f1c3f9ed8019288f4e8ddecfb8ec</pre></td></tr></table>
+</div>
+</div>
+<p>Above is a model of the some sort of password database that a server might use.<br />
+The username and some form of the password - either plaintext, or (hopefully) some sort of <a href="https://featherbear.github.io/UNSW-COMP6441/blog/post/hashes/">hash of the password</a>.</p>
+
+<h1 id="the-prologue">The Prologue</h1>
+
+<p>We&rsquo;ll be using <a href="https://www.wireshark.org">Wireshark</a> to analyse what&rsquo;s being sent and received by our computer.</p>
+
+<p><a href="https://www.wireshark.org">Wireshark</a> is a network packet analyser - a tool designed to read and inspect the network packets that travel around your computer network.<br />
+We can use <a href="https://www.wireshark.org">Wireshark</a> to find our insecure HTTP packets which contain login information</p>
+
+<h1 id="the-story">The Story</h1>
+
+<blockquote>
+<p>Imagine there&rsquo;s a gentrified hipster who somehow has the time, money and alacrity to sit and drink a cup of (powder) coffee in Meteorbucks - but too parsimonious to use their own mobile data, so they take out their Apple MacBook Pro and connect to the Meteorbucks Free WiFi.<br />
+&nbsp;<br />
+They navigate to <code>hmail.com</code> (<em>an email service like gmail.com, but worse</em>) and enter in their logon username and password. <code>hmail.com</code> is a <strong>HTTP only website</strong>, but they don&rsquo;t know nor care about what that means.<br />
+Free WiFi = Good.<br />
+&nbsp;<br />
+But unbeknownst to them, there&rsquo;s a shadow the room - a script kiddie connected to the same wireless network, probably following a step-by-step tutorial video called &ldquo;<em>How to hack WiFi using HTML and CSS</em>&rdquo;. This person has <a href="https://www.wireshark.org">Wireshark</a> installed, and is sniffing all of the packets that are buzzing around the air on the Meteorbucks Free WiFi network.</p>
+</blockquote>
+
+<table>
+<thead>
+<tr>
+<th><img src="plaintext-login.png" alt="" /></th>
+<th><img src="plaintext-wireshark.png" alt="" /></th>
+</tr>
+</thead>
+
+<tbody>
+</tbody>
+</table>
+
+<p>When you press Submit / Login on any login form, your logon credentials are transmitted to the server for validation.</p>
+
+<p>To physically reach the server, your laptop/phone wirelessly communicates with an Access Point (AP), which then transmits your packets over other mediums to reach the destination.<br />
+But due to the nature of <strong>access points functioning more as network hubs than network switches</strong>, everyone connected to that wireless network can see all of the packets being transmitted by the access point.<br />
+Usually your computer will only look at the packets addressed to you and drop the rest, <em>but I said <strong>usually</strong></em>.</p>
+
+<p>With <a href="https://www.wireshark.org">Wireshark</a> we can see all of the packets being transmitted by devices on the network - and consequently, one of those packets will contain the logon credentials.<br />
+As you can see on the <a href="https://www.wireshark.org">Wireshark</a> window, we can see that the username is <code>john</code> and the password is <code>citizen</code>.</p>
+
+<p>With these credentials, anyone (including our friend here) will be able to logon to the website, pretending to be our hipster friend!</p>
+
+<p><strong>Lesson 1: Don&rsquo;t transmit your data in plain text</strong></p>
+
+<hr />
+
+<blockquote>
+<p>The security team at <code>hmail.com</code> (unpaid student interns who couldn&rsquo;t find a good internship place) realised that it was not a good idea to transmit the logon credentials in plain text.<br />
+Fantasising about the cool <a href="https://featherbear.github.io/UNSW-COMP6441/blog/post/hashes/#rainbow-tables">one-way property</a> of <a href="https://featherbear.github.io/UNSW-COMP6441/blog/post/hashes/">hashes</a>, they decide to implement a system where the password is hashed on the client&rsquo;s computer. When the logon credentials are sent, no one will be able to see the password, rather only the hash.<br />
+&nbsp;<br />
+Great! Haxxor boi can&rsquo;t see the plain-text password on Wireshark anymore - we only have the username and hash of the password! Work done give me my full-time job offer ty.<br />
+Continuing the story, another user of <code>hmail.com</code> also walks into Meterobucks and buys a cup of coffee, also connecting to the free WiFi and logging onto their email.</p>
+</blockquote>
+
+<table>
+<thead>
+<tr>
+<th><img src="hash-login.png" alt="" /></th>
+<th><img src="hash-wireshark.png" alt="" /></th>
+</tr>
+</thead>
+
+<tbody>
+</tbody>
+</table>
+
+<p>At first glance, it may seem like the problem is solved. The password entered into the logon form will be transmitted as a hash, meaning you won&rsquo;t be able to recover the original password without <a href="https://featherbear.github.io/UNSW-COMP6441/blog/post/hashes/#rainbow-tables">cracking</a> it. As Wireshark shows, the data inside the logon packet is <code>andrew:5f4dcc3b5aa765d61d8327deb882cf99</code>.</p>
+
+<p>But do you spot the issue? <em>Perhaps we don&rsquo;t need the password&hellip;</em><br />
+The hash becomes the access token that we need to gain access to the account.</p>
+
+<p>In other words, we could just pass in <code>5f4dcc3b5aa765d61d8327deb882cf99</code> as our password hash.<br />
+Of course, if you just tried to enter <code>5f4dcc3b5aa765d61d8327deb882cf99</code> in the password field, you would actually be transmitting <code>hash(5f4dcc...) == 696d29e0940a4957748fe3fc9efd22a3</code>.</p>
+
+<table>
+<thead>
+<tr>
+<th><img src="hashbreaker-login.png" alt="" /></th>
+</tr>
+</thead>
+
+<tbody>
+</tbody>
+</table>
+
+<p>With a custom form submission script we can forcibly supply the &lsquo;hash&rsquo;. Not good.</p>
+
+<p><strong>Lesson 2: Don&rsquo;t hash your passwords on the client computer</strong></p>
+
+<p><strong>Lesson 3: Hashes are not a replacement for encryption</strong></p>
+
+<hr />
+
+<blockquote>
+<p>So what&rsquo;s the solution? One of the interns (finally) has the great idea of implementing HTTP<strong>S</strong>&hellip;<br />
+<em>HTTPS? More like HTTPYESFINALLYABOUTTIMEOMG</em>.<br />
+&nbsp;<br />
+On a high level, HTTPS will encrypt your packets meaning that only the client and server will be able to read the data sent towards and from each other.</p>
+</blockquote>
+
+<table>
+<thead>
+<tr>
+<th><img src="https-login.png" alt="" /></th>
+<th><img src="https-wireshark.png" alt="" /></th>
+</tr>
+</thead>
+
+<tbody>
+</tbody>
+</table>
+
+<p>Someone trying to monitor network traffic with <a href="https://www.wireshark.org">Wireshark</a> won&rsquo;t be able to easily intercept the logon details anymore.<br />
+Finally!</p>
+
+<p><strong>Lesson 0: Use HTTPS</strong></p>
+
+<h1 id="the-epilogue">The Epilogue</h1>
+
+<p>Securing your web connection with HTTPS is a very important requirement for any system.<br />
+Even websites owned by &lsquo;nobodies&rsquo; are being pushed to secure their connection.</p>
+
+<p>Back in the past years, you had to pay for an SSL certificate.<br />
+Security was weighed at the cost of price - and I guess it was understandable why some smaller business did not want to pay extra.</p>
+
+<p>But these days, organisations like <a href="https://letsencrypt.org/">Let&rsquo;s Encrypt</a> offers free SSL certificates - <strong>because it is that important</strong>.</p>
+
+<h2 id="attacks">Attacks</h2>
+
+<p><strong>So as a malicious person, how would you circumvent HTTPS?</strong></p>
+
+<p>One form of a Man-In-The-Middle attack is a HTTPS Downgrade attack, where the server is tricked into using a weaker (vulnerable) cryptographic algorithm.
+If the connection is made to use a weaker cryptographic algorithm - one may be able to break the encryption and intercept the data.</p>
+
+<p>Another form of MITM attack is an SSL Strip attack.<br />
+On most websites, the insecure port (HTTP:80) serves just as a redirect to the secure port (HTTPS:443).<br />
+SSL Stripping involves acting as a proxy between the client and the server.<br />
+Instead of the being redirected to the secure port, the client connects to the MITM computer, which relays the information (securely) to the intended server.<br />
+But being &ldquo;in-the-middle&rdquo;, the MITM computer is able to see all of the data being sent from the client &lsquo;to the server&rsquo;</p>
+
+<p>Luckily, both of these attacks can be thwarted by <a href="https://featherbear.github.io/UNSW-COMP6441/blog/post/google-tld-hsts/">HTTP Strict Transport Security</a> - a system to ensure that HTTPS is the only allowed way to connect to certain websites.</p>
+
+    </div>
+
+    <footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="../../post/lec10/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Lecture 10</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="../../post/lab05/">
+            <span class="next-text nav-default">Lab 5</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:z5206677@student.unsw.edu.au" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.linkedin.com/in/andrewjinmengwong/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/featherbear" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/_andrewjwong/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="../../index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Andrew Wong (z5206677)</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="../../dist/even.26188efa.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-107434487-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

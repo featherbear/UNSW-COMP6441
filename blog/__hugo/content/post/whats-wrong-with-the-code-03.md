@@ -28,7 +28,7 @@ if (f > sizeof(mybuf)-5) die("string too long!");
 strcpy(mybuf, userstr); 
 ```
 
-# What&pos;s wrong with the code?
+# What&apos;s wrong with the code?
 
 _strlen_.
 

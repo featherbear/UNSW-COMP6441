@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Wed, 26 Jun 2019 17:10:16 +1000</lastBuildDate>
+    <lastBuildDate>Wed, 03 Jul 2019 17:28:31 +1000</lastBuildDate>
     
 	<atom:link href="/categories/labs/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Lab 5</title>
+      <link>/post/lab05/</link>
+      <pubDate>Wed, 03 Jul 2019 17:28:31 +1000</pubDate>
+      
+      <guid>/post/lab05/</guid>
+      <description>Collision occurences &amp;gt; Birthday occurences =&amp;gt; B R O K E N</description>
+    </item>
     
     <item>
       <title>Lab 04</title>

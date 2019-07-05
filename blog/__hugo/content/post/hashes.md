@@ -173,6 +173,22 @@ _i.e._
 if `h(X) => hash` takes 1 second, h(h(h(X))) would take 3 seconds.  
 if `H(x) => plain` takes 5 seconds, H(H(H(x))) would take 15 (or 125) seconds
 
+## Salts
+
+Salts are arbitrary strings of text that are either appended or prepended to a message before it is all hashed. This means that given two different salts, the hash of the same message and a different salt would produce two hashes that are not the same!!
+
+`md5(AAApassword) = D5581DAEF8238853D0EDFBDA8361562F`  
+`md5(BBBpassword) = 2DA397558A2C230E0B38FB75B0BC519A`
+
+Salts (ie `AAA`, and `BBB`) do not need to be stored privately and could just be left as plain-text inside a database (although that's always a nice idea)
+
+## Rainbow Tables
+
+Rainbow tables are precomputed hashes of many many many different password combinations. They essentially save us the effort of having to compute the hashes ourselves - for the tradeoff of really massive rainbow table files (in multitudes of tens to thousands of gigabytes)
+
+They however become somewhat useless if a password was hashed with a salt.  
+A new rainbow table would need to be generated with that salt in mind - quickly making cracking of salted hashes very unfeasible.
+
 # Making cracking harder with modulos
 
 So I don't know about you, but the modulo operation looks really useful to add uncertainty into a reversing operation.  

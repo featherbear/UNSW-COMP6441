@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Tue, 25 Jun 2019 18:05:44 +1000</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jul 2019 18:52:35 +1000</lastBuildDate>
     
 	<atom:link href="/categories/lectures/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Lecture 10</title>
+      <link>/post/lec10/</link>
+      <pubDate>Tue, 02 Jul 2019 18:52:35 +1000</pubDate>
+      
+      <guid>/post/lec10/</guid>
+      <description>Merkle-damgard Construction Used by MD5, SHA-0, SHA-1, SHA-2</description>
+    </item>
     
     <item>
       <title>Lecture 8</title>

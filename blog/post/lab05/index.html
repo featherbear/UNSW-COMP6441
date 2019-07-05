@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Lab 5 - COMP6441 Musings</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="z5206677" /><meta name="description" content="Collision occurences &amp;gt; Birthday occurences =&amp;gt; B R O K E N" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="../../post/lab05/" />
+<link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+<link rel="manifest" href="../../manifest.json">
+<link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="../../dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Lab 5" />
+<meta property="og:description" content="Collision occurences &gt; Birthday occurences =&gt; B R O K E N" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/lab05/" />
+<meta property="article:published_time" content="2019-07-03T17:28:31&#43;10:00"/>
+<meta property="article:modified_time" content="2019-07-03T17:28:31&#43;10:00"/>
+
+<meta itemprop="name" content="Lab 5">
+<meta itemprop="description" content="Collision occurences &gt; Birthday occurences =&gt; B R O K E N">
+
+
+<meta itemprop="datePublished" content="2019-07-03T17:28:31&#43;10:00" />
+<meta itemprop="dateModified" content="2019-07-03T17:28:31&#43;10:00" />
+<meta itemprop="wordCount" content="444">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Lab 5"/>
+<meta name="twitter:description" content="Collision occurences &gt; Birthday occurences =&gt; B R O K E N"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="../../" class="logo">COMP6441 Musings</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="../../">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="https://github.com/featherbear/UNSW-COMP6441">
+        <li class="mobile-menu-item">GitHub</li>
+      </a><a href="../../categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="../../" class="logo">COMP6441 Musings</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="../../">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://github.com/featherbear/UNSW-COMP6441">GitHub</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="../../categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Lab 5</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-07-03 </span>
+        <div class="post-category">
+            <a href="../../categories/labs/"> Labs </a>
+            <a href="../../categories/case-study/"> Case Study </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#example-question">Example Question</a>
+<ul>
+<li><a href="#approach">Approach</a></li>
+<li><a href="#working">Working</a></li>
+</ul></li>
+<li><a href="#case-study-electronic-self-driving-cars">Case Study: Electronic Self-driving Cars</a>
+<ul>
+<li><a href="#concerns-for-the-assets-of-the-country">Concerns for the Assets of the Country</a></li>
+<li><a href="#top-risks">Top risks</a></li>
+<li><a href="#preventing-risks">Preventing risks</a></li>
+<li><a href="#verdict">Verdict</a></li>
+</ul></li>
+<li><a href="#class-disussion">Class Disussion</a>
+<ul>
+<li><a href="#assets">Assets</a></li>
+<li><a href="#risks">Risks</a></li>
+<li><a href="#response">Response</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<p>Collision occurences &gt; Birthday occurences =&gt; B R O K E N</p>
+
+<h1 id="example-question">Example Question</h1>
+
+<blockquote>
+<p>You have a password file of 1,000 hashes.<br />
+Assuming that 50% of the passwords used were weak passwords which can be found in a dictionary of 1,000,000 common passwords, and that hashing a password takes 12 bits of work on average, roughly how many bits of work would it take to discover all these 500 or so weak passwords?</p>
+</blockquote>
+
+<h2 id="approach">Approach</h2>
+
+<ul>
+<li>For each password <a href="1000000 is close to 2^20">2^20 bits of work</a>
+
+<ul>
+<li>Hash password [2^12 bits of work]</li>
+</ul></li>
+<li>For each hash <a href="1000 is close to 2^10">2^10 bits of work</a>
+
+<ul>
+<li>Compare</li>
+</ul></li>
+</ul>
+
+<p>So 2^32 =&gt; <code>32</code> bits of work to hash them all,<br />
+and 2^10 =&gt; <code>10</code> bits of work to compare the hashes.</p>
+
+<p>We only really consider the 2^<code>32</code>, since 2^<code>10</code> has such a small magnitude when added.</p>
+
+<p>So, <code>32</code> bits of work.</p>
+
+<p><em>We ignore the &ldquo;500&rdquo; passwords since we have to check basically all of the passwords</em></p>
+
+<h2 id="working">Working</h2>
+
+<hr />
+
+<h1 id="case-study-electronic-self-driving-cars">Case Study: Electronic Self-driving Cars</h1>
+
+<p><strong>Pick your side.</strong><br />
+Either the CTO of an autonomous driving car company, or as a minister of your government.</p>
+
+<h2 id="concerns-for-the-assets-of-the-country">Concerns for the Assets of the Country</h2>
+
+<ul>
+<li>Jobs (Public transport, taxi services)</li>
+<li>Infrastructure (roads)</li>
+</ul>
+
+<h2 id="top-risks">Top risks</h2>
+
+<ul>
+<li><p><strong>Security</strong></p>
+
+<ul>
+<li>Denial of Service // Jamming</li>
+<li>Hacking and Car Hijacking</li>
+</ul></li>
+
+<li><p><strong>Computer Brain</strong><br />
+<em>How well can we trust &ldquo;computer vision&rdquo;</em></p>
+
+<ul>
+<li>My life, or theirs?</li>
+<li>Incident response - What happens when an accident happens, or if there is an object on the road?</li>
+<li>Who is in control of the vehicle</li>
+</ul></li>
+
+<li><p><strong>Jobs</strong><br />
+An increase in convenience of private transport will lead to a decline of public transport usage, but an increase in technical jobs</p></li>
+</ul>
+
+<h2 id="preventing-risks">Preventing risks</h2>
+
+<ul>
+<li><p><strong>Security</strong></p>
+
+<ul>
+<li>Securing wireless networks</li>
+<li>Securing internal computers</li>
+<li>Securing physical components</li>
+</ul></li>
+
+<li><p><strong>Computer Brain</strong></p>
+
+<ul>
+<li>What model will you go for when it comes to situations that are difficult to decide?<br /></li>
+<li>Manual override for when the passenger wants to take control?</li>
+</ul></li>
+
+<li><p><strong>Jobs</strong><br />
+The occupation world is <em>unstable</em> and <em>always changing</em>.<br />
+&nbsp;<br />
+Will lead to an increase in technical jobs - <em>ie service people</em><br />
+But will also lead to job loss - specifically for those who operate public and private transport services.</p></li>
+</ul>
+
+<h2 id="verdict">Verdict</h2>
+
+<p><em>Yoooo are we left wing or right wing :&lsquo;)</em></p>
+
+<p>No - is autonomy the way to go?<br />
+Who is in control of the vehicle?</p>
+
+<p>Does the convenience outweigh risks?<br />
+Should it even be a comparison?</p>
+
+<hr />
+
+<h1 id="class-disussion">Class Disussion</h1>
+
+<h2 id="assets">Assets</h2>
+
+<ul>
+<li>Company image, reputation</li>
+<li>Software &amp; technology</li>
+
+<li><p>Finance</p></li>
+
+<li><p>Jobs and Growth</p></li>
+
+<li><p>Privacy</p></li>
+
+<li><p>Infrastructure</p></li>
+
+<li><p>The people (customers)</p></li>
+</ul>
+
+<h2 id="risks">Risks</h2>
+
+<ul>
+<li>Security
+
+<ul>
+<li>Car hijacking</li>
+<li>Insider attack</li>
+<li>Corruption</li>
+</ul></li>
+<li>AI morality</li>
+<li>Money</li>
+<li>Legal issues - who&rsquo;s to blame?</li>
+</ul>
+
+<h2 id="response">Response</h2>
+
+<ul>
+<li>Minimise the attack surface
+
+<ul>
+<li>Less wireless capability (reduce remote hijacking)</li>
+</ul></li>
+<li>Allow passengers to drive the vehicle (override)</li>
+<li>Government watchdog / supervise the compnay</li>
+<li>Adding requirements to testing / standards</li>
+</ul>
+
+    </div>
+
+    <footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="../../post/lightning-talk-http-https-security/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Lightning Talk: HTTP(S) Security</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:z5206677@student.unsw.edu.au" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.linkedin.com/in/andrewjinmengwong/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/featherbear" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/_andrewjwong/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="../../index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Andrew Wong (z5206677)</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="../../dist/even.26188efa.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-107434487-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

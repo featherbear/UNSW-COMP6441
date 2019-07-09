@@ -7,10 +7,82 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Wed, 03 Jul 2019 17:28:31 +1000</lastBuildDate>
+    <lastBuildDate>Tue, 09 Jul 2019 18:39:34 +1000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cryptocurrency</title>
+      <link>/post/cryptocurrency/</link>
+      <pubDate>Tue, 09 Jul 2019 18:39:34 +1000</pubDate>
+      
+      <guid>/post/cryptocurrency/</guid>
+      <description>Cryptocurrency  Consider buying a product with your debit/credit card&amp;hellip; * The customer would first tap their card on the EFTPOS terminal.</description>
+    </item>
+    
+    <item>
+      <title>Website Security</title>
+      <link>/post/website-security/</link>
+      <pubDate>Tue, 09 Jul 2019 18:09:21 +1000</pubDate>
+      
+      <guid>/post/website-security/</guid>
+      <description>Web Security Web Fundamentals When you visit a website, your internet browser sends a HTTP(S) GET request to the web server, which returns the content of the website (HTML + CSS + JS).</description>
+    </item>
+    
+    <item>
+      <title>Lecture 12</title>
+      <link>/post/lec12/</link>
+      <pubDate>Tue, 09 Jul 2019 18:08:32 +1000</pubDate>
+      
+      <guid>/post/lec12/</guid>
+      <description>The extended security group for website security gave their presentation today.</description>
+    </item>
+    
+    <item>
+      <title>Lecture 11</title>
+      <link>/post/lec11/</link>
+      <pubDate>Tue, 09 Jul 2019 10:30:21 +1000</pubDate>
+      
+      <guid>/post/lec11/</guid>
+      <description>Initialisation Vectors (IV) IVs are the so called &amp;lsquo;seed&amp;rsquo; for an algorithm to start</description>
+    </item>
+    
+    <item>
+      <title>Cryptopals</title>
+      <link>/post/cryptopals/</link>
+      <pubDate>Fri, 05 Jul 2019 23:38:52 +1000</pubDate>
+      
+      <guid>/post/cryptopals/</guid>
+      <description>So I was trying to find substition cipher challenges online, but found myself at cryptopals.</description>
+    </item>
+    
+    <item>
+      <title>Mid-Semester Exam: 2016s1</title>
+      <link>/post/midsem-2016s1/</link>
+      <pubDate>Fri, 05 Jul 2019 23:18:26 +1000</pubDate>
+      
+      <guid>/post/midsem-2016s1/</guid>
+      <description>Question 0 (2 Marks)</description>
+    </item>
+    
+    <item>
+      <title>Final Exam: 2016s1</title>
+      <link>/post/final-2016s1/</link>
+      <pubDate>Fri, 05 Jul 2019 22:12:41 +1000</pubDate>
+      
+      <guid>/post/final-2016s1/</guid>
+      <description>Question 0 Give a specific example demonstrating an attacker using a Denial of Service attack as a key part of a broader attack strategy.</description>
+    </item>
+    
+    <item>
+      <title>Mid-Semester Exam: 2015s2</title>
+      <link>/post/midsem-2015s2/</link>
+      <pubDate>Fri, 05 Jul 2019 18:16:25 +1000</pubDate>
+      
+      <guid>/post/midsem-2015s2/</guid>
+      <description>Question 0 Which of the below best describes the concept of a NONCE?</description>
+    </item>
     
     <item>
       <title>Lab 5</title>
@@ -351,7 +423,7 @@
       <pubDate>Sat, 15 Jun 2019 15:43:30 +1000</pubDate>
       
       <guid>/post/something-awesome-dev-protocol/</guid>
-      <description>Connection Connection to Host  Client sends hello to host  If bad auth, return r_hello::false Establish connection, return r_hello::true  Every interval, client sends keepAlive to host Client sends command to host  Host returns command   Relay The relay server does not exchange party connection details unless a connection is authorised.</description>
+      <description>Connection Connection to Host  Client sends hello::{id:.</description>
     </item>
     
     <item>

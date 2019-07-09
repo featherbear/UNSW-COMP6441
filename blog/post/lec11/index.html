@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Something Awesome: Protocol Specification - COMP6441 Musings</title>
+  <title>Lecture 11 - COMP6441 Musings</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="z5206677" /><meta name="description" content="Connection Connection to Host  Client sends hello::{id:." /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="z5206677" /><meta name="description" content="Initialisation Vectors (IV) IVs are the so called &amp;lsquo;seed&amp;rsquo; for an algorithm to start" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
 
 
-<link rel="canonical" href="../../post/something-awesome-dev-protocol/" />
+<link rel="canonical" href="../../post/lec11/" />
 <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
@@ -38,27 +38,27 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Something Awesome: Protocol Specification" />
-<meta property="og:description" content="Connection Connection to Host  Client sends hello::{id:." />
+<meta property="og:title" content="Lecture 11" />
+<meta property="og:description" content="Initialisation Vectors (IV) IVs are the so called &lsquo;seed&rsquo; for an algorithm to start" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/something-awesome-dev-protocol/" />
-<meta property="article:published_time" content="2019-06-15T15:43:30&#43;10:00"/>
-<meta property="article:modified_time" content="2019-06-15T15:43:30&#43;10:00"/>
+<meta property="og:url" content="/post/lec11/" />
+<meta property="article:published_time" content="2019-07-09T10:30:21&#43;10:00"/>
+<meta property="article:modified_time" content="2019-07-09T10:30:21&#43;10:00"/>
 
-<meta itemprop="name" content="Something Awesome: Protocol Specification">
-<meta itemprop="description" content="Connection Connection to Host  Client sends hello::{id:.">
+<meta itemprop="name" content="Lecture 11">
+<meta itemprop="description" content="Initialisation Vectors (IV) IVs are the so called &lsquo;seed&rsquo; for an algorithm to start">
 
 
-<meta itemprop="datePublished" content="2019-06-15T15:43:30&#43;10:00" />
-<meta itemprop="dateModified" content="2019-06-15T15:43:30&#43;10:00" />
-<meta itemprop="wordCount" content="300">
+<meta itemprop="datePublished" content="2019-07-09T10:30:21&#43;10:00" />
+<meta itemprop="dateModified" content="2019-07-09T10:30:21&#43;10:00" />
+<meta itemprop="wordCount" content="355">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Something Awesome: Protocol Specification"/>
-<meta name="twitter:description" content="Connection Connection to Host  Client sends hello::{id:."/>
+<meta name="twitter:title" content="Lecture 11"/>
+<meta name="twitter:description" content="Initialisation Vectors (IV) IVs are the so called &lsquo;seed&rsquo; for an algorithm to start"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -117,13 +117,12 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Something Awesome: Protocol Specification</h1>
+      <h1 class="post-title">Lecture 11</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2019-06-15 </span>
+        <span class="post-time"> 2019-07-09 </span>
         <div class="post-category">
-            <a href="../../categories/assessments/"> Assessments </a>
-            <a href="../../categories/something-awesome/"> Something Awesome </a>
+            <a href="../../categories/lectures/"> Lectures </a>
             </div>
         
       </div>
@@ -134,17 +133,11 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#connection">Connection</a>
-<ul>
-<li><a href="#connection-to-host">Connection to Host</a></li>
-<li><a href="#relay">Relay</a></li>
-</ul></li>
-<li><a href="#messages">Messages</a>
-<ul>
-<li><a href="#connection-messages">Connection Messages</a></li>
-<li><a href="#control-messages">Control Messages</a></li>
-<li><a href="#data-messages-response">Data Messages (Response)</a></li>
-</ul></li>
+<li><a href="#initialisation-vectors-iv">Initialisation Vectors (IV)</a></li>
+<li><a href="#data-and-control">Data and Control</a></li>
+<li><a href="#buffer-overflows">Buffer Overflows</a></li>
+<li><a href="#proof-of-work">Proof of Work</a></li>
+<li><a href="#moore-s-law">Moore&rsquo;s Law</a></li>
 </ul>
 </nav>
   </div>
@@ -152,143 +145,104 @@
     <div class="post-content">
       
 
-<h1 id="connection">Connection</h1>
+<h1 id="initialisation-vectors-iv">Initialisation Vectors (IV)</h1>
 
-<h2 id="connection-to-host">Connection to Host</h2>
+<p>IVs are the so called &lsquo;seed&rsquo; for an algorithm to start</p>
 
-<ul>
-<li>Client sends <code>hello</code>::<code>{id:...,key:...}</code> (TCP) to host
+<p>&ndash;&gt; What&rsquo;s wrong with <a href="../wired-equivalent-privacy">WEP</a>: The IV can be discovered</p>
 
-<ul>
-<li>If bad auth, return <code>r_hello</code>::<code>{status:false,attempts:...}</code> (TCP)</li>
-<li>Establish connection, return <code>r_hello</code>::<code>{status:true,udp_port:...}</code></li>
-<li>Client sends <code>hello</code>::<code>{id:...}</code> (UDP) to host</li>
-<li>Host registers client&rsquo;s address</li>
-</ul></li>
-<li>Every interval, client sends <code>keepAlive</code> (UDP) to host</li>
-<li>Client sends command to host
+<p>Seed: 40bit key + 24bit rng (IV) =&gt; 64 bit</p>
+
+<p>Collision after sqrt(2^24) = 2^12</p>
+
+<p>Keys vs Passwords (?):</p>
 
 <ul>
-<li>Host returns command</li>
-</ul></li>
+<li>Keys (in) bits of security</li>
+<li>Password (in) bits of data</li>
 </ul>
 
-<h2 id="relay">Relay</h2>
+<hr />
 
-<p>The relay server does not exchange party connection details unless a connection is authorised.<br />
-The relay server only keeps a record of the host&rsquo;s details in memory.</p>
+<p>In a 10 character long password, there are 80 bits of data.<br />
+But not all of these bits can be considered for security</p>
 
-<ul>
-<li>Client sends <code>hello</code> to relay
+<p>In ASCII, the first bit always 1.<br />
+ASCII letters only up to around 119</p>
 
-<ul>
-<li>If no ID, return <code>r_hello</code>::false</li>
-<li>Relay sends <code>hello</code> to host</li>
-<li>If bad auth, return <code>r_hello</code>::false</li>
-<li>Exchange connection details</li>
-</ul></li>
-<li>Every interval, host sends <code>poll</code> to relay</li>
-<li>Every interval, client sends <code>list</code> to relay
+<p>Maybe only 10 * 7 bits</p>
 
-<ul>
-<li>Relay returns <code>r_list</code></li>
-</ul></li>
-</ul>
+<p>If lowercase only, perhaps there are only <code>10 * 5 = 50</code> bits - which is not secure enough.</p>
 
-<h1 id="messages">Messages</h1>
+<hr />
 
-<h2 id="connection-messages">Connection Messages</h2>
+<h1 id="data-and-control">Data and Control</h1>
 
-<ul>
-<li><p><code>keepalive</code><br />
-Description: A periodic &ldquo;Keep Alive&rdquo; message. No reply<br />
-Source: Client<br />
-Destination: Host</p></li>
+<blockquote>
+<p><strong>Post Office Analogy</strong><br />
+Posting the purchasable items in the post office to yourself to avoid having to pay for each item.<br />
+&nbsp;<br />
+Are the items at the counter for purchase, or for postage?</p>
+</blockquote>
 
-<li><p><code>hello</code><br />
-Description: Connect and authenticate to a relay / host<br />
-Data: id, key
-Source: Client / Relay<br />
-Destination: Relay / Host</p></li>
+<p><a href="../wired-equivalent-privacy">WEP</a> - Data and Control mixed</p>
 
-<li><p><code>list</code><br />
-Description: Request the computers connected to the relay<br />
-Source: Client<br />
-Destination: Relay</p></li>
+<h1 id="buffer-overflows">Buffer Overflows</h1>
 
-<li><p><code>poll</code><br />
-Description: Broadcast presence to a relay server. Latency also recorded by the relay server. No reply<br />
-Data: Public IP, Computer Name, MAC Address, RAM, CPU<br />
-Source: Host<br />
-Destination: Relay</p></li>
-</ul>
+<p>Ignoring multithreading and multiple cores, the &lsquo;parallel experience&rsquo; we see is rapid context switching</p>
 
-<h2 id="control-messages">Control Messages</h2>
+<p>Program interrupts add their task to the stack (including data as well as control information), and the stack pointer moves to the newest frame to run. When the frame is popped, the top of the stack needs to be &lsquo;reminded&rsquo; of their state.</p>
 
-<ul>
-<li><p><code>display_setup</code><br />
-Description: Configuration for the display stream</p></li>
+<p>The stack is stored backwards, meaning that the next item in the stack has a memory address <strong>earlier</strong> than the previous stack address</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># | Memory ===&gt;
+--|------------
+1 | [A]
+2 | [B][A]
+3 | [C][B][A]  </pre></td></tr></table>
+</div>
+</div>
+<p>If you write more data into <code>C</code> than the length, it will spill into <code>B</code>.<br />
+i.e <code>3 | [C][C][A]</code></p>
 
-<li><p><code>screenshot</code><br />
-Description: Take a screenshot of the host&rsquo;s display</p></li>
+<p>We could override the control data, which could change what the next step for the previous frame is.</p>
 
-<li><p><code>control_setup</code><br />
-Description: Configuration for keyboard/mouse input</p></li>
+<h1 id="proof-of-work">Proof of Work</h1>
 
-<li><p><code>control</code><br />
-Description: Input data for keyboard/mouse input</p></li>
+<blockquote>
+<p>See more about <a href="../cryptocurrency">Cryptocurrency</a></p>
+</blockquote>
 
-<li><p><code>keylog_setup</code><br />
-Description: Configuration for keyboard logging</p></li>
+<p>A lot of work needed to compute and prove legitimacy</p>
 
-<li><p><code>webcam_setup</code><br />
-Description: Configuration for webcam control</p></li>
+<p>Whoever has the longest chain is considered to be the validated chain</p>
 
-<li><p><code>restart</code><br />
-Description: Reboot the host machine</p></li>
+<p>If you were to falsify one of the previous ledgers, you&rsquo;ll need to race ahead to also falsify the next ones</p>
 
-<li><p><code>shutdown</code><br />
-Description: Shutdown the host machine</p></li>
+<h1 id="moore-s-law">Moore&rsquo;s Law</h1>
 
-<li><p><code>lock</code><br />
-Description: Lock the host machine</p></li>
-</ul>
-
-<!-- * `shell` / `rce` - Access a shell / terminal (netcat) -->
-
-<h2 id="data-messages-response">Data Messages (Response)</h2>
-
-<ul>
-<li><p><code>r_hello</code>
-Description: Hello response<br />
-Data: true/false<br />
-Source: Host / Relay<br />
-Destination: Relay / Client</p></li>
-
-<li><p><code>r_list</code><br />
-Description: Returns a list of computers connected to the relay<br />
-Data: Object of computers
-Source: Relay<br />
-Destination: Client</p></li>
-
-<li><p><code>r_display</code> - Display stream data</p></li>
-
-<li><p><code>r_screenshot</code> - Screenshot data
-<!-- * `r_shell` --></p></li>
-</ul>
+<p>Transistors double each year, and compute power increases</p>
 
     </div>
 
     <footer class="post-footer">
       
       <nav class="post-nav">
-        <a class="prev" href="../../post/something-awesome-research-transport/">
+        <a class="prev" href="../../post/cryptopals/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Something Awesome: Research - Transport</span>
+            <span class="prev-text nav-default">Cryptopals</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        <a class="next" href="../../post/something-awesome-research-authentication/">
-            <span class="next-text nav-default">Something Awesome: Research - Authentication</span>
+        <a class="next" href="../../post/lec12/">
+            <span class="next-text nav-default">Lecture 12</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>

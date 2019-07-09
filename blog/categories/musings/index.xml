@@ -7,10 +7,46 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Wed, 03 Jul 2019 17:10:07 +1000</lastBuildDate>
+    <lastBuildDate>Fri, 05 Jul 2019 23:38:52 +1000</lastBuildDate>
     
 	<atom:link href="/categories/musings/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cryptopals</title>
+      <link>/post/cryptopals/</link>
+      <pubDate>Fri, 05 Jul 2019 23:38:52 +1000</pubDate>
+      
+      <guid>/post/cryptopals/</guid>
+      <description>So I was trying to find substition cipher challenges online, but found myself at cryptopals.</description>
+    </item>
+    
+    <item>
+      <title>Mid-Semester Exam: 2016s1</title>
+      <link>/post/midsem-2016s1/</link>
+      <pubDate>Fri, 05 Jul 2019 23:18:26 +1000</pubDate>
+      
+      <guid>/post/midsem-2016s1/</guid>
+      <description>Question 0 (2 Marks)</description>
+    </item>
+    
+    <item>
+      <title>Final Exam: 2016s1</title>
+      <link>/post/final-2016s1/</link>
+      <pubDate>Fri, 05 Jul 2019 22:12:41 +1000</pubDate>
+      
+      <guid>/post/final-2016s1/</guid>
+      <description>Question 0 Give a specific example demonstrating an attacker using a Denial of Service attack as a key part of a broader attack strategy.</description>
+    </item>
+    
+    <item>
+      <title>Mid-Semester Exam: 2015s2</title>
+      <link>/post/midsem-2015s2/</link>
+      <pubDate>Fri, 05 Jul 2019 18:16:25 +1000</pubDate>
+      
+      <guid>/post/midsem-2015s2/</guid>
+      <description>Question 0 Which of the below best describes the concept of a NONCE?</description>
+    </item>
     
     <item>
       <title>Lightning Talk: HTTP(S) Security</title>

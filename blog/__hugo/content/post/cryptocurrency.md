@@ -19,6 +19,7 @@ sequenceDiagrams:
 # Cryptocurrency
 
 > Consider buying a product with your debit/credit card...
+
 * The customer would first tap their card on the EFTPOS terminal.  
 * Their card information and transaction data would then be transmitted to a _payment gateway_ which would validate and handle the transaction.  
 * The money then gets transferred to the seller

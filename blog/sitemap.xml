@@ -17,6 +17,13 @@
   </url>
   
   <url>
+    <loc>/post/job-application/</loc>
+    <lastmod>2019-07-13T20:48:05+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/job-application/organisation/</loc>
     <lastmod>2019-07-13T20:48:05+10:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -648,7 +655,7 @@
   
   <url>
     <loc>/categories/assessments/</loc>
-    <lastmod>2019-06-22T14:12:33+10:00</lastmod>
+    <lastmod>2019-07-13T20:48:05+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -669,7 +676,7 @@
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2019-06-22T14:12:33+10:00</lastmod>
+    <lastmod>2019-07-13T20:48:05+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

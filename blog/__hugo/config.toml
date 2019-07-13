@@ -35,6 +35,11 @@ copyright = "Andrew Wong (z5206677)"
   weight = 10
   identifier = "home"
   url = "/"
+[[menu.main]]             # config your menu              # 配置目录
+  name = "Job Application"
+  weight = 20
+  identifier = "home"
+  url = "/post/job-application"
 [[menu.main]]
   name = "Categories"
   weight = 40

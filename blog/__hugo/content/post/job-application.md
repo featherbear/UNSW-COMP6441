@@ -2,7 +2,6 @@
 title: "Job Application"
 date: 2019-07-13T20:48:05+10:00
 
-draft: true
 categories: ["Assessments"]
 hiddenFromHomePage: false
 postMetaInFooter: false

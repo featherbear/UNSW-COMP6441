@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Sat, 13 Jul 2019 19:10:31 +1000</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jul 2019 19:52:18 +1000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Reflections - Week 6</title>
+      <link>/post/reflections06/</link>
+      <pubDate>Sat, 13 Jul 2019 19:52:18 +1000</pubDate>
+      
+      <guid>/post/reflections06/</guid>
+      <description>Lecture Eleven | Lecture Twelve</description>
+    </item>
+    
+    <item>
+      <title>Reflections - Week 5</title>
+      <link>/post/reflections05/</link>
+      <pubDate>Sat, 13 Jul 2019 19:52:09 +1000</pubDate>
+      
+      <guid>/post/reflections05/</guid>
+      <description>Lecture Nine | Lecture Ten</description>
+    </item>
     
     <item>
       <title>Security Everywhere: DNS over HTTPS</title>
@@ -198,7 +216,7 @@
       <pubDate>Sat, 29 Jun 2019 02:08:51 +1000</pubDate>
       
       <guid>/post/reflections04/</guid>
-      <description>Lectures  I feel like the lectures are abit chaotic.</description>
+      <description>Lecture Seven | Lecture Eight</description>
     </item>
     
     <item>
@@ -261,7 +279,7 @@
       <pubDate>Sun, 23 Jun 2019 11:15:23 +1000</pubDate>
       
       <guid>/post/reflections03/</guid>
-      <description>Lockpicking A group of extended security students presented how to pick locks!</description>
+      <description>Lecture Five | Lecture Six</description>
     </item>
     
     <item>
@@ -432,7 +450,7 @@
       <pubDate>Sun, 16 Jun 2019 17:07:28 +1000</pubDate>
       
       <guid>/post/reflections02/</guid>
-      <description>Often security is thought of as an afterthought, that only after a system has been designed that security implications are considered.</description>
+      <description>Lecture Three | Lecture Four</description>
     </item>
     
     <item>
@@ -747,7 +765,7 @@
       <pubDate>Tue, 04 Jun 2019 14:00:40 +1000</pubDate>
       
       <guid>/post/reflections01/</guid>
-      <description>Imagine having two lectures of the same course, on the same day&amp;hellip; 6 hours apart&amp;hellip; Oh wait.</description>
+      <description>Lecture One | Lecture Two</description>
     </item>
     
     <item>

@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Fri, 21 Jun 2019 11:43:05 +1000</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jul 2019 19:10:31 +1000</lastBuildDate>
     
 	<atom:link href="/categories/security-everywhere/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Security Everywhere: DNS over HTTPS</title>
+      <link>/post/security-everywhere-dns-over-https/</link>
+      <pubDate>Sat, 13 Jul 2019 19:10:31 +1000</pubDate>
+      
+      <guid>/post/security-everywhere-dns-over-https/</guid>
+      <description>Mozilla has &amp;lsquo;recently&amp;rsquo; moved their DNS-over-HTTPS feature from the Testing to Release channel.</description>
+    </item>
     
     <item>
       <title>The Thinning</title>

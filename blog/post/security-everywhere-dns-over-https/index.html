@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Passwords - COMP6441 Musings</title>
+  <title>Security Everywhere: DNS over HTTPS - COMP6441 Musings</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="z5206677" /><meta name="description" content="LET ME INNNNN" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="z5206677" /><meta name="description" content="Mozilla has &amp;lsquo;recently&amp;rsquo; moved their DNS-over-HTTPS feature from the Testing to Release channel." /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
 
 
-<link rel="canonical" href="../../post/passwords/" />
+<link rel="canonical" href="../../post/security-everywhere-dns-over-https/" />
 <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
@@ -38,27 +38,27 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Passwords" />
-<meta property="og:description" content="LET ME INNNNN" />
+<meta property="og:title" content="Security Everywhere: DNS over HTTPS" />
+<meta property="og:description" content="Mozilla has &lsquo;recently&rsquo; moved their DNS-over-HTTPS feature from the Testing to Release channel." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/passwords/" />
-<meta property="article:published_time" content="2019-07-02T00:00:54&#43;10:00"/>
-<meta property="article:modified_time" content="2019-07-02T00:00:54&#43;10:00"/>
+<meta property="og:url" content="/post/security-everywhere-dns-over-https/" />
+<meta property="article:published_time" content="2019-07-13T19:10:31&#43;10:00"/>
+<meta property="article:modified_time" content="2019-07-13T19:10:31&#43;10:00"/>
 
-<meta itemprop="name" content="Passwords">
-<meta itemprop="description" content="LET ME INNNNN">
+<meta itemprop="name" content="Security Everywhere: DNS over HTTPS">
+<meta itemprop="description" content="Mozilla has &lsquo;recently&rsquo; moved their DNS-over-HTTPS feature from the Testing to Release channel.">
 
 
-<meta itemprop="datePublished" content="2019-07-02T00:00:54&#43;10:00" />
-<meta itemprop="dateModified" content="2019-07-02T00:00:54&#43;10:00" />
-<meta itemprop="wordCount" content="329">
+<meta itemprop="datePublished" content="2019-07-13T19:10:31&#43;10:00" />
+<meta itemprop="dateModified" content="2019-07-13T19:10:31&#43;10:00" />
+<meta itemprop="wordCount" content="524">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Passwords"/>
-<meta name="twitter:description" content="LET ME INNNNN"/>
+<meta name="twitter:title" content="Security Everywhere: DNS over HTTPS"/>
+<meta name="twitter:description" content="Mozilla has &lsquo;recently&rsquo; moved their DNS-over-HTTPS feature from the Testing to Release channel."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -117,11 +117,12 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Passwords</h1>
+      <h1 class="post-title">Security Everywhere: DNS over HTTPS</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2019-07-02 </span>
+        <span class="post-time"> 2019-07-13 </span>
         <div class="post-category">
+            <a href="../../categories/security-everywhere/"> Security Everywhere </a>
             <a href="../../categories/musings/"> Musings </a>
             </div>
         
@@ -133,10 +134,14 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#common-passwords">Common passwords</a></li>
-<li><a href="#good-password-practice">Good password practice</a></li>
-<li><a href="#password-managers">Password Managers</a></li>
-<li><a href="#try-it-out">Try it out</a></li>
+<li><a href="#context">Context</a>
+<ul>
+<li><a href="#ip-addresses">IP Addresses</a></li>
+<li><a href="#dns">DNS</a></li>
+</ul></li>
+<li><a href="#the-issue">The Issue</a></li>
+<li><a href="#solutions">Solutions</a></li>
+<li><a href="#dns-over-https">DNS over HTTPS</a></li>
 </ul>
 </nav>
   </div>
@@ -144,95 +149,96 @@
     <div class="post-content">
       
 
-<p><link rel="stylesheet" type="text/css" href="visualiser.min.css" />
-<script defer src="zxcvbn.js"></script>
-<script defer src="visualiser.min.js"></script></p>
+<p>Mozilla has &lsquo;recently&rsquo; moved their DNS-over-HTTPS feature from the Testing to Release channel.</p>
 
-<p>Passwords and PIN codes&hellip;</p>
+<p><strong><em>What does that mean?</em></strong></p>
 
-<p>They&rsquo;re one thing you never disclose to anyone else&hellip; <em>(unless you&rsquo;re <a href="https://www.youtube.com/watch?v=4KwdwBvb4mQ">password close</a> with your buddies)</em></p>
+<p>Firstly let&rsquo;s start from the very basics.</p>
 
-<p>It is the key to open up the doors of your life.<br />
-Your email account, Facebook, your bank account, perhaps your <a href="https://www.youtube.com/watch?v=a6iW-8xPw3k">combination lock</a>.</p>
-
-<p>Yet, despite its importance and so much being at stake when compromised - it&rsquo;s amazing to see how <strong>bad</strong> people&rsquo;s passwords are.</p>
-
-<h1 id="common-passwords">Common passwords</h1>
-
-<ul>
-<li><code>123456</code></li>
-<li><code>password</code></li>
-<li><code>123456789</code></li>
-<li><code>12345678</code></li>
-<li><a href="https://www.youtube.com/watch?v=a6iW-8xPw3k"><code>12345</code></a></li>
-<li><code>111111</code></li>
-<li><code>1234567</code></li>
-<li><code>sunshine</code></li>
-<li><code>qwerty</code></li>
-<li>&hellip;</li>
-</ul>
-
-<p>It&rsquo;s <em>really</em> concerning actually - if you have one of these passwords&hellip;<br />
-<strong>Please change it</strong></p>
-
-<p>With the power of modern day computing, the prevalence of account hijacking has skyrocketed.<br />
-Brute-forcing passwords (though inefficient) is very doable; and with attackers getting craftier, we need to be smarter and more aware.</p>
-
-<h1 id="good-password-practice">Good password practice</h1>
-
-<ul>
-<li>Don&rsquo;t use words</li>
-<li><em>Or</em>, use lots of words.</li>
-<li>Use a combination of lowercase, uppercase, numerical and symbol characters</li>
-<li>The longer the better</li>
-<li>Don&rsquo;t use the same password twice</li>
-</ul>
+<h1 id="context">Context</h1>
 
 <blockquote>
-<p><em>&ldquo;But, but, but&hellip; I can&rsquo;t remember so many passwords :c&rdquo;</em></p>
+<p>When you type <code>google.com</code> into your web browser, you see the Google search page!<br />
+But in the background, your computer has contacted some <em>DNS server</em> to query the <em>IP address</em> for that <em>hostname</em>.</p>
 </blockquote>
 
-<p>You don&rsquo;t have to then.</p>
+<h2 id="ip-addresses">IP Addresses</h2>
 
-<h1 id="password-managers">Password Managers</h1>
+<p>Computers on a network are accessible by what&rsquo;s known as an IP address.<br />
+For example, your computer at home might have the IP address <code>192.168.1.114</code>. This is called your <strong>LAN IP address</strong> (LAN for <em>Local</em> Area Network).<br />
+If you&rsquo;re connected to the internet, you&rsquo;d also have another IP, called your WAN IP address (WAN for <em>Wide</em> Area Network).</p>
 
-<p><strong>Password managers</strong> securely store the credentials of your accounts, allowing you to generate arbitrarily long and strong passwords without needing to remember them!<br />
-You only need to remember one password (known as the <em>master password</em>), which will give you access to all of your other credentials. Some password manager programs automatically fill in your account details into known websites - which can be really handy!
-I personally use <a href="https://keepass.info/">KeePass</a>, as I have a bit of a concern with online password manager services.</p>
+<p>Regardless, these address allow another computer to contact your computer.</p>
 
-<p>On the topic of passwords, if you <strong>forget your password</strong> you often go through a password reset procedure where you verify the ownership of the account by either answering some security questions, or by opening a link sent to your associated email address.<br />
-<em>Also you better hope that the <a href="https://featherbear.github.io/UNSW-COMP6441/blog/post/openlearning-security/">password reset functionality works</a></em>.</p>
+<p>Consequently, each website also has its own WAN IP address that we can go to in order to see the webpage.</p>
 
-<h1 id="try-it-out">Try it out</h1>
+<p>For example, (one of) Google&rsquo;s IP is <a href="http://216.58.199.46"><code>216.58.199.46</code></a>.<br />
+And one of Facebook&rsquo;s IP is <a href="http://157.240.8.35"><code>157.240.8.3</code></a>.</p>
+
+<p>But it&rsquo;s not that easy to remember a specific IP address for each website that you want to visit - so that&rsquo;s why we have DNS!</p>
+
+<h2 id="dns">DNS</h2>
+
+<p>DNS stands for Domin Name System - and is the technology that allows you to type <code>google.com</code> into your browser, and see the page.</p>
+
+<p>What a DNS server does is return an IP address from a requested hostname.<br />
+<em>In other words,</em> if you request <code>google.com</code> it will return (in computer terms, &lsquo;resolve&rsquo;) the IP address <code>216.58.199.46</code>.</p>
+
+<h1 id="the-issue">The Issue</h1>
+
+<p>When you enter a website address into the browser, (if it has not already been visited) your computer will send a DNS query over the network and wait for a DNS server to return a resolved IP.</p>
+
+<p>There are two issues here.</p>
+
+<p><strong>1) Anyone can see the DNS request</strong><br />
+If you&rsquo;re visiting some dodgy website, <em>anyone</em> on your network will be able to tell that you&rsquo;ve tried to visit that site.<br />
+<em>Oh, and incognito won&rsquo;t help cover your tracks!</em></p>
+
+<p><strong>2) Anyone can reply to the DNS request</strong><br />
+In fact this is common in MITM attacks, and is known as &ldquo;DNS Spoofing&rdquo;.<br />
+Anyone - including a malicious person - could craft a reply that says that <code>google.com</code> goes to <em>any</em> address they choose.</p>
+
+<p>These two issues are quite big concerns.<br />
+With the premise of &lsquo;anti-terrorism&rsquo; amongst other things, some governments may wish to censor and/or track your internet activity.</p>
+
+<p>But down to censorship and up for anonymity!??</p>
+
+<h1 id="solutions">Solutions</h1>
 
 <blockquote>
-<p>More of a visual learner? Perhaps try out the password strength visualiser below<a href="https://github.com/codrops/PasswordStrengthVisualization/">!</a></p>
+<p>In light of this post, I won&rsquo;t be talking about circumventing sites that are blocked on an IP level (<em>Your ISP could blacklist certain websites, so even if you memorise the IP address, it wouldn&rsquo;t do.</em>), but rather focus on just DNS resolution</p>
 </blockquote>
 
-<div class="passwordInput-wrap">
-  <input class="passwordInput" type="text" name="password" id="password" placeholder="> Test your password here! <">
-  <p class="passwordStrength" id="strength-output"></p>
-</div>
+<p>There are several ways that you could hide your DNS request traces.</p>
 
-<div class="canvas-wrap">
-  <canvas></canvas>
-</div>
+<ul>
+<li>Memorise the IP</li>
+<li>Use a VPN</li>
+<li>Use a Proxy</li>
+<li>DNS over TLS / DNS over HTTPS</li>
+</ul>
+
+<h1 id="dns-over-https">DNS over HTTPS</h1>
+
+<p>DNS-over-HTTPS works by packaging the DNS request (and responses) in a HTTPS packet. The packet then looks just like any other HTTPS packet, and you wouldn&rsquo;t be able to deduce that it was a DNS request.</p>
+
+<p>Supposedly only Firefox has this technology implemented.</p>
+
+<blockquote>
+<p><a href="https://www.cloudflare.com/ssl/encrypted-sni/">https://www.cloudflare.com/ssl/encrypted-sni/</a></p>
+</blockquote>
 
     </div>
 
     <footer class="post-footer">
       
       <nav class="post-nav">
-        <a class="prev" href="../../post/whats-wrong-with-the-code-03/">
+        <a class="prev" href="../../post/one-time-pads/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">What&#39;s Wrong With the Code - 03</span>
+            <span class="prev-text nav-default">One Time Pads</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        <a class="next" href="../../post/lec09/">
-            <span class="next-text nav-default">Lecture 9</span>
-            <span class="next-text nav-mobile">Next</span>
-            <i class="iconfont icon-right"></i>
-          </a>
+        
       </nav>
     </footer>
   </article>

@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-07-09T18:08:32&#43;10:00" />
 <meta itemprop="dateModified" content="2019-07-09T18:08:32&#43;10:00" />
-<meta itemprop="wordCount" content="97">
+<meta itemprop="wordCount" content="263">
 
 
 
@@ -133,6 +133,13 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
 <ul>
+<li><a href="#block-ciphers">Block Ciphers</a>
+<ul>
+<li><a href="#ecb-electronic-codebook">ECB - Electronic Codebook</a></li>
+<li><a href="#cbc-cipher-block-chaining">CBC - Cipher Block Chaining</a></li>
+<li><a href="#cfb-cipher-feedback">CFB - Cipher Feedback</a></li>
+</ul></li>
+<li><a href="#jtag">JTAG</a></li>
 <li><a href="#factors-of-authentication">Factors of Authentication</a></li>
 </ul>
 </nav>
@@ -149,9 +156,38 @@
 
 <hr />
 
-<p>Block<br />
- CBC<br />
- CTR</p>
+<h1 id="block-ciphers">Block Ciphers</h1>
+
+<p>Block ciphers operate on a set size of data rather than on a per-byte basis. If there is not enough data to complete a block, padding is appended to the block.</p>
+
+<h2 id="ecb-electronic-codebook">ECB - Electronic Codebook</h2>
+
+<ul>
+<li>Each block is encrypted/decrypted independently of other blocks</li>
+</ul>
+
+<h2 id="cbc-cipher-block-chaining">CBC - Cipher Block Chaining</h2>
+
+<ul>
+<li>Each block is XOR&rsquo;d with the previous encrypted block before being encrypted itself.<br /></li>
+<li>Cannot be encrypted in parallel</li>
+<li>Requires an IV for the first block</li>
+</ul>
+
+<h2 id="cfb-cipher-feedback">CFB - Cipher Feedback</h2>
+
+<ul>
+<li>IV is encrypted then XOR&rsquo;d with the data to produce the cipher text</li>
+<li>Previous block is encrypted, <strong>and then</strong> XOR&rsquo;d with the data</li>
+<li>For decryption, the IV is encrypted then XOR&rsquo;d with the next block&rsquo;s cipher text (?)</li>
+<li>Cannot be encrypted in parallel</li>
+</ul>
+
+<p>Can (suppoedly) cope with partial data loss (ie transmission error)</p>
+
+<h1 id="jtag">JTAG</h1>
+
+<p>JTAG (Joint (European) Test Access Group) is a hardware interface standard to communicate with the onboard chips on circuit boards. Often used for programming and flashing, but can also be used as a serial console, etc&hellip;</p>
 
 <hr />
 

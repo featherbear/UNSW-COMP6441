@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-07-09T10:30:21&#43;10:00" />
 <meta itemprop="dateModified" content="2019-07-09T10:30:21&#43;10:00" />
-<meta itemprop="wordCount" content="355">
+<meta itemprop="wordCount" content="398">
 
 
 
@@ -149,11 +149,11 @@
 
 <p>IVs are the so called &lsquo;seed&rsquo; for an algorithm to start</p>
 
-<p>&ndash;&gt; What&rsquo;s wrong with <a href="../wired-equivalent-privacy">WEP</a>: The IV can be discovered</p>
+<p>&ndash;&gt; What&rsquo;s wrong with <a href="../lec09">WEP</a>: The IV can be discovered</p>
 
 <p>Seed: 40bit key + 24bit rng (IV) =&gt; 64 bit</p>
 
-<p>Collision after sqrt(2^24) = 2^12</p>
+<p>Collision after <code>sqrt(2^24) = 2^12</code></p>
 
 <p>Keys vs Passwords (?):</p>
 
@@ -167,12 +167,23 @@
 <p>In a 10 character long password, there are 80 bits of data.<br />
 But not all of these bits can be considered for security</p>
 
-<p>In ASCII, the first bit always 1.<br />
-ASCII letters only up to around 119</p>
+<p>In (non-extended) ASCII, the first bit always 0.<br />
+So then, intead of having <code>10 * 8 = 80</code> bits of security, we only really have <code>10 * 7 = 80</code> bits</p>
 
-<p>Maybe only 10 * 7 bits</p>
-
-<p>If lowercase only, perhaps there are only <code>10 * 5 = 50</code> bits - which is not secure enough.</p>
+<p>What about if we only allowed uppercase letters (A-Z)?</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">A 65 `01000001`
+Z 90 `01011010`
+         ^^^^^</pre></td></tr></table>
+</div>
+</div>
+<p>Only five of the bits actually change, the others are always the same. There are only <code>10 * 5 = 50</code> bits of security - which is not very secure these days&hellip;</p>
 
 <hr />
 
@@ -185,7 +196,7 @@ Posting the purchasable items in the post office to yourself to avoid having to 
 Are the items at the counter for purchase, or for postage?</p>
 </blockquote>
 
-<p><a href="../wired-equivalent-privacy">WEP</a> - Data and Control mixed</p>
+<p><a href="../lec09">WEP</a> - Data and Control mixed</p>
 
 <h1 id="buffer-overflows">Buffer Overflows</h1>
 

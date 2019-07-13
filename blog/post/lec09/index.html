@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Security Everywhere · COMP6441 Musings</title>
+  <title>Lecture 9 - COMP6441 Musings</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="z5206677" /><meta name="description" content="Musings of a COMP6441 student" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="z5206677" /><meta name="description" content="Don&amp;rsquo;t write your own cryptographic algorithm." /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,9 +26,7 @@
 <meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
 
 
-<link rel="canonical" href="../../categories/security-everywhere/" />
-  <link href="../../categories/security-everywhere/index.xml" rel="alternate" type="application/rss+xml" title="COMP6441 Musings" />
-  <link href="../../categories/security-everywhere/index.xml" rel="feed" type="application/rss+xml" title="COMP6441 Musings" />
+<link rel="canonical" href="../../post/lec09/" />
 <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
@@ -40,19 +38,27 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Security Everywhere" />
-<meta property="og:description" content="Musings of a COMP6441 student" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/categories/security-everywhere/" />
+<meta property="og:title" content="Lecture 9" />
+<meta property="og:description" content="Don&rsquo;t write your own cryptographic algorithm." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/lec09/" />
+<meta property="article:published_time" content="2019-07-02T11:22:59&#43;10:00"/>
+<meta property="article:modified_time" content="2019-07-02T11:22:59&#43;10:00"/>
 
-<meta property="og:updated_time" content="2019-07-13T19:10:31&#43;10:00"/>
+<meta itemprop="name" content="Lecture 9">
+<meta itemprop="description" content="Don&rsquo;t write your own cryptographic algorithm.">
 
-<meta itemprop="name" content="Security Everywhere">
-<meta itemprop="description" content="Musings of a COMP6441 student">
 
+<meta itemprop="datePublished" content="2019-07-02T11:22:59&#43;10:00" />
+<meta itemprop="dateModified" content="2019-07-02T11:22:59&#43;10:00" />
+<meta itemprop="wordCount" content="212">
+
+
+
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Security Everywhere"/>
-<meta name="twitter:description" content="Musings of a COMP6441 student"/>
+<meta name="twitter:title" content="Lecture 9"/>
+<meta name="twitter:description" content="Don&rsquo;t write your own cryptographic algorithm."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -108,63 +114,85 @@
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          <section id="archive" class="archive">
-  <div class="archive-title category">
-        <h2 class="archive-name">Security Everywhere</h2>
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Lecture 9</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-07-02 </span>
+        <div class="post-category">
+            <a href="../../categories/lectures/"> Lectures </a>
+            </div>
+        
       </div>
+    </header>
 
-  <div class="archive-post">
-      <span class="archive-post-time">
-        2019-07-13
-      </span>
-      <span class="archive-post-title">
-        <a href="../../post/security-everywhere-dns-over-https/" class="archive-post-link">
-          Security Everywhere: DNS over HTTPS
-        </a>
-      </span>
-    </div><div class="archive-post">
-      <span class="archive-post-time">
-        2019-06-21
-      </span>
-      <span class="archive-post-title">
-        <a href="../../post/the-thinning/" class="archive-post-link">
-          The Thinning
-        </a>
-      </span>
-    </div><div class="archive-post">
-      <span class="archive-post-time">
-        2019-06-20
-      </span>
-      <span class="archive-post-title">
-        <a href="../../post/security-everywhere-google-calendar-outage/" class="archive-post-link">
-          Security Everywhere: Google Calendar Outage
-        </a>
-      </span>
-    </div><div class="archive-post">
-      <span class="archive-post-time">
-        2019-06-13
-      </span>
-      <span class="archive-post-title">
-        <a href="../../post/security-everywhere-jb-hifi-bing-lee-raids/" class="archive-post-link">
-          Security Everywhere: JB Hi-Fi &amp; Bing Lee Raids
-        </a>
-      </span>
-    </div><div class="archive-post">
-      <span class="archive-post-time">
-        2019-06-06
-      </span>
-      <span class="archive-post-title">
-        <a href="../../post/security-everywhere-anu-data-breach/" class="archive-post-link">
-          Security Everywhere: ANU Data Breach
-        </a>
-      </span>
-    </div>
-</section>
-
-<nav class="pagination">
-  
-  
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#wired-equivalent-privacy">Wired Equivalent Privacy</a>
+<ul>
+<li><a href="#mixing-data-and-control">Mixing data and control</a></li>
+</ul></li>
+<li><a href="#read-more">Read more</a></li>
+</ul>
 </nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<ul>
+<li>Don&rsquo;t write your own cryptographic algorithm.</li>
+</ul>
+
+<h1 id="wired-equivalent-privacy">Wired Equivalent Privacy</h1>
+
+<p>WEP was a very flawed technology that was once used to encrypt and secure wireless network traffic. Since then, newer technologies like WPA2 (and soon WPA3) have been released, and is urged to use.</p>
+
+<p>The payload data was encrypted by performing an XOR against an RC4 stream cipher.<br />
+Whilst the concept of XOR&rsquo;ing data was not the reason that WEP was vulnerable - the way that it was implemented was the reason for its downfall.</p>
+
+<p>By capturing enough broadcasted network packets, the IVs could be discovered; rendering the &lsquo;unknown&rsquo; sequence of RC4 bytes <a href="https://en.wikipedia.org/wiki/Stream_cipher_attacks">determinable</a>. With the sequence of bytes XOR&rsquo;d against known, it was easy to decrypt the original data.
+<em>Two values that have been XORed by a third value can be XORed together to recover that third value.</em></p>
+
+<h2 id="mixing-data-and-control">Mixing data and control</h2>
+
+<p>Having the payload data and control data sent in the same stream is dangerous, as modification to the control data (such as the destination address) may lead to sensitive information being sent to unintended parties.</p>
+
+<p>This is something that WEP is also vulnerable to.<br />
+By modifying the destination address in a TCP/IP packet, the access point would naively transmit the information directly to you.</p>
+
+<h1 id="read-more">Read more</h1>
+
+<ul>
+<li><a href="http://www.opus1.com/www/whitepapers/whatswrongwithwep.pdf">http://www.opus1.com/www/whitepapers/whatswrongwithwep.pdf</a><br /></li>
+<li><a href="https://www.oreilly.com/library/view/80211-security/0596002904/ch01s07.html">https://www.oreilly.com/library/view/80211-security/0596002904/ch01s07.html</a></li>
+<li><a href="https://www.paladion.net/blogs/wireless-security-how-wep-works">https://www.paladion.net/blogs/wireless-security-how-wep-works</a></li>
+<li><a href="https://www.paladion.net/blogs/wireless-security-cracking-wep">https://www.paladion.net/blogs/wireless-security-cracking-wep</a></li>
+</ul>
+
+    </div>
+
+    <footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="../../post/passwords/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Passwords</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="../../post/lec10/">
+            <span class="next-text nav-default">Lecture 10</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
         </div>
         
 

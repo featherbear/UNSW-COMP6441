@@ -40,6 +40,15 @@
     </item>
     
     <item>
+      <title>Lecture 9</title>
+      <link>/post/lec09/</link>
+      <pubDate>Tue, 02 Jul 2019 11:22:59 +1000</pubDate>
+      
+      <guid>/post/lec09/</guid>
+      <description>Don&amp;rsquo;t write your own cryptographic algorithm.</description>
+    </item>
+    
+    <item>
       <title>Lecture 8</title>
       <link>/post/lec08/</link>
       <pubDate>Tue, 25 Jun 2019 18:05:44 +1000</pubDate>

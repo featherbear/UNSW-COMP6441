@@ -7,10 +7,55 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Tue, 09 Jul 2019 18:39:34 +1000</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jul 2019 19:10:31 +1000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Security Everywhere: DNS over HTTPS</title>
+      <link>/post/security-everywhere-dns-over-https/</link>
+      <pubDate>Sat, 13 Jul 2019 19:10:31 +1000</pubDate>
+      
+      <guid>/post/security-everywhere-dns-over-https/</guid>
+      <description>Mozilla has &amp;lsquo;recently&amp;rsquo; moved their DNS-over-HTTPS feature from the Testing to Release channel.</description>
+    </item>
+    
+    <item>
+      <title>One Time Pads</title>
+      <link>/post/one-time-pads/</link>
+      <pubDate>Sat, 13 Jul 2019 16:40:11 +1000</pubDate>
+      
+      <guid>/post/one-time-pads/</guid>
+      <description>From what I understood, one time pads would be used with XOR - but looks like it&amp;rsquo;s actually just a Caesar / ROT(ation) on a per-character basis</description>
+    </item>
+    
+    <item>
+      <title>Buffer Overflow - 3</title>
+      <link>/post/buffer-overflow-03/</link>
+      <pubDate>Fri, 12 Jul 2019 03:16:59 +1000</pubDate>
+      
+      <guid>/post/buffer-overflow-03/</guid>
+      <description>This time the code is hidden</description>
+    </item>
+    
+    <item>
+      <title>Buffer Overflow - 2</title>
+      <link>/post/buffer-overflow-02/</link>
+      <pubDate>Fri, 12 Jul 2019 03:00:39 +1000</pubDate>
+      
+      <guid>/post/buffer-overflow-02/</guid>
+      <description>Code 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31  #include &amp;lt;stdio.</description>
+    </item>
+    
+    <item>
+      <title>Buffer Overflow - 1</title>
+      <link>/post/buffer-overflow-01/</link>
+      <pubDate>Thu, 11 Jul 2019 16:03:30 +1000</pubDate>
+      
+      <guid>/post/buffer-overflow-01/</guid>
+      <description>The nice course tutors decided to provide us some programs vulnerable to buffer overflow attacks - so let&amp;rsquo;s have a play with them!</description>
+    </item>
     
     <item>
       <title>Cryptocurrency</title>
@@ -18,7 +63,7 @@
       <pubDate>Tue, 09 Jul 2019 18:39:34 +1000</pubDate>
       
       <guid>/post/cryptocurrency/</guid>
-      <description>Cryptocurrency  Consider buying a product with your debit/credit card&amp;hellip;</description>
+      <description>Consider buying a product with your debit/credit card&amp;hellip;</description>
     </item>
     
     <item>
@@ -67,15 +112,6 @@
     </item>
     
     <item>
-      <title>Final Exam: 2016s1</title>
-      <link>/post/final-2016s1/</link>
-      <pubDate>Fri, 05 Jul 2019 22:12:41 +1000</pubDate>
-      
-      <guid>/post/final-2016s1/</guid>
-      <description>Question 0 Give a specific example demonstrating an attacker using a Denial of Service attack as a key part of a broader attack strategy.</description>
-    </item>
-    
-    <item>
       <title>Mid-Semester Exam: 2015s2</title>
       <link>/post/midsem-2015s2/</link>
       <pubDate>Fri, 05 Jul 2019 18:16:25 +1000</pubDate>
@@ -109,6 +145,15 @@
       
       <guid>/post/lec10/</guid>
       <description>Merkle-damgard Construction Used by MD5, SHA-0, SHA-1, SHA-2</description>
+    </item>
+    
+    <item>
+      <title>Lecture 9</title>
+      <link>/post/lec09/</link>
+      <pubDate>Tue, 02 Jul 2019 11:22:59 +1000</pubDate>
+      
+      <guid>/post/lec09/</guid>
+      <description>Don&amp;rsquo;t write your own cryptographic algorithm.</description>
     </item>
     
     <item>

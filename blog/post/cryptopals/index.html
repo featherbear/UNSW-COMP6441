@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Cryptopals - COMP6441 Musings</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="z5206677" /><meta name="description" content="So I was trying to find substition cipher challenges online, but found myself at cryptopals." /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="../../post/cryptopals/" />
+<link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+<link rel="manifest" href="../../manifest.json">
+<link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="../../dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Cryptopals" />
+<meta property="og:description" content="So I was trying to find substition cipher challenges online, but found myself at cryptopals." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/cryptopals/" />
+<meta property="article:published_time" content="2019-07-05T23:38:52&#43;10:00"/>
+<meta property="article:modified_time" content="2019-07-05T23:38:52&#43;10:00"/>
+
+<meta itemprop="name" content="Cryptopals">
+<meta itemprop="description" content="So I was trying to find substition cipher challenges online, but found myself at cryptopals.">
+
+
+<meta itemprop="datePublished" content="2019-07-05T23:38:52&#43;10:00" />
+<meta itemprop="dateModified" content="2019-07-05T23:38:52&#43;10:00" />
+<meta itemprop="wordCount" content="475">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Cryptopals"/>
+<meta name="twitter:description" content="So I was trying to find substition cipher challenges online, but found myself at cryptopals."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="../../" class="logo">COMP6441 Musings</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="../../">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="https://github.com/featherbear/UNSW-COMP6441">
+        <li class="mobile-menu-item">GitHub</li>
+      </a><a href="../../categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="../../" class="logo">COMP6441 Musings</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="../../">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://github.com/featherbear/UNSW-COMP6441">GitHub</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="../../categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Cryptopals</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-07-05 </span>
+        <div class="post-category">
+            <a href="../../categories/musings/"> Musings </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#set-one">Set One</a>
+<ul>
+<li><a href="#convert-hex-to-base64">Convert hex to base64</a></li>
+<li><a href="#fixed-xor">Fixed XOR</a></li>
+<li><a href="#single-byte-xor-cipher">Single-byte XOR cipher</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<p>So I was trying to find substition cipher challenges online, but found myself at <a href="https://cryptopals.com">cryptopals.com</a>.<br />
+Whoops, but might as well <a href="https://cryptopals.com/sets/1">play around</a>!</p>
+
+<p>I&rsquo;ll be using Javascript and/or Python for these challenges.<br />
+Also, instead of writing my code more declarative than imperative, so that I can reuse them later</p>
+
+<h1 id="set-one">Set One</h1>
+
+<h2 id="convert-hex-to-base64">Convert hex to base64</h2>
+
+<blockquote>
+<p>The string: <code>49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d</code>
+Should produce: <code>SSdtIGtpbGxpbmcgeW91ciBicmFpbiBsaWtlIGEgcG9pc29ub3VzIG11c2hyb29t</code></p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">hexToString</span><span class="p">(</span><span class="nb">hex</span><span class="p">):</span>
+  <span class="k">return</span> <span class="nb">bytearray</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="nb">hex</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">stringToB64</span><span class="p">(</span><span class="nb">str</span><span class="p">):</span>
+  <span class="kn">import</span> <span class="nn">base64</span>
+  <span class="k">return</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+
+<span class="k">def</span> <span class="nf">hexToB64</span><span class="p">(</span><span class="nb">hex</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">stringToB64</span><span class="p">(</span><span class="n">hexToString</span><span class="p">(</span><span class="nb">hex</span><span class="p">))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">hexToB64</span><span class="p">(</span><span class="s2">&#34;49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d&#34;</span><span class="p">))</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><strong>Output</strong><br />
+<code>SSdtIGtpbGxpbmcgeW91ciBicmFpbiBsaWtlIGEgcG9pc29ub3VzIG11c2hyb29t</code></p>
+
+<h2 id="fixed-xor">Fixed XOR</h2>
+
+<blockquote>
+<p>Write a function that takes two equal-length buffers and produces their XOR combination.<br />
+If your function works properly, then when you feed it the string: <code>1c0111001f010100061a024b53535009181c</code> and <code>686974207468652062756c6c277320657965</code><br />
+XORing the hex decoded strings should result in <code>746865206b696420646f6e277420706c6179</code></p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">hexToBytes</span><span class="p">(</span><span class="nb">hex</span><span class="p">):</span>
+  <span class="kn">import</span> <span class="nn">binascii</span>
+  <span class="k">return</span> <span class="n">binascii</span><span class="o">.</span><span class="n">unhexlify</span><span class="p">(</span><span class="nb">hex</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">hexStringXOR</span><span class="p">(</span><span class="n">hex1</span><span class="p">,</span> <span class="n">hex2</span><span class="p">):</span>
+  <span class="kn">import</span> <span class="nn">binascii</span>
+
+  <span class="n">str1</span> <span class="o">=</span> <span class="n">hexToBytes</span><span class="p">(</span><span class="n">hex1</span><span class="p">)</span>
+  <span class="n">str2</span> <span class="o">=</span> <span class="n">hexToBytes</span><span class="p">(</span><span class="n">hex2</span><span class="p">)</span>
+  
+  <span class="n">output</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+  
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">str1</span><span class="p">)):</span>
+    <span class="n">output</span> <span class="o">+=</span> <span class="nb">chr</span><span class="p">(</span><span class="n">str1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">^</span> <span class="n">str2</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+  
+  <span class="k">return</span> <span class="n">binascii</span><span class="o">.</span><span class="n">hexlify</span><span class="p">(</span><span class="n">output</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">hexStringXOR</span><span class="p">(</span><span class="s2">&#34;1c0111001f010100061a024b53535009181c&#34;</span><span class="p">,</span> <span class="s2">&#34;686974207468652062756c6c277320657965&#34;</span><span class="p">))</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><strong>Output</strong><br />
+<code>746865206b696420646f6e277420706c6179</code></p>
+
+<h2 id="single-byte-xor-cipher">Single-byte XOR cipher</h2>
+
+<blockquote>
+<p>The hex encoded string: <code>1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736</code> has been XOR&rsquo;d against a single character. Find the key, decrypt the message.<br />
+You can do this by hand. But don&rsquo;t: write code to do it for you.<br />
+How? Devise some method for &ldquo;scoring&rdquo; a piece of English plaintext. Character frequency is a good metric. Evaluate each output and choose the one with the best score.</p>
+</blockquote>
+
+<p>We&rsquo;ll use the most common English letters (in order E T A O I N S H R D L U).</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">hexToBytes</span><span class="p">(</span><span class="nb">hex</span><span class="p">):</span>
+  <span class="kn">import</span> <span class="nn">binascii</span>
+  <span class="k">return</span> <span class="n">binascii</span><span class="o">.</span><span class="n">unhexlify</span><span class="p">(</span><span class="nb">hex</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">hexToString</span><span class="p">(</span><span class="nb">hex</span><span class="p">):</span>
+  <span class="k">return</span> <span class="nb">bytearray</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="nb">hex</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+  
+<span class="k">def</span> <span class="nf">stringToHex</span><span class="p">(</span><span class="nb">str</span><span class="p">):</span>
+  <span class="kn">import</span> <span class="nn">binascii</span>
+  <span class="k">return</span> <span class="n">binascii</span><span class="o">.</span><span class="n">hexlify</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+
+<span class="k">def</span> <span class="nf">hexStringXOR</span><span class="p">(</span><span class="n">hex1</span><span class="p">,</span> <span class="n">hex2</span><span class="p">):</span>
+  <span class="kn">import</span> <span class="nn">binascii</span>
+
+  <span class="n">str1</span> <span class="o">=</span> <span class="n">hexToBytes</span><span class="p">(</span><span class="n">hex1</span><span class="p">)</span>
+  <span class="n">str2</span> <span class="o">=</span> <span class="n">hexToBytes</span><span class="p">(</span><span class="n">hex2</span><span class="p">)</span>
+  
+  <span class="n">output</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+  
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">str1</span><span class="p">)):</span>
+    <span class="n">output</span> <span class="o">+=</span> <span class="nb">chr</span><span class="p">(</span><span class="n">str1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">^</span> <span class="n">str2</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+  
+  <span class="k">return</span> <span class="n">binascii</span><span class="o">.</span><span class="n">hexlify</span><span class="p">(</span><span class="n">output</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+
+<span class="n">inputString</span> <span class="o">=</span> <span class="s2">&#34;1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736&#34;</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="s2">&#34;ABCDEFGIHJKLMNOPQRSTUVWXYZ&#34;</span><span class="p">:</span>
+  <span class="n">XOR_result</span> <span class="o">=</span> <span class="n">hexStringXOR</span><span class="p">(</span><span class="n">inputString</span><span class="p">,</span> <span class="n">stringToHex</span><span class="p">(</span><span class="n">c</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">hexToBytes</span><span class="p">(</span><span class="n">inputString</span><span class="p">))))</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">XOR_result</span><span class="p">,</span> <span class="n">hexToString</span><span class="p">(</span><span class="n">XOR_result</span><span class="p">))</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><strong>Result</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">A 5a76767270777e39545a3e6a397570727c39783969766c777d39767f397b787a7677 Zvvrpw~9TZ&gt;j9upr|9x9ivlw}9v9{xzvw
+B 5975757173747d3a57593d693a7673717f3a7b3a6a756f747e3a757c3a787b797574 Yuuqst}:WY=i:vsq:{:juot~:u|:x{yut
+C 5874747072757c3b56583c683b7772707e3b7a3b6b746e757f3b747d3b797a787475 Xttpru|;VX&lt;h;wrp~;z;ktnu;t};yzxtu
+D 5f73737775727b3c515f3b6f3c707577793c7d3c6c736972783c737a3c7e7d7f7372 _sswur{&lt;Q_;o&lt;puwy&lt;}&lt;lsirx&lt;sz&lt;~}sr
+E 5e72727674737a3d505e3a6e3d717476783d7c3d6d726873793d727b3d7f7c7e7273 ^rrvtsz=P^:n=qtvx=|=mrhsy=r{=|~rs
+F 5d7171757770793e535d396d3e7277757b3e7f3e6e716b707a3e71783e7c7f7d7170 ]qquwpy&gt;S]9m&gt;rwu{&gt;&gt;nqkpz&gt;qx&gt;|}qp
+G 5c7070747671783f525c386c3f7376747a3f7e3f6f706a717b3f70793f7d7e7c7071 \pptvqx?R\8l?svtz?~?opjq{?py?}~|pq
+I 527e7e7a787f76315c523662317d787a74317031617e647f75317e77317370727e7f R~~zxv1\R6b1}xzt1p1a~du1~w1spr~
+H 537f7f7b797e77305d533763307c797b75307130607f657e74307f76307271737f7e S{y~w0]S7c0|y{u0q0`e~t0v0rqs~
+J 517d7d797b7c75325f513561327e7b7977327332627d677c76327d74327073717d7c Q}}y{|u2_Q5a2~{yw2s2b}g|v2}t2psq}|
+K 507c7c787a7d74335e503460337f7a7876337233637c667d77337c75337172707c7d P||xz}t3^P4`3zxv3r3c|f}w3|u3qrp|}
+L 577b7b7f7d7a73345957336734787d7f71347534647b617a70347b72347675777b7a W{{}zs4YW3g4x}q4u4d{azp4{r4vuw{z
+M 567a7a7e7c7b72355856326635797c7e70357435657a607b71357a73357774767a7b Vzz~|{r5XV2f5y|~p5t5ez`{q5zs5wtvz{
+N 5579797d7f7871365b553165367a7f7d733677366679637872367970367477757978 Uyy}xq6[U1e6z}s6w6fycxr6yp6twuyx
+O 5478787c7e7970375a543064377b7e7c723776376778627973377871377576747879 Txx|~yp7ZT0d7{~|r7v7gxbys7xq7uvtxy
+P 4b67676361666f28454b2f7b286461636d28692878677d666c28676e286a696b6766 Kggcafo(EK/{(dacm(i(xg}fl(gn(jikgf
+Q 4a66666260676e29444a2e7a296560626c29682979667c676d29666f296b686a6667 Jffb`gn)DJ.z)e`bl)h)yf|gm)fo)khjfg
+R 4965656163646d2a47492d792a6663616f2a6b2a7a657f646e2a656c2a686b696564 Ieeacdm*GI-y*fcao*k*zedn*el*hkied
+S 4864646062656c2b46482c782b6762606e2b6a2b7b647e656f2b646d2b696a686465 Hdd`bel+FH,x+gb`n+j+{d~eo+dm+ijhde
+T 4f63636765626b2c414f2b7f2c606567692c6d2c7c637962682c636a2c6e6d6f6362 Occgebk,AO+,`egi,m,|cybh,cj,nmocb
+U 4e62626664636a2d404e2a7e2d616466682d6c2d7d627863692d626b2d6f6c6e6263 Nbbfdcj-@N*~-adfh-l-}bxci-bk-olnbc
+V 4d6161656760692e434d297d2e6267656b2e6f2e7e617b606a2e61682e6c6f6d6160 Maaeg`i.CM)}.bgek.o.~a{`j.ah.loma`
+W 4c6060646661682f424c287c2f6366646a2f6e2f7f607a616b2f60692f6d6e6c6061 L``dfah/BL(|/cfdj/n/`zak/`i/mnl`a
+X 436f6f6b696e67204d432773206c696b65206120706f756e64206f66206261636f6e Cooking MC&#39;s like a pound of bacon
+Y 426e6e6a686f66214c422672216d686a64216021716e746f65216e67216360626e6f Bnnjhof!LB&amp;r!mhjd!`!qntoe!ng!c`bno
+Z 416d6d696b6c65224f412571226e6b6967226322726d776c66226d64226063616d6c Ammikle&#34;OA%q&#34;nkig&#34;c&#34;rmwlf&#34;md&#34;`caml</pre></td></tr></table>
+</div>
+</div>
+<p>Our key was &lsquo;X&rsquo; -&gt; <code>X 436f6f6b696e67204d432773206c696b65206120706f756e64206f66206261636f6e Cooking MC's like a pound of bacon</code></p>
+
+    </div>
+
+    <footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="../../post/midsem-2016s1/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Mid-Semester Exam: 2016s1</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="../../post/lec11/">
+            <span class="next-text nav-default">Lecture 11</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:z5206677@student.unsw.edu.au" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.linkedin.com/in/andrewjinmengwong/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/featherbear" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/_andrewjwong/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="../../index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Andrew Wong (z5206677)</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="../../dist/even.26188efa.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-107434487-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

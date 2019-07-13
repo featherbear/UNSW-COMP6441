@@ -20,10 +20,12 @@ sequenceDiagrams:
 
 ## Connection to Host
 
-* Client sends `hello` to host
-  * If bad auth, return `r_hello`::false
-  * Establish connection, return `r_hello`::true
-* Every interval, client sends `keepAlive` to host
+* Client sends `hello`::`{id:...,key:...}` (TCP) to host
+  * If bad auth, return `r_hello`::`{status:false,attempts:...}` (TCP)
+  * Establish connection, return `r_hello`::`{status:true,udp_port:...}`
+  * Client sends `hello`::`{id:...}` (UDP) to host
+    * Host registers client's address
+* Every interval, client sends `keepAlive` (UDP) to host
 * Client sends command to host
   * Host returns command
 
@@ -52,7 +54,7 @@ Destination: Host
 
 * `hello`  
 Description: Connect and authenticate to a relay / host  
-Data: ID, Password / other auth token  
+Data: id, key
 Source: Client / Relay  
 Destination: Relay / Host
 

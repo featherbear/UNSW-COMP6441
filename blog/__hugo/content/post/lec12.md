@@ -22,9 +22,32 @@ sequenceDiagrams:
 
 ---
 
- Block  
- CBC   
- CTR  
+# Block Ciphers
+
+Block ciphers operate on a set size of data rather than on a per-byte basis. If there is not enough data to complete a block, padding is appended to the block.
+
+## ECB - Electronic Codebook 
+
+* Each block is encrypted/decrypted independently of other blocks
+
+## CBC - Cipher Block Chaining
+
+* Each block is XOR'd with the previous encrypted block before being encrypted itself.  
+* Cannot be encrypted in parallel
+* Requires an IV for the first block
+
+## CFB - Cipher Feedback
+
+* IV is encrypted then XOR'd with the data to produce the cipher text
+* Previous block is encrypted, **and then** XOR'd with the data
+* For decryption, the IV is encrypted then XOR'd with the next block's cipher text (?)
+* Cannot be encrypted in parallel
+
+Can (suppoedly) cope with partial data loss (ie transmission error)
+
+# JTAG
+
+JTAG (Joint (European) Test Access Group) is a hardware interface standard to communicate with the onboard chips on circuit boards. Often used for programming and flashing, but can also be used as a serial console, etc...
 
 ---
 

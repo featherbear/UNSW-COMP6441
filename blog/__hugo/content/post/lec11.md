@@ -16,7 +16,7 @@ sequenceDiagrams:
 
 ---
 
-[WEP]: ../wired-equivalent-privacy
+[WEP]: ../lec09
 
 # Initialisation Vectors (IV)
 
@@ -26,7 +26,7 @@ IVs are the so called 'seed' for an algorithm to start
 
 Seed: 40bit key + 24bit rng (IV) => 64 bit
 
-Collision after sqrt(2^24) = 2^12
+Collision after `sqrt(2^24) = 2^12`  
 
 Keys vs Passwords (?):  
 
@@ -38,12 +38,18 @@ Keys vs Passwords (?):
 In a 10 character long password, there are 80 bits of data.  
 But not all of these bits can be considered for security
 
-In ASCII, the first bit always 1.  
-ASCII letters only up to around 119
+In (non-extended) ASCII, the first bit always 0.  
+So then, intead of having `10 * 8 = 80` bits of security, we only really have `10 * 7 = 80` bits
 
-Maybe only 10 * 7 bits
+What about if we only allowed uppercase letters (A-Z)?
 
-If lowercase only, perhaps there are only `10 * 5 = 50` bits - which is not secure enough.
+```
+A 65 `01000001`
+Z 90 `01011010`
+         ^^^^^
+```
+
+Only five of the bits actually change, the others are always the same. There are only `10 * 5 = 50` bits of security - which is not very secure these days...
 
 ---
 

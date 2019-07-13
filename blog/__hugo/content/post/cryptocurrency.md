@@ -16,8 +16,6 @@ sequenceDiagrams:
 
 ---
 
-# Cryptocurrency
-
 > Consider buying a product with your debit/credit card...
 
 * The customer would first tap their card on the EFTPOS terminal.  
@@ -26,7 +24,7 @@ sequenceDiagrams:
 
 With cryptocurrency, the customer and seller have a more direct transaction, 'without' the need for a payment gateway.
 
-## Blockchain and Hashing
+# Blockchain and Hashing
 
 Cryptocurrency is based on the model of blockchains - that is blocks of information chained together (_sorta like a linked list!_).  
 

@@ -18,6 +18,8 @@ sequenceDiagrams:
 
 # Merkle-damgard Construction
 
+![](Merkle-damgard.png)
+
 _Used by MD5, SHA-0, SHA-1, SHA-2_
 
 

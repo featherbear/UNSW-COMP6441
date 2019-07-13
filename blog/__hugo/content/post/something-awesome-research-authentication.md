@@ -34,6 +34,7 @@ We could generate a unique ID for each device; that once added to a connection w
 I would have to somehow check that the device ID hasn't been emulated.
 
 ## One-time password
+
 As an additional layer of security, we could implement a [one-time password](https://featherbear.github.io/blog/post/2fa-one-time-password).  
 Probably not ideal, but it could also be used as the first level of security, and not have a passsword (probably a bad idea).
 

@@ -7,10 +7,55 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Sat, 13 Jul 2019 19:52:18 +1000</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jul 2019 20:48:05 +1000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Analysis</title>
+      <link>/post/job-application/analysis/</link>
+      <pubDate>Sat, 13 Jul 2019 20:48:05 +1000</pubDate>
+      
+      <guid>/post/job-application/analysis/</guid>
+      <description>Go back to overview</description>
+    </item>
+    
+    <item>
+      <title>Community / Professionalism</title>
+      <link>/post/job-application/community_professionalism/</link>
+      <pubDate>Sat, 13 Jul 2019 20:48:05 +1000</pubDate>
+      
+      <guid>/post/job-application/community_professionalism/</guid>
+      <description>Go back to overview</description>
+    </item>
+    
+    <item>
+      <title>Organisation</title>
+      <link>/post/job-application/organisation/</link>
+      <pubDate>Sat, 13 Jul 2019 20:48:05 +1000</pubDate>
+      
+      <guid>/post/job-application/organisation/</guid>
+      <description>Go back to overview</description>
+    </item>
+    
+    <item>
+      <title>Skills</title>
+      <link>/post/job-application/skills/</link>
+      <pubDate>Sat, 13 Jul 2019 20:48:05 +1000</pubDate>
+      
+      <guid>/post/job-application/skills/</guid>
+      <description>Go back to overview</description>
+    </item>
+    
+    <item>
+      <title>Something Awesome</title>
+      <link>/post/job-application/something_awesome/</link>
+      <pubDate>Sat, 13 Jul 2019 20:48:05 +1000</pubDate>
+      
+      <guid>/post/job-application/something_awesome/</guid>
+      <description>Go back to overview</description>
+    </item>
     
     <item>
       <title>Reflections - Week 6</title>
@@ -234,7 +279,7 @@
       <pubDate>Fri, 28 Jun 2019 20:11:22 +1000</pubDate>
       
       <guid>/post/weakness-of-the-week-04/</guid>
-      <description>&amp;ldquo;I donno wat I stay doing.</description>
+      <description>Moral Hazards  &amp;ldquo;I donno wat I stay doing.</description>
     </item>
     
     <item>
@@ -252,7 +297,7 @@
       <pubDate>Tue, 25 Jun 2019 18:06:26 +1000</pubDate>
       
       <guid>/post/social-engineering/</guid>
-      <description>What is social engineering  The art of learning and lying Targets both physical and digital security Psychological attack Phishing, ransomware, baiting  Stage 1) Investigation/Recon 2) Hook - approach 3) Play - game on 4) Exit - lolkbyeee?</description>
+      <description>What is social engineering  The art of learning and lying Targets both physical and digital security Psychological attack Phishing, ransomware, baiting  Stage 1) Investigation/Recon</description>
     </item>
     
     <item>
@@ -342,7 +387,7 @@
       <pubDate>Tue, 18 Jun 2019 18:45:41 +1000</pubDate>
       
       <guid>/post/weakness-of-the-week-03/</guid>
-      <description>Corruption.</description>
+      <description>Corruption Ah, where to start.</description>
     </item>
     
     <item>

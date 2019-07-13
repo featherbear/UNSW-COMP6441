@@ -16,6 +16,10 @@ sequenceDiagrams:
 
 ---
 
+> [Lecture One](../lec01) | [Lecture Two](../lec02)
+
+
+
 > Imagine having two lectures of the same course, on the same day... 6 hours apart... Oh wait.
 
 When you sit on a chair, how do you know it won't fall?

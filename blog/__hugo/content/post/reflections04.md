@@ -16,6 +16,8 @@ sequenceDiagrams:
 
 ---
 
+> [Lecture Seven](../lec07) | [Lecture Eight](../lec08)
+
 > # Lectures
 
 I feel like the lectures are abit chaotic.

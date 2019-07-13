@@ -16,6 +16,8 @@ sequenceDiagrams:
 
 ---
 
+> [Lecture Three](../lec03) | [Lecture Four](../lec04)
+
 > Often security is thought of as an afterthought, that only _after_ a system has been designed that security implications are considered.  
 But to turn that on its head, security should be the forethought - that is _security by design_ - Where a system is designed with its security implications considered at every process.  
 &nbsp;  

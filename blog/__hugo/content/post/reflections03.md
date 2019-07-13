@@ -16,6 +16,8 @@ sequenceDiagrams:
 
 ---
 
+> [Lecture Five](../lec05) | [Lecture Six](../lec06)
+
 # Lockpicking
 
 A group of extended security students presented how to [pick locks](../attacking-locks)!  

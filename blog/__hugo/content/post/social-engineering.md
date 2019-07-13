@@ -26,10 +26,10 @@ sequenceDiagrams:
 
 # Stage
 
-1) Investigation/Recon
-2) Hook - approach
-3) Play - game on
-4) Exit - lolkbyeee?
+1) Investigation/Recon  
+2) Hook - approach  
+3) Play - game on  
+4) Exit - lolkbyeee?  
 
 # Role of a social engineer
 

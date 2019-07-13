@@ -86,10 +86,3 @@ He subjected her to many different tests, and had vouched that he had witnessed 
 One of the biggest shocks in her peak, was during a seance where she was demonstrating the presence of her late brother in the room, who was to then imprint his fingerprint in slab of wax. The fingerprint did not match anyone within the room  but it was eventually revealed when the fingerprint was matched against the local dentist.
 
 Her supposed fraudulency nearly ended the credibility of the American paranormal research. While there were some unexplainable activities, it is hard to separate the truth from the pretence.
-
-
-# A look at [The Medium and the Magician]
--
-
-
-

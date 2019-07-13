@@ -18,11 +18,15 @@ sequenceDiagrams:
 
 > [Lecture Three](../lec03) | [Lecture Four](../lec04)
 
-> Often security is thought of as an afterthought, that only _after_ a system has been designed that security implications are considered.  
+---
+
+Often security is thought of as an afterthought, that only _after_ a system has been designed that security implications are considered.  
 But to turn that on its head, security should be the forethought - that is _security by design_ - Where a system is designed with its security implications considered at every process.  
 &nbsp;  
 Though I can also see where this may go sour. Like premature optimisation of code, pre-strengthening of a system _could_ be a bad thing.  
 Though that's debatable.
+
+---
 
 This week zoomed into the security of data and information: Who can see it, who can prove it, and what is done with it.
 
@@ -34,6 +38,6 @@ For storage devices, a good idea (on a hard disk) would be to physically punctur
 
 The concept of _work ratio_ was explained, which was a description of how little effort is required to gain authorised access of data, compared to how great of an effort it would be to gain unauthorised access.
 
-This week's case study threw a bit of a curve ball, as the analysis question didn't _at all_ relate to the raedings.  
+This week's case study threw a bit of a curve ball, as the analysis question didn't _at all_ relate to the readings.  
 Groups discussed primedial ways of both protecting data, and validating the integrity of data.
 

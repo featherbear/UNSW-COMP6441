@@ -20,6 +20,8 @@ sequenceDiagrams:
 
 > _"Bet on self interest, it's a horse that's always trying" - Jack Liang_
 
+# Self Interest
+
 You know self-interest. It's that plague in you.  
 That tiny voice that's always talking to you..
 

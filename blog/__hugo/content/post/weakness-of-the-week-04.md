@@ -18,6 +18,8 @@ sequenceDiagrams:
 
 ---
 
+# Moral Hazards
+
 > "I donno wat I stay doing. Cuz, eh, I no do da tings I like do. I do da tings dat I no like." - Pidgin
 
 Excuse the echolalia and polemics, but mind over matter.  

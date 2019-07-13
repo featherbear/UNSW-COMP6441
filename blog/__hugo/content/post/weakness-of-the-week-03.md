@@ -18,7 +18,7 @@ sequenceDiagrams:
 
 ---
 
-_Corruption_.  
+# Corruption
 
 Ah, where to start.
 

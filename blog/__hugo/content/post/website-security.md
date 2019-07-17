@@ -33,8 +33,8 @@ To logon to a website, session cookies (special browser cookies) are used as cla
 * Inject content
 * Steal cookies
 * Modify DOM
-* $$$
 * ???
+* $$$
 
 ### Methods
 

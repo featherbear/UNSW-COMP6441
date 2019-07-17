@@ -93,6 +93,6 @@ Whoever has the longest chain is considered to be the validated chain
 
 If you were to falsify one of the previous ledgers, you'll need to race ahead to also falsify the next ones 
 
-# Moore's Law
+# Moore&apos;s Law
 
 Transistors double each year, and compute power increases

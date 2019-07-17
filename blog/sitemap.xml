@@ -3,6 +3,69 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/post/crypto-terms/</loc>
+    <lastmod>2019-07-18T00:05:24+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/security-everywhere-whatsapp-telegram-media-file-jacking/</loc>
+    <lastmod>2019-07-17T22:16:45+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/social-engineering-puppylove/</loc>
+    <lastmod>2019-07-17T13:23:34+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/pentesting/</loc>
+    <lastmod>2019-07-16T18:46:41+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/bug-bounties/</loc>
+    <lastmod>2019-07-16T18:16:18+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/mitigating-memory-vulnerabilities/</loc>
+    <lastmod>2019-07-16T16:04:53+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/buffer-overflows/</loc>
+    <lastmod>2019-07-16T15:58:04+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/memory-vulnerabilities/</loc>
+    <lastmod>2019-07-16T14:01:03+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/lec13/</loc>
+    <lastmod>2019-07-16T10:23:33+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/job-application/analysis/</loc>
     <lastmod>2019-07-13T20:48:05+10:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -662,14 +725,14 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-07-13T20:48:05+10:00</lastmod>
+    <lastmod>2019-07-18T00:05:24+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/case-study/</loc>
-    <lastmod>2019-07-03T17:28:31+10:00</lastmod>
+    <lastmod>2019-07-17T22:16:45+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -683,7 +746,7 @@
   
   <url>
     <loc>/categories/extended-security/</loc>
-    <lastmod>2019-07-12T03:16:59+10:00</lastmod>
+    <lastmod>2019-07-16T18:46:41+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -697,21 +760,21 @@
   
   <url>
     <loc>/categories/lectures/</loc>
-    <lastmod>2019-07-09T18:08:32+10:00</lastmod>
+    <lastmod>2019-07-16T10:23:33+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/musings/</loc>
-    <lastmod>2019-07-13T19:10:31+10:00</lastmod>
+    <lastmod>2019-07-18T00:05:24+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-07-13T20:48:05+10:00</lastmod>
+    <lastmod>2019-07-18T00:05:24+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -725,7 +788,7 @@
   
   <url>
     <loc>/categories/security-everywhere/</loc>
-    <lastmod>2019-07-13T19:10:31+10:00</lastmod>
+    <lastmod>2019-07-17T22:16:45+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

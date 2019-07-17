@@ -7,10 +7,55 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Sat, 13 Jul 2019 19:10:31 +1000</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jul 2019 00:05:24 +1000</lastBuildDate>
     
 	<atom:link href="/categories/musings/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Crypto Terms</title>
+      <link>/post/crypto-terms/</link>
+      <pubDate>Thu, 18 Jul 2019 00:05:24 +1000</pubDate>
+      
+      <guid>/post/crypto-terms/</guid>
+      <description>Crypto Terms  Confusion - Each bit of the ciphertext should be produced from a combination of parts from the key.</description>
+    </item>
+    
+    <item>
+      <title>Social Engineering Challenge: Puppy Love</title>
+      <link>/post/social-engineering-puppylove/</link>
+      <pubDate>Wed, 17 Jul 2019 13:23:34 +1000</pubDate>
+      
+      <guid>/post/social-engineering-puppylove/</guid>
+      <description>Activity time - Social engineer two staff members of the ficticious company Puppy Love to retrieve flags!</description>
+    </item>
+    
+    <item>
+      <title>Mitigating Memory Vulnerabilities</title>
+      <link>/post/mitigating-memory-vulnerabilities/</link>
+      <pubDate>Tue, 16 Jul 2019 16:04:53 +1000</pubDate>
+      
+      <guid>/post/mitigating-memory-vulnerabilities/</guid>
+      <description>Mitigation Stack Canaries  In the past, the canary birds were used in the mining industry as an alarm system for if the gas concentration levels were too high underground.</description>
+    </item>
+    
+    <item>
+      <title>Buffer Overflows</title>
+      <link>/post/buffer-overflows/</link>
+      <pubDate>Tue, 16 Jul 2019 15:58:04 +1000</pubDate>
+      
+      <guid>/post/buffer-overflows/</guid>
+      <description>Quick Links</description>
+    </item>
+    
+    <item>
+      <title>Memory Vulnerabilities</title>
+      <link>/post/memory-vulnerabilities/</link>
+      <pubDate>Tue, 16 Jul 2019 14:01:03 +1000</pubDate>
+      
+      <guid>/post/memory-vulnerabilities/</guid>
+      <description>The Toolkit - Attack Techniques Buffer Overflows Buffer overflow attacks allow data to be written outside of their allocated memory space</description>
+    </item>
     
     <item>
       <title>Security Everywhere: DNS over HTTPS</title>

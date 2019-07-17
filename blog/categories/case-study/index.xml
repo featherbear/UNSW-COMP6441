@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Wed, 03 Jul 2019 17:28:31 +1000</lastBuildDate>
+    <lastBuildDate>Wed, 17 Jul 2019 22:16:45 +1000</lastBuildDate>
     
 	<atom:link href="/categories/case-study/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Security Everwhere: WhatsApp &amp; Telegram Media File Jacking</title>
+      <link>/post/security-everywhere-whatsapp-telegram-media-file-jacking/</link>
+      <pubDate>Wed, 17 Jul 2019 22:16:45 +1000</pubDate>
+      
+      <guid>/post/security-everywhere-whatsapp-telegram-media-file-jacking/</guid>
+      <description>Recently the security peeps at Symantec released a proof of concept attack of &amp;ldquo;Media File Jacking&amp;rdquo; on the Android platform - namely through WhatsApp and Telegram.</description>
+    </item>
     
     <item>
       <title>Lab 5</title>

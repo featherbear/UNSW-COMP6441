@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-07-13T20:48:05&#43;10:00" />
 <meta itemprop="dateModified" content="2019-07-13T20:48:05&#43;10:00" />
-<meta itemprop="wordCount" content="373">
+<meta itemprop="wordCount" content="402">
 
 
 
@@ -154,7 +154,7 @@
 
 <ul>
 <li><p>All of my lecture notes are publically available.<br />
-<a href="../../lec01">[01]</a> <a href="../../lec02">[02]</a> <a href="../../lec03">[03]</a> <a href="../../lec04">[04]</a> <a href="../../lec05">[05]</a> <a href="../../ ec06">[06]</a> <a href="../../lec07">[07]</a> <a href="../../lec08">[08]</a> <a href="../../lec09">[09]</a> <a href="../../lec10">[10]</a> <a href="../../lec11">[11]</a> <a href="../../lec12">[12]</a></p></li>
+<a href="../../lec01">[01]</a> <a href="../../lec02">[02]</a> <a href="../../lec03">[03]</a> <a href="../../lec04">[04]</a> <a href="../../lec05">[05]</a> <a href="../../ ec06">[06]</a> <a href="../../lec07">[07]</a> <a href="../../lec08">[08]</a> <a href="../../lec09">[09]</a> <a href="../../lec10">[10]</a> <a href="../../lec11">[11]</a> <a href="../../lec12">[12]</a> <a href="../../lec13">[13]</a> <a href="../../lec14">[14]</a> <a href="../../lec15">[15]</a> <a href="../../lec16">[16]</a></p></li>
 
 <li><p>I released my attempts at the provided practice exam questions.<br />
 <a href="../../midsem-2015s2">[2015s2-midsem]</a> <a href="../../midsem-2016s1">[2016s1-midsem]</a> <a href="../../final-2016s1">[2016s1-finals]</a></p></li>
@@ -177,8 +177,9 @@
 <li><code>(2019-06-28)</code> Making cracking harder with modulos | <a href="../../hashes/#making-cracking-harder-with-modulos">[link]</a></li>
 <li><code>(2019-07-01)</code> C code vulnerabilities | <a href="../../whats-wrong-with-the-code-01">[1]</a> <a href="../../whats-wrong-with-the-code-02">[2]</a> <a href="../../whats-wrong-with-the-code-03">[3]</a></li>
 <li><code>(2019-07-09)</code> SQL code injection | <a href="../../website-security#sql-injection">[link]</a></li>
-<li><code>(2019-07-11)</code> Buffer overflows | <a href="../../buffer-overflow-01">[1]</a> <a href="../../buffer-overflow-02">[2]</a> <a href="../../buffer-overflow-03">[3]</a></li>
+<li><code>(2019-07-11)</code> Buffer overflows | <a href="../../buffer-overflows">[post]</a> <a href="../../buffer-overflow-01">[1]</a> <a href="../../buffer-overflow-02">[2]</a> <a href="../../buffer-overflow-03">[3]</a></li>
 <li><code>(2019-07-13)</code> Cracking a reused one-time pad | <a href="../../one-time-pads">[link]</a></li>
+<li><code>(2019-07-16)</code> Format string vulnerabilities | <a href="../../format-string-vulnerabilities">[link]</a></li>
 </ul></li>
 
 <li><p><code>(2019-06-18)</code> Explained and demonstrated how to pick a lock. | <a href="../../attacking-locks">[link]</a> <a href="../ptpj5ytlAz1ypltvz_720.mp4">[video]</a></p></li>
@@ -204,6 +205,7 @@ After the talk, I wrote a <a href="../../lightning-talk-http-https-security">wri
 <li><code>(2019-06-21)</code> <a href="../../the-thinning">A look at &lsquo;The Thinning&rsquo; movie</a></li>
 <li><code>(2019-06-13)</code> <a href="../../security-everywhere-jb-hifi-bing-lee-raids">JB Hi-Fi and Bing Lee Store Raids</a></li>
 <li><code>(2019-07-13)</code> <a href="../../security-everywhere-dns-over-https">DNS over HTTPS</a></li>
+<li><code>(2019-07-16)</code> <a href="../../security-everywhere-whatsapp-telegram-media-file-jacking">Media File Jacking PoC</a></li>
 </ul></li>
 </ul>
 
@@ -234,9 +236,13 @@ let tumblr_callback = data => document.getElementById("postCount").innerText = d
 
 <ul>
 <li><a href="https://supersecure.tumblr.com/post/186256285513/reflections-week-6"><em>supersecure</em> thanking me</a></li>
-<li><a href="https://alexpanaman.tumblr.com/post/185989477117/passwords">Discussion with <em>comp6841</em></a></li>
 <li><a href="https://alexpanaman.tumblr.com/post/186082589007/lightning-talk-https-security"><em>cse6441</em> thanking me</a></li>
+<li><a href="https://alexpanaman.tumblr.com/post/186180964580/cryptocurrency"><em>public-insecurities</em> thanking me</a></li>
+<li><a href="https://alexpanaman.tumblr.com/post/185973381271/making-cracking-harder-with-modulos"><em>tsoyuzhu</em> thanking me</a></li>
+<li><a href="https://jennax-seceng.tumblr.com/post/186322711311/week-07-notes-a"><em>jennax-seceng</em> using my content</a></li>
 <li><a href="https://alexpanaman.tumblr.com/post/185856973850/something-awesome-research-keylogging"><em>wooloojumper</em> providing feedback</a></li>
+<li><a href="https://alexpanaman.tumblr.com/post/185989477117/passwords">Discussion with <em>comp6841</em></a></li>
+<li><a href="https://frankfoo3.tumblr.com/post/186278347801/week-06-buffer-overflow-practice-questions-10">Discission with <em>frankfoo3</em></a></li>
 <li><a href="https://alexpanaman.tumblr.com/post/185833679392/naive-thoughts-if-you-intercept-and-hijack-the">Discussion with <em>morethankradio</em></a></li>
 <li><a href="https://alexpanaman.tumblr.com/post/185651749873/had-a-look-at-the-shared-class-notes-for-this">Discussion with the community</a></li>
 </ul>

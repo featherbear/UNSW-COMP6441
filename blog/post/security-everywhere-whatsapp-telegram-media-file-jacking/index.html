@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Security Everwhere: WhatsApp &amp; Telegram Media File Jacking - COMP6441 Musings</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="z5206677" /><meta name="description" content="Recently the security peeps at Symantec released a proof of concept attack of &amp;ldquo;Media File Jacking&amp;rdquo; on the Android platform - namely through WhatsApp and Telegram." /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="../../post/security-everywhere-whatsapp-telegram-media-file-jacking/" />
+<link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+<link rel="manifest" href="../../manifest.json">
+<link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="../../dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Security Everwhere: WhatsApp &amp; Telegram Media File Jacking" />
+<meta property="og:description" content="Recently the security peeps at Symantec released a proof of concept attack of &ldquo;Media File Jacking&rdquo; on the Android platform - namely through WhatsApp and Telegram." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/security-everywhere-whatsapp-telegram-media-file-jacking/" />
+<meta property="article:published_time" content="2019-07-17T22:16:45&#43;10:00"/>
+<meta property="article:modified_time" content="2019-07-17T22:16:45&#43;10:00"/>
+
+<meta itemprop="name" content="Security Everwhere: WhatsApp &amp; Telegram Media File Jacking">
+<meta itemprop="description" content="Recently the security peeps at Symantec released a proof of concept attack of &ldquo;Media File Jacking&rdquo; on the Android platform - namely through WhatsApp and Telegram.">
+
+
+<meta itemprop="datePublished" content="2019-07-17T22:16:45&#43;10:00" />
+<meta itemprop="dateModified" content="2019-07-17T22:16:45&#43;10:00" />
+<meta itemprop="wordCount" content="378">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Security Everwhere: WhatsApp &amp; Telegram Media File Jacking"/>
+<meta name="twitter:description" content="Recently the security peeps at Symantec released a proof of concept attack of &ldquo;Media File Jacking&rdquo; on the Android platform - namely through WhatsApp and Telegram."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="../../" class="logo">COMP6441 Musings</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="../../">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="../../post/job-application">
+        <li class="mobile-menu-item">Job Application</li>
+      </a><a href="../../categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="../../" class="logo">COMP6441 Musings</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="../../">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="../../post/job-application">Job Application</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="../../categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Security Everwhere: WhatsApp &amp; Telegram Media File Jacking</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-07-17 </span>
+        <div class="post-category">
+            <a href="../../categories/security-everywhere/"> Security Everywhere </a>
+            <a href="../../categories/case-study/"> Case Study </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#how">How</a></li>
+<li><a href="#what-now">What now?</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<p>Recently the security peeps at Symantec released a proof of concept attack of &ldquo;Media File Jacking&rdquo; on the Android platform - namely through WhatsApp and Telegram.<br />
+They detailed how <a href="https://www.youtube.com/watch?v=FHvkGUh8S_c">images</a>, <a href="https://www.youtube.com/watch?v=bKBk6NBHw5s">documents</a>, and even <a href="https://www.youtube.com/watch?v=Xt5BI0gIwnw">voice messages</a> could be intercepted and modified in the background.</p>
+
+<h1 id="how">How</h1>
+
+<p>Android phones often allow you to insert a microSD into the phone as an expansible external storage. (And even if there&rsquo;s no physical slot on the phone, you might have a virtual external SD on your filesystem).</p>
+
+<p>Compared to how application data is stored in the internal storage, all data on the external SD is accessible by any application. With write access to the card (*), that means that any application could add, delete, <em>and modify</em> other files.</p>
+
+<p>*: You do need to grant the application permission to write to the external card, but most of us would press Accept&hellip;</p>
+
+<p><strong>By default</strong>, media files for WhatsApp and Telegram will store their files on the external SD card - and there&rsquo;s nothing wrong with that; it&rsquo;s the intended use for the extSD. But because of that, a malicious program could modify these files&hellip; And that&rsquo;s what this proof of concept reveals.</p>
+
+<p>By listening for changes in the WhatsApp / Telegram media directories, paired with listening to broadcasted notification intent events - malicious programs would be able to monitor when a file is created, and then programatically perform modifications to those files.</p>
+
+<p>That&rsquo;s an issue, because WhatsApp and Telegram are often used due to people&rsquo;s trust in their security and privacy.</p>
+
+<p>It&rsquo;s not fault of the application - the protocol they use to securely transmit the content from one device to another over the internet is amazing. <strong>The issue is what happens <em>after</em> transmission</strong> (and before as well)</p>
+
+<h1 id="what-now">What now?</h1>
+
+<p>Symantec has recommended <strong>turning off the option to save media files to your device&rsquo;s external storage</strong>. By the nature of how Android sandboxes applications in the internal storage, applications aren&rsquo;t able to access the internal storage data of other applications.</p>
+
+<p>In the upcoming Android Q update, there will be a feature called &ldquo;Scoped Storage&rdquo;, which will provide this same idea, but for external storage mediums.</p>
+
+<p><em>Also, don&rsquo;t install dodgy stuff in general&hellip;</em><br />
+<em>You probably don&rsquo;t need those &ldquo;100 Free Wallpapers&rdquo; applications - <strong>looking at you mum</strong></em></p>
+
+    </div>
+
+    <footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="../../post/social-engineering-puppylove/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Social Engineering Challenge: Puppy Love</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="../../post/crypto-terms/">
+            <span class="next-text nav-default">Crypto Terms</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:z5206677@student.unsw.edu.au" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.linkedin.com/in/andrewjinmengwong/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/featherbear" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/_andrewjwong/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="../../index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Andrew Wong (z5206677)</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="../../dist/even.26188efa.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-107434487-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

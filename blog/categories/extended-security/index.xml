@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Fri, 12 Jul 2019 03:16:59 +1000</lastBuildDate>
+    <lastBuildDate>Tue, 16 Jul 2019 18:46:41 +1000</lastBuildDate>
     
 	<atom:link href="/categories/extended-security/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Pentesting</title>
+      <link>/post/pentesting/</link>
+      <pubDate>Tue, 16 Jul 2019 18:46:41 +1000</pubDate>
+      
+      <guid>/post/pentesting/</guid>
+      <description>Pentesting is short for Penetration Testing.</description>
+    </item>
+    
+    <item>
+      <title>Bug Bounties</title>
+      <link>/post/bug-bounties/</link>
+      <pubDate>Tue, 16 Jul 2019 18:16:18 +1000</pubDate>
+      
+      <guid>/post/bug-bounties/</guid>
+      <description>A bug is a flaw in a program code that could possibly lead to security issues.</description>
+    </item>
     
     <item>
       <title>Buffer Overflow - 3</title>

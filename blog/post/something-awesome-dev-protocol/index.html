@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="z5206677" /><meta name="description" content="Connection Connection to Host  Client sends hello::{id:." /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="z5206677" /><meta name="description" content="Connection Connection to Host  Client sends hello({id:." /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -39,26 +39,26 @@
 
 
 <meta property="og:title" content="Something Awesome: Protocol Specification" />
-<meta property="og:description" content="Connection Connection to Host  Client sends hello::{id:." />
+<meta property="og:description" content="Connection Connection to Host  Client sends hello({id:." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/something-awesome-dev-protocol/" />
 <meta property="article:published_time" content="2019-06-15T15:43:30&#43;10:00"/>
 <meta property="article:modified_time" content="2019-06-15T15:43:30&#43;10:00"/>
 
 <meta itemprop="name" content="Something Awesome: Protocol Specification">
-<meta itemprop="description" content="Connection Connection to Host  Client sends hello::{id:.">
+<meta itemprop="description" content="Connection Connection to Host  Client sends hello({id:.">
 
 
 <meta itemprop="datePublished" content="2019-06-15T15:43:30&#43;10:00" />
 <meta itemprop="dateModified" content="2019-06-15T15:43:30&#43;10:00" />
-<meta itemprop="wordCount" content="300">
+<meta itemprop="wordCount" content="303">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Something Awesome: Protocol Specification"/>
-<meta name="twitter:description" content="Connection Connection to Host  Client sends hello::{id:."/>
+<meta name="twitter:description" content="Connection Connection to Host  Client sends hello({id:."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -157,12 +157,12 @@
 <h2 id="connection-to-host">Connection to Host</h2>
 
 <ul>
-<li>Client sends <code>hello</code>::<code>{id:...,key:...}</code> (TCP) to host
+<li>Client sends <code>hello({id:...,key:...})</code> to host
 
 <ul>
-<li>If bad auth, return <code>r_hello</code>::<code>{status:false,attempts:...}</code> (TCP)</li>
-<li>Establish connection, return <code>r_hello</code>::<code>{status:true,udp_port:...}</code></li>
-<li>Client sends <code>hello</code>::<code>{id:...}</code> (UDP) to host</li>
+<li>If bad auth, return <code>r_hello({status:false,attempts:...})</code></li>
+<li>Establish connection, return <code>r_hello({status:true,udp_port:...})</code></li>
+<li>Client sends <code>hello({id:...})</code> (UDP) to host</li>
 <li>Host registers client&rsquo;s address</li>
 </ul></li>
 <li>Every interval, client sends <code>keepAlive</code> (UDP) to host</li>
@@ -182,9 +182,9 @@ The relay server only keeps a record of the host&rsquo;s details in memory.</p>
 <li>Client sends <code>hello</code> to relay
 
 <ul>
-<li>If no ID, return <code>r_hello</code>::false</li>
+<li>If no ID, return <code>r_hello({status:false})</code></li>
 <li>Relay sends <code>hello</code> to host</li>
-<li>If bad auth, return <code>r_hello</code>::false</li>
+<li>If bad auth, return <code>r_hello({status:false})</code></li>
 <li>Exchange connection details</li>
 </ul></li>
 <li>Every interval, host sends <code>poll</code> to relay</li>
@@ -207,7 +207,7 @@ Destination: Host</p></li>
 
 <li><p><code>hello</code><br />
 Description: Connect and authenticate to a relay / host<br />
-Data: id, key
+Data: <code>id</code>, <code>key</code>
 Source: Client / Relay<br />
 Destination: Relay / Host</p></li>
 
@@ -261,7 +261,7 @@ Description: Lock the host machine</p></li>
 <ul>
 <li><p><code>r_hello</code>
 Description: Hello response<br />
-Data: true/false<br />
+Data: <code>status</code>, <code>attempts</code><br />
 Source: Host / Relay<br />
 Destination: Relay / Client</p></li>
 
@@ -273,7 +273,9 @@ Destination: Client</p></li>
 
 <li><p><code>r_display</code> - Display stream data</p></li>
 
-<li><p><code>r_screenshot</code> - Screenshot data
+<li><p><code>r_screenshot</code> - Screenshot data</p></li>
+
+<li><p><code>r_keylog</code> - Keylog data
 <!-- * `r_shell` --></p></li>
 </ul>
 

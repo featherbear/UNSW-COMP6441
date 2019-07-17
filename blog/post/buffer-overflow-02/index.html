@@ -219,7 +219,7 @@
 
 <p>Similar to the <a href="../buffer-overflow-01">previous example</a>, we need to overflow the <code>buffer</code> array and overwrite the address that <code>function</code> points to.</p>
 
-<p>To our conventience, line 19 gives us the address to the <code>win</code> function - We just need to write this address through the buffer overflow attack.<br />
+<p>To our convenience, the program prints out the address to the <code>win</code> function - We just need to write this address through the buffer overflow attack.<br />
 Note that we&rsquo;ll write this backwards due to the little endian memory structure of most systems.</p>
 
 <p><em>If line 19 <strong>didn&rsquo;t</strong> exist, we could use other methods to determine the function address of <code>win</code>. For example, we could use <code>objdump -d ./whereami</code> to find a delta/offset from a known address of another function.</em></p>

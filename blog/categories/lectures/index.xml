@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Tue, 09 Jul 2019 18:08:32 +1000</lastBuildDate>
+    <lastBuildDate>Tue, 16 Jul 2019 10:23:33 +1000</lastBuildDate>
     
 	<atom:link href="/categories/lectures/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Lecture 13</title>
+      <link>/post/lec13/</link>
+      <pubDate>Tue, 16 Jul 2019 10:23:33 +1000</pubDate>
+      
+      <guid>/post/lec13/</guid>
+      <description>Diffie Hellman  How can you establish a secret without transmitting it?</description>
+    </item>
     
     <item>
       <title>Lecture 12</title>

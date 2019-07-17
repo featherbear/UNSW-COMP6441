@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Social Engineering Challenge: Puppy Love - COMP6441 Musings</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="z5206677" /><meta name="description" content="Activity time - Social engineer two staff members of the ficticious company Puppy Love to retrieve flags!" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="../../post/social-engineering-puppylove/" />
+<link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+<link rel="manifest" href="../../manifest.json">
+<link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="../../dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Social Engineering Challenge: Puppy Love" />
+<meta property="og:description" content="Activity time - Social engineer two staff members of the ficticious company Puppy Love to retrieve flags!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/social-engineering-puppylove/" />
+<meta property="article:published_time" content="2019-07-17T13:23:34&#43;10:00"/>
+<meta property="article:modified_time" content="2019-07-17T13:23:34&#43;10:00"/>
+
+<meta itemprop="name" content="Social Engineering Challenge: Puppy Love">
+<meta itemprop="description" content="Activity time - Social engineer two staff members of the ficticious company Puppy Love to retrieve flags!">
+
+
+<meta itemprop="datePublished" content="2019-07-17T13:23:34&#43;10:00" />
+<meta itemprop="dateModified" content="2019-07-17T13:23:34&#43;10:00" />
+<meta itemprop="wordCount" content="846">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Social Engineering Challenge: Puppy Love"/>
+<meta name="twitter:description" content="Activity time - Social engineer two staff members of the ficticious company Puppy Love to retrieve flags!"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="../../" class="logo">COMP6441 Musings</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="../../">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="../../post/job-application">
+        <li class="mobile-menu-item">Job Application</li>
+      </a><a href="../../categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="../../" class="logo">COMP6441 Musings</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="../../">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="../../post/job-application">Job Application</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="../../categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Social Engineering Challenge: Puppy Love</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-07-17 </span>
+        <div class="post-category">
+            <a href="../../categories/musings/"> Musings </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#task">Task</a></li>
+<li><a href="#recon">Recon</a>
+<ul>
+<li><a href="#inferring">Inferring</a></li>
+</ul></li>
+<li><a href="#facebook-flag">Facebook Flag</a></li>
+<li><a href="#banking-flag">Banking Flag</a></li>
+<li><a href="#aside">Aside</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<p>Activity time - Social engineer two staff members of the ficticious company <a href="http://comp6445-curlybracket-letsmakeflagsgreatagain-curlybracket.bid/challenges/puppylove/puppylove.org.au/">Puppy Love</a> to retrieve flags!</p>
+
+<h1 id="task">Task</h1>
+
+<ul>
+<li>Recover the flag for the Facebook account through social engineering over <a href="http://comp6445-curlybracket-letsmakeflagsgreatagain-curlybracket.bid/challenges/puppylove/mail/index.php">email</a></li>
+<li>Recover the flag for a bank transfer through social engineering over <a href="http://comp6445-curlybracket-letsmakeflagsgreatagain-curlybracket.bid/challenges/puppylove/mail/index.php">email</a></li>
+</ul>
+
+<hr />
+
+<p>First off, recon.</p>
+
+<h1 id="recon">Recon</h1>
+
+<p>Having a look at the website <a href="http://comp6445-curlybracket-letsmakeflagsgreatagain-curlybracket.bid/challenges/puppylove/puppylove.org.au/">puppylove.org.au</a>, we&rsquo;ve gotten the following software products on our technology stack:</p>
+
+<ul>
+<li>CMS: WordPress (4.8.6)</li>
+<li>Server: LiteSpeed</li>
+</ul>
+
+<p>The other non-important stuff are Font Awesome, and jQuery - but there&rsquo;s nothing we can do with those things.</p>
+
+<p>In fact&hellip; there&rsquo;s nothing we can do at all! What we&rsquo;re seeing is a static site, a clone of a WordPress page&hellip;<br />
+But anyway this is a social engineering activity, so let&rsquo;s find some useful data!</p>
+
+<p><em>Note: Going to ignore the timestamps and pretend that the information and data is in &lsquo;present time&rsquo;</em></p>
+
+<ul>
+<li>David Quest
+
+<ul>
+<li>(e) david@puppylove.org.au</li>
+<li>Operations</li>
+<li>Likes microbrewing</li>
+<li>Has two black pugs - Angela, Jessie</li>
+</ul></li>
+<li>Sarah Jenkins
+
+<ul>
+<li>(e) sarah@puppylove.org.au</li>
+<li>Has a 3 years old son named James</li>
+<li>Married to David</li>
+<li>Has a beagle named Jasper</li>
+<li>Instagram - <code>https://www.instagram.com/sarah.jenkins0583/</code></li>
+<li>James&rsquo; birth date is 02/12/2014</li>
+<li>Other dogs: Max, Bella</li>
+<li>04/06 -&gt; Mark&rsquo;s 35th birthday - Husband???</li>
+</ul></li>
+<li>Facebook - <code>https://www.facebook.com/Puppy-Love-Australia-154384201787157</code> (inactive)</li>
+<li>Dog: Stella</li>
+<li>Business Address - 363 George Street, Sydney, NSW 2000</li>
+</ul>
+
+<h2 id="inferring">Inferring</h2>
+
+<p><em>What can we infer from our data about David and Sarah?</em></p>
+
+<ul>
+<li>Dogs: <code>Angela</code>, <code>Jessie</code>, <code>Jasper</code>, <code>Max</code>, <code>Bella</code>, <code>Stella</code></li>
+<li>David likes microbrewing - so possibly <code>Coffee</code></li>
+<li>Child: <code>James</code>, <code>02/12/14</code>, <code>021214</code></li>
+<li>Sarah&rsquo;s husband: <code>David</code></li>
+<li>Sarah&rsquo;s <em>other</em> husband (<em>!??</em>): <code>Max</code>, <code>040682</code>, <code>040683</code>, <code>0406..</code>, <code>040616</code>, <code>040617</code></li>
+</ul>
+
+<p>If there was some sort of password / secret password form, these keywords could be possible dictionary attack candidates.<br />
+But this task isn&rsquo;t that hard :)</p>
+
+<hr />
+
+<p>Red team, go!<br />
+Note: I was lazy and didn&rsquo;t actually write full sentences. I had a hunch that this demo site was just looking for keywords (which it did).<br />
+But it would be better practice to write actual proper emails.</p>
+
+<p><em>But who&rsquo;s got time for that? Trimesters yo.</em></p>
+
+<h1 id="facebook-flag">Facebook Flag</h1>
+
+<p>The Facebook link at the bottom of the website doesn&rsquo;t go anywhere, we so won&rsquo;t actually be attacking or finding information off Facebook.<br />
+So let&rsquo;s try send an <a href="http://comp6445-curlybracket-letsmakeflagsgreatagain-curlybracket.bid/challenges/puppylove/mail/index.php">email</a> to Sarah about the Facebook password.</p>
+
+<p><strong>Sending an <a href="http://comp6445-curlybracket-letsmakeflagsgreatagain-curlybracket.bid/challenges/puppylove/mail/index.php">email</a> with the keyword <code>sarah</code></strong></p>
+
+<blockquote>
+<p>Hi<br />
+I&rsquo;m sorry - I don&rsquo;t understand what you&rsquo;re after.<br />
+Can you send me another email and be a little clearer?<br />
+&nbsp;<br />
+Kind regards,<br />
+Sarah</p>
+</blockquote>
+
+<p><strong>Sending an <a href="http://comp6445-curlybracket-letsmakeflagsgreatagain-curlybracket.bid/challenges/puppylove/mail/index.php">email</a> with the keywords <code>sarah</code> and <code>facebook</code></strong></p>
+
+<blockquote>
+<p>Hi,<br />
+I&rsquo;m pretty busy at the moment and just checking email on phone - what is it you&rsquo;re after for the facebook account?<br />
+Let me know and ill see what I can do<br />
+&nbsp;<br />
+Kind regards,<br />
+Sarah</p>
+</blockquote>
+
+<p><strong>Sending an <a href="http://comp6445-curlybracket-letsmakeflagsgreatagain-curlybracket.bid/challenges/puppylove/mail/index.php">email</a> with the keywords <code>sarah</code>, <code>facebook</code> and <code>password</code></strong></p>
+
+<blockquote>
+<p>Hi,<br />
+Yep no worries.<br />
+&nbsp;<br />
+The facebook login details are:<br />
+username: sarah@puppylove.org.au<br />
+password: <strong>COMP6441{MakeSureYouSetUpTwoFactorAuthToPreventThis!!}</strong><br />
+&nbsp;<br />
+Kind regards,<br />
+Sarah</p>
+</blockquote>
+
+<hr />
+
+<h1 id="banking-flag">Banking Flag</h1>
+
+<p>If we send an <a href="http://comp6445-curlybracket-letsmakeflagsgreatagain-curlybracket.bid/challenges/puppylove/mail/index.php">email</a> to Sarah about <code>payment</code>s, we&rsquo;ll receive this response</p>
+
+<blockquote>
+<p>Hi,<br />
+I&rsquo;m sorry. I don&rsquo;t handle payments. You&rsquo;re better off speaking to David about that.<br />
+Sorry I couldn&rsquo;t be more help!!!<br />
+&nbsp;<br />
+Kind regards,<br />
+Sarah</p>
+</blockquote>
+
+<p>So let&rsquo;s send it to David then!</p>
+
+<p><strong>Sending an <a href="http://comp6445-curlybracket-letsmakeflagsgreatagain-curlybracket.bid/challenges/puppylove/mail/index.php">email</a> to David, with no important keywords</strong></p>
+
+<blockquote>
+<p>Hey!<br />
+Thanks for the email.<br />
+What&rsquo;s this regarding? I&rsquo;m a little behind on payments if its about that. Soz.<br />
+&nbsp;<br />
+Cheers,<br />
+David</p>
+</blockquote>
+
+<p><em>Right, so he&rsquo;s a bit behind on payments - let&rsquo;s follow that up with him</em></p>
+
+<p><strong>Sending an <a href="http://comp6445-curlybracket-letsmakeflagsgreatagain-curlybracket.bid/challenges/puppylove/mail/index.php">email</a> with the keywords <code>david</code> and <code>payment</code></strong></p>
+
+<blockquote>
+<p>Hi,<br />
+Sorry - I&rsquo;m a bit busy at the moment and you know how I feel about doing payments over email.<br />
+Can this wait until tomorrow? Or is it urgent?<br />
+&nbsp;<br />
+Cheers,<br />
+David</p>
+</blockquote>
+
+<p><strong>Sending an <a href="http://comp6445-curlybracket-letsmakeflagsgreatagain-curlybracket.bid/challenges/puppylove/mail/index.php">email</a> with the keywords <code>david</code>, <code>payment</code> and <code>urgent</code></strong></p>
+
+<blockquote>
+<p>Okay. I understand - it&rsquo;s an urgent payment!<br />
+I&rsquo;ve just put the transfer through now on netbanking.<br />
+&nbsp;<br />
+The confirmation code is <strong>COMP6441{paymentfraudisreal!}</strong><br />
+&nbsp;<br />
+Cheers,<br />
+David</p>
+</blockquote>
+
+<hr />
+
+<h1 id="aside">Aside</h1>
+
+<p>We also get a variety of other <a href="http://comp6445-curlybracket-letsmakeflagsgreatagain-curlybracket.bid/challenges/puppylove/mail/index.php">email</a> responses should you miss out on <code>k</code> <code>e</code> <code>y</code> <code>w</code> <code>o</code> <code>r</code> <code>d</code> <code>s</code></p>
+
+<blockquote>
+<p>Hi,<br />
+I&rsquo;m sorry. This email looks random, suspicious and doesn&rsquo;t even look addressed to me.<br />
+I&rsquo;m going to delete it.<br />
+&nbsp;<br />
+Bye</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+<p>Sorry. I&rsquo;m not sure who this is&hellip;<br />
+I don&rsquo;t reply to emails from people I don&rsquo;t know.<br />
+Sorry</p>
+</blockquote>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>So we&rsquo;ve recovered the two flags <code>COMP6441{paymentfraudisreal!}</code> and <code>COMP6441{MakeSureYouSetUpTwoFactorAuthToPreventThis!!}</code>.</p>
+
+<p>How would you protect these things from happening?</p>
+
+<p>One idea would be to have a communication protocol, that in order to request something you must say it in a certain way.<br />
+Though that would be vulnerable to an attacker who knows the protocol.</p>
+
+<p>Two Factor Authentication (2FA) (<em>as hinted in the flag</em>) is another possible way to mitigate these attacks - by requiring another factor of identification to authenticate.<br />
+For example, both David and Sarah could have a 2FA code attached to a physical device like their phones - making a remote attack much harder without access to their phones.</p>
+
+<p>Perhaps you could also store the login passwords, <a href="../passwords#password-managers">securely</a> that is.</p>
+
+<p><em>But at least it would&rsquo;ve (could&rsquo;ve should&rsquo;ve) stopped someone like me trying to gain access during 5 minutes of my spare time</em></p>
+
+    </div>
+
+    <footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="../../post/pentesting/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Pentesting</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="../../post/security-everywhere-whatsapp-telegram-media-file-jacking/">
+            <span class="next-text nav-default">Security Everwhere: WhatsApp &amp; Telegram Media File Jacking</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:z5206677@student.unsw.edu.au" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.linkedin.com/in/andrewjinmengwong/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/featherbear" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/_andrewjwong/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="../../index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Andrew Wong (z5206677)</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="../../dist/even.26188efa.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-107434487-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

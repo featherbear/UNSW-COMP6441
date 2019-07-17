@@ -7,10 +7,91 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Sat, 13 Jul 2019 20:48:05 +1000</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jul 2019 00:05:24 +1000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Crypto Terms</title>
+      <link>/post/crypto-terms/</link>
+      <pubDate>Thu, 18 Jul 2019 00:05:24 +1000</pubDate>
+      
+      <guid>/post/crypto-terms/</guid>
+      <description>Crypto Terms  Confusion - Each bit of the ciphertext should be produced from a combination of parts from the key.</description>
+    </item>
+    
+    <item>
+      <title>Security Everwhere: WhatsApp &amp; Telegram Media File Jacking</title>
+      <link>/post/security-everywhere-whatsapp-telegram-media-file-jacking/</link>
+      <pubDate>Wed, 17 Jul 2019 22:16:45 +1000</pubDate>
+      
+      <guid>/post/security-everywhere-whatsapp-telegram-media-file-jacking/</guid>
+      <description>Recently the security peeps at Symantec released a proof of concept attack of &amp;ldquo;Media File Jacking&amp;rdquo; on the Android platform - namely through WhatsApp and Telegram.</description>
+    </item>
+    
+    <item>
+      <title>Social Engineering Challenge: Puppy Love</title>
+      <link>/post/social-engineering-puppylove/</link>
+      <pubDate>Wed, 17 Jul 2019 13:23:34 +1000</pubDate>
+      
+      <guid>/post/social-engineering-puppylove/</guid>
+      <description>Activity time - Social engineer two staff members of the ficticious company Puppy Love to retrieve flags!</description>
+    </item>
+    
+    <item>
+      <title>Pentesting</title>
+      <link>/post/pentesting/</link>
+      <pubDate>Tue, 16 Jul 2019 18:46:41 +1000</pubDate>
+      
+      <guid>/post/pentesting/</guid>
+      <description>Pentesting is short for Penetration Testing.</description>
+    </item>
+    
+    <item>
+      <title>Bug Bounties</title>
+      <link>/post/bug-bounties/</link>
+      <pubDate>Tue, 16 Jul 2019 18:16:18 +1000</pubDate>
+      
+      <guid>/post/bug-bounties/</guid>
+      <description>A bug is a flaw in a program code that could possibly lead to security issues.</description>
+    </item>
+    
+    <item>
+      <title>Mitigating Memory Vulnerabilities</title>
+      <link>/post/mitigating-memory-vulnerabilities/</link>
+      <pubDate>Tue, 16 Jul 2019 16:04:53 +1000</pubDate>
+      
+      <guid>/post/mitigating-memory-vulnerabilities/</guid>
+      <description>Mitigation Stack Canaries  In the past, the canary birds were used in the mining industry as an alarm system for if the gas concentration levels were too high underground.</description>
+    </item>
+    
+    <item>
+      <title>Buffer Overflows</title>
+      <link>/post/buffer-overflows/</link>
+      <pubDate>Tue, 16 Jul 2019 15:58:04 +1000</pubDate>
+      
+      <guid>/post/buffer-overflows/</guid>
+      <description>Quick Links</description>
+    </item>
+    
+    <item>
+      <title>Memory Vulnerabilities</title>
+      <link>/post/memory-vulnerabilities/</link>
+      <pubDate>Tue, 16 Jul 2019 14:01:03 +1000</pubDate>
+      
+      <guid>/post/memory-vulnerabilities/</guid>
+      <description>The Toolkit - Attack Techniques Buffer Overflows Buffer overflow attacks allow data to be written outside of their allocated memory space</description>
+    </item>
+    
+    <item>
+      <title>Lecture 13</title>
+      <link>/post/lec13/</link>
+      <pubDate>Tue, 16 Jul 2019 10:23:33 +1000</pubDate>
+      
+      <guid>/post/lec13/</guid>
+      <description>Diffie Hellman  How can you establish a secret without transmitting it?</description>
+    </item>
     
     <item>
       <title>Analysis</title>
@@ -540,7 +621,7 @@
       <pubDate>Sat, 15 Jun 2019 15:43:30 +1000</pubDate>
       
       <guid>/post/something-awesome-dev-protocol/</guid>
-      <description>Connection Connection to Host  Client sends hello::{id:.</description>
+      <description>Connection Connection to Host  Client sends hello({id:.</description>
     </item>
     
     <item>

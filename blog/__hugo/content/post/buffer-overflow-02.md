@@ -57,7 +57,7 @@ int main(int argc, char** argv) {
 
 Similar to the [previous example](../buffer-overflow-01), we need to overflow the `buffer` array and overwrite the address that `function` points to.
 
-To our conventience, line 19 gives us the address to the `win` function - We just need to write this address through the buffer overflow attack.  
+To our convenience, the program prints out the address to the `win` function - We just need to write this address through the buffer overflow attack.  
 Note that we'll write this backwards due to the little endian memory structure of most systems.
 
 _If line 19 **didn't** exist, we could use other methods to determine the function address of `win`. For example, we could use `objdump -d ./whereami` to find a delta/offset from a known address of another function._

@@ -20,10 +20,10 @@ sequenceDiagrams:
 
 ## Connection to Host
 
-* Client sends `hello`::`{id:...,key:...}` (TCP) to host
-  * If bad auth, return `r_hello`::`{status:false,attempts:...}` (TCP)
-  * Establish connection, return `r_hello`::`{status:true,udp_port:...}`
-  * Client sends `hello`::`{id:...}` (UDP) to host
+* Client sends `hello({id:...,key:...})` to host
+  * If bad auth, return `r_hello({status:false,attempts:...})`
+  * Establish connection, return `r_hello({status:true,udp_port:...})`
+  * Client sends `hello({id:...})` (UDP) to host
     * Host registers client's address
 * Every interval, client sends `keepAlive` (UDP) to host
 * Client sends command to host
@@ -35,9 +35,9 @@ The relay server does not exchange party connection details unless a connection 
 The relay server only keeps a record of the host's details in memory.
 
 * Client sends `hello` to relay
-  * If no ID, return `r_hello`::false
+  * If no ID, return `r_hello({status:false})`
   * Relay sends `hello` to host
-    * If bad auth, return `r_hello`::false
+    * If bad auth, return `r_hello({status:false})`
     * Exchange connection details
 * Every interval, host sends `poll` to relay
 * Every interval, client sends `list` to relay
@@ -54,7 +54,7 @@ Destination: Host
 
 * `hello`  
 Description: Connect and authenticate to a relay / host  
-Data: id, key
+Data: `id`, `key`
 Source: Client / Relay  
 Destination: Relay / Host
 
@@ -104,7 +104,7 @@ Description: Lock the host machine
 
 * `r_hello`
 Description: Hello response  
-Data: true/false  
+Data: `status`, `attempts`  
 Source: Host / Relay  
 Destination: Relay / Client
 
@@ -117,4 +117,5 @@ Destination: Client
 
 * `r_display` - Display stream data
 * `r_screenshot` - Screenshot data
+* `r_keylog` - Keylog data
 <!-- * `r_shell` -->

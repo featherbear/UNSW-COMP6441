@@ -27,6 +27,14 @@ Cross-platform support:
 * Mac: ✔️
 * Linux: ✔️ (Uses [`imagemagick`](https://imagemagick.org))
 
+## &nbsp;&bull; Kuzat/[screenshot-node](https://github.com/Kuzat/screenshot-node)
+
+Cross-platform support:
+
+* Windows: ✔️
+* Mac: ✔️
+* Linux: ✔️
+
 ## &nbsp;&bull; johnvmt/[node-desktop-screenshot](https://github.com/johnvmt/node-desktop-screenshot)
 
 Updated fork: [senzil/node-desktop-screenshot](https://github.com/senzil/node-desktop-screenshot)
@@ -75,3 +83,7 @@ A node.js implementation of the protocol exists here: [sidorares/node-rfb2](http
 
 <!-- * Client: https://www.npmjs.com/package/peer-vnc
 * Server: https://github.com/megamsys/vnc_server -->
+
+---
+
+I'll try using [Kuzat/screenshot-node](https://github.com/Kuzat/screenshot-node), as it supposedly supports OS X, Linux and Windows.

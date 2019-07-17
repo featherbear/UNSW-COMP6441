@@ -119,3 +119,6 @@ The Socket for each connection on the server will receive events - rather than t
 This is as to allow each event to have a connection context (otherwise we will have to pass in the context via the argument)
 
 
+---
+
+Ran into receive packet collision, things being out of place... need to fix that

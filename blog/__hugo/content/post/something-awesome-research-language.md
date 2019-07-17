@@ -38,7 +38,8 @@ There's never a right or wrong when it comes to decisions - but rather - it is s
 &nbsp;  
 A lot of the times when I have to deal with some sort of network interaction, I often stick to some sort of async / event-based paradigm.
 
-* **Have I used thing language before**  
+* **Have I used thing language before**
+  
 > In my TODO list, I have "Learn [Rust](https://www.rust-lang.org/)".  
 Buuuut I probably don't have time to learn a new language on top of all of the R&D I'll need to do for the actual functionality of this RAT, on top of the other components of this course, on top of the other courses I'm doing.  
 _Thanks trimesters._

@@ -22,7 +22,7 @@ sequenceDiagrams:
 In the spirit of giving back to the community, alot of my posts have some sort of demo or pseudocode to help students further understand the concepts and ideas.
 
 * All of my lecture notes are publically available.  
-[[01]](../../lec01) [[02]](../../lec02) [[03]](../../lec03) [[04]](../../lec04) [[05]](../../lec05) [[06]](../../ ec06) [[07]](../../lec07) [[08]](../../lec08) [[09]](../../lec09) [[10]](../../lec10) [[11]](../../lec11) [[12]](../../lec12)
+[[01]](../../lec01) [[02]](../../lec02) [[03]](../../lec03) [[04]](../../lec04) [[05]](../../lec05) [[06]](../../ ec06) [[07]](../../lec07) [[08]](../../lec08) [[09]](../../lec09) [[10]](../../lec10) [[11]](../../lec11) [[12]](../../lec12) [[13]](../../lec13) [[14]](../../lec14) [[15]](../../lec15) [[16]](../../lec16)
 
 * I released my attempts at the provided practice exam questions.  
 [[2015s2-midsem]](../../midsem-2015s2) [[2016s1-midsem]](../../midsem-2016s1) [[2016s1-finals]](../../final-2016s1) 
@@ -40,8 +40,9 @@ In the spirit of giving back to the community, alot of my posts have some sort o
   * `(2019-06-28)` Making cracking harder with modulos | [[link]](../../hashes/#making-cracking-harder-with-modulos)
   * `(2019-07-01)` C code vulnerabilities | [[1]](../../whats-wrong-with-the-code-01) [[2]](../../whats-wrong-with-the-code-02) [[3]](../../whats-wrong-with-the-code-03)
   * `(2019-07-09)` SQL code injection | [[link]](../../website-security#sql-injection)
-  * `(2019-07-11)` Buffer overflows | [[1]](../../buffer-overflow-01) [[2]](../../buffer-overflow-02) [[3]](../../buffer-overflow-03)
+  * `(2019-07-11)` Buffer overflows | [[post]](../../buffer-overflows) [[1]](../../buffer-overflow-01) [[2]](../../buffer-overflow-02) [[3]](../../buffer-overflow-03)
   * `(2019-07-13)` Cracking a reused one-time pad | [[link]](../../one-time-pads)
+  * `(2019-07-16)` Format string vulnerabilities | [[link]](../../format-string-vulnerabilities)
 
 * `(2019-06-18)` Explained and demonstrated how to pick a lock. | [[link]](../../attacking-locks) [[video]](../ptpj5ytlAz1ypltvz_720.mp4)
 
@@ -60,6 +61,7 @@ After the talk, I wrote a [write-up post](../../lightning-talk-http-https-securi
   * `(2019-06-21)` [A look at 'The Thinning' movie](../../the-thinning)
   * `(2019-06-13)` [JB Hi-Fi and Bing Lee Store Raids](../../security-everywhere-jb-hifi-bing-lee-raids)
   * `(2019-07-13)` [DNS over HTTPS](../../security-everywhere-dns-over-https)
+  * `(2019-07-16)` [Media File Jacking PoC](../../security-everywhere-whatsapp-telegram-media-file-jacking)
 
 # External Community
 
@@ -85,8 +87,12 @@ let tumblr_callback = data => document.getElementById("postCount").innerText = d
 ## Example interactions
 
 * [_supersecure_ thanking me](https://supersecure.tumblr.com/post/186256285513/reflections-week-6)
-* [Discussion with _comp6841_](https://alexpanaman.tumblr.com/post/185989477117/passwords)
 * [_cse6441_ thanking me](https://alexpanaman.tumblr.com/post/186082589007/lightning-talk-https-security)
+* [_public-insecurities_ thanking me](https://alexpanaman.tumblr.com/post/186180964580/cryptocurrency)
+* [_tsoyuzhu_ thanking me](https://alexpanaman.tumblr.com/post/185973381271/making-cracking-harder-with-modulos)
+* [_jennax-seceng_ using my content](https://jennax-seceng.tumblr.com/post/186322711311/week-07-notes-a)
 * [_wooloojumper_ providing feedback](https://alexpanaman.tumblr.com/post/185856973850/something-awesome-research-keylogging)
+* [Discussion with _comp6841_](https://alexpanaman.tumblr.com/post/185989477117/passwords)
+* [Discission with _frankfoo3_](https://frankfoo3.tumblr.com/post/186278347801/week-06-buffer-overflow-practice-questions-10)
 * [Discussion with _morethankradio_](https://alexpanaman.tumblr.com/post/185833679392/naive-thoughts-if-you-intercept-and-hijack-the)
 * [Discussion with the community](https://alexpanaman.tumblr.com/post/185651749873/had-a-look-at-the-shared-class-notes-for-this)

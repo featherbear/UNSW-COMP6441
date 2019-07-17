@@ -37,14 +37,16 @@ Below are the topics that I have researched
 * [Hashes](../../hashes)
 * [Making Cracking Harder with Modulos](../../hashes/#making-cracking-harder-with-modulos)
 * [One Time Pads](../../one-time-pads)
+* [Crypto Terms](../../crypto-terms)
 
 ## Data and Application Security
 
 * [HTTP(S) Security](../../lightning-talk-http-https-security)
-* [Buffer Overflows](../../lec11#buffer-overflows)
+* [Buffer Overflows](../../buffer-overflows)
+* [Format String Vulnerabilities](../../format-string-vulnerabilities)
+* [Mitigating Memory Vulnerabilities](../../mitigating-memory-vulnerabilities)
 * [Viruses](../../something-awesome-research-virus-behaviour)
 * [Signing Documents](../../lec10#signing-documents)
-* [Hardware Security Modules](../../hardware-security-modules)
 
 ## Network Security
 
@@ -54,6 +56,7 @@ Below are the topics that I have researched
 ## Device Security
 
 * [ATM Machine Security](../../atm-machine-security)
+* [Hardware Security Modules](../../hardware-security-modules)
 * [Paper Shredders](../../paper-shredders)
 
 ## Meta Security and Psycho-analysis
@@ -83,6 +86,7 @@ Below are the topics that I have researched
 * [A look at 'The Thinning' movie](../../the-thinning)
 * [JB Hi-Fi and Bing Lee Store Raids](../../security-everywhere-jb-hifi-bing-lee-raids)
 * [DNS over HTTPS](../../security-everywhere-dns-over-https)
+* [Media File Jacking PoC](../../security-everywhere-whatsapp-telegram-media-file-jacking)
 
 ## Something Awesome
 
@@ -103,10 +107,12 @@ Below are the topics that I have researched
 * [Passwords](../../passwords)
 * [Website Security](../../website-security)
 * [Crytocurrency](../../cryptocurrency)
+* [Bug Bounties](../../bug-bounties)
+* [Pentesting](../../pentesting)
 
 # Reflection
 
-* Weekly Reflections | [[1]](../../reflections01) [[2]](../../reflections02) [[3]](../../reflections03) [[4]](../../reflections04) [[5]](../../reflections05) [[6]](../../reflections06)
+* Weekly Reflections | [[1]](../../reflections01) [[2]](../../reflections02) [[3]](../../reflections03) [[4]](../../reflections04) [[5]](../../reflections05) [[6]](../../reflections06) [[7]](../../reflections07) [[8]](../../reflections08)
 <!-- * [Something Awesome Reflection]() -->
 * [Reflections on the Deepwater Horizon Accident](../../reflections-case-study-the-deepwater-horizon-accident)
 * [Reflections on the Harry Houdini case study](../../reflections-case-study-harry-houdini)
@@ -116,5 +122,6 @@ Below are the topics that I have researched
 
 * **See for [Skills](../skills) for technical demos.**
 * [Shoplifting Prevention](../../shoplifting-prevention)
-* [How to Steal a Penguin](../../how-to-steal-a-penguin)
+* [How to Steal a Penguin (Activity)](../../how-to-steal-a-penguin)
+<!-- * [Social Engineering on Puppy Love (Activity)](../../social-engineering-puppylove) -->
 * Exams | [[2016s1]](../../final-2016s1) [[2015s2]](../../midsem-2015s2) [[2016s1]](../../midsem-2016s1)

@@ -28,7 +28,7 @@ I have a vast variety of security skills, from the physicalities of lockpicking,
 ## Buffer Overflows
 
 Performed and explained how to execute buffer overflow attacks on given programs.  
-Links: [[1]](../../buffer-overflow-01) [[2]](../../buffer-overflow-02) [[3]](../../buffer-overflow-03)  
+Links: [[Main]](../../buffer-overflows) [[1]](../../buffer-overflow-01) [[2]](../../buffer-overflow-02) [[3]](../../buffer-overflow-03)  
 
 ## Lock Picking
 
@@ -94,6 +94,11 @@ Touched on the first set of the Cryptopals challenges (in my free time)
 
 Performed a dumpster dive.  
 [[link]](../../dumpster-dive)
+
+## Social Engineering
+
+Performed a social engineering attack (activity).  
+[[link]](../../social-engineering-puppylove)
 
 ---
 

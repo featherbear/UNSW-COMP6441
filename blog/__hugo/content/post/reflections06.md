@@ -47,5 +47,7 @@ The cryptocurrency talk was more interesting - and even though I'm not very inte
 
 # Labs
 
-I wasn't able to attend my lab this week. But from reading other people's posts, it was a discussion on assets - To consider what things need to be protected, and how.
+I wasn't able to attend my lab this week. But from reading other people's posts, it was a discussion on assets - To consider what things need to be protected, and how.  
+
+> [Read my catchup lab notes](../lab06)
 

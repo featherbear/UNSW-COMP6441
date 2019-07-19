@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Sat, 13 Jul 2019 19:52:18 +1000</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jul 2019 00:28:38 +1000</lastBuildDate>
     
 	<atom:link href="/categories/reflections/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Reflections - 7</title>
+      <link>/post/reflections07/</link>
+      <pubDate>Sat, 20 Jul 2019 00:28:38 +1000</pubDate>
+      
+      <guid>/post/reflections07/</guid>
+      <description>Exams, Assessments!</description>
+    </item>
     
     <item>
       <title>Reflections - Week 6</title>

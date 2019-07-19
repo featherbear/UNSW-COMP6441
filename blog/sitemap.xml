@@ -3,6 +3,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/post/lab07/</loc>
+    <lastmod>2019-07-20T00:29:03+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/lab06/</loc>
+    <lastmod>2019-07-20T00:29:00+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/reflections07/</loc>
+    <lastmod>2019-07-20T00:28:38+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/crypto-terms/</loc>
     <lastmod>2019-07-18T00:05:24+10:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -725,14 +746,14 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-07-18T00:05:24+10:00</lastmod>
+    <lastmod>2019-07-20T00:29:03+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/case-study/</loc>
-    <lastmod>2019-07-17T22:16:45+10:00</lastmod>
+    <lastmod>2019-07-20T00:29:03+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -753,7 +774,7 @@
   
   <url>
     <loc>/categories/labs/</loc>
-    <lastmod>2019-07-03T17:28:31+10:00</lastmod>
+    <lastmod>2019-07-20T00:29:03+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -774,14 +795,14 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-07-18T00:05:24+10:00</lastmod>
+    <lastmod>2019-07-20T00:29:03+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/reflections/</loc>
-    <lastmod>2019-07-13T19:52:18+10:00</lastmod>
+    <lastmod>2019-07-20T00:28:38+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

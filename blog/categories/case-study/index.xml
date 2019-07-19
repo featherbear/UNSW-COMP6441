@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Wed, 17 Jul 2019 22:16:45 +1000</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jul 2019 00:29:03 +1000</lastBuildDate>
     
 	<atom:link href="/categories/case-study/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Lab 7</title>
+      <link>/post/lab07/</link>
+      <pubDate>Sat, 20 Jul 2019 00:29:03 +1000</pubDate>
+      
+      <guid>/post/lab07/</guid>
+      <description>Was unavailable to make this week&amp;rsquo;s tutorial (as well) so thankfully my tutor had collated everything we discussed!</description>
+    </item>
+    
+    <item>
+      <title>Lab 6</title>
+      <link>/post/lab06/</link>
+      <pubDate>Sat, 20 Jul 2019 00:29:00 +1000</pubDate>
+      
+      <guid>/post/lab06/</guid>
+      <description>I stayed at home instead of going to my tutorial because I was abit stressed out and underprepared for the two exams I had the day after :( - Luckily I steal everyone&amp;rsquo;s notes and synthesise it!</description>
+    </item>
     
     <item>
       <title>Security Everwhere: WhatsApp &amp; Telegram Media File Jacking</title>

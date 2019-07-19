@@ -26,10 +26,11 @@ I have been using Trello as a todo list, to manage all of the university work th
 
 In my reflection posts, I have regularly reflected and commented upon my progress, and of how I have been keeping up with my schedule.
 
-* [Link 1](https://alexpanaman.tumblr.com/post/186254784918/reflections-week-6)
-* [Link 2](https://alexpanaman.tumblr.com/post/186254645313/reflections-week-5)
-* [Link 3](https://alexpanaman.tumblr.com/post/185871286626/link)
-* [Link 4](https://alexpanaman.tumblr.com/post/185626312158/reflections-week-two)
+* [Link 1](https://alexpanaman.tumblr.com/post/186401051688/reflections-week-7)
+* [Link 2](https://alexpanaman.tumblr.com/post/186254784918/reflections-week-6)
+* [Link 3](https://alexpanaman.tumblr.com/post/186254645313/reflections-week-5)
+* [Link 4](https://alexpanaman.tumblr.com/post/185871286626/link)
+* [Link 5](https://alexpanaman.tumblr.com/post/185626312158/reflections-week-two)
 
 # Post Management
 
@@ -55,5 +56,8 @@ You can verify this through my Tumblr post archive page [here](https://alexpanam
 Several occasions throughout the course I was not able to attend my lectures, and even some classes.  
 However I have been diligent in catching up with the classes that I have missed.  
 
-* For example, I was able to catch up on [Lecture 9](../../lec09).
+* For example, I caught up on the following classes that I had missed:
+  * [Lecture 9](../../lec09)
+  * [Lab 6](../../lab06)
+  * [Lab 7](../../lab07)
 * I have also been responsible in being accountable during my absence. For example when I was unable to attend my tutorial, I had messaged my tutor beforehand (_Source: ... Find it, you know who you are_)

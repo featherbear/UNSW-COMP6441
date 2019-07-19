@@ -77,6 +77,8 @@ Below are the topics that I have researched
 * [Plane Doors](../../lab03) | [[Pre-readings]](../../case-study-plane-doors)
 * [The Secret Facility](../../lab04#case-study)
 * [Self Driving Cars](../../lab05#case-study-electronic-self-driving-cars)
+* [Cyber Warfare](../../lab06)
+* [Governments and Data](../../lab07)
 
 ## Security Everywhere
 

@@ -125,5 +125,5 @@ Below are the topics that I have researched
 * **See for [Skills](../skills) for technical demos.**
 * [Shoplifting Prevention](../../shoplifting-prevention)
 * [How to Steal a Penguin (Activity)](../../how-to-steal-a-penguin)
-<!-- * [Social Engineering on Puppy Love (Activity)](../../social-engineering-puppylove) -->
+* [Social Engineering on Puppy Love (Activity)](../../social-engineering-puppylove)
 * Exams | [[2016s1]](../../final-2016s1) [[2015s2]](../../midsem-2015s2) [[2016s1]](../../midsem-2016s1)

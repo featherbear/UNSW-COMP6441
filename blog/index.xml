@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Sat, 20 Jul 2019 00:29:03 +1000</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jul 2019 18:00:00 +1000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>SecSoc CTF</title>
+      <link>/post/secsoc-ctf/</link>
+      <pubDate>Sat, 20 Jul 2019 18:00:00 +1000</pubDate>
+      
+      <guid>/post/secsoc-ctf/</guid>
+      <description>Today I attended the Term 2 Security Society Capture The Flag event.</description>
+    </item>
     
     <item>
       <title>Lab 7</title>

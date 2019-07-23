@@ -22,10 +22,10 @@ sequenceDiagrams:
 
 # RATtata
 
-For my Something Awesome project, I developed a software-based RAT.  
-Either a Remote Administration Tool, or a Remote Access Trojan - a RAT is a piece of software which allows you to connect to a computer remotely to perform actions and tasks.
+![](../rattata.png)
 
-I decided to write a RAT because it would actually be useful to me as a piece of software that I might actually use in my personal life. I worked quite regularly on this project 
+For my Something Awesome project, I developed a software-based RAT.  
+Either a Remote Administration Tool, or a Remote Access Trojan - a RAT is a piece of software which allows you to connect to a computer remotely to perform actions and tasks. I decided to write a RAT because it would actually be useful to me as a piece of software that I might actually use in my personal life.
 
 # Completion
 
@@ -62,6 +62,7 @@ _Kindly browse the other pages to find related issues._
 Ultimately, I am quite pleased with what I have achieved in this project.
 
 * I was able to write a piece of software that I can futher extend in the future.
+* I was able to learn about NAT Holepunching, and other methods of establishing P2P connections.
 * I was able to learn new technologies (Electron, Vue.js)
 * I was able to perform a quite in-depth research about [Virus Behaviour](../../something-awesome-research-virus-behaviour)
 

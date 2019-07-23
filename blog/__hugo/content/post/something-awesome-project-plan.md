@@ -40,7 +40,7 @@ sequenceDiagrams:
   * Display streaming
   * Keyboard & Mouse Emulation
 
-* [Write client](../something-awesome-component-client)
+* Write client
   * Connect to server address
   * Issue commands to server
 

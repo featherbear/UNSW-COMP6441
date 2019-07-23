@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Sat, 22 Jun 2019 14:12:33 +1000</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jul 2019 19:28:30 +1000</lastBuildDate>
     
 	<atom:link href="/categories/something-awesome/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Something Awesome: Component - Relay</title>
+      <link>/post/something-awesome-component-relay/</link>
+      <pubDate>Tue, 23 Jul 2019 19:28:30 +1000</pubDate>
+      
+      <guid>/post/something-awesome-component-relay/</guid>
+      <description>It didn&amp;apos;t work.</description>
+    </item>
     
     <item>
       <title>Something Awesome: Research - Virus Behaviour</title>
@@ -19,6 +28,33 @@
       
       <guid>/post/something-awesome-research-virus-behaviour/</guid>
       <description>Do I sound like I know what I&amp;rsquo;m talking about?</description>
+    </item>
+    
+    <item>
+      <title>Something Awesome: Component - Server</title>
+      <link>/post/something-awesome-component-server/</link>
+      <pubDate>Tue, 18 Jun 2019 11:45:13 +1000</pubDate>
+      
+      <guid>/post/something-awesome-component-server/</guid>
+      <description>Before writing the server, I first had to write up the communications protocol for TCP and UDP connection between the client, server, and relay.</description>
+    </item>
+    
+    <item>
+      <title>Something Awesome: Component - Communication Protocol</title>
+      <link>/post/something-awesome-component-communication-protocol/</link>
+      <pubDate>Tue, 18 Jun 2019 11:44:54 +1000</pubDate>
+      
+      <guid>/post/something-awesome-component-communication-protocol/</guid>
+      <description>Writing my own application layer protocol was an&amp;hellip; interesting task.</description>
+    </item>
+    
+    <item>
+      <title>Something Awesome: User Interface with Electron</title>
+      <link>/post/something-awesome-dev-gui/</link>
+      <pubDate>Sat, 15 Jun 2019 22:08:44 +1000</pubDate>
+      
+      <guid>/post/something-awesome-dev-gui/</guid>
+      <description>Having a crack at Electron was a very fun experience - something that I&amp;rsquo;ve never tried before.</description>
     </item>
     
     <item>

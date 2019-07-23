@@ -89,6 +89,7 @@ Below are the topics that I have researched
 * [JB Hi-Fi and Bing Lee Store Raids](../../security-everywhere-jb-hifi-bing-lee-raids)
 * [DNS over HTTPS](../../security-everywhere-dns-over-https)
 * [Media File Jacking PoC](../../security-everywhere-whatsapp-telegram-media-file-jacking)
+* [Tracking Applications](../../security-everywhere-tracking-apps)
 
 ## Something Awesome
 
@@ -111,6 +112,8 @@ Below are the topics that I have researched
 * [Crytocurrency](../../cryptocurrency)
 * [Bug Bounties](../../bug-bounties)
 * [Pentesting](../../pentesting)
+* [Privacy](../../privacy)
+* [Digital Forensics](../../digital-forensics)
 
 # Reflection
 

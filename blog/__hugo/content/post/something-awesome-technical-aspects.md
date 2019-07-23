@@ -36,7 +36,10 @@ sequenceDiagrams:
 * [Keyboard / Mouse Emulation](../something-awesome-research-keyboard-mouse-emulation)
 * [Webcam Capture](../something-awesome-research-webcam)
 * [Virus Behaviour](../something-awesome-research-virus-behaviour)
-* [User Interface](../something-awesome-dev-gui): [`Electron`](https://electronjs.org/)
+* [User Interface](../something-awesome-dev-gui)
+  * [`Electron`](https://electronjs.org/)
+  * [`Vue`](https://vuejs.org/)
+  * [`Buefy`](https://buefy.org/)
 
 # Production & Release
 

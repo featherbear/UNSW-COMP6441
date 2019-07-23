@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Sat, 13 Jul 2019 20:48:05 +1000</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jul 2019 19:28:30 +1000</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Assessments</title>
       <link>/categories/assessments/</link>
-      <pubDate>Sat, 13 Jul 2019 20:48:05 +1000</pubDate>
+      <pubDate>Tue, 23 Jul 2019 19:28:30 +1000</pubDate>
       
       <guid>/categories/assessments/</guid>
       <description></description>
@@ -33,7 +33,7 @@
     <item>
       <title>Extended Security</title>
       <link>/categories/extended-security/</link>
-      <pubDate>Tue, 16 Jul 2019 18:46:41 +1000</pubDate>
+      <pubDate>Tue, 23 Jul 2019 18:32:55 +1000</pubDate>
       
       <guid>/categories/extended-security/</guid>
       <description></description>
@@ -51,7 +51,7 @@
     <item>
       <title>Lectures</title>
       <link>/categories/lectures/</link>
-      <pubDate>Tue, 16 Jul 2019 10:23:33 +1000</pubDate>
+      <pubDate>Tue, 23 Jul 2019 18:15:38 +1000</pubDate>
       
       <guid>/categories/lectures/</guid>
       <description></description>
@@ -87,7 +87,7 @@
     <item>
       <title>Something Awesome</title>
       <link>/categories/something-awesome/</link>
-      <pubDate>Sat, 22 Jun 2019 14:12:33 +1000</pubDate>
+      <pubDate>Tue, 23 Jul 2019 19:28:30 +1000</pubDate>
       
       <guid>/categories/something-awesome/</guid>
       <description></description>

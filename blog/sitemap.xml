@@ -3,6 +3,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/post/something-awesome-component-relay/</loc>
+    <lastmod>2019-07-23T19:28:30+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/privacy/</loc>
+    <lastmod>2019-07-23T18:32:55+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/lec16/</loc>
+    <lastmod>2019-07-23T18:15:38+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/lec15/</loc>
+    <lastmod>2019-07-23T10:00:30+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/secsoc-ctf/</loc>
     <lastmod>2019-07-20T18:00:00+10:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -444,6 +472,20 @@
   </url>
   
   <url>
+    <loc>/post/something-awesome-component-server/</loc>
+    <lastmod>2019-06-18T11:45:13+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/something-awesome-component-communication-protocol/</loc>
+    <lastmod>2019-06-18T11:44:54+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/lec05/</loc>
     <lastmod>2019-06-18T10:31:58+10:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -474,6 +516,13 @@
   <url>
     <loc>/post/reflections02/</loc>
     <lastmod>2019-06-16T17:07:28+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/something-awesome-dev-gui/</loc>
+    <lastmod>2019-06-15T22:08:44+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -746,14 +795,14 @@
   
   <url>
     <loc>/categories/assessments/</loc>
-    <lastmod>2019-07-13T20:48:05+10:00</lastmod>
+    <lastmod>2019-07-23T19:28:30+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-07-20T18:00:00+10:00</lastmod>
+    <lastmod>2019-07-23T19:28:30+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -767,14 +816,14 @@
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2019-07-13T20:48:05+10:00</lastmod>
+    <lastmod>2019-07-23T19:28:30+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/extended-security/</loc>
-    <lastmod>2019-07-16T18:46:41+10:00</lastmod>
+    <lastmod>2019-07-23T18:32:55+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -788,7 +837,7 @@
   
   <url>
     <loc>/categories/lectures/</loc>
-    <lastmod>2019-07-16T10:23:33+10:00</lastmod>
+    <lastmod>2019-07-23T18:15:38+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -802,7 +851,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-07-20T18:00:00+10:00</lastmod>
+    <lastmod>2019-07-23T19:28:30+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -823,7 +872,7 @@
   
   <url>
     <loc>/categories/something-awesome/</loc>
-    <lastmod>2019-06-22T14:12:33+10:00</lastmod>
+    <lastmod>2019-07-23T19:28:30+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

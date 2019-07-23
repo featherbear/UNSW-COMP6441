@@ -1,9 +1,8 @@
 ---
-title: "Something Awesome: User Interface with Electron"
-date: 2019-06-15T22:08:44+10:00
+title: "Lecture 15"
+date: 2019-07-23T10:00:30+10:00
 
-draft: true
-categories: ["Assessments", "Something Awesome"]
+categories: ["Lectures"]
 hiddenFromHomePage: false
 postMetaInFooter: false
 

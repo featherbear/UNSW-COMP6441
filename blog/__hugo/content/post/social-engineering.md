@@ -2,7 +2,7 @@
 title: "Social Engineering"
 date: 2019-06-25T18:06:26+10:00
 
-categories: ["Musings", "Extended Security"]
+categories: ["Extended Security"]
 hiddenFromHomePage: false
 postMetaInFooter: false
 

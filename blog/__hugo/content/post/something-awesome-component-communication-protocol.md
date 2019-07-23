@@ -2,7 +2,6 @@
 title: "Something Awesome: Component - Communication Protocol"
 date: 2019-06-18T11:44:54+10:00
 
-draft: true
 categories: ["Assessments", "Something Awesome"]
 hiddenFromHomePage: false
 postMetaInFooter: false
@@ -11,37 +10,19 @@ flowchartDiagrams:
   enable: false
   options: ""
 
-sequenceDiagrams: 
+sequenceDiagrams:
   enable: false
   options: ""
 
 ---
 
-* Should I have a ACK packet
-* Should I have a response packet, or send the same packet back
+Writing my own application layer protocol was an... _interesting_ task.
 
---
+> Gentle reminder to myself that TCP is stream based and that you need to split your payloads manually. [SO](https://stackoverflow.com/questions/24113273/when-sending-multiple-messages-to-a-node-js-tcp-socket-they-get-streamed-as-a-s)
 
-
-Gentle reminder to myself that TCP is stream based and that you need to split your payloads manually
-
-https://stackoverflow.com/questions/24113273/when-sending-multiple-messages-to-a-node-js-tcp-socket-they-get-streamed-as-a-s
-
-
-Luckily I was able to reuse some code 
-https://github.com/featherbear/PreSonus-StudioLive-API/blob/master/PreSonusAPI.js#L61-L102
-
---
-
-`EventEmitters` actually exist in node's `require('events').EventEmitter`
-
---- 
-
-nodejs's Socket.write also has Socket._write
-https://github.com/nodejs/node/blob/ad2036fc1a7114bdb961d176fcabca4e0a7b92f5/lib/net.js#L302
+Luckily I was able to reuse some [code from a previous project](https://github.com/featherbear/PreSonus-StudioLive-API/blob/master/PreSonusAPI.js#L61-L102) - which saved me some time
 
 ---
-
 
 # Dealing with TCP packets
 
@@ -65,7 +46,7 @@ But, if the payload contains the delimiter sequence then we'll run into splittin
 
 ---
 
-## Thoughts
+# Thoughts
 
 Ideally I'd want to use `0x00` as some sort of delimeter - but the `0x00` byte _may_ appear in the payload.  
 Perhaps if I could just strip the `0x00` bytes - but there _might_ be a need to keep it within the data (?).  
@@ -79,7 +60,6 @@ This could cause a denial of service and would require a restart of the server.
 
 Ultimately I will need to encrypt my payloads too.  
 Perhaps the encryption doesn't produce any output bytes of `0x00` - but I shouldn't intertwine the need for encryption for both security and transport.
-
 
 ## Decision 
 
@@ -118,7 +98,29 @@ Will use the [`int24`](https://github.com/matanamir/int24) node module.
 The Socket for each connection on the server will receive events - rather than the Server receiving events.  
 This is as to allow each event to have a connection context (otherwise we will have to pass in the context via the argument)
 
+---
+
 
 ---
 
-Ran into receive packet collision, things being out of place... need to fix that
+# Other Musings
+
+## ACK packets
+
+Should I have some sort of acknowledgement packet that gets sent back to confirm reception?
+
+## EventEmitters
+
+Also I didn't realise that `EventEmitters` exist in node.js with `require('events').EventEmitter`.  
+_I thought that every developer had written their own in the same way..._ - silly me.
+
+## net.Socket
+
+Node.js's `Socket.write` also has a ``Socket._write` method [source](https://github.com/nodejs/node/blob/ad2036fc1a7114bdb961d176fcabca4e0a7b92f5/lib/net.js#L302).  
+This caused issues when I was trying to write a wrapper function to hook onto the `write` calls.  
+I didn't receive any errors or warnings, so it was very hard to debug.
+
+## Receive Buffers
+
+I ran into receive packet collision (I thought I had fixed it???) and chunks of packets were being being received out of place.  
+In hindsight, I'm not sure why I didn't just use something like [Socket.io](https://socket.io).

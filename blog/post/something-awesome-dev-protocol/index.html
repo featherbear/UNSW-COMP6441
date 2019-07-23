@@ -201,7 +201,7 @@ The relay server only keeps a record of the host&rsquo;s details in memory.</p>
 
 <ul>
 <li><p><code>keepalive</code><br />
-Description: A periodic &ldquo;Keep Alive&rdquo; message. No reply<br />
+Description: A periodic &ldquo;Keep Alive&rdquo; message over UDP. No reply<br />
 Source: Client<br />
 Destination: Host</p></li>
 
@@ -217,10 +217,11 @@ Source: Client<br />
 Destination: Relay</p></li>
 
 <li><p><code>poll</code><br />
-Description: Broadcast presence to a relay server. Latency also recorded by the relay server. No reply<br />
-Data: Public IP, Computer Name, MAC Address, RAM, CPU<br />
+Description: Broadcast presence to a relay server / client (UDP). No reply<br />
+Data: { Public IP, Computer Name, MAC Address, RAM, CPU }<br />
 Source: Host<br />
-Destination: Relay</p></li>
+Destination: Relay<br />
+<!-- ( Latency also recorded by the server. ) --></p></li>
 </ul>
 
 <h2 id="control-messages">Control Messages</h2>

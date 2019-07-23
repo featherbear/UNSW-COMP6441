@@ -7,10 +7,46 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Sat, 20 Jul 2019 18:00:00 +1000</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jul 2019 19:28:30 +1000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Something Awesome: Component - Relay</title>
+      <link>/post/something-awesome-component-relay/</link>
+      <pubDate>Tue, 23 Jul 2019 19:28:30 +1000</pubDate>
+      
+      <guid>/post/something-awesome-component-relay/</guid>
+      <description>It didn&amp;apos;t work.</description>
+    </item>
+    
+    <item>
+      <title>Privacy</title>
+      <link>/post/privacy/</link>
+      <pubDate>Tue, 23 Jul 2019 18:32:55 +1000</pubDate>
+      
+      <guid>/post/privacy/</guid>
+      <description>Privacy GPS Logging Did you know that Google tracks where you&amp;rsquo;ve been?</description>
+    </item>
+    
+    <item>
+      <title>Lecture 16</title>
+      <link>/post/lec16/</link>
+      <pubDate>Tue, 23 Jul 2019 18:15:38 +1000</pubDate>
+      
+      <guid>/post/lec16/</guid>
+      <description>Extended Security  Click here to read about Privacy</description>
+    </item>
+    
+    <item>
+      <title>Lecture 15</title>
+      <link>/post/lec15/</link>
+      <pubDate>Tue, 23 Jul 2019 10:00:30 +1000</pubDate>
+      
+      <guid>/post/lec15/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>SecSoc CTF</title>
@@ -175,7 +211,7 @@
     </item>
     
     <item>
-      <title>Something Awesome</title>
+      <title>Something Awesome: Project RATtata</title>
       <link>/post/job-application/something_awesome/</link>
       <pubDate>Sat, 13 Jul 2019 20:48:05 +1000</pubDate>
       
@@ -580,6 +616,24 @@
     </item>
     
     <item>
+      <title>Something Awesome: Component - Server</title>
+      <link>/post/something-awesome-component-server/</link>
+      <pubDate>Tue, 18 Jun 2019 11:45:13 +1000</pubDate>
+      
+      <guid>/post/something-awesome-component-server/</guid>
+      <description>Before writing the server, I first had to write up the communications protocol for TCP and UDP connection between the client, server, and relay.</description>
+    </item>
+    
+    <item>
+      <title>Something Awesome: Component - Communication Protocol</title>
+      <link>/post/something-awesome-component-communication-protocol/</link>
+      <pubDate>Tue, 18 Jun 2019 11:44:54 +1000</pubDate>
+      
+      <guid>/post/something-awesome-component-communication-protocol/</guid>
+      <description>Writing my own application layer protocol was an&amp;hellip; interesting task.</description>
+    </item>
+    
+    <item>
       <title>Lecture 5</title>
       <link>/post/lec05/</link>
       <pubDate>Tue, 18 Jun 2019 10:31:58 +1000</pubDate>
@@ -622,6 +676,15 @@
       
       <guid>/post/reflections02/</guid>
       <description>Lecture Three | Lecture Four</description>
+    </item>
+    
+    <item>
+      <title>Something Awesome: User Interface with Electron</title>
+      <link>/post/something-awesome-dev-gui/</link>
+      <pubDate>Sat, 15 Jun 2019 22:08:44 +1000</pubDate>
+      
+      <guid>/post/something-awesome-dev-gui/</guid>
+      <description>Having a crack at Electron was a very fun experience - something that I&amp;rsquo;ve never tried before.</description>
     </item>
     
     <item>

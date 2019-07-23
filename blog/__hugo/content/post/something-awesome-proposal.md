@@ -32,24 +32,25 @@ The task for this project is to create a **RAT** that can remotely connect to a 
 
 * Server software that will listen to client connections
 * Client software that can connect to servers and issue commands
-* Access authorisation mechanism (password)
-* Host display is visible to the client
-* Keyboard and mouse emulation
-* Screenshot capability
+* Relay/broker server to manage running RAT hosts
 
 # Additional features
 
-* Relay/broker server to manage running RAT hosts
+* Access authorisation mechanism (password)
+* Host display is visible to the client
+* Screenshot capability
+* Make the GUI for the client software pretty!
+* Keystroke logging
+* Keyboard and mouse emulation
 * Connection is secured
 * Cross platform support
-* Keystroke logging
 * Capture webcam photos
+
 <!-- * Hidden execution -->
 <!-- * Remote code execution -->
 
 # If you&apos;re bored (worth no marks)
 
-* Make the GUI for the client software pretty! (_Perhaps learn Electron_)
 * Virus-like behaviour (self replication, auto-start)
 
 # Task Outcomes
@@ -62,6 +63,7 @@ The task for this project is to create a **RAT** that can remotely connect to a 
 * Make something awesome!
 
 # Marking Criteria
+
 HD - 85-100 - Compulsory features working with at least 3 additional features  
 DN - 75-84 - Compulsory features working with 2 additional features  
 CR - 65-74 - Compulsory features working with 1 additional feature  

@@ -62,6 +62,7 @@ After the talk, I wrote a [write-up post](../../lightning-talk-http-https-securi
   * `(2019-06-21)` [A look at 'The Thinning' movie](../../the-thinning)
   * `(2019-07-13)` [DNS over HTTPS](../../security-everywhere-dns-over-https)
   * `(2019-07-16)` [Media File Jacking PoC](../../security-everywhere-whatsapp-telegram-media-file-jacking)
+  * `(2019-07-24)` [Tracking Applications](../../security-everywhere-tracking-apps)
 
 # External Community
 

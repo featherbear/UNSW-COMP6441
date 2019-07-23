@@ -48,7 +48,7 @@ The relay server only keeps a record of the host's details in memory.
 ## Connection Messages
 
 * `keepalive`  
-Description: A periodic "Keep Alive" message. No reply  
+Description: A periodic "Keep Alive" message over UDP. No reply  
 Source: Client  
 Destination: Host  
 
@@ -64,10 +64,11 @@ Source: Client
 Destination: Relay  
 
 * `poll`  
-Description: Broadcast presence to a relay server. Latency also recorded by the relay server. No reply  
-Data: Public IP, Computer Name, MAC Address, RAM, CPU  
+Description: Broadcast presence to a relay server / client (UDP). No reply  
+Data: { Public IP, Computer Name, MAC Address, RAM, CPU }  
 Source: Host  
 Destination: Relay  
+<!-- ( Latency also recorded by the server. ) -->
 
 ## Control Messages
 

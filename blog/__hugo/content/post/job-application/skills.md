@@ -100,6 +100,12 @@ Performed a dumpster dive.
 Performed a social engineering attack (activity).  
 [[link]](../../social-engineering-puppylove)
 
+## Data Analysis
+
+Analysed the location history data that Google has about me.  
+[[link]](../../where-you-at/)
+
+
 ---
 
 # Other

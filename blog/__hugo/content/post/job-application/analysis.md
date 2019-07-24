@@ -118,7 +118,6 @@ Below are the topics that I have researched
 # Reflection
 
 * Weekly Reflections | [[1]](../../reflections01) [[2]](../../reflections02) [[3]](../../reflections03) [[4]](../../reflections04) [[5]](../../reflections05) [[6]](../../reflections06) [[7]](../../reflections07) [[8]](../../reflections08)
-<!-- * [Something Awesome Reflection]() -->
 * [Reflections on the Deepwater Horizon Accident](../../reflections-case-study-the-deepwater-horizon-accident)
 * [Reflections on the Harry Houdini case study](../../reflections-case-study-harry-houdini)
 * [Reflections on the Plane Doors case study](../../reflections-case-study-plane-doors)

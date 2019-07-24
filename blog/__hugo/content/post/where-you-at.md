@@ -56,7 +56,11 @@ Quite a heavy presence down south - perhaps I might live there or something?
 # Conclusion
 
 It's quite frightening actually to know that Google retains my location data since around 2010.  
-That's roughly 9 years worth of location history - ***my*** location history.
+
+And mind you, the map images above only show 4 years worth of data.  
+There's still another 5 or so other years unrevealed.
+
+9 years worth of location history. ***MY*** location history.
 
 ---
 

@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Tue, 23 Jul 2019 19:28:30 +1000</lastBuildDate>
+    <lastBuildDate>Wed, 24 Jul 2019 00:31:40 +1000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Security Everywhere: Tracking Apps</title>
+      <link>/post/security-everywhere-tracking-apps/</link>
+      <pubDate>Wed, 24 Jul 2019 00:31:40 +1000</pubDate>
+      
+      <guid>/post/security-everywhere-tracking-apps/</guid>
+      <description>Where do you draw the line between tracking apps, and stalking apps?</description>
+    </item>
     
     <item>
       <title>Something Awesome: Component - Relay</title>
@@ -45,7 +54,7 @@
       <pubDate>Tue, 23 Jul 2019 10:00:30 +1000</pubDate>
       
       <guid>/post/lec15/</guid>
-      <description></description>
+      <description>TODO - Watch The China Syndrome (will be in the exam!</description>
     </item>
     
     <item>

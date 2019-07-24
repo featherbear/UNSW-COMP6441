@@ -91,6 +91,8 @@ let tumblr_callback = data => document.getElementById("postCount").innerText = d
 * [_cse6441_ thanking me](https://alexpanaman.tumblr.com/post/186082589007/lightning-talk-https-security)
 * [_public-insecurities_ thanking me](https://alexpanaman.tumblr.com/post/186180964580/cryptocurrency)
 * [_tsoyuzhu_ thanking me](https://alexpanaman.tumblr.com/post/185973381271/making-cracking-harder-with-modulos)
+* [_shmacktus_ thanking me](https://alexpanaman.tumblr.com/post/186352262023/social-engineering-puppy-love)
+* [_usmanhaidar6441_ thanking me](https://usmanhaidar6441.tumblr.com/post/186492827359/social-engineering-puppy-love)
 * [_jennax-seceng_ using my content](https://jennax-seceng.tumblr.com/post/186322711311/week-07-notes-a)
 * [_wooloojumper_ providing feedback](https://alexpanaman.tumblr.com/post/185856973850/something-awesome-research-keylogging)
 * [Being credited for my content](https://supersecure.tumblr.com/post/186374434338/big-shoutout-to-jennax-seceng-for-helping-me-out)

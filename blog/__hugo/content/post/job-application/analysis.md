@@ -124,7 +124,7 @@ Below are the topics that I have researched
 
 # Application
 
-* **See for [Skills](../skills) for technical demos.**
+* **See for [Skills](../skills) for technical demos and skills.**
 * [Shoplifting Prevention](../../shoplifting-prevention)
 * [How to Steal a Penguin (Activity)](../../how-to-steal-a-penguin)
 * [Social Engineering on Puppy Love (Activity)](../../social-engineering-puppylove)

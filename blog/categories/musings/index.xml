@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Thu, 25 Jul 2019 03:48:38 +1000</lastBuildDate>
+    <lastBuildDate>Thu, 25 Jul 2019 13:34:08 +1000</lastBuildDate>
     
 	<atom:link href="/categories/musings/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>plsdonthaq.me CTF Challenges</title>
+      <link>/post/plsdonthaq.me/</link>
+      <pubDate>Thu, 25 Jul 2019 13:34:08 +1000</pubDate>
+      
+      <guid>/post/plsdonthaq.me/</guid>
+      <description>WARNING: SPOILERS</description>
+    </item>
     
     <item>
       <title>Where You At</title>

@@ -68,7 +68,8 @@ After the talk, I wrote a [write-up post](../../lightning-talk-http-https-securi
 
 * `(2019-06-29)` I attended and [wrote the server](https://github.com/featherbear/UNSW-CompClub2019Summer-CTF) for the [Kingsway CTF event](https://alexpanaman.tumblr.com/post/186017987604/went-to-a-community-ctf-event-recently-the-server)  
 * `(2019-07-05)` I attempted some challenges from the [Cryptopals website](../../cryptopals)
-* `(2017-07-20)` I attended the [SecSoc CTF Event](../../secsec-ctf)
+* `(2019-07-20)` I attended the [SecSoc CTF Event](../../secsec-ctf)
+* `(2019-07-25)` I attempted the [plsdonthaq.me](../../plsdonthaq.me) CTF challenges, and wrote write-ups for questions that I had completed.
 
 
 # Community Interaction

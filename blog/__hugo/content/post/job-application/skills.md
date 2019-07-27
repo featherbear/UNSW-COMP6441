@@ -120,4 +120,7 @@ Implemented a custom password strength visualiser into my [passwords](../../pass
 Wrote a CTF server interface that was used in a public CTF event.  
 [[github]](https://github.com/featherbear/UNSW-CompClub2019Summer-CTF) [[Kingsway CTF Event]](https://alexpanaman.tumblr.com/post/186017987604/went-to-a-community-ctf-event-recently-the-server)
 
-Also participated in the SecSoc CTF event on 20/07/2019.
+Also participated in the [SecSoc CTF event](../../secsoc-ctf) on 20/07/2019.
+
+Also participated in the [plsdonthaq.me](../../plsdonthaq.me) CTF challenges on 25/07/2019 - 27/07/2019.  
+For these challenges, I created write-ups for questions that I had completed.

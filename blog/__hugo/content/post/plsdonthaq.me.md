@@ -449,6 +449,8 @@ Flag: `COMP6441{hacked_the_planet_2}`
 
 ## int1
 
+<details>
+
 **Solution**  
 I wasn't able to do this challenge the first time, despite doing the exact same thing when attempting it the next day...
 
@@ -494,6 +496,8 @@ I even tried adding a time delay between the prints, but it still wouldn't work.
 If anyone knows why this is the case, please let me know!
 
 `python3 -c 'print(-(2*31)+1337)' | nc plsdonthaq.me 1003`
+
+</details>
 
 # Category: Crypto
 ## <s>birthday attack</s>

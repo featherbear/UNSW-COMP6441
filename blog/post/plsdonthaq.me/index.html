@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-07-25T13:34:08&#43;10:00" />
 <meta itemprop="dateModified" content="2019-07-25T13:34:08&#43;10:00" />
-<meta itemprop="wordCount" content="3213">
+<meta itemprop="wordCount" content="3194">
 
 
 
@@ -911,7 +911,9 @@ Vinegar &hellip; hm I wonder if it&rsquo;s a <em>vigenere</em> cipher.</p>
 
 <h2 id="s-hash-length-magic-s"><s>hash length magic</s></h2>
 
-<p><strong>Analysis</strong>
+<p><details></p>
+
+<p><strong>Analysis</strong><br />
 Nothing happens when you connect?<br />
 <em>Or does it?</em></p>
 
@@ -920,9 +922,7 @@ Nothing happens when you connect?<br />
 
 <p>python3 -c &lsquo;key = &ldquo;a&rdquo;; m = &ldquo;get flag&rdquo;; import hashlib; xx = hashlib.sha256(key.encode() + m.encode()).hexdigest() + m; print(xx + &ldquo;\x00&rdquo; * (0x100 - len(xx)))&rsquo; | nc plsdonthaq.me 9003</p>
 
-<p>python3 -c &lsquo;print(-(2**31)+1337)&rsquo; | nc plsdonthaq.me 1003
-Enter 1337*2 == 2674 ;)
-Enter a number:you entered -2147482311*2 == 2674</p>
+<p></details></p>
 
 <h1 id="category-misc">Category: Misc</h1>
 

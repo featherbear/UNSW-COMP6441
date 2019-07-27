@@ -571,7 +571,9 @@ Flag: `COMP6441{hack_the_gibson}`
 
 ## <s>hash length magic</s>
 
-**Analysis**
+<details>
+
+**Analysis**  
 Nothing happens when you connect?  
 _Or does it?_
 
@@ -580,10 +582,7 @@ When you enter more than 255 characters, you get this message:
 
 python3 -c 'key = "a"; m = "get flag"; import hashlib; xx = hashlib.sha256(key.encode() + m.encode()).hexdigest() + m; print(xx + "\x00" * (0x100 - len(xx)))' | nc plsdonthaq.me 9003
 
-python3 -c 'print(-(2**31)+1337)' | nc plsdonthaq.me 1003
-Enter 1337*2 == 2674 ;)
-Enter a number:you entered -2147482311*2 == 2674
-
+</details>
 
 # Category: Misc
 

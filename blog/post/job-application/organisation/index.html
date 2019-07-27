@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-07-13T20:48:05&#43;10:00" />
 <meta itemprop="dateModified" content="2019-07-13T20:48:05&#43;10:00" />
-<meta itemprop="wordCount" content="272">
+<meta itemprop="wordCount" content="287">
 
 
 
@@ -182,6 +182,15 @@
 
 <p>I have been very active and regular with my posts. With at least two/three posts each week.<br />
 You can verify this through my Tumblr post archive page <a href="https://alexpanaman.tumblr.com/archive">here</a></p>
+
+<p>I currently have <span id="postCount" style="font-weight: bold">(loading)</span> posts on Tumblr.</p>
+
+<p>
+<script>
+let tumblr_callback = data => document.getElementById("postCount").innerText = data["posts-total"];
+</script>
+
+<script async src="https://alexpanaman.tumblr.com/api/read/json?callback=tumblr_callback"></script></p>
 
 <h1 id="catching-up">Catching up</h1>
 

@@ -51,6 +51,15 @@ You can see my blog [[here]](https://featherbear.github.io/UNSW-COMP6441)
 I have been very active and regular with my posts. With at least two/three posts each week.  
 You can verify this through my Tumblr post archive page [here](https://alexpanaman.tumblr.com/archive)
 
+I currently have <span id="postCount" style="font-weight: bold">(loading)</span> posts on Tumblr.
+
+{{< rawhtml >}}
+<script>
+let tumblr_callback = data => document.getElementById("postCount").innerText = data["posts-total"];
+</script>
+{{< /rawhtml >}}
+<script async src="https://alexpanaman.tumblr.com/api/read/json?callback=tumblr_callback"></script>
+
 # Catching up
 
 Several occasions throughout the course I was not able to attend my lectures, and even some classes.  

@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Andrew Wong (z5206677)</copyright>
-    <lastBuildDate>Tue, 23 Jul 2019 18:15:38 +1000</lastBuildDate>
+    <lastBuildDate>Tue, 06 Aug 2019 10:12:20 +1000</lastBuildDate>
     
 	<atom:link href="/categories/lectures/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Lecture 19</title>
+      <link>/post/lec19/</link>
+      <pubDate>Tue, 06 Aug 2019 10:12:20 +1000</pubDate>
+      
+      <guid>/post/lec19/</guid>
+      <description>Privacy  Data is the new oil   Very useful But very dangerous  Issues around data collection  Data linking - correlating data sets (De)anonymisation Massive Scale Data breach Fishing expeditions -&amp;gt; Using data out of collected purpose  Tools aren&amp;rsquo;t built for users Tools are often built for government agencies to easily retrieve your data.</description>
+    </item>
+    
+    <item>
+      <title>Lecture 17</title>
+      <link>/post/lec17/</link>
+      <pubDate>Tue, 30 Jul 2019 10:24:17 +1000</pubDate>
+      
+      <guid>/post/lec17/</guid>
+      <description>&amp;ldquo;Just Culture&amp;rdquo; (Just as in justice)</description>
+    </item>
     
     <item>
       <title>Lecture 16</title>

@@ -3,6 +3,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/post/lec19/</loc>
+    <lastmod>2019-08-06T10:12:20+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/lec17/</loc>
+    <lastmod>2019-07-30T10:24:17+10:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/plsdonthaq.me/</loc>
     <lastmod>2019-07-25T13:34:08+10:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -823,7 +837,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-07-25T13:34:08+10:00</lastmod>
+    <lastmod>2019-08-06T10:12:20+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -858,7 +872,7 @@
   
   <url>
     <loc>/categories/lectures/</loc>
-    <lastmod>2019-07-23T18:15:38+10:00</lastmod>
+    <lastmod>2019-08-06T10:12:20+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -872,7 +886,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-07-25T13:34:08+10:00</lastmod>
+    <lastmod>2019-08-06T10:12:20+10:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

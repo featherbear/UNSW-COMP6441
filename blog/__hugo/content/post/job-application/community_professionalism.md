@@ -66,7 +66,7 @@ After the talk, I wrote a [write-up post](../../lightning-talk-http-https-securi
 
 # External Community
 
-* `(2019-06-29)` I attended and [wrote the server](https://github.com/featherbear/UNSW-CompClub2019Summer-CTF) for the [Kingsway CTF event](https://alexpanaman.tumblr.com/post/186017987604/went-to-a-community-ctf-event-recently-the-server)  
+* `(2019-06-29)` I attended and [wrote the server](https://github.com/featherbear/UNSW-CompClub2019Summer-CTF) for the [Kingsway CTF event](https://yiw404.tumblr.com/post/186017987604/went-to-a-community-ctf-event-recently-the-server)  
 * `(2019-07-05)` I attempted some challenges from the [Cryptopals website](../../cryptopals)
 * `(2019-07-20)` I attended the [SecSoc CTF Event](../../secsec-ctf)
 * `(2019-07-25)` I attempted the [plsdonthaq.me](../../plsdonthaq.me) CTF challenges, and wrote write-ups for questions that I had completed.
@@ -74,7 +74,7 @@ After the talk, I wrote a [write-up post](../../lightning-talk-http-https-securi
 
 # Community Interaction
 
-I have been an active member on the Tumblr community, as seen through my [post overviews](https://alexpanaman.tumblr.com/archive).  
+I have been an active member on the Tumblr community, as seen through my [post overviews](https://yiw404.tumblr.com/archive).  
 Furthermore, apart from just posting, I have also interacted with the community as seen from the below.
 
 I currently have <span id="postCount" style="font-weight: bold">(loading)</span> posts on Tumblr.
@@ -84,20 +84,20 @@ I currently have <span id="postCount" style="font-weight: bold">(loading)</span>
 let tumblr_callback = data => document.getElementById("postCount").innerText = data["posts-total"];
 </script>
 {{< /rawhtml >}}
-<script async src="https://alexpanaman.tumblr.com/api/read/json?callback=tumblr_callback"></script>
+<script async src="https://yiw404.tumblr.com/api/read/json?callback=tumblr_callback"></script>
 
 ## Example interactions
 
 * [_supersecure_ thanking me](https://supersecure.tumblr.com/post/186256285513/reflections-week-6)
-* [_cse6441_ thanking me](https://alexpanaman.tumblr.com/post/186082589007/lightning-talk-https-security)
-* [_public-insecurities_ thanking me](https://alexpanaman.tumblr.com/post/186180964580/cryptocurrency)
-* [_tsoyuzhu_ thanking me](https://alexpanaman.tumblr.com/post/185973381271/making-cracking-harder-with-modulos)
-* [_shmacktus_ thanking me](https://alexpanaman.tumblr.com/post/186352262023/social-engineering-puppy-love)
+* [_cse6441_ thanking me](https://yiw404.tumblr.com/post/186082589007/lightning-talk-https-security)
+* [_public-insecurities_ thanking me](https://yiw404.tumblr.com/post/186180964580/cryptocurrency)
+* [_tsoyuzhu_ thanking me](https://yiw404.tumblr.com/post/185973381271/making-cracking-harder-with-modulos)
+* [_shmacktus_ thanking me](https://yiw404.tumblr.com/post/186352262023/social-engineering-puppy-love)
 * [_usmanhaidar6441_ thanking me](https://usmanhaidar6441.tumblr.com/post/186492827359/social-engineering-puppy-love)
 * [_jennax-seceng_ using my content](https://jennax-seceng.tumblr.com/post/186322711311/week-07-notes-a)
-* [_wooloojumper_ providing feedback](https://alexpanaman.tumblr.com/post/185856973850/something-awesome-research-keylogging)
+* [_wooloojumper_ providing feedback](https://yiw404.tumblr.com/post/185856973850/something-awesome-research-keylogging)
 * [Being credited for my content](https://supersecure.tumblr.com/post/186374434338/big-shoutout-to-jennax-seceng-for-helping-me-out)
-* [Discussion with _comp6841_](https://alexpanaman.tumblr.com/post/185989477117/passwords)
+* [Discussion with _comp6841_](https://yiw404.tumblr.com/post/185989477117/passwords)
 * [Discussion with _frankfoo3_](https://frankfoo3.tumblr.com/post/186278347801/week-06-buffer-overflow-practice-questions-10)
-* [Discussion with _morethankradio_](https://alexpanaman.tumblr.com/post/185833679392/naive-thoughts-if-you-intercept-and-hijack-the)
-* [Discussion with the community](https://alexpanaman.tumblr.com/post/185651749873/had-a-look-at-the-shared-class-notes-for-this)
+* [Discussion with _morethankradio_](https://yiw404.tumblr.com/post/185833679392/naive-thoughts-if-you-intercept-and-hijack-the)
+* [Discussion with the community](https://yiw404.tumblr.com/post/185651749873/had-a-look-at-the-shared-class-notes-for-this)

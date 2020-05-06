@@ -26,11 +26,11 @@ I have been using Trello as a todo list, to manage all of the university work th
 
 In my reflection posts, I have regularly reflected and commented upon my progress, and of how I have been keeping up with my schedule.
 
-* [Link 1](https://alexpanaman.tumblr.com/post/186401051688/reflections-week-7)
-* [Link 2](https://alexpanaman.tumblr.com/post/186254784918/reflections-week-6)
-* [Link 3](https://alexpanaman.tumblr.com/post/186254645313/reflections-week-5)
-* [Link 4](https://alexpanaman.tumblr.com/post/185871286626/link)
-* [Link 5](https://alexpanaman.tumblr.com/post/185626312158/reflections-week-two)
+* [Link 1](https://yiw404.tumblr.com/post/186401051688/reflections-week-7)
+* [Link 2](https://yiw404.tumblr.com/post/186254784918/reflections-week-6)
+* [Link 3](https://yiw404.tumblr.com/post/186254645313/reflections-week-5)
+* [Link 4](https://yiw404.tumblr.com/post/185871286626/link)
+* [Link 5](https://yiw404.tumblr.com/post/185626312158/reflections-week-two)
 
 # Post Management
 
@@ -49,7 +49,7 @@ You can see my blog [[here]](https://featherbear.github.io/UNSW-COMP6441)
 # Blogging
 
 I have been very active and regular with my posts. With at least two/three posts each week.  
-You can verify this through my Tumblr post archive page [here](https://alexpanaman.tumblr.com/archive)
+You can verify this through my Tumblr post archive page [here](https://yiw404.tumblr.com/archive)
 
 I currently have <span id="postCount" style="font-weight: bold">(loading)</span> posts on Tumblr.
 
@@ -58,7 +58,7 @@ I currently have <span id="postCount" style="font-weight: bold">(loading)</span>
 let tumblr_callback = data => document.getElementById("postCount").innerText = data["posts-total"];
 </script>
 {{< /rawhtml >}}
-<script async src="https://alexpanaman.tumblr.com/api/read/json?callback=tumblr_callback"></script>
+<script async src="https://yiw404.tumblr.com/api/read/json?callback=tumblr_callback"></script>
 
 # Catching up
 

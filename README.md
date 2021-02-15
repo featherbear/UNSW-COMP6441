@@ -14,4 +14,4 @@ Here are some links that will probably be more useful to you:
 
 ---
 
-_~ Hope you have cookies enabled 🍪_
+~ Hope you have cookies enabled 🍪

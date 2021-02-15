@@ -1,10 +1,9 @@
-# UNSW COMP6441 Security Engineering and Cyber Security
+# UNSW COMP6441 / COMP6841 Security Engineering and Cyber Security
 2019 Session Two Course Work
 
 ---
 
-Hello! I see you've stumbled upon this repository somehow.  
-
+Hello!  
 Here are some links that will probably be more useful to you:
 
 * [A bunch of posts / blog posts](https://featherbear.cc/UNSW-COMP6441/blog/categories/)

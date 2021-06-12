@@ -1,618 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Buffer Overflows - COMP6441 Musings</title>
-  <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
-
-
-<meta name="author" content="z5206677" /><meta name="description" content="Quick Links" /><meta name="keywords" content="Hugo, theme, even" />
-
-
-
-
-
-
-<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
-
-
-<link rel="canonical" href="../../post/buffer-overflows/" />
-<link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
-<link rel="manifest" href="../../manifest.json">
-<link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#5bbad5">
-
-
-<link href="../../dist/even.c2a46f00.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
-
-
-<meta property="og:title" content="Buffer Overflows" />
-<meta property="og:description" content="Quick Links" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/post/buffer-overflows/" />
-<meta property="article:published_time" content="2019-07-16T15:58:04&#43;10:00"/>
-<meta property="article:modified_time" content="2019-07-16T15:58:04&#43;10:00"/>
-
-<meta itemprop="name" content="Buffer Overflows">
-<meta itemprop="description" content="Quick Links">
-
-
-<meta itemprop="datePublished" content="2019-07-16T15:58:04&#43;10:00" />
-<meta itemprop="dateModified" content="2019-07-16T15:58:04&#43;10:00" />
-<meta itemprop="wordCount" content="786">
-
-
-
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Buffer Overflows"/>
-<meta name="twitter:description" content="Quick Links"/>
-
-<!--[if lte IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
-<![endif]-->
-
-<!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
-
-</head>
-<body>
-  <div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="../../" class="logo">COMP6441 Musings</a>
-  </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    <a href="../../">
-        <li class="mobile-menu-item">Home</li>
-      </a><a href="../../post/job-application">
-        <li class="mobile-menu-item">Job Application</li>
-      </a><a href="../../categories/">
-        <li class="mobile-menu-item">Categories</li>
-      </a>
-  </ul>
-</nav>
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="../../" class="logo">COMP6441 Musings</a>
-</div>
-
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item">
-        <a class="menu-item-link" href="../../">Home</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="../../post/job-application">Job Application</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="../../categories/">Categories</a>
-      </li>
-  </ul>
-</nav>
-    </header>
-
-    <main id="main" class="main">
-      <div class="content-wrapper">
-        <div id="content" class="content">
-          <article class="post">
-    
-    <header class="post-header">
-      <h1 class="post-title">Buffer Overflows</h1>
-
-      <div class="post-meta">
-        <span class="post-time"> 2019-07-16 </span>
-        <div class="post-category">
-            <a href="../../categories/musings/"> Musings </a>
-            </div>
-        
-      </div>
-    </header>
-
-    <div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">Contents</h2>
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-<ul>
-<li><a href="#buffer-overflows">Buffer Overflows</a>
-<ul>
-<li><a href="#overwriting-variables">Overwriting variables</a></li>
-<li><a href="#modifying-return-addresses">Modifying return addresses</a></li>
-</ul></li>
-</ul>
-</nav>
-  </div>
-</div>
-    <div class="post-content">
-      
-
-<blockquote>
-<p><strong>Quick Links</strong></p>
-
-<ul>
-<li><a href="../memory-vulnerabilities">Memory Vulnerabilities</a></li>
-<li><a href="../buffer-overflow-01">Example 1</a></li>
-<li><a href="../buffer-overflow-02">Example 2</a></li>
-<li><a href="../buffer-overflow-03">Example 3</a></li>
-</ul>
-</blockquote>
-
-<h1 id="buffer-overflows">Buffer Overflows</h1>
-
-<p>Buffer overflow attacks are caused by a code&rsquo;s naive mishandling of user input. Just because you have a buffer of a said size, you cannot guarantee that the user will supply at most that size.</p>
-
-<p>The function we&rsquo;ll look at here is <code>char *gets(char *s)</code>.<br />
-<em>By the way, if you look at the <code>man 3 gets</code> page, it literally says &ldquo;<strong>Never use gets()</strong>&ldquo;</em></p>
-
-<p><code>gets</code> reads data from <code>stdin</code> and stores into the address given by its first parameter <code>s</code>. At the end of input it also writes the null terminating byte <code>\00</code>.</p>
-
-<h2 id="overwriting-variables">Overwriting variables</h2>
-
-<p><img src="buffer_overflow.png" alt="" /></p>
-
-<!-- ```c
-
-// Buffer Overflow Example
-
-#include <stdio.h>
-
-int main(int argc, char** argv) {
-    char num = 12;
-    char name[10];
-
-    printf("Hey there, what's your name?\n> ");
-
-    gets(name);
-
-    printf("\nHey there, %s!\n", name);
-    printf("And the secret number is %d!\n", secret_number);
-}
-``` -->
-
-<p>Here we have a basic program that asks the user for their name, and then greets the user and tells us a <code>num</code>. It stores the user&rsquo;s name into the character array <code>name</code> (which has a size of 10).</p>
-
-<p>If our name was Samuel, the program would run something like this&hellip;</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$&gt; ./buffer_overflow
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>Buffer Overflows - COMP6441 Musings</title><meta name=renderer content=webkit><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content=no-transform><meta http-equiv=cache-control content=no-siteapp><meta name=theme-color content=#f8f5ec><meta name=msapplication-navbutton-color content=#f8f5ec><meta name=apple-mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=#f8f5ec><meta name=author content=z5206677><meta name=description content="Quick Links"><meta name=keywords content=Hugo,theme,even><meta name=generator content="Hugo 0.54.0 with even 4.0.0"><link rel=canonical href=../../post/buffer-overflows/><link rel=apple-touch-icon sizes=180x180 href=../../apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=../../favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=../../favicon-16x16.png><link rel=manifest href=../../manifest.json><link rel=mask-icon href=../../safari-pinned-tab.svg color=#5bbad5><link href=../../dist/even.c2a46f00.min.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property=og:title content="Buffer Overflows"><meta property=og:description content="Quick Links"><meta property=og:type content=article><meta property=og:url content=/post/buffer-overflows/><meta property=article:published_time content=2019-07-16T15:58:04&#43;10:00><meta property=article:modified_time content=2019-07-16T15:58:04&#43;10:00><meta itemprop=name content="Buffer Overflows"><meta itemprop=description content="Quick Links"><meta itemprop=datePublished content=2019-07-16T15:58:04&#43;10:00><meta itemprop=dateModified content=2019-07-16T15:58:04&#43;10:00><meta itemprop=wordCount content=786><meta itemprop=keywords content><meta name=twitter:card content=summary><meta name=twitter:title content="Buffer Overflows"><meta name=twitter:description content="Quick Links"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=../../ class=logo>COMP6441 Musings</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=../../><li class=mobile-menu-item>Home</li></a><a href=../../post/job-application><li class=mobile-menu-item>Job Application</li></a><a href=../../categories/><li class=mobile-menu-item>Categories</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=../../ class=logo>COMP6441 Musings</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=../../>Home</a></li><li class=menu-item><a class=menu-item-link href=../../post/job-application>Job Application</a></li><li class=menu-item><a class=menu-item-link href=../../categories/>Categories</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>Buffer Overflows</h1><div class=post-meta><span class=post-time>2019-07-16</span><div class=post-category><a href=../../categories/musings/>Musings</a></div></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><a href=#buffer-overflows>Buffer Overflows</a><ul><li><a href=#overwriting-variables>Overwriting variables</a></li><li><a href=#modifying-return-addresses>Modifying return addresses</a></li></ul></li></ul></nav></div></div><div class=post-content><blockquote><p><strong>Quick Links</strong></p><ul><li><a href=../memory-vulnerabilities>Memory Vulnerabilities</a></li><li><a href=../buffer-overflow-01>Example 1</a></li><li><a href=../buffer-overflow-02>Example 2</a></li><li><a href=../buffer-overflow-03>Example 3</a></li></ul></blockquote><h1 id=buffer-overflows>Buffer Overflows</h1><p>Buffer overflow attacks are caused by a code&rsquo;s naive mishandling of user input. Just because you have a buffer of a said size, you cannot guarantee that the user will supply at most that size.</p><p>The function we&rsquo;ll look at here is <code>char *gets(char *s)</code>.<br><em>By the way, if you look at the <code>man 3 gets</code> page, it literally says &ldquo;<strong>Never use gets()</strong>&ldquo;</em></p><p><code>gets</code> reads data from <code>stdin</code> and stores into the address given by its first parameter <code>s</code>. At the end of input it also writes the null terminating byte <code>\00</code>.</p><h2 id=overwriting-variables>Overwriting variables</h2><p><img src=buffer_overflow.png alt></p><p>Here we have a basic program that asks the user for their name, and then greets the user and tells us a <code>num</code>. It stores the user&rsquo;s name into the character array <code>name</code> (which has a size of 10).</p><p>If our name was Samuel, the program would run something like this&hellip;</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></pre></td><td class=lntd><pre class=chroma>$&gt; ./buffer_overflow
 
 Hey there, what&#39;s your name?
 &gt; Samuel
 
 Hey there, Samuel!
-And the secret number is 12!</pre></td></tr></table>
-</div>
-</div>
-<p>Cool, all is as expected.</p>
-
-<p>If we take a look at the memory stored in the program</p>
-
-<p><strong>Memory</strong></p>
-
-<table>
-<thead>
-<tr>
-<th align="left"><strong>Offset</strong></th>
-<th align="center">00</th>
-<th align="center">01</th>
-<th align="center">02</th>
-<th align="center">03</th>
-<th align="center">04</th>
-<th align="center">05</th>
-<th align="center">06</th>
-<th align="center">07</th>
-<th align="center">08</th>
-<th align="center">09</th>
-<th align="center">0A</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td align="left"><strong>Value</strong></td>
-<td align="center">S</td>
-<td align="center">a</td>
-<td align="center">m</td>
-<td align="center">u</td>
-<td align="center">e</td>
-<td align="center">l</td>
-<td align="center"><code>\x00</code></td>
-<td align="center">&middot;</td>
-<td align="center">&middot;</td>
-<td align="center">&middot;</td>
-<td align="center"><code>\x12</code></td>
-</tr>
-
-<tr>
-<td align="left"><strong>Variable</strong></td>
-<td align="center"><code>name</code></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"><code>num</code></td>
-</tr>
-</tbody>
-</table>
-
-<hr />
-
-<p>What if we enter a 10 letter name, perhaps Jacqueline.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$&gt; ./buffer_overflow
+And the secret number is 12!</pre></td></tr></table></div></div><p>Cool, all is as expected.</p><p>If we take a look at the memory stored in the program</p><p><strong>Memory</strong></p><table><thead><tr><th align=left><strong>Offset</strong></th><th align=center>00</th><th align=center>01</th><th align=center>02</th><th align=center>03</th><th align=center>04</th><th align=center>05</th><th align=center>06</th><th align=center>07</th><th align=center>08</th><th align=center>09</th><th align=center>0A</th></tr></thead><tbody><tr><td align=left><strong>Value</strong></td><td align=center>S</td><td align=center>a</td><td align=center>m</td><td align=center>u</td><td align=center>e</td><td align=center>l</td><td align=center><code>\x00</code></td><td align=center>&middot;</td><td align=center>&middot;</td><td align=center>&middot;</td><td align=center><code>\x12</code></td></tr><tr><td align=left><strong>Variable</strong></td><td align=center><code>name</code></td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center><code>num</code></td></tr></tbody></table><hr><p>What if we enter a 10 letter name, perhaps Jacqueline.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></pre></td><td class=lntd><pre class=chroma>$&gt; ./buffer_overflow
 
 Hey there, what&#39;s your name?
 &gt; Jacqueline
 
 Hey there, Jacqueline!
-And the secret number is 0!</pre></td></tr></table>
-</div>
-</div>
-<p>Hmm that&rsquo;s strange, why did our secret number become <code>0</code>?</p>
-
-<p><strong>Memory</strong></p>
-
-<table>
-<thead>
-<tr>
-<th align="left"><strong>Offset</strong></th>
-<th align="center">00</th>
-<th align="center">01</th>
-<th align="center">02</th>
-<th align="center">03</th>
-<th align="center">04</th>
-<th align="center">05</th>
-<th align="center">06</th>
-<th align="center">07</th>
-<th align="center">08</th>
-<th align="center">09</th>
-<th align="center">0A</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td align="left"><strong>Value</strong></td>
-<td align="center">J</td>
-<td align="center">a</td>
-<td align="center">c</td>
-<td align="center">q</td>
-<td align="center">u</td>
-<td align="center">e</td>
-<td align="center">l</td>
-<td align="center">i</td>
-<td align="center">n</td>
-<td align="center">e</td>
-<td align="center"><code>\x00</code></td>
-</tr>
-
-<tr>
-<td align="left"><strong>Variable</strong></td>
-<td align="center"><code>name</code></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"><code>num</code></td>
-</tr>
-</tbody>
-</table>
-
-<p>Remember, <code>gets</code> writes a null terminating byte after it finishes reading the user input. That null terminating byte so happens to be written into the memory for <code>num</code>.</p>
-
-<p><em>Don&rsquo;t forget! If you want to store a <code>10</code> letter word, you need <code>10 + 1 = 11</code> bytes to store it!</em></p>
-
-<hr />
-
-<p>In that sense, you can &ldquo;overflow&rdquo; your data into another variable to overwrite the values of other variables!</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$&gt; ./buffer_overflow
+And the secret number is 0!</pre></td></tr></table></div></div><p>Hmm that&rsquo;s strange, why did our secret number become <code>0</code>?</p><p><strong>Memory</strong></p><table><thead><tr><th align=left><strong>Offset</strong></th><th align=center>00</th><th align=center>01</th><th align=center>02</th><th align=center>03</th><th align=center>04</th><th align=center>05</th><th align=center>06</th><th align=center>07</th><th align=center>08</th><th align=center>09</th><th align=center>0A</th></tr></thead><tbody><tr><td align=left><strong>Value</strong></td><td align=center>J</td><td align=center>a</td><td align=center>c</td><td align=center>q</td><td align=center>u</td><td align=center>e</td><td align=center>l</td><td align=center>i</td><td align=center>n</td><td align=center>e</td><td align=center><code>\x00</code></td></tr><tr><td align=left><strong>Variable</strong></td><td align=center><code>name</code></td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center><code>num</code></td></tr></tbody></table><p>Remember, <code>gets</code> writes a null terminating byte after it finishes reading the user input. That null terminating byte so happens to be written into the memory for <code>num</code>.</p><p><em>Don&rsquo;t forget! If you want to store a <code>10</code> letter word, you need <code>10 + 1 = 11</code> bytes to store it!</em></p><hr><p>In that sense, you can &ldquo;overflow&rdquo; your data into another variable to overwrite the values of other variables!</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></pre></td><td class=lntd><pre class=chroma>$&gt; ./buffer_overflow
 
 Hey there, what&#39;s your name?
 &gt; __________A
 
 Hey there, __________A!
-And the secret number is 65!</pre></td></tr></table>
-</div>
-</div>
-<p><strong>Memory</strong></p>
-
-<table>
-<thead>
-<tr>
-<th align="left"><strong>Offset</strong></th>
-<th align="center">00</th>
-<th align="center">01</th>
-<th align="center">02</th>
-<th align="center">03</th>
-<th align="center">04</th>
-<th align="center">05</th>
-<th align="center">06</th>
-<th align="center">07</th>
-<th align="center">08</th>
-<th align="center">09</th>
-<th align="center">0A</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td align="left"><strong>Value</strong></td>
-<td align="center">_</td>
-<td align="center">_</td>
-<td align="center">_</td>
-<td align="center">_</td>
-<td align="center">_</td>
-<td align="center">_</td>
-<td align="center">_</td>
-<td align="center">_</td>
-<td align="center">_</td>
-<td align="center">_</td>
-<td align="center">A</td>
-</tr>
-
-<tr>
-<td align="left"><strong>Variable</strong></td>
-<td align="center"><code>name</code></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"><code>num</code></td>
-</tr>
-</tbody>
-</table>
-
-<p>The character <code>A</code> is equivalent to the ASCII code <code>65</code>, which is why we see 65.</p>
-
-<hr />
-
-<blockquote>
-<p>Also see <a href="../buffer-overflow-01">Example 1</a></p>
-</blockquote>
-
-<p>But that was boring!!! Show me something else!!!</p>
-
-<p>No one:<br />
-Me: Alright fine you&rsquo;ve convinced me.</p>
-
-<h2 id="modifying-return-addresses">Modifying return addresses</h2>
-
-<p>Having access to the memory in the stack means that not only can we change the function variables, we can also <strong>modify the return address</strong> of a certain stack frame.</p>
-
-<p>In other words, we can make a function run another function (should we know the function address)</p>
-
-<p><img src="buffer_overflow_return.png" alt="" /></p>
-
-<!-- ```c
-// buffer_overflow_return.c
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-void win() {
-  printf("\nYou are awesome :)\n");
-}
-
-void prompt() {
-  char password[10] = {'\0'};
-  gets(password);
-  if (strcmp(password, "hello") == 0) {
-    win();
-  } else {
-    puts("Sorry, that wasn't right.\nGoodbye!");
-  }
-}
-
-int main(int argc, char** argv) {
-  printf("// Pretend you didn't see this but you should try jump to win at %p\n", win);
-
-  printf("Enter the password: ");
-  prompt();
-
-  return 0;
-}
-``` -->
-
-<p>In the above program, when we enter the right password (in this case <code>hello</code>), the program will say &ldquo;You are awesome!&rdquo;.<br />
-If we don&rsquo;t know the password, but we know the address of the <code>win</code> function, we could exploit the <code>gets</code> function to overwrite the return address in the stack frame.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$&gt; echo -e &#34;__________............\xc9\x61\x55\x56&#34; | aslr ./buffer_overflow_return
+And the secret number is 65!</pre></td></tr></table></div></div><p><strong>Memory</strong></p><table><thead><tr><th align=left><strong>Offset</strong></th><th align=center>00</th><th align=center>01</th><th align=center>02</th><th align=center>03</th><th align=center>04</th><th align=center>05</th><th align=center>06</th><th align=center>07</th><th align=center>08</th><th align=center>09</th><th align=center>0A</th></tr></thead><tbody><tr><td align=left><strong>Value</strong></td><td align=center>_</td><td align=center>_</td><td align=center>_</td><td align=center>_</td><td align=center>_</td><td align=center>_</td><td align=center>_</td><td align=center>_</td><td align=center>_</td><td align=center>_</td><td align=center>A</td></tr><tr><td align=left><strong>Variable</strong></td><td align=center><code>name</code></td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center><code>num</code></td></tr></tbody></table><p>The character <code>A</code> is equivalent to the ASCII code <code>65</code>, which is why we see 65.</p><hr><blockquote><p>Also see <a href=../buffer-overflow-01>Example 1</a></p></blockquote><p>But that was boring!!! Show me something else!!!</p><p>No one:<br>Me: Alright fine you&rsquo;ve convinced me.</p><h2 id=modifying-return-addresses>Modifying return addresses</h2><p>Having access to the memory in the stack means that not only can we change the function variables, we can also <strong>modify the return address</strong> of a certain stack frame.</p><p>In other words, we can make a function run another function (should we know the function address)</p><p><img src=buffer_overflow_return.png alt></p><p>In the above program, when we enter the right password (in this case <code>hello</code>), the program will say &ldquo;You are awesome!&rdquo;.<br>If we don&rsquo;t know the password, but we know the address of the <code>win</code> function, we could exploit the <code>gets</code> function to overwrite the return address in the stack frame.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></pre></td><td class=lntd><pre class=chroma>$&gt; echo -e &#34;__________............\xc9\x61\x55\x56&#34; | aslr ./buffer_overflow_return
 
 // Pretend you didn&#39;t see this but you should try jump to win at 0x565561c9
 Enter the password: Sorry, that wasn&#39;t right.
 Goodbye!
 
 You are awesome :)
-Segmentation fault</pre></td></tr></table>
-</div>
-</div>
-<p>Note that we couldn&rsquo;t just type this in directly because our memory address would be split into characters {<code>\</code>,<code>x</code>,<code>c</code>,<code>9</code>,<code>\</code>,<code>x</code>,<code>6</code>,<code>1</code>,<code>\</code>,<code>x</code>,<code>5</code>,<code>5</code>,<code>\</code>,<code>x</code>,<code>5</code>,<code>6</code>}</p>
-
-<p>In this case we were given the value of the return address that we needed to use, although in reality we probably won&rsquo;t have access to that (see <a href="../buffer-overflow-03">example 3</a>)!</p>
-
-<blockquote>
-<p><a href="../buffer-overflow-02">Example 2</a><br />
-<a href="../buffer-overflow-03">Example 3</a></p>
-</blockquote>
-
-<hr />
-
-<p>Buffer overflows provide attackers a way to write arbitrary data. Whether it be a value, or an address to jump to another function, these vulnerabilities can be troubling and are worth fixing.</p>
-
-    </div>
-
-    <footer class="post-footer">
-      
-      <nav class="post-nav">
-        <a class="prev" href="../../post/memory-vulnerabilities/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Memory Vulnerabilities</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="../../post/mitigating-memory-vulnerabilities/">
-            <span class="next-text nav-default">Mitigating Memory Vulnerabilities</span>
-            <span class="next-text nav-mobile">Next</span>
-            <i class="iconfont icon-right"></i>
-          </a>
-      </nav>
-    </footer>
-  </article>
-
-  <script>
-  (function(f, a, t, h, o, m){
-    a[h]=a[h]||function(){
-      (a[h].q=a[h].q||[]).push(arguments)
-    };
-    o=f.createElement('script'),
-    m=f.getElementsByTagName('script')[0];
-    o.async=1; o.src=t; o.id='fathom-script';
-    m.parentNode.insertBefore(o,m)
-  })(document, window, '//ss.featherbear.cc/tracker.js', 'fathom');
-  fathom('set', 'siteId', 'NEQTU');
-  fathom('trackPageview');
-  </script>
-        </div>
-        
-
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="mailto:z5206677@student.unsw.edu.au" class="iconfont icon-email" title="email"></a>
-      <a href="https://www.linkedin.com/in/andrewjinmengwong/" class="iconfont icon-linkedin" title="linkedin"></a>
-      <a href="https://github.com/featherbear" class="iconfont icon-github" title="github"></a>
-      <a href="https://www.instagram.com/_andrewjwong/" class="iconfont icon-instagram" title="instagram"></a>
-  <a href="../../index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
-</div>
-
-<div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
-
-  
-
-  <span class="copyright-year">
-    &copy; 
-    2019 - 
-    2021
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">Andrew Wong (z5206677)</span>
-  </span>
-</div>
-    </footer>
-
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
-    </div>
-  </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../dist/even.26188efa.min.js"></script>
-
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-107434487-2', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-
-
-
-
-
-</body>
-</html>
+Segmentation fault</pre></td></tr></table></div></div><p>Note that we couldn&rsquo;t just type this in directly because our memory address would be split into characters {<code>\</code>,<code>x</code>,<code>c</code>,<code>9</code>,<code>\</code>,<code>x</code>,<code>6</code>,<code>1</code>,<code>\</code>,<code>x</code>,<code>5</code>,<code>5</code>,<code>\</code>,<code>x</code>,<code>5</code>,<code>6</code>}</p><p>In this case we were given the value of the return address that we needed to use, although in reality we probably won&rsquo;t have access to that (see <a href=../buffer-overflow-03>example 3</a>)!</p><blockquote><p><a href=../buffer-overflow-02>Example 2</a><br><a href=../buffer-overflow-03>Example 3</a></p></blockquote><hr><p>Buffer overflows provide attackers a way to write arbitrary data. Whether it be a value, or an address to jump to another function, these vulnerabilities can be troubling and are worth fixing.</p></div><footer class=post-footer><nav class=post-nav><a class=prev href=../../post/memory-vulnerabilities/><i class="iconfont icon-left"></i><span class="prev-text nav-default">Memory Vulnerabilities</span>
+<span class="prev-text nav-mobile">Prev</span></a>
+<a class=next href=../../post/mitigating-memory-vulnerabilities/><span class="next-text nav-default">Mitigating Memory Vulnerabilities</span>
+<span class="next-text nav-mobile">Next</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article><script>(function(f,a,t,h,o,m){a[h]=a[h]||function(){(a[h].q=a[h].q||[]).push(arguments)};o=f.createElement('script'),m=f.getElementsByTagName('script')[0];o.async=1;o.src=t;o.id='fathom-script';m.parentNode.insertBefore(o,m)})(document,window,'//ss.featherbear.cc/tracker.js','fathom');fathom('set','siteId','NEQTU');fathom('trackPageview');</script></div></div></main><footer id=footer class=footer><div class=social-links><a href=mailto:z5206677@student.unsw.edu.au class="iconfont icon-email" title=email></a><a href=https://www.linkedin.com/in/andrewjinmengwong/ class="iconfont icon-linkedin" title=linkedin></a><a href=https://github.com/featherbear class="iconfont icon-github" title=github></a><a href=https://www.instagram.com/_andrewjwong/ class="iconfont icon-instagram" title=instagram></a><a href=../../index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
+<span class=division>|</span>
+<span class=theme-info>Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span>
+<span class=copyright-year>&copy;
+2019 -
+2021
+<span class=heart><i class="iconfont icon-heart"></i></span><span class=author>Andrew Wong (z5206677)</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script><script type=text/javascript src=../../dist/even.26188efa.min.js></script><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-107434487-2','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script></body></html>

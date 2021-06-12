@@ -12,7 +12,7 @@ for /f "usebackq tokens=*" %%i in (`dir /b /a:-d-h`) do (
 endlocal
 
 cd %~dp0\__hugo
-hugo.exe
+hugo.exe --minify
 cd %~dp0
 rem hugo
 

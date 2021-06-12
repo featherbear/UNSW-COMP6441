@@ -1,304 +1,113 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>One Time Pads - COMP6441 Musings</title>
-  <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
-
-
-<meta name="author" content="z5206677" /><meta name="description" content="From what I understood, one time pads would be used with XOR - but looks like it&amp;rsquo;s actually just a Caesar / ROT(ation) on a per-character basis" /><meta name="keywords" content="Hugo, theme, even" />
-
-
-
-
-
-
-<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
-
-
-<link rel="canonical" href="../../post/one-time-pads/" />
-<link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
-<link rel="manifest" href="../../manifest.json">
-<link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#5bbad5">
-
-
-<link href="../../dist/even.c2a46f00.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
-
-
-<meta property="og:title" content="One Time Pads" />
-<meta property="og:description" content="From what I understood, one time pads would be used with XOR - but looks like it&rsquo;s actually just a Caesar / ROT(ation) on a per-character basis" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/post/one-time-pads/" />
-<meta property="article:published_time" content="2019-07-13T16:40:11&#43;10:00"/>
-<meta property="article:modified_time" content="2019-07-13T16:40:11&#43;10:00"/>
-
-<meta itemprop="name" content="One Time Pads">
-<meta itemprop="description" content="From what I understood, one time pads would be used with XOR - but looks like it&rsquo;s actually just a Caesar / ROT(ation) on a per-character basis">
-
-
-<meta itemprop="datePublished" content="2019-07-13T16:40:11&#43;10:00" />
-<meta itemprop="dateModified" content="2019-07-13T16:40:11&#43;10:00" />
-<meta itemprop="wordCount" content="1297">
-
-
-
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="One Time Pads"/>
-<meta name="twitter:description" content="From what I understood, one time pads would be used with XOR - but looks like it&rsquo;s actually just a Caesar / ROT(ation) on a per-character basis"/>
-
-<!--[if lte IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
-<![endif]-->
-
-<!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
-
-</head>
-<body>
-  <div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="../../" class="logo">COMP6441 Musings</a>
-  </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    <a href="../../">
-        <li class="mobile-menu-item">Home</li>
-      </a><a href="../../post/job-application">
-        <li class="mobile-menu-item">Job Application</li>
-      </a><a href="../../categories/">
-        <li class="mobile-menu-item">Categories</li>
-      </a>
-  </ul>
-</nav>
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="../../" class="logo">COMP6441 Musings</a>
-</div>
-
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item">
-        <a class="menu-item-link" href="../../">Home</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="../../post/job-application">Job Application</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="../../categories/">Categories</a>
-      </li>
-  </ul>
-</nav>
-    </header>
-
-    <main id="main" class="main">
-      <div class="content-wrapper">
-        <div id="content" class="content">
-          <article class="post">
-    
-    <header class="post-header">
-      <h1 class="post-title">One Time Pads</h1>
-
-      <div class="post-meta">
-        <span class="post-time"> 2019-07-13 </span>
-        <div class="post-category">
-            <a href="../../categories/musings/"> Musings </a>
-            </div>
-        
-      </div>
-    </header>
-
-    <div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">Contents</h2>
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-<ul>
-<li><a href="#principles-of-one-time-pads">Principles of One Time Pads</a></li>
-<li><a href="#usage">Usage</a></li>
-<li><a href="#activity">Activity</a>
-<ul>
-<li><a href="#log">Log</a></li>
-</ul></li>
-</ul>
-</nav>
-  </div>
-</div>
-    <div class="post-content">
-      
-
-<blockquote>
-<p>From what I understood, one time pads would be used with XOR - but looks like it&rsquo;s actually just a Caesar / ROT(ation) on a per-character basis</p>
-</blockquote>
-
-<h1 id="principles-of-one-time-pads">Principles of One Time Pads</h1>
-
-<ul>
-<li>The pad must be truly random (and not pseudo-random)</li>
-<li>The pad must be as long as, or longer than the message</li>
-<li>The pad must never be resued</li>
-</ul>
-
-<h1 id="usage">Usage</h1>
-
-<p>For each character in the message, we shift it by the value at the same position from the pad.</p>
-
-<p>For example</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="s2">&#34;&#34;&#34;
-</span><span class="s2">Rotate function. Only for letters
-</span><span class="s2">&#34;&#34;&#34;</span>
-<span class="k">def</span> <span class="nf">rotate</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">pad</span><span class="p">):</span>
-  <span class="c1"># if len(pad) &lt; len(message):</span>
-  <span class="c1">#   raise Exception(&#34;Pad must be as long as or longer than the message&#34;)</span>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>One Time Pads - COMP6441 Musings</title><meta name=renderer content=webkit><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content=no-transform><meta http-equiv=cache-control content=no-siteapp><meta name=theme-color content=#f8f5ec><meta name=msapplication-navbutton-color content=#f8f5ec><meta name=apple-mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=#f8f5ec><meta name=author content=z5206677><meta name=description content="From what I understood, one time pads would be used with XOR - but looks like it&amp;rsquo;s actually just a Caesar / ROT(ation) on a per-character basis"><meta name=keywords content=Hugo,theme,even><meta name=generator content="Hugo 0.54.0 with even 4.0.0"><link rel=canonical href=../../post/one-time-pads/><link rel=apple-touch-icon sizes=180x180 href=../../apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=../../favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=../../favicon-16x16.png><link rel=manifest href=../../manifest.json><link rel=mask-icon href=../../safari-pinned-tab.svg color=#5bbad5><link href=../../dist/even.c2a46f00.min.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property=og:title content="One Time Pads"><meta property=og:description content="From what I understood, one time pads would be used with XOR - but looks like it&rsquo;s actually just a Caesar / ROT(ation) on a per-character basis"><meta property=og:type content=article><meta property=og:url content=/post/one-time-pads/><meta property=article:published_time content=2019-07-13T16:40:11&#43;10:00><meta property=article:modified_time content=2019-07-13T16:40:11&#43;10:00><meta itemprop=name content="One Time Pads"><meta itemprop=description content="From what I understood, one time pads would be used with XOR - but looks like it&rsquo;s actually just a Caesar / ROT(ation) on a per-character basis"><meta itemprop=datePublished content=2019-07-13T16:40:11&#43;10:00><meta itemprop=dateModified content=2019-07-13T16:40:11&#43;10:00><meta itemprop=wordCount content=1297><meta itemprop=keywords content><meta name=twitter:card content=summary><meta name=twitter:title content="One Time Pads"><meta name=twitter:description content="From what I understood, one time pads would be used with XOR - but looks like it&rsquo;s actually just a Caesar / ROT(ation) on a per-character basis"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=../../ class=logo>COMP6441 Musings</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=../../><li class=mobile-menu-item>Home</li></a><a href=../../post/job-application><li class=mobile-menu-item>Job Application</li></a><a href=../../categories/><li class=mobile-menu-item>Categories</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=../../ class=logo>COMP6441 Musings</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=../../>Home</a></li><li class=menu-item><a class=menu-item-link href=../../post/job-application>Job Application</a></li><li class=menu-item><a class=menu-item-link href=../../categories/>Categories</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>One Time Pads</h1><div class=post-meta><span class=post-time>2019-07-13</span><div class=post-category><a href=../../categories/musings/>Musings</a></div></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><a href=#principles-of-one-time-pads>Principles of One Time Pads</a></li><li><a href=#usage>Usage</a></li><li><a href=#activity>Activity</a><ul><li><a href=#log>Log</a></li></ul></li></ul></nav></div></div><div class=post-content><blockquote><p>From what I understood, one time pads would be used with XOR - but looks like it&rsquo;s actually just a Caesar / ROT(ation) on a per-character basis</p></blockquote><h1 id=principles-of-one-time-pads>Principles of One Time Pads</h1><ul><li>The pad must be truly random (and not pseudo-random)</li><li>The pad must be as long as, or longer than the message</li><li>The pad must never be resued</li></ul><h1 id=usage>Usage</h1><p>For each character in the message, we shift it by the value at the same position from the pad.</p><p>For example</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=s2>&#34;&#34;&#34;
+</span><span class=s2>Rotate function. Only for letters
+</span><span class=s2>&#34;&#34;&#34;</span>
+<span class=k>def</span> <span class=nf>rotate</span><span class=p>(</span><span class=n>message</span><span class=p>,</span> <span class=n>pad</span><span class=p>):</span>
+  <span class=c1># if len(pad) &lt; len(message):</span>
+  <span class=c1>#   raise Exception(&#34;Pad must be as long as or longer than the message&#34;)</span>
   
-  <span class="k">print</span><span class="p">(</span><span class="n">pad</span><span class="p">)</span>
-  <span class="k">def</span> <span class="nf">thisFunctionHereForSimplificationSake</span><span class="p">():</span>
-    <span class="kn">import</span> <span class="nn">re</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&#34;^[a-zA-Z]*$&#34;</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
-      <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&#34;Please use only letters in the message&#34;</span><span class="p">)</span>  
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&#34;^[a-zA-Z]*$&#34;</span><span class="p">,</span> <span class="n">pad</span><span class="p">):</span>
-      <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&#34;Please use only letters in the pad&#34;</span><span class="p">)</span>
+  <span class=k>print</span><span class=p>(</span><span class=n>pad</span><span class=p>)</span>
+  <span class=k>def</span> <span class=nf>thisFunctionHereForSimplificationSake</span><span class=p>():</span>
+    <span class=kn>import</span> <span class=nn>re</span>
+    <span class=k>if</span> <span class=ow>not</span> <span class=n>re</span><span class=o>.</span><span class=n>match</span><span class=p>(</span><span class=s2>&#34;^[a-zA-Z]*$&#34;</span><span class=p>,</span> <span class=n>message</span><span class=p>):</span>
+      <span class=k>raise</span> <span class=ne>Exception</span><span class=p>(</span><span class=s2>&#34;Please use only letters in the message&#34;</span><span class=p>)</span>  
+    <span class=k>if</span> <span class=ow>not</span> <span class=n>re</span><span class=o>.</span><span class=n>match</span><span class=p>(</span><span class=s2>&#34;^[a-zA-Z]*$&#34;</span><span class=p>,</span> <span class=n>pad</span><span class=p>):</span>
+      <span class=k>raise</span> <span class=ne>Exception</span><span class=p>(</span><span class=s2>&#34;Please use only letters in the pad&#34;</span><span class=p>)</span>
 
 
-  <span class="n">thisFunctionHereForSimplificationSake</span><span class="p">()</span>
+  <span class=n>thisFunctionHereForSimplificationSake</span><span class=p>()</span>
 
-  <span class="n">output</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class=n>output</span> <span class=o>=</span> <span class=p>[]</span>
 
-  <span class="c1"># Convert both messages to upper case</span>
-  <span class="c1"># Restore case later</span>
-  <span class="n">_message</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
-  <span class="n">_pad</span> <span class="o">=</span> <span class="n">pad</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+  <span class=c1># Convert both messages to upper case</span>
+  <span class=c1># Restore case later</span>
+  <span class=n>_message</span> <span class=o>=</span> <span class=n>message</span><span class=o>.</span><span class=n>upper</span><span class=p>()</span>
+  <span class=n>_pad</span> <span class=o>=</span> <span class=n>pad</span><span class=o>.</span><span class=n>upper</span><span class=p>()</span>
 
-  <span class="n">_ordA</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+  <span class=n>_ordA</span> <span class=o>=</span> <span class=nb>ord</span><span class=p>(</span><span class=s1>&#39;A&#39;</span><span class=p>)</span>
   
-  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">message</span><span class="p">)):</span>
-    <span class="c1"># Subtract 65 (A) to get a number from 0 to 25</span>
-    <span class="n">_m</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">_message</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>        <span class="o">-</span> <span class="n">_ordA</span>
-    <span class="n">_p</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">_pad</span><span class="p">[</span><span class="n">i</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">pad</span><span class="p">)])</span> <span class="o">-</span> <span class="n">_ordA</span> <span class="c1"># Wrap the pad because we can (for purpose of breaking partial pads)</span>
+  <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=nb>len</span><span class=p>(</span><span class=n>message</span><span class=p>)):</span>
+    <span class=c1># Subtract 65 (A) to get a number from 0 to 25</span>
+    <span class=n>_m</span> <span class=o>=</span> <span class=nb>ord</span><span class=p>(</span><span class=n>_message</span><span class=p>[</span><span class=n>i</span><span class=p>])</span>        <span class=o>-</span> <span class=n>_ordA</span>
+    <span class=n>_p</span> <span class=o>=</span> <span class=nb>ord</span><span class=p>(</span><span class=n>_pad</span><span class=p>[</span><span class=n>i</span> <span class=o>%</span> <span class=nb>len</span><span class=p>(</span><span class=n>pad</span><span class=p>)])</span> <span class=o>-</span> <span class=n>_ordA</span> <span class=c1># Wrap the pad because we can (for purpose of breaking partial pads)</span>
 
-    <span class="c1"># Add character and padding offset, wrapped from 0 to 25</span>
-    <span class="n">_o</span> <span class="o">=</span> <span class="p">(</span><span class="n">_m</span> <span class="o">+</span> <span class="n">_p</span><span class="p">)</span> <span class="o">%</span> <span class="mi">26</span>
+    <span class=c1># Add character and padding offset, wrapped from 0 to 25</span>
+    <span class=n>_o</span> <span class=o>=</span> <span class=p>(</span><span class=n>_m</span> <span class=o>+</span> <span class=n>_p</span><span class=p>)</span> <span class=o>%</span> <span class=mi>26</span>
 
-    <span class="c1"># Add back the offset</span>
-    <span class="n">_o</span> <span class="o">+=</span> <span class="n">_ordA</span>
+    <span class=c1># Add back the offset</span>
+    <span class=n>_o</span> <span class=o>+=</span> <span class=n>_ordA</span>
 
-    <span class="c1"># Convert back to a letter</span>
-    <span class="n">_o</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="n">_o</span><span class="p">)</span>
+    <span class=c1># Convert back to a letter</span>
+    <span class=n>_o</span> <span class=o>=</span> <span class=nb>chr</span><span class=p>(</span><span class=n>_o</span><span class=p>)</span>
 
-    <span class="c1"># Restore letter case</span>
-    <span class="k">if</span> <span class="n">message</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">islower</span><span class="p">():</span>
-      <span class="n">_o</span> <span class="o">=</span> <span class="n">_o</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class=c1># Restore letter case</span>
+    <span class=k>if</span> <span class=n>message</span><span class=p>[</span><span class=n>i</span><span class=p>]</span><span class=o>.</span><span class=n>islower</span><span class=p>():</span>
+      <span class=n>_o</span> <span class=o>=</span> <span class=n>_o</span><span class=o>.</span><span class=n>lower</span><span class=p>()</span>
 
-    <span class="n">output</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_o</span><span class="p">)</span>
+    <span class=n>output</span><span class=o>.</span><span class=n>append</span><span class=p>(</span><span class=n>_o</span><span class=p>)</span>
 
-  <span class="k">return</span> <span class="s2">&#34;&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output</span><span class="p">)</span></code></pre></td></tr></table>
-</div>
-</div>
-<p>So if our key was &ldquo;AAAAA&rdquo;, then <code>rotate(&quot;Hello&quot;, &quot;XKCDZ&quot;) =&gt; Eonon</code>.</p>
-
-<p>To decrypt the pad, for the sake of laziness and space saving - we&rsquo;ll just feed the inverted key into the <code>rotate</code> function</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">de_rotate</span><span class="p">(</span><span class="n">cipher</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
-  <span class="n">key</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">chr</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">26</span> <span class="o">-</span> <span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">-</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">))</span> <span class="o">%</span> <span class="mi">26</span><span class="p">))</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">key</span><span class="o">.</span><span class="n">upper</span><span class="p">()])</span>
-  <span class="k">return</span> <span class="n">rotate</span><span class="p">(</span><span class="n">cipher</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span></code></pre></td></tr></table>
-</div>
-</div>
-<p>Performing <code>de_rotate(&quot;Eonon&quot;, &quot;XKCDZ&quot;) =&gt; Hello</code></p>
-
-<hr />
-
-<h1 id="activity">Activity</h1>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">LpaGbbfctNiPvwdbjnPuqolhhtygWhEuafjlirfPxxl
+  <span class=k>return</span> <span class=s2>&#34;&#34;</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=n>output</span><span class=p>)</span></code></pre></td></tr></table></div></div><p>So if our key was &ldquo;AAAAA&rdquo;, then <code>rotate(&quot;Hello&quot;, &quot;XKCDZ&quot;) =&gt; Eonon</code>.</p><p>To decrypt the pad, for the sake of laziness and space saving - we&rsquo;ll just feed the inverted key into the <code>rotate</code> function</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=k>def</span> <span class=nf>de_rotate</span><span class=p>(</span><span class=n>cipher</span><span class=p>,</span> <span class=n>key</span><span class=p>):</span>
+  <span class=n>key</span> <span class=o>=</span> <span class=s2>&#34;&#34;</span><span class=o>.</span><span class=n>join</span><span class=p>([</span><span class=nb>chr</span><span class=p>(</span><span class=nb>ord</span><span class=p>(</span><span class=s1>&#39;A&#39;</span><span class=p>)</span> <span class=o>+</span> <span class=p>(</span><span class=mi>26</span> <span class=o>-</span> <span class=p>(</span><span class=nb>ord</span><span class=p>(</span><span class=n>c</span><span class=p>)</span> <span class=o>-</span> <span class=nb>ord</span><span class=p>(</span><span class=s1>&#39;A&#39;</span><span class=p>))</span> <span class=o>%</span> <span class=mi>26</span><span class=p>))</span> <span class=k>for</span> <span class=n>c</span> <span class=ow>in</span> <span class=n>key</span><span class=o>.</span><span class=n>upper</span><span class=p>()])</span>
+  <span class=k>return</span> <span class=n>rotate</span><span class=p>(</span><span class=n>cipher</span><span class=p>,</span> <span class=n>key</span><span class=p>)</span></code></pre></td></tr></table></div></div><p>Performing <code>de_rotate(&quot;Eonon&quot;, &quot;XKCDZ&quot;) =&gt; Hello</code></p><hr><h1 id=activity>Activity</h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></pre></td><td class=lntd><pre class=chroma>LpaGbbfctNiPvwdbjnPuqolhhtygWhEuafjlirfPxxl
 
 WdafvnbcDymxeeulWOtpoofnilwngLhblUfecvqAxs
 
@@ -306,155 +115,86 @@ UijMltDjeumxUnbiKstvdrVhcoDasUlrvDypegublg
 
 LpaAlrhGmjikgjdmLlcsnnYmIsoPcglaGtKeQcemiu
 
-LpaDohqcOzVbglebjPdTnoTzbyRbuwGftflTliPiqp</pre></td></tr></table>
-</div>
-</div>
-<p>We&rsquo;ve got five strings that have all been encrypted with the same one-time pad (more like many-time pad now).<br />
-Okay so let&rsquo;s start breaking this</p>
+LpaDohqcOzVbglebjPdTnoTzbyRbuwGftflTliPiqp</pre></td></tr></table></div></div><p>We&rsquo;ve got five strings that have all been encrypted with the same one-time pad (more like many-time pad now).<br>Okay so let&rsquo;s start breaking this</p><p>The basic principles of breaking ciphers with the same encryption key is that, if we break one of them - we break all of them.</p><p>Let&rsquo;s throw a script together to touch each one at the same time.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>messages</span> <span class=o>=</span> <span class=p>[</span>
+  <span class=s2>&#34;LpaGbbfctNiPvwdbjnPuqolhhtygWhEuafjlirfPxxl&#34;</span><span class=p>,</span>
+  <span class=s2>&#34;WdafvnbcDymxeeulWOtpoofnilwngLhblUfecvqAxs&#34;</span><span class=p>,</span>
+  <span class=s2>&#34;UijMltDjeumxUnbiKstvdrVhcoDasUlrvDypegublg&#34;</span><span class=p>,</span>
+  <span class=s2>&#34;LpaAlrhGmjikgjdmLlcsnnYmIsoPcglaGtKeQcemiu&#34;</span><span class=p>,</span>
+  <span class=s2>&#34;LpaDohqcOzVbglebjPdTnoTzbyRbuwGftflTliPiqp&#34;</span>
+<span class=p>]</span>
 
-<p>The basic principles of breaking ciphers with the same encryption key is that, if we break one of them - we break all of them.</p>
+<span class=k>def</span> <span class=nf>attempt</span><span class=p>(</span><span class=n>key</span><span class=p>):</span>
+  <span class=k>for</span> <span class=n>i</span><span class=p>,</span> <span class=n>m</span> <span class=ow>in</span> <span class=nb>enumerate</span><span class=p>(</span><span class=n>messages</span><span class=p>):</span>
+    <span class=n>R</span> <span class=o>=</span> <span class=n>de_rotate</span><span class=p>(</span><span class=n>m</span><span class=p>,</span> <span class=n>key</span><span class=p>)</span>
+    <span class=k>print</span><span class=p>(</span><span class=n>i</span><span class=o>+</span><span class=mi>1</span><span class=p>,</span> <span class=n>R</span><span class=p>[:</span><span class=nb>len</span><span class=p>(</span><span class=n>key</span><span class=p>)]</span> <span class=o>+</span> <span class=s2>&#34;.&#34;</span> <span class=o>+</span> <span class=n>R</span><span class=p>[</span><span class=nb>len</span><span class=p>(</span><span class=n>key</span><span class=p>):])</span>
+  <span class=k>print</span><span class=p>()</span>
 
-<p>Let&rsquo;s throw a script together to touch each one at the same time.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">messages</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="s2">&#34;LpaGbbfctNiPvwdbjnPuqolhhtygWhEuafjlirfPxxl&#34;</span><span class="p">,</span>
-  <span class="s2">&#34;WdafvnbcDymxeeulWOtpoofnilwngLhblUfecvqAxs&#34;</span><span class="p">,</span>
-  <span class="s2">&#34;UijMltDjeumxUnbiKstvdrVhcoDasUlrvDypegublg&#34;</span><span class="p">,</span>
-  <span class="s2">&#34;LpaAlrhGmjikgjdmLlcsnnYmIsoPcglaGtKeQcemiu&#34;</span><span class="p">,</span>
-  <span class="s2">&#34;LpaDohqcOzVbglebjPdTnoTzbyRbuwGftflTliPiqp&#34;</span>
-<span class="p">]</span>
-
-<span class="k">def</span> <span class="nf">attempt</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
-  <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">messages</span><span class="p">):</span>
-    <span class="n">R</span> <span class="o">=</span> <span class="n">de_rotate</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">R</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">)]</span> <span class="o">+</span> <span class="s2">&#34;.&#34;</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">):])</span>
-  <span class="k">print</span><span class="p">()</span>
-
-<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-  <span class="n">attempt</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Enter attempt: &#34;</span><span class="p">))</span></code></pre></td></tr></table>
-</div>
-</div>
-<p>We <em>could</em> try brute force it, but that&rsquo;d be abit&hellip;<br />
-Instead, thinking analytically - considering that the message is in English.</p>
-
-<p><code>Lpa</code> is probably the word <code>The</code>.</p>
-
-<p>By entering in <code>The</code> as the key - by nature of this symmetric encryption pattern - we&rsquo;re given the key used to <strong>decrypt</strong> the word <code>The</code>, as the output.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">Enter attempt: The
+<span class=k>while</span> <span class=bp>True</span><span class=p>:</span>
+  <span class=n>attempt</span><span class=p>(</span><span class=nb>input</span><span class=p>(</span><span class=s2>&#34;Enter attempt: &#34;</span><span class=p>))</span></code></pre></td></tr></table></div></div><p>We <em>could</em> try brute force it, but that&rsquo;d be abit&hellip;<br>Instead, thinking analytically - considering that the message is in English.</p><p><code>Lpa</code> is probably the word <code>The</code>.</p><p>By entering in <code>The</code> as the key - by nature of this symmetric encryption pattern - we&rsquo;re given the key used to <strong>decrypt</strong> the word <code>The</code>, as the output.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></pre></td><td class=lntd><pre class=chroma>Enter attempt: The
 1 Siw.NuxmvpUbLcpzicjWnmvedomunPdLnwmchpkbWqts
 2 Dww.mojivZfftlxqsPKaikvyjpesuzHouhByajomHqo
 3 Bbf.TepKcabftBgxpDoaozyOdjhZhlQskrKrllzqiec
 4 Siw.HenoZiqbgncztEhjljuRiPlkWvcstCaDaXvatbq
 5 Siw.KhdxvKgOxneaicLkMjvMvirNinsNypmePsbLpjl
-  ^^^</pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">Enter attempt: Siw
+  ^^^</pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></pre></td><td class=lntd><pre class=chroma>Enter attempt: Siw
 1 The.OtfnuxVaTdohjbrXmuwdlplcoOlMmenbpqjjXpbt
 2 Eve.nnrjuHgebmwytOSbhswxrqdavyPptpCxiknuIpw
 3 Can.UdxLbicebCffqCwbnhzNlkgHikYtjzLqtmyyjdk
 4 The.IdvpYqraoobhuDpkkrvQqQksXuktsKbCiYuiuay
 5 The.LglyuShNfodijbTlLrwLdjqVjmaOxxndXtaTqit
-  ^^^</pre></td></tr></table>
-</div>
-</div>
-<p>So from the first three characters, we have the possible trigrams <code>The</code>, <code>Eve</code> and <code>Can</code>.<br />
-Looks like the guess was right!</p>
-
-<hr />
-
-<p>If we keep going, eventually we recover these messages:</p>
-
-<ul>
-<li>TheSecretToWinningEurovisionIsExcellentHair</li>
-<li>EveryoneDeservesAHippopotamusWhenTheyreSad</li>
-<li>CanYouPleaseHelpOliverFindTheFluxCapacitor</li>
-<li>TheMostImportantPersonInTheWorldIsMeMyself</li>
-<li>ThePriceOfBitcoinIsTooDamnHighGivenTheData</li>
-</ul>
-
-<p>with the key <code>SiwOxzoyaUuTnjqtwhLazaqzplktOpAxybyaeemIxpu</code></p>
-
-<hr />
-
-<h2 id="log">Log</h2>
-
-<p>For the fun of it, here&rsquo;s a log of everything I did</p>
-
-<p><details></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">LpaGbbfctNiPvwdbjnPuqolhhtygWhEuafjlirfPxxl
+  ^^^</pre></td></tr></table></div></div><p>So from the first three characters, we have the possible trigrams <code>The</code>, <code>Eve</code> and <code>Can</code>.<br>Looks like the guess was right!</p><hr><p>If we keep going, eventually we recover these messages:</p><ul><li>TheSecretToWinningEurovisionIsExcellentHair</li><li>EveryoneDeservesAHippopotamusWhenTheyreSad</li><li>CanYouPleaseHelpOliverFindTheFluxCapacitor</li><li>TheMostImportantPersonInTheWorldIsMeMyself</li><li>ThePriceOfBitcoinIsTooDamnHighGivenTheData</li></ul><p>with the key <code>SiwOxzoyaUuTnjqtwhLazaqzplktOpAxybyaeemIxpu</code></p><hr><h2 id=log>Log</h2><p>For the fun of it, here&rsquo;s a log of everything I did</p><p><details></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></pre></td><td class=lntd><pre class=chroma>LpaGbbfctNiPvwdbjnPuqolhhtygWhEuafjlirfPxxl
 WdafvnbcDymxeeulWOtpoofnilwngLhblUfecvqAxs
 UijMltDjeumxUnbiKstvdrVhcoDasUlrvDypegublg
 LpaAlrhGmjikgjdmLlcsnnYmIsoPcglaGtKeQcemiu
-LpaDohqcOzVbglebjPdTnoTzbyRbuwGftflTliPiqp</pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">Enter attempt: The
+LpaDohqcOzVbglebjPdTnoTzbyRbuwGftflTliPiqp</pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></pre></td><td class=lntd><pre class=chroma>Enter attempt: The
 1 Siw.NuxmvpUbLcpzicjWnmvedomunPdLnwmchpkbWqts
 2 Dww.mojivZfftlxqsPKaikvyjpesuzHouhByajomHqo
 3 Bbf.TepKcabftBgxpDoaozyOdjhZhlQskrKrllzqiec
@@ -466,28 +206,20 @@ Enter attempt: Siw
 2 Eve.nnrjuHgebmwytOSbhswxrqdavyPptpCxiknuIpw
 3 Can.UdxLbicebCffqCwbnhzNlkgHikYtjzLqtmyyjdk
 4 The.IdvpYqraoobhuDpkkrvQqQksXuktsKbCiYuiuay
-5 The.LglyuShNfodijbTlLrwLdjqVjmaOxxndXtaTqit</pre></td></tr></table>
-</div>
-</div>
-<p>&ndash;&gt; I tried <code>The</code>, and reversing <code>Siw</code> gives <code>The</code>, <code>Eve</code> and <code>Can</code></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">Enter attempt: CanYou
+5 The.LglyuShNfodijbTlLrwLdjqVjmaOxxndXtaTqit</pre></td></tr></table></div></div><p>&ndash;&gt; I tried <code>The</code>, and reversing <code>Siw</code> gives <code>The</code>, <code>Eve</code> and <code>Can</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></pre></td><td class=lntd><pre class=chroma>Enter attempt: CanYou
 1 JpnInh.dcgPuVtwqdvtNudqxnftliInCunhvrgrsRjdj
 2 Udnhht.zcQaydcehnIUrpbqrtgljpsRfbyWrkavdCjy
 3 SiwOxz.BjrwydSnokWyrvqtHnaoQceAjriFkvcghdxm
@@ -499,28 +231,20 @@ Enter attempt: SiwOxz
 2 Everyo.juHkpymwyxZPbhsaioqdazjMptpGifknuMat
 3 CanYou.LbigpyCffuNtbnhdYikgHmvVtjzPbqmyynoh
 4 TheMos.pYqvllobhyOmkkrzBnQksBfhtsKfNfYuiylv
-5 ThePri.yuSlYcodinmQlLraWajqVnxxOxxroUtaTutq</pre></td></tr></table>
-</div>
-</div>
-<p>&ndash;&gt; I tried adding the word <code>You</code> onto <code>Can</code> (guess) and it looks like it works with the other messages</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">Enter attempt: Everyone
+5 ThePri.yuSlYcodinmQlLraWajqVnxxOxxroUtaTutq</pre></td></tr></table></div></div><p>&ndash;&gt; I tried adding the word <code>You</code> onto <code>Can</code> (guess) and it looks like it works with the other messages</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></pre></td><td class=lntd><pre class=chroma>Enter attempt: Everyone
 1 HuwPdnsy.pSeYxiqxfsLdsayddyupYtRqwkfukdsLtch
 2 Siwoxzoy.ZdiggqhhSTpyqasjeqswiXuxhZbnehdWtx
 3 QnfVnfQf.azigWzoeGxpefdIdytZjuGynrIuygshxhl
@@ -532,28 +256,20 @@ Enter attempt: Siwoxzoy
 2 Everyone.LqqjhfgnEGxbrprpqdazjMtdtMjqfwcCfk
 3 CanYouPl.mmqjXonkSkxhgsHjkgHmvVxtdVcbhhgdty
 4 TheMostI.ubmwjkpoTdgeqoKoQksBfhxcOlOqTdqoqm
-5 ThePrice.WrZnjmqdrHhFqpFbjqVnxxShbxpFojBkyh</pre></td></tr></table>
-</div>
-</div>
-<p>&ndash;&gt; <code>Eve</code> probably goes to <code>Everyone</code>&hellip; yep!</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">Enter attempt: CanYouPlease
+5 ThePrice.WrZnjmqdrHhFqpFbjqVnxxShbxpFojBkyh</pre></td></tr></table></div></div><p>&ndash;&gt; <code>Eve</code> probably goes to <code>Everyone</code>&hellip; yep!</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></pre></td><td class=lntd><pre class=chroma>Enter attempt: CanYouPlease
 1 JpnInhqrpNqL.twqdvtAjmotdftliInPjwfrhgrsRjdw
 2 UdnhhtmrZyut.cehnIUeekonjgljpsRsqhUnaavdCjy
 3 SiwOxzOyauut.SnokWyekzrDdaoQceAwgrDglcghdxm
@@ -565,28 +281,20 @@ Enter attempt: SiwOxzOyauut
 2 EveryoneDese.mwyxZPfrouluqdazjMtdlAllknuMat
 3 CanYouPlease.CffuNtfxdxBokgHmvVxtvJewmyynoh
 4 TheMostImpor.obhyOmountEtQksBfhxcGzQlYuiylv
-5 ThePriceOfBi.odinmQpVnuZgjqVnxxShtlrAtaTutq</pre></td></tr></table>
-</div>
-</div>
-<p>&ndash;&gt; <code>CanYouPlease</code></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">Enter attempt: TheMostImportant
+5 ThePriceOfBi.odinmQpVnuZgjqVnxxShtlrAtaTutq</pre></td></tr></table></div></div><p>&ndash;&gt; <code>CanYouPlease</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></pre></td><td class=lntd><pre class=chroma>Enter attempt: TheMostImportant
 1 SiwUnjmuhYuYcwqi.qgLicwszvekpDhRbhyfzuzmHlix
 2 DwwthviuRjyglehs.DHpdawmfwwiwnLuisNbsodxSld
 3 BbfAxbKbsfygBnop.RlpjpzCzqzPjzUyycWudqobtzr
@@ -598,28 +306,20 @@ Enter attempt: SiwOxzoYauutnjqt
 2 EveryoneDeserves.EGxbrprpircutCritMjqfwcCxy
 3 CanYouPleaseHelp.SkxhgsHjcuJhfLvydVcbhhgdlm
 4 TheMostImportant.TdgeqoKoIyuWpxvhOlOqTdqoia
-5 ThePriceOfBitcoi.rHhFqpFbbeXihnQmbxpFojBkqv</pre></td></tr></table>
-</div>
-</div>
-<p>&ndash;&gt; <code>TheMostImportant</code></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">Enter attempt: TheSecretToWinning
+5 ThePriceOfBitcoi.rHhFqpFbbeXihnQmbxpFojBkqv</pre></td></tr></table></div></div><p>&ndash;&gt; <code>TheMostImportant</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></pre></td><td class=lntd><pre class=chroma>Enter attempt: TheSecretToWinning
 1 SiwOxzoyaUuTnjqtwh.WnmwhfqpfnIlWhnxwfpkbXtvu
 2 DwwnrlkyKfybwrhdJI.aikwblrhdusPzoyMsyjomItq
 3 BbfUhrMflbybMaoaXm.aozzRflkKheYdeiVljlzqjhe
@@ -631,28 +331,20 @@ Enter attempt: SiwOxzoyaUuTnjqtwh
 2 EveryoneDeservesAH.bhsaiounwtmSusvBjxknuMat
 3 CanYouPleaseHelpOl.bnhdYioqDgyByifKcimyynoh
 4 TheMostImportantPe.kkrzBnUuoVinyrQaOxYuiylv
-5 ThePriceOfBitcoinI.lLraWanaRhadTwdmpMtaTutq</pre></td></tr></table>
-</div>
-</div>
-<p>&ndash;&gt; <code>TheSecretToWinning</code></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">Enter attempt: TheMostImportantPeople
+5 ThePriceOfBitcoinI.lLraWanaRhadTwdmpMtaTutq</pre></td></tr></table></div></div><p>&ndash;&gt; <code>TheSecretToWinning</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></pre></td><td class=lntd><pre class=chroma>Enter attempt: TheMostImportantPeople
 1 SiwUnjmuhYuYcwqiujBffk.sadhkoDzSfmoqlvyqLjia
 2 DwwthviuRjyglehsHKfadk.mgezivnDvmxDmepcbWjd
 3 BbfAxbKbsfygBnopVofgsn.CaycPizMzchMfprnfxxr
@@ -664,28 +356,20 @@ Enter attempt: SiwOxzoYauutnjqtWhodcj
 2 EveryoneDeservesAHfmmf.nfmxzosNhhrBsvmcuTjp
 3 CanYouPleaseHelpOlfsbi.DzgaGbeWlxbKlgonyuxd
 4 TheMostImportantPeople.GeMerQoilgMaXvAjifur
-5 ThePriceOfBitcoinIpQlf.BrfkUcgyGlzmyKvpTbcm</pre></td></tr></table>
-</div>
-</div>
-<p>&ndash;&gt; Looks like it wasn&rsquo;t <code>People</code>, let&rsquo;s try <code>Person</code></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">Enter attempt: TheMostImportantPerson
+5 ThePriceOfBitcoinIpQlf.BrfkUcgyGlzmyKvpTbcm</pre></td></tr></table></div></div><p>&ndash;&gt; Looks like it wasn&rsquo;t <code>People</code>, let&rsquo;s try <code>Person</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></pre></td><td class=lntd><pre class=chroma>Enter attempt: TheMostImportantPerson
 1 SiwUnjmuhYuYcwqiujYccb.sadhkoDzSfmoqlvyqLgfx
 2 DwwthviuRjyglehsHKcxab.mgezivnDvmxDmepcbWga
 3 BbfAxbKbsfygBnopVocdpe.CaycPizMzchMfprnfxuo
@@ -697,28 +381,20 @@ Enter attempt: SiwOxzoYauutnjqtWhlaza
 2 EveryoneDeservesAHippo.nfmxzosNhhrBsvmcuTms
 3 CanYouPleaseHelpOliver.DzgaGbeWlxbKlgonyuag
 4 TheMostImportantPerson.GeMerQoilgMaXvAjifxu
-5 ThePriceOfBitcoinIsToo.BrfkUcgyGlzmyKvpTbfp</pre></td></tr></table>
-</div>
-</div>
-<p>&ndash;&gt; <code>Person</code> worked</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">Enter attempt: TheMostImportantPersonInTheWorld
+5 ThePriceOfBitcoinIsToo.BrfkUcgyGlzmyKvpTbfp</pre></td></tr></table></div></div><p>&ndash;&gt; <code>Person</code> worked</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></pre></td><td class=lntd><pre class=chroma>Enter attempt: TheMostImportantPersonInTheWorld
 1 SiwUnjmuhYuYcwqiujYccbduomukIqTr.hyfzuzmHlix
 2 DwwthviuRjyglehsHKcxabxapesrsUwy.sNbsodxSld
 3 BbfAxbKbsfygBnopVocdpeNujhZeeDao.cWudqobtzr
@@ -730,28 +406,20 @@ Enter attempt: SiwOxzoYauutnjqtWhlazaQzPlkTopax
 2 EveryoneDeservesAHippopotamusWhe.tMjqfwcCxy
 3 CanYouPleaseHelpOliverFindTheFlu.dVcbhhgdlm
 4 TheMostImportantPersonInTheWorld.OlOqTdqoia
-5 ThePriceOfBitcoinIsTooDamnHighGi.bxpFojBkqv</pre></td></tr></table>
-</div>
-</div>
-<p>&ndash;&gt; <code>TheMostImportantPersonInTheWorld</code></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">Enter attempt: EveryoneDeservesAHippopotamusWhen
+5 ThePriceOfBitcoinIsTooDamnHighGi.bxpFojBkqv</pre></td></tr></table></div></div><p>&ndash;&gt; <code>TheMostImportantPersonInTheWorld</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></pre></td><td class=lntd><pre class=chroma>Enter attempt: EveryoneDeservesAHippopotamusWhen
 1 HuwPdnsyqJqLebzjjgHfbawtotmmElXqn.bohrtrCtuh
 2 SiwoxzoyAuutnjqtWHlazaqzplktoPaxy.QkalxcNtp
 3 QnfVnfQfbqutDsxqKllgodGtjoRgaYeni.Zdlnigohd
@@ -763,28 +431,20 @@ Enter attempt: SiwoxzoyAuutnjqtWHlazaqzplktoPaxy
 2 EveryoneDeservesAHippopotamusWhen.CxioyrMzs
 3 CanYouPleaseHelpOliverFindTheFlux.Lqtqjvnng
 4 TheMostImportantPersonInTheWorldI.bCiCffyku
-5 ThePriceOfBitcoinIsTooDamnHighGiv.ndXxlQusp</pre></td></tr></table>
-</div>
-</div>
-<p>&ndash;&gt; <code>EveryoneDeservesAHippopotamusWhen</code></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">Enter attempt: TheMostImportantPersonInTheWorldIs
+5 ThePriceOfBitcoinIsTooDamnHighGiv.ndXxlQusp</pre></td></tr></table></div></div><p>&ndash;&gt; <code>EveryoneDeservesAHippopotamusWhen</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></pre></td><td class=lntd><pre class=chroma>Enter attempt: TheMostImportantPersonInTheWorldIs
 1 SiwUnjmuhYuYcwqiujYccbduomukIqTrsn.qeefrXepz
 2 DwwthviuRjyglehsHKcxabxapesrsUwydC.mxyjcIek
 3 BbfAxbKbsfygBnopVocdpeNujhZeeDaonL.fiaugjsy
@@ -796,28 +456,20 @@ Enter attempt: SiwOxzoYauutnjqtWhlazaQzPlkTopaxYb
 2 EveryoneDeservesAHippopotamusWhenT.nwghtBju
 3 CanYouPleaseHelpOliverFindTheFluxC.ghisxcxi
 4 TheMostImportantPersonInTheWorldIs.SwUohnuw
-5 ThePriceOfBitcoinIsTooDamnHighGive.tLpuSjcr</pre></td></tr></table>
-</div>
-</div>
-<p>&ndash;&gt; <code>TheMostImportantPersonInTheWorldIs</code></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">Enter attempt: TheSecretToWinningEurovisionIsExcellent
+5 ThePriceOfBitcoinIsTooDamnHighGive.tLpuSjcr</pre></td></tr></table></div></div><p>&ndash;&gt; <code>TheMostImportantPersonInTheWorldIs</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></pre></td><td class=lntd><pre class=chroma>Enter attempt: TheSecretToWinningEurovisionIsExcellent
 1 SiwOxzoyaUuTnjqtwhLazaqzplktOpAxybyaeem.Wqtt
 2 DwwnrlkyKfybwrhdJIpvxakfqdiayTdejQutyix.Hqo
 3 BbfUhrMflbybMaoaXmpbmdAzkgPnkChutZneatb.iec
@@ -829,28 +481,20 @@ Enter attempt: SiwOxzoyaUuTnjqtwhLazaqzplktOpAxybyaeem
 2 EveryoneDeservesAHippopotamusWhenTheyre.Ipw
 3 CanYouPleaseHelpOliverFindTheFluxCapaci.jdk
 4 TheMostImportantPersonInTheWorldIsMeMys.uay
-5 ThePriceOfBitcoinIsTooDamnHighGivenTheD.qit</pre></td></tr></table>
-</div>
-</div>
-<p>&ndash;&gt; <code>TheSecretToWinningEurovisionIsExcellent</code></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">Enter attempt: TheMostImportantPersonInTheWorldIsMeMyself
+5 ThePriceOfBitcoinIsTooDamnHighGivenTheD.qit</pre></td></tr></table></div></div><p>&ndash;&gt; <code>TheSecretToWinningEurovisionIsExcellent</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></pre></td><td class=lntd><pre class=chroma>Enter attempt: TheMostImportantPersonInTheWorldIsMeMyself
 1 SiwUnjmuhYuYcwqiujYccbduomukIqTrsnxhwtnLms.s
 2 DwwthviuRjyglehsHKcxabxapesrsUwydCtaqxyWmn.
 3 BbfAxbKbsfygBnopVocdpeNujhZeeDaonLmlsicxab.
@@ -862,28 +506,20 @@ Enter attempt: SiwOxzoYauutnjqtWhlazaQzPlkTopaxYbYaEemixp
 2 EveryoneDeservesAHippopotamusWhenTheyreSad.
 3 CanYouPleaseHelpOliverFindTheFluxCapacitor.
 4 TheMostImportantPersonInTheWorldIsMeMyself.
-5 ThePriceOfBitcoinIsTooDamnHighGivenTheData.</pre></td></tr></table>
-</div>
-</div>
-<p>&ndash;&gt; <code>TheMostImportantPersonInTheWorldIsMeMyself</code></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">Enter attempt: TheSecretToWinningEurovisionIsExcellentHair
+5 ThePriceOfBitcoinIsTooDamnHighGivenTheData.</pre></td></tr></table></div></div><p>&ndash;&gt; <code>TheMostImportantPersonInTheWorldIsMeMyself</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></pre></td><td class=lntd><pre class=chroma>Enter attempt: TheSecretToWinningEurovisionIsExcellentHair
 1 SiwOxzoyaUuTnjqtwhLazaqzplktOpAxybyaeemIxpu.
 2 DwwnrlkyKfybwrhdJIpvxakfqdiayTdejQutyixTxk.
 3 BbfUhrMflbybMaoaXmpbmdAzkgPnkChutZneatbuly.
@@ -895,151 +531,16 @@ Enter attempt: SiwOxzoyaUuTnjqtwhLazaqzplktOpAxybyaeemIxpu
 2 EveryoneDeservesAHippopotamusWhenTheyreSad.
 3 CanYouPleaseHelpOliverFindTheFluxCapacitor.
 4 TheMostImportantPersonInTheWorldIsMeMyself.
-5 ThePriceOfBitcoinIsTooDamnHighGivenTheData.</pre></td></tr></table>
-</div>
-</div>
-<p>&ndash;&gt; And that <code>t</code> is probably <code>r</code> to spell <code>Hair</code>.</p>
-
-<p></details></p>
-
-<p>So ultimately, our OTP phrase was <code>SiwOxzoyaUuTnjqtwhLazaqzplktOpAxybyaeemIxpu</code>.</p>
-
-<p>We can verify this by trying to encrypt the phrase again.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">rotate</span><span class="p">(</span><span class="s2">&#34;TheSecretToWinningEurovisionIsExcellentHair&#34;</span><span class="p">,</span> <span class="s2">&#34;SiwOxzoyaUuTnjqtwhLazaqzplktOpAxybyaeemIxpu&#34;</span><span class="p">)</span></code></pre></td></tr></table>
-</div>
-</div>
-<p>=&gt; <code>LpaGbbfctNiPvwdbjnPuqolhhtygWhEuafjlirfPxxl</code></p>
-
-<p>Looks like it worked!</p>
-
-<!-- 
-```python
-messages = ["LpaGbbfctNiPvwdbjnPuqolhhtygWhEuafjlirfPxxl",
-"WdafvnbcDymxeeulWOtpoofnilwngLhblUfecvqAxs",
-"UijMltDjeumxUnbiKstvdrVhcoDasUlrvDypegublg",
-"LpaAlrhGmjikgjdmLlcsnnYmIsoPcglaGtKeQcemiu",
-"LpaDohqcOzVbglebjPdTnoTzbyRbuwGftflTliPiqp"
-]
-
-def toBytes(string):
-  return [ord(c) for c in list(string)]
-
-def fromBytes(seq):
-  return "".join([chr(b) for b in seq])
-
-def doXOR(seq1, seq2):
-  length = min(len(seq1), len(seq2))
-  XOR = []
-  for i in range(length):
-    XOR.append(seq1[i] ^ seq2[i])
-  return XOR
-
-b_messages = list(map(toBytes, messages))
-``` -->
-
-    </div>
-
-    <footer class="post-footer">
-      
-      <nav class="post-nav">
-        <a class="prev" href="../../post/buffer-overflow-03/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Buffer Overflow - 3</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="../../post/security-everywhere-dns-over-https/">
-            <span class="next-text nav-default">Security Everywhere: DNS over HTTPS</span>
-            <span class="next-text nav-mobile">Next</span>
-            <i class="iconfont icon-right"></i>
-          </a>
-      </nav>
-    </footer>
-  </article>
-
-  <script>
-  (function(f, a, t, h, o, m){
-    a[h]=a[h]||function(){
-      (a[h].q=a[h].q||[]).push(arguments)
-    };
-    o=f.createElement('script'),
-    m=f.getElementsByTagName('script')[0];
-    o.async=1; o.src=t; o.id='fathom-script';
-    m.parentNode.insertBefore(o,m)
-  })(document, window, '//ss.featherbear.cc/tracker.js', 'fathom');
-  fathom('set', 'siteId', 'NEQTU');
-  fathom('trackPageview');
-  </script>
-        </div>
-        
-
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="mailto:z5206677@student.unsw.edu.au" class="iconfont icon-email" title="email"></a>
-      <a href="https://www.linkedin.com/in/andrewjinmengwong/" class="iconfont icon-linkedin" title="linkedin"></a>
-      <a href="https://github.com/featherbear" class="iconfont icon-github" title="github"></a>
-      <a href="https://www.instagram.com/_andrewjwong/" class="iconfont icon-instagram" title="instagram"></a>
-  <a href="../../index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
-</div>
-
-<div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
-
-  
-
-  <span class="copyright-year">
-    &copy; 
-    2019 - 
-    2021
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">Andrew Wong (z5206677)</span>
-  </span>
-</div>
-    </footer>
-
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
-    </div>
-  </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../dist/even.26188efa.min.js"></script>
-
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-107434487-2', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-
-
-
-
-
-</body>
-</html>
+5 ThePriceOfBitcoinIsTooDamnHighGivenTheData.</pre></td></tr></table></div></div><p>&ndash;&gt; And that <code>t</code> is probably <code>r</code> to spell <code>Hair</code>.</p><p></details></p><p>So ultimately, our OTP phrase was <code>SiwOxzoyaUuTnjqtwhLazaqzplktOpAxybyaeemIxpu</code>.</p><p>We can verify this by trying to encrypt the phrase again.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>rotate</span><span class=p>(</span><span class=s2>&#34;TheSecretToWinningEurovisionIsExcellentHair&#34;</span><span class=p>,</span> <span class=s2>&#34;SiwOxzoyaUuTnjqtwhLazaqzplktOpAxybyaeemIxpu&#34;</span><span class=p>)</span></code></pre></td></tr></table></div></div><p>=&gt; <code>LpaGbbfctNiPvwdbjnPuqolhhtygWhEuafjlirfPxxl</code></p><p>Looks like it worked!</p></div><footer class=post-footer><nav class=post-nav><a class=prev href=../../post/buffer-overflow-03/><i class="iconfont icon-left"></i><span class="prev-text nav-default">Buffer Overflow - 3</span>
+<span class="prev-text nav-mobile">Prev</span></a>
+<a class=next href=../../post/security-everywhere-dns-over-https/><span class="next-text nav-default">Security Everywhere: DNS over HTTPS</span>
+<span class="next-text nav-mobile">Next</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article><script>(function(f,a,t,h,o,m){a[h]=a[h]||function(){(a[h].q=a[h].q||[]).push(arguments)};o=f.createElement('script'),m=f.getElementsByTagName('script')[0];o.async=1;o.src=t;o.id='fathom-script';m.parentNode.insertBefore(o,m)})(document,window,'//ss.featherbear.cc/tracker.js','fathom');fathom('set','siteId','NEQTU');fathom('trackPageview');</script></div></div></main><footer id=footer class=footer><div class=social-links><a href=mailto:z5206677@student.unsw.edu.au class="iconfont icon-email" title=email></a><a href=https://www.linkedin.com/in/andrewjinmengwong/ class="iconfont icon-linkedin" title=linkedin></a><a href=https://github.com/featherbear class="iconfont icon-github" title=github></a><a href=https://www.instagram.com/_andrewjwong/ class="iconfont icon-instagram" title=instagram></a><a href=../../index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
+<span class=division>|</span>
+<span class=theme-info>Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span>
+<span class=copyright-year>&copy;
+2019 -
+2021
+<span class=heart><i class="iconfont icon-heart"></i></span><span class=author>Andrew Wong (z5206677)</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script><script type=text/javascript src=../../dist/even.26188efa.min.js></script><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-107434487-2','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script></body></html>

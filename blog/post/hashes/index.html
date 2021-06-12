@@ -1,496 +1,148 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Hashes - COMP6441 Musings</title>
-  <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>Hashes - COMP6441 Musings</title><meta name=renderer content=webkit><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content=no-transform><meta http-equiv=cache-control content=no-siteapp><meta name=theme-color content=#f8f5ec><meta name=msapplication-navbutton-color content=#f8f5ec><meta name=apple-mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=#f8f5ec><meta name=author content=z5206677><meta name=description content=Hashes.><meta name=keywords content=Hugo,theme,even><meta name=generator content="Hugo 0.54.0 with even 4.0.0"><link rel=canonical href=../../post/hashes/><link rel=apple-touch-icon sizes=180x180 href=../../apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=../../favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=../../favicon-16x16.png><link rel=manifest href=../../manifest.json><link rel=mask-icon href=../../safari-pinned-tab.svg color=#5bbad5><link href=../../dist/even.c2a46f00.min.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property=og:title content=Hashes><meta property=og:description content=Hashes.><meta property=og:type content=article><meta property=og:url content=/post/hashes/><meta property=article:published_time content=2019-06-28T21:24:21&#43;10:00><meta property=article:modified_time content=2019-06-28T21:24:21&#43;10:00><meta itemprop=name content=Hashes><meta itemprop=description content=Hashes.><meta itemprop=datePublished content=2019-06-28T21:24:21&#43;10:00><meta itemprop=dateModified content=2019-06-28T21:24:21&#43;10:00><meta itemprop=wordCount content=1878><meta itemprop=keywords content><meta name=twitter:card content=summary><meta name=twitter:title content=Hashes><meta name=twitter:description content=Hashes.><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=../../ class=logo>COMP6441 Musings</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=../../><li class=mobile-menu-item>Home</li></a><a href=../../post/job-application><li class=mobile-menu-item>Job Application</li></a><a href=../../categories/><li class=mobile-menu-item>Categories</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=../../ class=logo>COMP6441 Musings</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=../../>Home</a></li><li class=menu-item><a class=menu-item-link href=../../post/job-application>Job Application</a></li><li class=menu-item><a class=menu-item-link href=../../categories/>Categories</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>Hashes</h1><div class=post-meta><span class=post-time>2019-06-28</span><div class=post-category><a href=../../categories/musings/>Musings</a></div></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><a href=#cryptographic-hashes>Cryptographic Hashes</a></li><li><a href=#message-authentication-codes>Message Authentication Codes</a><ul><li><a href=#weaknesses>Weaknesses</a><ul><li><a href=#length-extension-attacks>Length Extension Attacks</a><ul><li><a href=#example>Example</a></li></ul></li></ul></li><li><a href=#solution-hash-it-again>Solution? Hash it again</a></li><li><a href=#salts>Salts</a></li><li><a href=#rainbow-tables>Rainbow Tables</a></li></ul></li><li><a href=#making-cracking-harder-with-modulos>Making cracking harder with modulos</a></li></ul></nav></div></div><div class=post-content><p><strong>Hashes</strong>.<br><a href="https://www.youtube.com/watch?v=dpWmlRNfLck">What are they good for? 🎵</a><br><s>Absolute nothing</s> Actually quite a lot!</p><p>From optimising access to data with <a href=https://featherbear.github.io/UNSW-COMP2521/blog/post/lec14/>hash tables</a>, to hashbrowns™, to validating data - something we&rsquo;ll look at now!</p><h1 id=cryptographic-hashes>Cryptographic Hashes</h1><p>A cryptographic hash function (also known as a digest, or fingerprint) takes an input, and produces a fixed size output from the input.</p><p>Some hashes operate on a byte-by-byte basis, whilst others operate on a block of data at a time (better)</p><p>With a <strong><em>grain of salt</em></strong>, cryptographic hash functions have the output properties</p><ul><li>One way - &lsquo;Impossible&rsquo; to reverse</li><li>Unique - Two messages will &lsquo;never&rsquo; have the same hash</li><li>Avalanche effect - A small change in input changes at least half the output bits</li></ul><p>I say to take it which a <em>grain of salt</em>, because <em>you can never be too certain</em> that something is secure.<br>Though highly unlikely or perhaps unfeasible - there is a possibility that a hashing function can be reversed. Just because we haven&rsquo;t found a way, doesn&rsquo;t mean it&rsquo;s impossible.</p><blockquote><p>We say our computers are secure, but then lo and behold the NSA publicly announces an exploit to a vulnerability discovered a lifetime ago&hellip;</p></blockquote><h1 id=message-authentication-codes>Message Authentication Codes</h1><p>MACs ensure that a message has not been altered or modified, and usually use some sort of a cryptographic hash implementation.</p><h2 id=weaknesses>Weaknesses</h2><p>The structure of a MAC is important, as it could lead to weaknesses.</p><p>For example:</p><ul><li>hash(key + message) - susceptible to a <a href=#length-extension-attacks>length extension attack</a><br></li><li>hash(message + key ) - susceptible to a collision attack</li></ul><p>There are several attack variants on hashing functions that can be performed:</p><ul><li>Preimage attack - Given <code>h(m)</code>, we are able to find <code>m</code></li><li>Second preimage attack - Given <code>m</code>, we can find <code>m'</code> where <code>h(m) = h(m')</code></li><li>Collision attack - Find <code>m</code> and <code>m'</code> where <code>h(m) = h(m')</code></li><li><a href=#length-extension-attacks>Length extension attack</a> - Reconstructing internal hashing state to append extra data</li></ul><h3 id=length-extension-attacks>Length Extension Attacks</h3><p>Ripping straight off <a href=https://en.wikipedia.org/wiki/Length_extension_attack>Wikipedia</a>&hellip;</p><blockquote><p><em>&ldquo;The vulnerable hashing functions work by taking the input message, and using it to transform an internal state. After all of the input has been processed, the hash digest is generated by outputting the internal state of the function. It is possible to reconstruct the internal state from the hash digest, which can then be used to process the new data. In this way, one may extend the message and compute the hash that is a valid signature for the new message.&rdquo;</em></p></blockquote><p>Length extension attacks allow attackers to append additional data to a message, whilst also recomputing the hash.</p><p>If you know the hash function / algorithm being used, you would be able to continue the hashing process from the original hash result</p><h4 id=example>Example</h4><p>Consider the secret key <code>z5206677</code>, the message <code>Hello World!</code>, and some arbitrary byte-based hashing function <code>myHash</code> that I&rsquo;ll make up.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python3 data-lang=python3><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python3 data-lang=python3><span class=n>key</span> <span class=o>=</span> <span class=s2>&#34;z5206677&#34;</span>
+<span class=n>message</span> <span class=o>=</span> <span class=s2>&#34;Hello World!&#34;</span>
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<span class=k>def</span> <span class=nf>myHash</span><span class=p>(</span><span class=n>message</span><span class=p>,</span> <span class=n>key</span><span class=p>):</span>
+  <span class=c1># Hash length</span>
+  <span class=n>hashLength</span> <span class=o>=</span> <span class=mi>7</span>
+  <span class=n>result</span> <span class=o>=</span> <span class=p>[</span><span class=mi>0</span><span class=p>]</span> <span class=o>*</span> <span class=n>hashLength</span>
+  
+  <span class=c1># Hash structure</span>
+  <span class=n>string</span> <span class=o>=</span> <span class=n>key</span> <span class=o>+</span> <span class=n>message</span>
+  
+  <span class=c1># Some arbitrary hashing function</span>
+  <span class=k>for</span> <span class=n>c</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=nb>len</span><span class=p>(</span><span class=n>string</span><span class=p>)):</span>
+    <span class=n>result</span><span class=p>[</span><span class=n>c</span> <span class=o>%</span> <span class=n>hashLength</span><span class=p>]</span> <span class=o>+=</span> <span class=nb>ord</span><span class=p>(</span><span class=n>string</span><span class=p>[</span><span class=n>c</span><span class=p>])</span>
+  <span class=n>result</span> <span class=o>=</span> <span class=s2>&#34;&#34;</span><span class=o>.</span><span class=n>join</span><span class=p>([</span><span class=nb>chr</span><span class=p>(</span><span class=n>a</span> <span class=o>%</span> <span class=mi>58</span> <span class=o>+</span> <span class=mi>65</span><span class=p>)</span> <span class=k>for</span> <span class=n>a</span> <span class=ow>in</span> <span class=n>result</span><span class=p>])</span>
+  
+  <span class=k>return</span> <span class=n>result</span>
 
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+<span class=nb>print</span><span class=p>(</span><span class=s2>&#34;Hash:&#34;</span><span class=p>,</span> <span class=n>myHash</span><span class=p>(</span><span class=n>message</span><span class=p>,</span> <span class=n>key</span><span class=p>))</span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>Hash: aEba_Y^</code></pre></td></tr></table></div></div><p>Let&rsquo;s say we make the message &ldquo;<code>Hello World! yeet</code>&rdquo;.<br>With knowledge of the key, <code>myHash(&quot;Hello World! yeet&quot;, &quot;z5206677&quot;) == &quot;fpSa_YD&quot;</code></p><p>So if we didn&rsquo;t know the key, how could we get this hash with a length extension attack?</p><p>Analysis time! Let&rsquo;s look at what <code>myHash</code> does:</p><ul><li>The hash output is 7 characters long</li><li>The <strong>hash structure</strong> is <code>h(key + message)</code></li><li>For each character in <code>key + message</code>, add the ASCII letter value into the result array</li><li>Modulo each value by 58 and add 65 (&lsquo;A&rsquo;)</li><li><em>We can also see that this is a bad cryptographic hash function, as it doesn&rsquo;t exhibit the avalanche property.</em></li></ul><p>To attack this hashing function, let&rsquo;s first consider what we have.</p><ul><li>We <strong>do not</strong> have the <strong>value</strong> of the key</li><li>We <strong>do have</strong> the <strong>length</strong> of the key<ul><li>If we know the algorithm, we could possibly solve for the key length</li></ul></li><li>We <strong>may have</strong> the <strong>value</strong> of the message</li><li>We <strong>do have</strong> the <strong>length</strong> of the message</li></ul><p>We need to set the internal states (variable values) of the function. In our case, it would be knowing the <code>result</code> values, and the index/cursor position for the next letter.</p><p>To get the <code>result</code> values, we convert each character in the hash to its ASCII value, and subtract 65. We can ignore the modulo operation, as for any <code>n</code> and <code>A</code>, <code>(n + A) % A == n</code>.<br>We then set our index to where the end of the original message would have been, and perform the hashing operation as if we&rsquo;re continuing.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python3 data-lang=python3><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python3 data-lang=python3><span class=k>def</span> <span class=nf>attack_myHash</span><span class=p>(</span><span class=nb>hash</span><span class=p>,</span> <span class=n>extraMessage</span><span class=p>,</span> <span class=n>keyLength</span><span class=p>,</span> <span class=n>messageLength</span><span class=p>):</span>
+  <span class=n>result</span> <span class=o>=</span> <span class=nb>list</span><span class=p>(</span><span class=nb>hash</span><span class=p>)</span>                     <span class=c1># Turn our string into an array</span>
+  <span class=n>result</span> <span class=o>=</span> <span class=p>[</span><span class=nb>ord</span><span class=p>(</span><span class=n>a</span><span class=p>)</span> <span class=o>-</span> <span class=mi>65</span> <span class=k>for</span> <span class=n>a</span> <span class=ow>in</span> <span class=n>result</span><span class=p>]</span>  <span class=c1># Remove the `+ 65` offset</span>
+                                          <span class=c1># We can ignore the `mod 58`</span>
 
+  <span class=c1># Reuse the hashing logic from `myHash`</span>
+  <span class=k>for</span> <span class=n>c</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=nb>len</span><span class=p>(</span><span class=n>extraMessage</span><span class=p>)):</span>
+    <span class=n>result</span><span class=p>[(</span><span class=n>c</span> <span class=o>+</span> <span class=n>keyLength</span> <span class=o>+</span> <span class=n>messageLength</span><span class=p>)</span> <span class=o>%</span> <span class=mi>7</span><span class=p>]</span> <span class=o>+=</span> <span class=nb>ord</span><span class=p>(</span><span class=n>extraMessage</span><span class=p>[</span><span class=n>c</span><span class=p>])</span>
+  <span class=n>result</span> <span class=o>=</span> <span class=s2>&#34;&#34;</span><span class=o>.</span><span class=n>join</span><span class=p>([</span><span class=nb>chr</span><span class=p>(</span><span class=n>a</span> <span class=o>%</span> <span class=mi>58</span> <span class=o>+</span> <span class=mi>65</span><span class=p>)</span> <span class=k>for</span> <span class=n>a</span> <span class=ow>in</span> <span class=n>result</span><span class=p>])</span>
 
-<meta name="author" content="z5206677" /><meta name="description" content="Hashes." /><meta name="keywords" content="Hugo, theme, even" />
+<span class=nb>print</span><span class=p>(</span><span class=s2>&#34;New hash:&#34;</span><span class=p>,</span> <span class=n>attack_myHash</span><span class=p>(</span><span class=s2>&#34;aEba_Y^&#34;</span><span class=p>,</span> <span class=s2>&#34; yeet&#34;</span><span class=p>,</span> <span class=mi>8</span><span class=p>,</span> <span class=mi>12</span><span class=p>))</span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt>1
+</span></pre></td><td class=lntd><pre class=chroma>New hash: fpSa_YD</pre></td></tr></table></div></div><p>So given a message that has been hashed with key<br><code>myHash(&quot;Hello World!&quot;, &quot;z5206677&quot;) == &quot;aEba_Y^&quot;</code></p><p>We can perform a length extension attack on the hash<br><code>attack_myHash(&quot;aEba_Y^&quot;, &quot; yeet&quot;, 8, 12) == &quot;fpSa_YD&quot;</code></p><p>Which produces the same hash as that message properly hashed<br><code>myHash(&quot;Hello World! yeet&quot;, &quot;z5206677&quot;) == &quot;fpSa_YD&quot;</code></p><hr><p>When it comes to block-based hash functions, the attacker would have to additionally pad their input so that the data blocks align.</p><h2 id=solution-hash-it-again>Solution? Hash it again</h2><p>By hashing the hash of a message, the possibility for a length extension attack is mitigated. In addition, it becomes much harder (and time consuming) to crack the hash.</p><p>We call one particular implementation of this idea a <strong>HMAC</strong> - or &ldquo;hash-based message authentication code&rdquo;. It operates along the functionality of <code>HMAC = hash(key + hash(key + message))</code></p><p>What if you hash the hash of a message hash?<br>Or hash the hash of the hash of the hash of a message?<br>Or hash the hash that was hashed from the hash of the hash of a hash?</p><p>We call these <strong>hashing rounds</strong> - that is, how many times the hash was hashed.</p><p>Hashing functions (<em>usually</em>) take considerably less time to perform than a cracking function.</p><p><em>i.e.</em><br>if <code>h(X) =&gt; hash</code> takes 1 second, h(h(h(X))) would take 3 seconds.<br>if <code>H(x) =&gt; plain</code> takes 5 seconds, H(H(H(x))) would take 15 (or 125) seconds</p><h2 id=salts>Salts</h2><p>Salts are arbitrary strings of text that are either appended or prepended to a message before it is all hashed. This means that given two different salts, the hash of the same message and a different salt would produce two hashes that are not the same!!</p><p><code>md5(AAApassword) = D5581DAEF8238853D0EDFBDA8361562F</code><br><code>md5(BBBpassword) = 2DA397558A2C230E0B38FB75B0BC519A</code></p><p>Salts (ie <code>AAA</code>, and <code>BBB</code>) do not need to be stored privately and could just be left as plain-text inside a database (although that&rsquo;s always a nice idea)</p><h2 id=rainbow-tables>Rainbow Tables</h2><p>Rainbow tables are precomputed hashes of many many many different password combinations. They essentially save us the effort of having to compute the hashes ourselves - for the tradeoff of really massive rainbow table files (in multitudes of tens to thousands of gigabytes)</p><p>They however become somewhat useless if a password was hashed with a salt.<br>A new rainbow table would need to be generated with that salt in mind - quickly making cracking of salted hashes very unfeasible.</p><h1 id=making-cracking-harder-with-modulos>Making cracking harder with modulos</h1><p>So I don&rsquo;t know about you, but the modulo operation looks really useful to add uncertainty into a reversing operation.<br>Given <code>n % 5 == 0</code>, we don&rsquo;t know if <code>n</code> is <code>0</code>, or <code>5</code>, or <code>10</code>, <code>15</code>, etc.</p><p>If <code>n</code> was dependent on another modulo result (ie <code>n = m % 29</code>), then we would need to consider the possible values for m over the different n values.</p><p><strong>Code</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python3 data-lang=python3><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python3 data-lang=python3><span class=k>def</span> <span class=nf>solveModulo</span><span class=p>(</span><span class=n>modulo</span><span class=p>,</span> <span class=n>remainder</span><span class=p>):</span>
+  <span class=s2>&#34;&#34;&#34;
+</span><span class=s2>  Solve for `i` where i % modulo == remainder
+</span><span class=s2>  &#34;&#34;&#34;</span>
+  <span class=c1># limit to values &lt;= 100</span>
+  <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=mi>100</span><span class=o>+</span><span class=mi>1</span><span class=p>):</span>
+    <span class=k>if</span> <span class=n>i</span> <span class=o>%</span> <span class=n>modulo</span> <span class=o>==</span> <span class=n>remainder</span><span class=p>:</span>
+      <span class=k>yield</span> <span class=n>i</span>
 
+<span class=n>n_mod_5_is_zero</span> <span class=o>=</span> <span class=nb>list</span><span class=p>(</span><span class=n>solveModulo</span><span class=p>(</span><span class=mi>5</span><span class=p>,</span> <span class=mi>0</span><span class=p>))</span>
+<span class=nb>print</span><span class=p>(</span><span class=n>f</span><span class=s2>&#34;n % 5 == 0 when n = </span><span class=si>{n_mod_5_is_zero}</span><span class=s2>&#34;</span><span class=p>)</span>
 
+<span class=nb>print</span><span class=p>()</span>
 
+<span class=n>possible_values_of_m</span> <span class=o>=</span> <span class=nb>set</span><span class=p>()</span>
+<span class=n>mod_collisions</span> <span class=o>=</span> <span class=p>[]</span>
 
-
-
-<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
-
-
-<link rel="canonical" href="../../post/hashes/" />
-<link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
-<link rel="manifest" href="../../manifest.json">
-<link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#5bbad5">
-
-
-<link href="../../dist/even.c2a46f00.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
-
-
-<meta property="og:title" content="Hashes" />
-<meta property="og:description" content="Hashes." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/post/hashes/" />
-<meta property="article:published_time" content="2019-06-28T21:24:21&#43;10:00"/>
-<meta property="article:modified_time" content="2019-06-28T21:24:21&#43;10:00"/>
-
-<meta itemprop="name" content="Hashes">
-<meta itemprop="description" content="Hashes.">
-
-
-<meta itemprop="datePublished" content="2019-06-28T21:24:21&#43;10:00" />
-<meta itemprop="dateModified" content="2019-06-28T21:24:21&#43;10:00" />
-<meta itemprop="wordCount" content="1878">
-
-
-
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Hashes"/>
-<meta name="twitter:description" content="Hashes."/>
-
-<!--[if lte IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
-<![endif]-->
-
-<!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
-
-</head>
-<body>
-  <div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="../../" class="logo">COMP6441 Musings</a>
-  </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    <a href="../../">
-        <li class="mobile-menu-item">Home</li>
-      </a><a href="../../post/job-application">
-        <li class="mobile-menu-item">Job Application</li>
-      </a><a href="../../categories/">
-        <li class="mobile-menu-item">Categories</li>
-      </a>
-  </ul>
-</nav>
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="../../" class="logo">COMP6441 Musings</a>
-</div>
-
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item">
-        <a class="menu-item-link" href="../../">Home</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="../../post/job-application">Job Application</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="../../categories/">Categories</a>
-      </li>
-  </ul>
-</nav>
-    </header>
-
-    <main id="main" class="main">
-      <div class="content-wrapper">
-        <div id="content" class="content">
-          <article class="post">
+<span class=k>for</span> <span class=n>n</span> <span class=ow>in</span> <span class=n>n_mod_5_is_zero</span><span class=p>:</span>
+  <span class=n>m_mod_29_is_n</span> <span class=o>=</span> <span class=nb>list</span><span class=p>(</span><span class=n>solveModulo</span><span class=p>(</span><span class=mi>29</span><span class=p>,</span> <span class=n>n</span><span class=p>))</span>
+  <span class=nb>print</span><span class=p>(</span><span class=n>f</span><span class=s2>&#34;m % 29 == </span><span class=si>{n}</span><span class=s2> when m = </span><span class=si>{m_mod_29_is_n}</span><span class=s2>&#34;</span><span class=p>)</span>
+  
+  <span class=k>for</span> <span class=n>n_value</span> <span class=ow>in</span> <span class=n>m_mod_29_is_n</span><span class=p>:</span>
+    <span class=k>if</span> <span class=n>n_value</span> <span class=ow>in</span> <span class=n>possible_values_of_m</span><span class=p>:</span>
+      <span class=n>mod_collisions</span><span class=o>.</span><span class=n>append</span><span class=p>(</span><span class=n>n_value</span><span class=p>)</span>
+    <span class=k>else</span><span class=p>:</span>
+      <span class=n>possible_values_of_m</span><span class=o>.</span><span class=n>add</span><span class=p>(</span><span class=n>n_value</span><span class=p>)</span>
     
-    <header class="post-header">
-      <h1 class="post-title">Hashes</h1>
-
-      <div class="post-meta">
-        <span class="post-time"> 2019-06-28 </span>
-        <div class="post-category">
-            <a href="../../categories/musings/"> Musings </a>
-            </div>
-        
-      </div>
-    </header>
-
-    <div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">Contents</h2>
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-<ul>
-<li><a href="#cryptographic-hashes">Cryptographic Hashes</a></li>
-<li><a href="#message-authentication-codes">Message Authentication Codes</a>
-<ul>
-<li><a href="#weaknesses">Weaknesses</a>
-<ul>
-<li><a href="#length-extension-attacks">Length Extension Attacks</a>
-<ul>
-<li><a href="#example">Example</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#solution-hash-it-again">Solution? Hash it again</a></li>
-<li><a href="#salts">Salts</a></li>
-<li><a href="#rainbow-tables">Rainbow Tables</a></li>
-</ul></li>
-<li><a href="#making-cracking-harder-with-modulos">Making cracking harder with modulos</a></li>
-</ul>
-</nav>
-  </div>
-</div>
-    <div class="post-content">
-      
-
-<p><strong>Hashes</strong>.<br />
-<a href="https://www.youtube.com/watch?v=dpWmlRNfLck">What are they good for? 🎵</a><br />
-<s>Absolute nothing</s> Actually quite a lot!</p>
-
-<p>From optimising access to data with <a href="https://featherbear.github.io/UNSW-COMP2521/blog/post/lec14/">hash tables</a>, to hashbrowns™, to validating data - something we&rsquo;ll look at now!</p>
-
-<h1 id="cryptographic-hashes">Cryptographic Hashes</h1>
-
-<p>A cryptographic hash function (also known as a digest, or fingerprint) takes an input, and produces a fixed size output from the input.</p>
-
-<p>Some hashes operate on a byte-by-byte basis, whilst others operate on a block of data at a time (better)</p>
-
-<p>With a <strong><em>grain of salt</em></strong>, cryptographic hash functions have the output properties</p>
-
-<ul>
-<li>One way - &lsquo;Impossible&rsquo; to reverse</li>
-<li>Unique - Two messages will &lsquo;never&rsquo; have the same hash</li>
-<li>Avalanche effect - A small change in input changes at least half the output bits</li>
-</ul>
-
-<p>I say to take it which a <em>grain of salt</em>, because <em>you can never be too certain</em> that something is secure.<br />
-Though highly unlikely or perhaps unfeasible - there is a possibility that a hashing function can be reversed. Just because we haven&rsquo;t found a way, doesn&rsquo;t mean it&rsquo;s impossible.</p>
-
-<blockquote>
-<p>We say our computers are secure, but then lo and behold the NSA publicly announces an exploit to a vulnerability discovered a lifetime ago&hellip;</p>
-</blockquote>
-
-<h1 id="message-authentication-codes">Message Authentication Codes</h1>
-
-<p>MACs ensure that a message has not been altered or modified, and usually use some sort of a cryptographic hash implementation.</p>
-
-<h2 id="weaknesses">Weaknesses</h2>
-
-<p>The structure of a MAC is important, as it could lead to weaknesses.</p>
-
-<p>For example:</p>
-
-<ul>
-<li>hash(key + message) - susceptible to a <a href="#length-extension-attacks">length extension attack</a><br /></li>
-<li>hash(message + key ) - susceptible to a collision attack</li>
-</ul>
-
-<p>There are several attack variants on hashing functions that can be performed:</p>
-
-<ul>
-<li>Preimage attack - Given <code>h(m)</code>, we are able to find <code>m</code></li>
-<li>Second preimage attack - Given <code>m</code>, we can find <code>m'</code> where <code>h(m) = h(m')</code></li>
-<li>Collision attack - Find <code>m</code> and <code>m'</code> where <code>h(m) = h(m')</code></li>
-<li><a href="#length-extension-attacks">Length extension attack</a> - Reconstructing internal hashing state to append extra data</li>
-</ul>
-
-<h3 id="length-extension-attacks">Length Extension Attacks</h3>
-
-<p>Ripping straight off <a href="https://en.wikipedia.org/wiki/Length_extension_attack">Wikipedia</a>&hellip;</p>
-
-<blockquote>
-<p><em>&ldquo;The vulnerable hashing functions work by taking the input message, and using it to transform an internal state. After all of the input has been processed, the hash digest is generated by outputting the internal state of the function. It is possible to reconstruct the internal state from the hash digest, which can then be used to process the new data. In this way, one may extend the message and compute the hash that is a valid signature for the new message.&rdquo;</em></p>
-</blockquote>
-
-<p>Length extension attacks allow attackers to append additional data to a message, whilst also recomputing the hash.</p>
-
-<p>If you know the hash function / algorithm being used, you would be able to continue the hashing process from the original hash result</p>
-
-<h4 id="example">Example</h4>
-
-<p>Consider the secret key <code>z5206677</code>, the message <code>Hello World!</code>, and some arbitrary byte-based hashing function <code>myHash</code> that I&rsquo;ll make up.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-python3" data-lang="python3"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python3" data-lang="python3"><span class="n">key</span> <span class="o">=</span> <span class="s2">&#34;z5206677&#34;</span>
-<span class="n">message</span> <span class="o">=</span> <span class="s2">&#34;Hello World!&#34;</span>
-
-<span class="k">def</span> <span class="nf">myHash</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
-  <span class="c1"># Hash length</span>
-  <span class="n">hashLength</span> <span class="o">=</span> <span class="mi">7</span>
-  <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">hashLength</span>
-  
-  <span class="c1"># Hash structure</span>
-  <span class="n">string</span> <span class="o">=</span> <span class="n">key</span> <span class="o">+</span> <span class="n">message</span>
-  
-  <span class="c1"># Some arbitrary hashing function</span>
-  <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">string</span><span class="p">)):</span>
-    <span class="n">result</span><span class="p">[</span><span class="n">c</span> <span class="o">%</span> <span class="n">hashLength</span><span class="p">]</span> <span class="o">+=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">string</span><span class="p">[</span><span class="n">c</span><span class="p">])</span>
-  <span class="n">result</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">chr</span><span class="p">(</span><span class="n">a</span> <span class="o">%</span> <span class="mi">58</span> <span class="o">+</span> <span class="mi">65</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">result</span><span class="p">])</span>
-  
-  <span class="k">return</span> <span class="n">result</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Hash:&#34;</span><span class="p">,</span> <span class="n">myHash</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">Hash: aEba_Y^</code></pre></td></tr></table>
-</div>
-</div>
-<p>Let&rsquo;s say we make the message &ldquo;<code>Hello World! yeet</code>&rdquo;.<br />
-With knowledge of the key, <code>myHash(&quot;Hello World! yeet&quot;, &quot;z5206677&quot;) == &quot;fpSa_YD&quot;</code></p>
-
-<p>So if we didn&rsquo;t know the key, how could we get this hash with a length extension attack?</p>
-
-<p>Analysis time! Let&rsquo;s look at what <code>myHash</code> does:</p>
-
-<ul>
-<li>The hash output is 7 characters long</li>
-<li>The <strong>hash structure</strong> is <code>h(key + message)</code></li>
-<li>For each character in <code>key + message</code>, add the ASCII letter value into the result array</li>
-<li>Modulo each value by 58 and add 65 (&lsquo;A&rsquo;)</li>
-<li><em>We can also see that this is a bad cryptographic hash function, as it doesn&rsquo;t exhibit the avalanche property.</em></li>
-</ul>
-
-<p>To attack this hashing function, let&rsquo;s first consider what we have.</p>
-
-<ul>
-<li>We <strong>do not</strong> have the <strong>value</strong> of the key</li>
-<li>We <strong>do have</strong> the <strong>length</strong> of the key
-
-<ul>
-<li>If we know the algorithm, we could possibly solve for the key length</li>
-</ul></li>
-<li>We <strong>may have</strong> the <strong>value</strong> of the message</li>
-<li>We <strong>do have</strong> the <strong>length</strong> of the message</li>
-</ul>
-
-<p>We need to set the internal states (variable values) of the function. In our case, it would be knowing the <code>result</code> values, and the index/cursor position for the next letter.</p>
-
-<p>To get the <code>result</code> values, we convert each character in the hash to its ASCII value, and subtract 65. We can ignore the modulo operation, as for any <code>n</code> and <code>A</code>, <code>(n + A) % A == n</code>.<br />
-We then set our index to where the end of the original message would have been, and perform the hashing operation as if we&rsquo;re continuing.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-python3" data-lang="python3"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python3" data-lang="python3"><span class="k">def</span> <span class="nf">attack_myHash</span><span class="p">(</span><span class="nb">hash</span><span class="p">,</span> <span class="n">extraMessage</span><span class="p">,</span> <span class="n">keyLength</span><span class="p">,</span> <span class="n">messageLength</span><span class="p">):</span>
-  <span class="n">result</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">hash</span><span class="p">)</span>                     <span class="c1"># Turn our string into an array</span>
-  <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="nb">ord</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">-</span> <span class="mi">65</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">result</span><span class="p">]</span>  <span class="c1"># Remove the `+ 65` offset</span>
-                                          <span class="c1"># We can ignore the `mod 58`</span>
-
-  <span class="c1"># Reuse the hashing logic from `myHash`</span>
-  <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">extraMessage</span><span class="p">)):</span>
-    <span class="n">result</span><span class="p">[(</span><span class="n">c</span> <span class="o">+</span> <span class="n">keyLength</span> <span class="o">+</span> <span class="n">messageLength</span><span class="p">)</span> <span class="o">%</span> <span class="mi">7</span><span class="p">]</span> <span class="o">+=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">extraMessage</span><span class="p">[</span><span class="n">c</span><span class="p">])</span>
-  <span class="n">result</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">chr</span><span class="p">(</span><span class="n">a</span> <span class="o">%</span> <span class="mi">58</span> <span class="o">+</span> <span class="mi">65</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">result</span><span class="p">])</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;New hash:&#34;</span><span class="p">,</span> <span class="n">attack_myHash</span><span class="p">(</span><span class="s2">&#34;aEba_Y^&#34;</span><span class="p">,</span> <span class="s2">&#34; yeet&#34;</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">New hash: fpSa_YD</pre></td></tr></table>
-</div>
-</div>
-<p>So given a message that has been hashed with key<br />
-<code>myHash(&quot;Hello World!&quot;, &quot;z5206677&quot;) == &quot;aEba_Y^&quot;</code></p>
-
-<p>We can perform a length extension attack on the hash<br />
-<code>attack_myHash(&quot;aEba_Y^&quot;, &quot; yeet&quot;, 8, 12) == &quot;fpSa_YD&quot;</code></p>
-
-<p>Which produces the same hash as that message properly hashed<br />
-<code>myHash(&quot;Hello World! yeet&quot;, &quot;z5206677&quot;) == &quot;fpSa_YD&quot;</code></p>
-
-<hr />
-
-<p>When it comes to block-based hash functions, the attacker would have to additionally pad their input so that the data blocks align.</p>
-
-<h2 id="solution-hash-it-again">Solution? Hash it again</h2>
-
-<p>By hashing the hash of a message, the possibility for a length extension attack is mitigated. In addition, it becomes much harder (and time consuming) to crack the hash.</p>
-
-<p>We call one particular implementation of this idea a <strong>HMAC</strong> - or &ldquo;hash-based message authentication code&rdquo;. It operates along the functionality of <code>HMAC = hash(key + hash(key + message))</code></p>
-
-<p>What if you hash the hash of a message hash?<br />
-Or hash the hash of the hash of the hash of a message?<br />
-Or hash the hash that was hashed from the hash of the hash of a hash?</p>
-
-<p>We call these <strong>hashing rounds</strong> - that is, how many times the hash was hashed.</p>
-
-<p>Hashing functions (<em>usually</em>) take considerably less time to perform than a cracking function.</p>
-
-<p><em>i.e.</em><br />
-if <code>h(X) =&gt; hash</code> takes 1 second, h(h(h(X))) would take 3 seconds.<br />
-if <code>H(x) =&gt; plain</code> takes 5 seconds, H(H(H(x))) would take 15 (or 125) seconds</p>
-
-<h2 id="salts">Salts</h2>
-
-<p>Salts are arbitrary strings of text that are either appended or prepended to a message before it is all hashed. This means that given two different salts, the hash of the same message and a different salt would produce two hashes that are not the same!!</p>
-
-<p><code>md5(AAApassword) = D5581DAEF8238853D0EDFBDA8361562F</code><br />
-<code>md5(BBBpassword) = 2DA397558A2C230E0B38FB75B0BC519A</code></p>
-
-<p>Salts (ie <code>AAA</code>, and <code>BBB</code>) do not need to be stored privately and could just be left as plain-text inside a database (although that&rsquo;s always a nice idea)</p>
-
-<h2 id="rainbow-tables">Rainbow Tables</h2>
-
-<p>Rainbow tables are precomputed hashes of many many many different password combinations. They essentially save us the effort of having to compute the hashes ourselves - for the tradeoff of really massive rainbow table files (in multitudes of tens to thousands of gigabytes)</p>
-
-<p>They however become somewhat useless if a password was hashed with a salt.<br />
-A new rainbow table would need to be generated with that salt in mind - quickly making cracking of salted hashes very unfeasible.</p>
-
-<h1 id="making-cracking-harder-with-modulos">Making cracking harder with modulos</h1>
-
-<p>So I don&rsquo;t know about you, but the modulo operation looks really useful to add uncertainty into a reversing operation.<br />
-Given <code>n % 5 == 0</code>, we don&rsquo;t know if <code>n</code> is <code>0</code>, or <code>5</code>, or <code>10</code>, <code>15</code>, etc.</p>
-
-<p>If <code>n</code> was dependent on another modulo result (ie <code>n = m % 29</code>), then we would need to consider the possible values for m over the different n values.</p>
-
-<p><strong>Code</strong></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-python3" data-lang="python3"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python3" data-lang="python3"><span class="k">def</span> <span class="nf">solveModulo</span><span class="p">(</span><span class="n">modulo</span><span class="p">,</span> <span class="n">remainder</span><span class="p">):</span>
-  <span class="s2">&#34;&#34;&#34;
-</span><span class="s2">  Solve for `i` where i % modulo == remainder
-</span><span class="s2">  &#34;&#34;&#34;</span>
-  <span class="c1"># limit to values &lt;= 100</span>
-  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="n">modulo</span> <span class="o">==</span> <span class="n">remainder</span><span class="p">:</span>
-      <span class="k">yield</span> <span class="n">i</span>
-
-<span class="n">n_mod_5_is_zero</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">solveModulo</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&#34;n % 5 == 0 when n = </span><span class="si">{n_mod_5_is_zero}</span><span class="s2">&#34;</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">()</span>
-
-<span class="n">possible_values_of_m</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-<span class="n">mod_collisions</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">n_mod_5_is_zero</span><span class="p">:</span>
-  <span class="n">m_mod_29_is_n</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">solveModulo</span><span class="p">(</span><span class="mi">29</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
-  <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&#34;m % 29 == </span><span class="si">{n}</span><span class="s2"> when m = </span><span class="si">{m_mod_29_is_n}</span><span class="s2">&#34;</span><span class="p">)</span>
-  
-  <span class="k">for</span> <span class="n">n_value</span> <span class="ow">in</span> <span class="n">m_mod_29_is_n</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">n_value</span> <span class="ow">in</span> <span class="n">possible_values_of_m</span><span class="p">:</span>
-      <span class="n">mod_collisions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n_value</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-      <span class="n">possible_values_of_m</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">n_value</span><span class="p">)</span>
-    
-<span class="nb">print</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&#34;Got {len(possible_values_of_m)} m values&#34;</span><span class="p">,</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">possible_values_of_m</span><span class="p">)))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&#34;Got {len(mod_collisions)} collisions&#34;</span><span class="p">,</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">mod_collisions</span><span class="p">))</span></code></pre></td></tr></table>
-</div>
-</div>
-<p><strong>Output</strong></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">n % 5 == 0 when n = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]
+<span class=nb>print</span><span class=p>()</span>
+<span class=nb>print</span><span class=p>(</span><span class=n>f</span><span class=s2>&#34;Got {len(possible_values_of_m)} m values&#34;</span><span class=p>,</span> <span class=nb>sorted</span><span class=p>(</span><span class=n>possible_values_of_m</span><span class=p>)))</span>
+<span class=nb>print</span><span class=p>(</span><span class=n>f</span><span class=s2>&#34;Got {len(mod_collisions)} collisions&#34;</span><span class=p>,</span> <span class=nb>sorted</span><span class=p>(</span><span class=n>mod_collisions</span><span class=p>))</span></code></pre></td></tr></table></div></div><p><strong>Output</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span></pre></td><td class=lntd><pre class=chroma>n % 5 == 0 when n = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]
 
 m % 29 == 5 when m = [5, 34, 63, 92]
 m % 29 == 10 when m = [10, 39, 68, 97]
@@ -514,117 +166,15 @@ m % 29 == 95 when m = []
 m % 29 == 100 when m = []
 
 Got 17 m values [5, 10, 15, 20, 25, 34, 39, 44, 49, 54, 63, 68, 73, 78, 83, 92, 97]
-Got 0 collisions []</pre></td></tr></table>
-</div>
-</div>
-<p>As you see here, for <code>m % 29 % 5 == 0</code> for <code>0 &lt; m &lt;= 100</code>, there are 17 possible values of <code>n</code> which you would have to try.</p>
-
-<p>Sure 17 in 100 isn&rsquo;t a lot of trials,<br />
-and even for <code>0 &lt; m &lt;= 1000</code>, 172 in 1000 isn&rsquo;t a lot.</p>
-
-<p>But with a better choice of modulo numbers, <code>m % 91 % 2 == 0</code> gives us 495 in 1000 values&hellip; That&rsquo;s much much better!</p>
-
-<p><strong>A modulo operation could also be dangerous though</strong><br />
-If you are using the result of a modulo operation - for example <code>x = A % 2</code> - then <code>x</code> only has two possible values <code>0</code> and <code>1</code>. By applying a modulo operation, the output space has been reduced to only two values, which could be bad.</p>
-
-    </div>
-
-    <footer class="post-footer">
-      
-      <nav class="post-nav">
-        <a class="prev" href="../../post/weakness-of-the-week-04/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Weakness of the Week - 04</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="../../post/reflections04/">
-            <span class="next-text nav-default">Reflections - Week 4</span>
-            <span class="next-text nav-mobile">Next</span>
-            <i class="iconfont icon-right"></i>
-          </a>
-      </nav>
-    </footer>
-  </article>
-
-  <script>
-  (function(f, a, t, h, o, m){
-    a[h]=a[h]||function(){
-      (a[h].q=a[h].q||[]).push(arguments)
-    };
-    o=f.createElement('script'),
-    m=f.getElementsByTagName('script')[0];
-    o.async=1; o.src=t; o.id='fathom-script';
-    m.parentNode.insertBefore(o,m)
-  })(document, window, '//ss.featherbear.cc/tracker.js', 'fathom');
-  fathom('set', 'siteId', 'NEQTU');
-  fathom('trackPageview');
-  </script>
-        </div>
-        
-
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="mailto:z5206677@student.unsw.edu.au" class="iconfont icon-email" title="email"></a>
-      <a href="https://www.linkedin.com/in/andrewjinmengwong/" class="iconfont icon-linkedin" title="linkedin"></a>
-      <a href="https://github.com/featherbear" class="iconfont icon-github" title="github"></a>
-      <a href="https://www.instagram.com/_andrewjwong/" class="iconfont icon-instagram" title="instagram"></a>
-  <a href="../../index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
-</div>
-
-<div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
-
-  
-
-  <span class="copyright-year">
-    &copy; 
-    2019 - 
-    2021
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">Andrew Wong (z5206677)</span>
-  </span>
-</div>
-    </footer>
-
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
-    </div>
-  </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../dist/even.26188efa.min.js"></script>
-
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-107434487-2', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-
-
-
-
-
-</body>
-</html>
+Got 0 collisions []</pre></td></tr></table></div></div><p>As you see here, for <code>m % 29 % 5 == 0</code> for <code>0 &lt; m &lt;= 100</code>, there are 17 possible values of <code>n</code> which you would have to try.</p><p>Sure 17 in 100 isn&rsquo;t a lot of trials,<br>and even for <code>0 &lt; m &lt;= 1000</code>, 172 in 1000 isn&rsquo;t a lot.</p><p>But with a better choice of modulo numbers, <code>m % 91 % 2 == 0</code> gives us 495 in 1000 values&hellip; That&rsquo;s much much better!</p><p><strong>A modulo operation could also be dangerous though</strong><br>If you are using the result of a modulo operation - for example <code>x = A % 2</code> - then <code>x</code> only has two possible values <code>0</code> and <code>1</code>. By applying a modulo operation, the output space has been reduced to only two values, which could be bad.</p></div><footer class=post-footer><nav class=post-nav><a class=prev href=../../post/weakness-of-the-week-04/><i class="iconfont icon-left"></i><span class="prev-text nav-default">Weakness of the Week - 04</span>
+<span class="prev-text nav-mobile">Prev</span></a>
+<a class=next href=../../post/reflections04/><span class="next-text nav-default">Reflections - Week 4</span>
+<span class="next-text nav-mobile">Next</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article><script>(function(f,a,t,h,o,m){a[h]=a[h]||function(){(a[h].q=a[h].q||[]).push(arguments)};o=f.createElement('script'),m=f.getElementsByTagName('script')[0];o.async=1;o.src=t;o.id='fathom-script';m.parentNode.insertBefore(o,m)})(document,window,'//ss.featherbear.cc/tracker.js','fathom');fathom('set','siteId','NEQTU');fathom('trackPageview');</script></div></div></main><footer id=footer class=footer><div class=social-links><a href=mailto:z5206677@student.unsw.edu.au class="iconfont icon-email" title=email></a><a href=https://www.linkedin.com/in/andrewjinmengwong/ class="iconfont icon-linkedin" title=linkedin></a><a href=https://github.com/featherbear class="iconfont icon-github" title=github></a><a href=https://www.instagram.com/_andrewjwong/ class="iconfont icon-instagram" title=instagram></a><a href=../../index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
+<span class=division>|</span>
+<span class=theme-info>Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span>
+<span class=copyright-year>&copy;
+2019 -
+2021
+<span class=heart><i class="iconfont icon-heart"></i></span><span class=author>Andrew Wong (z5206677)</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script><script type=text/javascript src=../../dist/even.26188efa.min.js></script><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-107434487-2','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script></body></html>

@@ -1,303 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>What&#39;s Wrong With the Code - 01 - COMP6441 Musings</title>
-  <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>What&#39;s Wrong With the Code - 01 - COMP6441 Musings</title><meta name=renderer content=webkit><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content=no-transform><meta http-equiv=cache-control content=no-siteapp><meta name=theme-color content=#f8f5ec><meta name=msapplication-navbutton-color content=#f8f5ec><meta name=apple-mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=#f8f5ec><meta name=author content=z5206677><meta name=description content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  int read_data(int sockfd) { char buf[1024]; unsigned short max = sizeof(buf); short length; length = get_network_short(sockfd); if (length &amp;gt; max) { error(&amp;#34;bad length: %d\n&amp;#34;, length); return 1; } if(read(sockfd, buf, length) &amp;lt; 0){ error(&amp;#34;read: %m&amp;#34;); return 1; } ."><meta name=keywords content=Hugo,theme,even><meta name=generator content="Hugo 0.54.0 with even 4.0.0"><link rel=canonical href=../../post/whats-wrong-with-the-code-01/><link rel=apple-touch-icon sizes=180x180 href=../../apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=../../favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=../../favicon-16x16.png><link rel=manifest href=../../manifest.json><link rel=mask-icon href=../../safari-pinned-tab.svg color=#5bbad5><link href=../../dist/even.c2a46f00.min.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property=og:title content="What's Wrong With the Code - 01"><meta property=og:description content='1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  int read_data(int sockfd) { char buf[1024]; unsigned short max = sizeof(buf); short length; length = get_network_short(sockfd); if (length &gt; max) { error("bad length: %d\n", length); return 1; } if(read(sockfd, buf, length) &lt; 0){ error("read: %m"); return 1; } .'><meta property=og:type content=article><meta property=og:url content=/post/whats-wrong-with-the-code-01/><meta property=article:published_time content=2019-07-01T16:18:44&#43;10:00><meta property=article:modified_time content=2019-07-01T16:18:44&#43;10:00><meta itemprop=name content="What's Wrong With the Code - 01"><meta itemprop=description content='1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  int read_data(int sockfd) { char buf[1024]; unsigned short max = sizeof(buf); short length; length = get_network_short(sockfd); if (length &gt; max) { error("bad length: %d\n", length); return 1; } if(read(sockfd, buf, length) &lt; 0){ error("read: %m"); return 1; } .'><meta itemprop=datePublished content=2019-07-01T16:18:44&#43;10:00><meta itemprop=dateModified content=2019-07-01T16:18:44&#43;10:00><meta itemprop=wordCount content=163><meta itemprop=keywords content><meta name=twitter:card content=summary><meta name=twitter:title content="What's Wrong With the Code - 01"><meta name=twitter:description content='1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  int read_data(int sockfd) { char buf[1024]; unsigned short max = sizeof(buf); short length; length = get_network_short(sockfd); if (length &gt; max) { error("bad length: %d\n", length); return 1; } if(read(sockfd, buf, length) &lt; 0){ error("read: %m"); return 1; } .'><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=../../ class=logo>COMP6441 Musings</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=../../><li class=mobile-menu-item>Home</li></a><a href=../../post/job-application><li class=mobile-menu-item>Job Application</li></a><a href=../../categories/><li class=mobile-menu-item>Categories</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=../../ class=logo>COMP6441 Musings</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=../../>Home</a></li><li class=menu-item><a class=menu-item-link href=../../post/job-application>Job Application</a></li><li class=menu-item><a class=menu-item-link href=../../categories/>Categories</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>What&#39;s Wrong With the Code - 01</h1><div class=post-meta><span class=post-time>2019-07-01</span><div class=post-category><a href=../../categories/musings/>Musings</a>
+<a href=../../categories/extended-security/>Extended Security</a></div></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><a href=#what-apos-s-wrong-with-the-code>What&apos;s wrong with the code?</a></li></ul></nav></div></div><div class=post-content><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-c data-lang=c><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-c data-lang=c><span class=kt>int</span> <span class=nf>read_data</span><span class=p>(</span><span class=kt>int</span> <span class=n>sockfd</span><span class=p>)</span> <span class=p>{</span>
+  <span class=kt>char</span> <span class=n>buf</span><span class=p>[</span><span class=mi>1024</span><span class=p>];</span>
+  <span class=kt>unsigned</span> <span class=kt>short</span> <span class=n>max</span> <span class=o>=</span> <span class=k>sizeof</span><span class=p>(</span><span class=n>buf</span><span class=p>);</span>
+  <span class=kt>short</span> <span class=n>length</span><span class=p>;</span>
+  
+  <span class=n>length</span> <span class=o>=</span> <span class=n>get_network_short</span><span class=p>(</span><span class=n>sockfd</span><span class=p>);</span>
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
-
-
-<meta name="author" content="z5206677" /><meta name="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  int read_data(int sockfd) { char buf[1024]; unsigned short max = sizeof(buf); short length; length = get_network_short(sockfd); if (length &amp;gt; max) { error(&amp;#34;bad length: %d\n&amp;#34;, length); return 1; } if(read(sockfd, buf, length) &amp;lt; 0){ error(&amp;#34;read: %m&amp;#34;); return 1; } ." /><meta name="keywords" content="Hugo, theme, even" />
-
-
-
-
-
-
-<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
-
-
-<link rel="canonical" href="../../post/whats-wrong-with-the-code-01/" />
-<link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
-<link rel="manifest" href="../../manifest.json">
-<link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#5bbad5">
-
-
-<link href="../../dist/even.c2a46f00.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
-
-
-<meta property="og:title" content="What&#39;s Wrong With the Code - 01" />
-<meta property="og:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  int read_data(int sockfd) { char buf[1024]; unsigned short max = sizeof(buf); short length; length = get_network_short(sockfd); if (length &gt; max) { error(&#34;bad length: %d\n&#34;, length); return 1; } if(read(sockfd, buf, length) &lt; 0){ error(&#34;read: %m&#34;); return 1; } ." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/post/whats-wrong-with-the-code-01/" />
-<meta property="article:published_time" content="2019-07-01T16:18:44&#43;10:00"/>
-<meta property="article:modified_time" content="2019-07-01T16:18:44&#43;10:00"/>
-
-<meta itemprop="name" content="What&#39;s Wrong With the Code - 01">
-<meta itemprop="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  int read_data(int sockfd) { char buf[1024]; unsigned short max = sizeof(buf); short length; length = get_network_short(sockfd); if (length &gt; max) { error(&#34;bad length: %d\n&#34;, length); return 1; } if(read(sockfd, buf, length) &lt; 0){ error(&#34;read: %m&#34;); return 1; } .">
-
-
-<meta itemprop="datePublished" content="2019-07-01T16:18:44&#43;10:00" />
-<meta itemprop="dateModified" content="2019-07-01T16:18:44&#43;10:00" />
-<meta itemprop="wordCount" content="163">
-
-
-
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="What&#39;s Wrong With the Code - 01"/>
-<meta name="twitter:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  int read_data(int sockfd) { char buf[1024]; unsigned short max = sizeof(buf); short length; length = get_network_short(sockfd); if (length &gt; max) { error(&#34;bad length: %d\n&#34;, length); return 1; } if(read(sockfd, buf, length) &lt; 0){ error(&#34;read: %m&#34;); return 1; } ."/>
-
-<!--[if lte IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
-<![endif]-->
-
-<!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
-
-</head>
-<body>
-  <div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="../../" class="logo">COMP6441 Musings</a>
-  </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    <a href="../../">
-        <li class="mobile-menu-item">Home</li>
-      </a><a href="../../post/job-application">
-        <li class="mobile-menu-item">Job Application</li>
-      </a><a href="../../categories/">
-        <li class="mobile-menu-item">Categories</li>
-      </a>
-  </ul>
-</nav>
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="../../" class="logo">COMP6441 Musings</a>
-</div>
-
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item">
-        <a class="menu-item-link" href="../../">Home</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="../../post/job-application">Job Application</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="../../categories/">Categories</a>
-      </li>
-  </ul>
-</nav>
-    </header>
-
-    <main id="main" class="main">
-      <div class="content-wrapper">
-        <div id="content" class="content">
-          <article class="post">
+  <span class=k>if</span> <span class=p>(</span><span class=n>length</span> <span class=o>&gt;</span> <span class=n>max</span><span class=p>)</span> <span class=p>{</span>
+    <span class=n>error</span><span class=p>(</span><span class=s>&#34;bad length: %d</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>,</span> <span class=n>length</span><span class=p>);</span>
+    <span class=k>return</span> <span class=mi>1</span><span class=p>;</span>
+  <span class=p>}</span>
     
-    <header class="post-header">
-      <h1 class="post-title">What&#39;s Wrong With the Code - 01</h1>
+  <span class=k>if</span><span class=p>(</span><span class=n>read</span><span class=p>(</span><span class=n>sockfd</span><span class=p>,</span> <span class=n>buf</span><span class=p>,</span> <span class=n>length</span><span class=p>)</span> <span class=o>&lt;</span> <span class=mi>0</span><span class=p>){</span>
+    <span class=n>error</span><span class=p>(</span><span class=s>&#34;read: %m&#34;</span><span class=p>);</span>
+    <span class=k>return</span> <span class=mi>1</span><span class=p>;</span>
+  <span class=p>}</span>
 
-      <div class="post-meta">
-        <span class="post-time"> 2019-07-01 </span>
-        <div class="post-category">
-            <a href="../../categories/musings/"> Musings </a>
-            <a href="../../categories/extended-security/"> Extended Security </a>
-            </div>
-        
-      </div>
-    </header>
+  <span class=p>...</span> <span class=n>process</span> <span class=n>data</span> <span class=p>...</span>
 
-    <div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">Contents</h2>
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-<ul>
-<li><a href="#what-apos-s-wrong-with-the-code">What&apos;s wrong with the code?</a></li>
-</ul>
-</nav>
-  </div>
-</div>
-    <div class="post-content">
-      
-
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="nf">read_data</span><span class="p">(</span><span class="kt">int</span> <span class="n">sockfd</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kt">char</span> <span class="n">buf</span><span class="p">[</span><span class="mi">1024</span><span class="p">];</span>
-  <span class="kt">unsigned</span> <span class="kt">short</span> <span class="n">max</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">buf</span><span class="p">);</span>
-  <span class="kt">short</span> <span class="n">length</span><span class="p">;</span>
-  
-  <span class="n">length</span> <span class="o">=</span> <span class="n">get_network_short</span><span class="p">(</span><span class="n">sockfd</span><span class="p">);</span>
-
-  <span class="k">if</span> <span class="p">(</span><span class="n">length</span> <span class="o">&gt;</span> <span class="n">max</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">error</span><span class="p">(</span><span class="s">&#34;bad length: %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">length</span><span class="p">);</span>
-    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
-  <span class="p">}</span>
-    
-  <span class="k">if</span><span class="p">(</span><span class="n">read</span><span class="p">(</span><span class="n">sockfd</span><span class="p">,</span> <span class="n">buf</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">){</span>
-    <span class="n">error</span><span class="p">(</span><span class="s">&#34;read: %m&#34;</span><span class="p">);</span>
-    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="p">...</span> <span class="n">process</span> <span class="n">data</span> <span class="p">...</span>
-
-  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span></code></pre></td></tr></table>
-</div>
-</div>
-<h1 id="what-apos-s-wrong-with-the-code">What&apos;s wrong with the code?</h1>
-
-<p>On line 8, we have a comparison <code>length &gt; max</code> which will return an error if the length of the data exceeds the buffer size.<br />
-However, we are comparing an <code>unsigned short</code> to a <code>short</code>.</p>
-
-<p>If <code>get_network_short(sockfd)</code> (line 6) returns a value greater than <code>65535 / 2</code>, for example <code>32768</code>, then due to <code>length</code> being a <code>signed</code> variable the value stored will actually be negative.<br />
-Upon comparison, we&rsquo;ll actually be comparing <code>-32768 &gt; max</code>, which will always return <code>false</code>.</p>
-
-<p>Hence, the code to raise the bad length error will never be called!</p>
-
-    </div>
-
-    <footer class="post-footer">
-      
-      <nav class="post-nav">
-        <a class="prev" href="../../post/reflections04/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Reflections - Week 4</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="../../post/whats-wrong-with-the-code-02/">
-            <span class="next-text nav-default">What&#39;s Wrong With the Code - 02</span>
-            <span class="next-text nav-mobile">Next</span>
-            <i class="iconfont icon-right"></i>
-          </a>
-      </nav>
-    </footer>
-  </article>
-
-  <script>
-  (function(f, a, t, h, o, m){
-    a[h]=a[h]||function(){
-      (a[h].q=a[h].q||[]).push(arguments)
-    };
-    o=f.createElement('script'),
-    m=f.getElementsByTagName('script')[0];
-    o.async=1; o.src=t; o.id='fathom-script';
-    m.parentNode.insertBefore(o,m)
-  })(document, window, '//ss.featherbear.cc/tracker.js', 'fathom');
-  fathom('set', 'siteId', 'NEQTU');
-  fathom('trackPageview');
-  </script>
-        </div>
-        
-
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="mailto:z5206677@student.unsw.edu.au" class="iconfont icon-email" title="email"></a>
-      <a href="https://www.linkedin.com/in/andrewjinmengwong/" class="iconfont icon-linkedin" title="linkedin"></a>
-      <a href="https://github.com/featherbear" class="iconfont icon-github" title="github"></a>
-      <a href="https://www.instagram.com/_andrewjwong/" class="iconfont icon-instagram" title="instagram"></a>
-  <a href="../../index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
-</div>
-
-<div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
-
-  
-
-  <span class="copyright-year">
-    &copy; 
-    2019 - 
-    2021
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">Andrew Wong (z5206677)</span>
-  </span>
-</div>
-    </footer>
-
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
-    </div>
-  </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../dist/even.26188efa.min.js"></script>
-
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-107434487-2', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-
-
-
-
-
-</body>
-</html>
+  <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
+<span class=p>}</span></code></pre></td></tr></table></div></div><h1 id=what-apos-s-wrong-with-the-code>What&apos;s wrong with the code?</h1><p>On line 8, we have a comparison <code>length &gt; max</code> which will return an error if the length of the data exceeds the buffer size.<br>However, we are comparing an <code>unsigned short</code> to a <code>short</code>.</p><p>If <code>get_network_short(sockfd)</code> (line 6) returns a value greater than <code>65535 / 2</code>, for example <code>32768</code>, then due to <code>length</code> being a <code>signed</code> variable the value stored will actually be negative.<br>Upon comparison, we&rsquo;ll actually be comparing <code>-32768 &gt; max</code>, which will always return <code>false</code>.</p><p>Hence, the code to raise the bad length error will never be called!</p></div><footer class=post-footer><nav class=post-nav><a class=prev href=../../post/reflections04/><i class="iconfont icon-left"></i><span class="prev-text nav-default">Reflections - Week 4</span>
+<span class="prev-text nav-mobile">Prev</span></a>
+<a class=next href=../../post/whats-wrong-with-the-code-02/><span class="next-text nav-default">What&#39;s Wrong With the Code - 02</span>
+<span class="next-text nav-mobile">Next</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article><script>(function(f,a,t,h,o,m){a[h]=a[h]||function(){(a[h].q=a[h].q||[]).push(arguments)};o=f.createElement('script'),m=f.getElementsByTagName('script')[0];o.async=1;o.src=t;o.id='fathom-script';m.parentNode.insertBefore(o,m)})(document,window,'//ss.featherbear.cc/tracker.js','fathom');fathom('set','siteId','NEQTU');fathom('trackPageview');</script></div></div></main><footer id=footer class=footer><div class=social-links><a href=mailto:z5206677@student.unsw.edu.au class="iconfont icon-email" title=email></a><a href=https://www.linkedin.com/in/andrewjinmengwong/ class="iconfont icon-linkedin" title=linkedin></a><a href=https://github.com/featherbear class="iconfont icon-github" title=github></a><a href=https://www.instagram.com/_andrewjwong/ class="iconfont icon-instagram" title=instagram></a><a href=../../index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
+<span class=division>|</span>
+<span class=theme-info>Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span>
+<span class=copyright-year>&copy;
+2019 -
+2021
+<span class=heart><i class="iconfont icon-heart"></i></span><span class=author>Andrew Wong (z5206677)</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script><script type=text/javascript src=../../dist/even.26188efa.min.js></script><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-107434487-2','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script></body></html>

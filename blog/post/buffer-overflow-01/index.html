@@ -204,39 +204,39 @@
 <span class="kt">void</span> <span class="nf">doCheck</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">doCheck</span><span class="p">();</span>
-    <span class="k">return</span> <span class="n">EXIT_SUCCESS</span><span class="p">;</span>
+	<span class="n">doCheck</span><span class="p">();</span>
+	<span class="k">return</span> <span class="n">EXIT_SUCCESS</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="kt">void</span> <span class="nf">doCheck</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// turn off print buffering
 </span><span class="c1"></span>        <span class="n">setbuf</span><span class="p">(</span><span class="n">stdout</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
     <span class="c1">// setup local variables
-</span><span class="c1"></span>    <span class="kt">char</span> <span class="n">team</span> <span class="o">=</span> <span class="sc">&#39;A&#39;</span><span class="p">;</span>
-    <span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">32</span><span class="p">];</span>
+</span><span class="c1"></span>	<span class="kt">char</span> <span class="n">team</span> <span class="o">=</span> <span class="sc">&#39;A&#39;</span><span class="p">;</span>
+	<span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">32</span><span class="p">];</span>
 
     <span class="c1">// Print
-</span><span class="c1"></span>    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;Halt! Who goes there!</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span><span class="c1"></span>	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;Halt! Who goes there!</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
 
     <span class="c1">// get user input, save to array
-</span><span class="c1"></span>    <span class="n">gets</span><span class="p">(</span><span class="o">&amp;</span><span class="n">name</span><span class="p">);</span>
+</span><span class="c1"></span>	<span class="n">gets</span><span class="p">(</span><span class="o">&amp;</span><span class="n">name</span><span class="p">);</span>
 
     <span class="c1">// jump to function
-</span><span class="c1"></span>    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;Let me see if you&#39;re on the list, %s...</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">name</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">team</span> <span class="o">==</span> <span class="sc">&#39;B&#39;</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">win</span><span class="p">();</span>
-    <span class="p">}</span>
+</span><span class="c1"></span>	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;Let me see if you&#39;re on the list, %s...</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">name</span><span class="p">);</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">team</span> <span class="o">==</span> <span class="sc">&#39;B&#39;</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">win</span><span class="p">();</span>
+	<span class="p">}</span>
 
-    <span class="k">return</span><span class="p">;</span>
+	<span class="k">return</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="kt">void</span> <span class="nf">win</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;We can leave this here, because it is never called.</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;Our flag is safe.</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;We can leave this here, because it is never called.</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;Our flag is safe.</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
 
-    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;Flag: COMP6841{Hey_Look_Ma_I_Made_It!}</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;Flag: COMP6841{Hey_Look_Ma_I_Made_It!}</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
 
-    <span class="k">return</span><span class="p">;</span>
+	<span class="k">return</span><span class="p">;</span>
 <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
@@ -446,6 +446,20 @@ Let me see if you&#39;re on the list, BBBBBBBBBBBBBBBBB...</pre></td></tr></tabl
       </nav>
     </footer>
   </article>
+
+  <script>
+  (function(f, a, t, h, o, m){
+    a[h]=a[h]||function(){
+      (a[h].q=a[h].q||[]).push(arguments)
+    };
+    o=f.createElement('script'),
+    m=f.getElementsByTagName('script')[0];
+    o.async=1; o.src=t; o.id='fathom-script';
+    m.parentNode.insertBefore(o,m)
+  })(document, window, '//ss.featherbear.cc/tracker.js', 'fathom');
+  fathom('set', 'siteId', 'NEQTU');
+  fathom('trackPageview');
+  </script>
         </div>
         
 
@@ -475,7 +489,8 @@ Let me see if you&#39;re on the list, BBBBBBBBBBBBBBBBB...</pre></td></tr></tabl
 
   <span class="copyright-year">
     &copy; 
-    2019
+    2019 - 
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>

@@ -194,11 +194,11 @@ An <code>unsigned short</code> has the range <code>0 - 65535</code>.</p>
 </span><span class="cm"> */</span>
 <span class="n">size_t</span> <span class="nf">strlen</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">s</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">sc</span><span class="p">;</span>
+	<span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">sc</span><span class="p">;</span>
 
-    <span class="k">for</span> <span class="p">(</span><span class="n">sc</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span> <span class="o">*</span><span class="n">sc</span> <span class="o">!=</span> <span class="sc">&#39;\0&#39;</span><span class="p">;</span> <span class="o">++</span><span class="n">sc</span><span class="p">)</span>
-        <span class="cm">/* nothing */</span><span class="p">;</span>
-    <span class="k">return</span> <span class="n">sc</span> <span class="o">-</span> <span class="n">s</span><span class="p">;</span>
+	<span class="k">for</span> <span class="p">(</span><span class="n">sc</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span> <span class="o">*</span><span class="n">sc</span> <span class="o">!=</span> <span class="sc">&#39;\0&#39;</span><span class="p">;</span> <span class="o">++</span><span class="n">sc</span><span class="p">)</span>
+		<span class="cm">/* nothing */</span><span class="p">;</span>
+	<span class="k">return</span> <span class="n">sc</span> <span class="o">-</span> <span class="n">s</span><span class="p">;</span>
 <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
@@ -238,6 +238,20 @@ Inbound buffer overflow.</p>
       </nav>
     </footer>
   </article>
+
+  <script>
+  (function(f, a, t, h, o, m){
+    a[h]=a[h]||function(){
+      (a[h].q=a[h].q||[]).push(arguments)
+    };
+    o=f.createElement('script'),
+    m=f.getElementsByTagName('script')[0];
+    o.async=1; o.src=t; o.id='fathom-script';
+    m.parentNode.insertBefore(o,m)
+  })(document, window, '//ss.featherbear.cc/tracker.js', 'fathom');
+  fathom('set', 'siteId', 'NEQTU');
+  fathom('trackPageview');
+  </script>
         </div>
         
 
@@ -267,7 +281,8 @@ Inbound buffer overflow.</p>
 
   <span class="copyright-year">
     &copy; 
-    2019
+    2019 - 
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>

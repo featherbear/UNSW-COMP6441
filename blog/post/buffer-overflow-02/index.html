@@ -187,31 +187,31 @@
 </span><span class="cp">#include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp">
 </span><span class="cp"></span>
 <span class="kt">void</span> <span class="nf">win</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;Oh noe; my code flow</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
-    <span class="n">system</span><span class="p">(</span><span class="s">&#34;/bin/sh&#34;</span><span class="p">);</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;Oh noe; my code flow</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+	<span class="n">system</span><span class="p">(</span><span class="s">&#34;/bin/sh&#34;</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="kt">void</span> <span class="nf">lose</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">system</span><span class="p">(</span><span class="s">&#34;/usr/games/cowsay `/usr/games/fortune`&#34;</span><span class="p">);</span>
+	<span class="n">system</span><span class="p">(</span><span class="s">&#34;/usr/games/cowsay `/usr/games/fortune`&#34;</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// setup local variables
-</span><span class="c1"></span>    <span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">function</span><span class="p">)(</span><span class="kt">void</span><span class="p">)</span> <span class="o">=</span> <span class="n">lose</span><span class="p">;</span>
-    <span class="kt">char</span> <span class="n">buffer</span><span class="p">[</span><span class="mi">64</span><span class="p">];</span>
+	<span class="c1">// setup local variables
+</span><span class="c1"></span>	<span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">function</span><span class="p">)(</span><span class="kt">void</span><span class="p">)</span> <span class="o">=</span> <span class="n">lose</span><span class="p">;</span>
+	<span class="kt">char</span> <span class="n">buffer</span><span class="p">[</span><span class="mi">64</span><span class="p">];</span>
 
     <span class="c1">// Print hints
-</span><span class="c1"></span>    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;The winning function is at %p</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">win</span><span class="p">);</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;Do you remember how function pointers work ?</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span><span class="c1"></span>	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;The winning function is at %p</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">win</span><span class="p">);</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;Do you remember how function pointers work ?</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
 
     <span class="c1">// get user input, save to buffer
-</span><span class="c1"></span>    <span class="n">gets</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">);</span>
+</span><span class="c1"></span>	<span class="n">gets</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">);</span>
 
     <span class="c1">// jump to function
-</span><span class="c1"></span>    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;Preparing to jump to %p</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">function</span><span class="p">);</span>
-    <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>
-    <span class="n">function</span><span class="p">();</span>
+</span><span class="c1"></span>	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;Preparing to jump to %p</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">function</span><span class="p">);</span>
+	<span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>
+	<span class="n">function</span><span class="p">();</span>
 
-    <span class="k">return</span> <span class="n">EXIT_SUCCESS</span><span class="p">;</span>
+	<span class="k">return</span> <span class="n">EXIT_SUCCESS</span><span class="p">;</span>
 <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
@@ -291,6 +291,20 @@ COMP6841<span class="o">{</span>Oh_Look_Youre_So_1337_now<span class="o">}</span
       </nav>
     </footer>
   </article>
+
+  <script>
+  (function(f, a, t, h, o, m){
+    a[h]=a[h]||function(){
+      (a[h].q=a[h].q||[]).push(arguments)
+    };
+    o=f.createElement('script'),
+    m=f.getElementsByTagName('script')[0];
+    o.async=1; o.src=t; o.id='fathom-script';
+    m.parentNode.insertBefore(o,m)
+  })(document, window, '//ss.featherbear.cc/tracker.js', 'fathom');
+  fathom('set', 'siteId', 'NEQTU');
+  fathom('trackPageview');
+  </script>
         </div>
         
 
@@ -320,7 +334,8 @@ COMP6841<span class="o">{</span>Oh_Look_Youre_So_1337_now<span class="o">}</span
 
   <span class="copyright-year">
     &copy; 
-    2019
+    2019 - 
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>

@@ -1,0 +1,150 @@
+= COMP6841 Final Exam =
+== 20T1 ==
+Time Recommended: 60mins
+
+The total number of marks available in this section is 60. We recommend you spend on average 1 minute per mark.
+You are not permitted to modify the structure of this paper; please answer by replacing the designated sections (underlined). Failure to do this may impact the marking of your paper.
+All conditions and restrictions given in the 6441 paper also apply here.
+
+=== Question 1 ===
+[1 mark]
+Explain (In 25-125 words) what makes C function calls such as `gets()` and `scanf()` (when used incorrectly) vulnerable to buffer overflow attacks?
+
+
+=== Question 2 ===
+[2 mark]
+Can web applications be vulnerable to buffer overflow attacks, or are buffer overflow vulnerabilities limited to compiled binary programs?
+Yes / No (Delete the incorrect answer)
+In 25-125 words, why?
+
+
+=== Question 3 ===
+[2 marks]
+What are the biggest two advantages (as an attacker) of utilizing a userland rootkit as opposed to a kernel rootkit?
+
+=== Question 4 ===
+[3 marks]
+If a friend came to you suspicious that their computer has been infected by a rootkit, what are 3 things you would do or examine to search for the presence of a rootkit?
+
+=== Question 5 ===
+[3 marks]
+List 3 ways to defend against buffer overflow attacks
+1. 
+2. 
+3.
+
+In 50-150 words each, explain how each of these protections help prevent buffer overflows.
+1. 
+2. 
+3.
+
+=== Question 6 ===
+[4 marks]
+If you're given the below SHA256 hash that is suspected to belong to a malware executable, is it possible to determine whether the sample may contact an external IP address?
+Hash: `8cf42426c277b11a1fe2fa524539ca838ea327561cc6083e9d561b1188f698eb`
+- If yes, what is the IP address?
+- If no, why not? (25-125 words)
+
+=== Question 7 ===
+[5 marks]
+Give your answer to this question either as a command which will print the correct payload (e.g. `python2 -c 'print("We have Top Men.")'`).
+If you're unsure, it is still possible to get almost full marks by describing your approach and method rather than giving a payload.
+You have been asked to examine the following `C` code as a security engineer to determine whether it is safe to run on a computer accessible from the internet. You suspect it is vulnerable, but must provide a working exploit to convince the owners of this. What input would cause the code to print out the secret password?
+
+You may assume the .c file was compiled with the command:
+$ gcc -m32 -O0 -fno-stack-protector -no-pie -o compiledBinary file.c
+
+Source Code:
+```C
+#include <stdio.h>
+#include <string.h>
+void processData(void);
+void secret(void); // NEVER CALL THIS!
+int main(int argc, char *argv[]) {
+    processData();
+    return 0;
+}
+void processData(void) {
+    printf("Which action would you like to perform?\n");
+    char input[8] = {0};
+    scanf("%s", &input);
+    if (strcmp(input, "exit") == 0) {
+        return;
+    } else if (strcmp(input, "help") == 0) {
+        printf("No help available yet\n");
+    } else {
+        printf("Command not yet implemented...\n");
+    }
+}
+void secret(void) {
+    printf("Admin password: 'CorrectHorseBatteryEraser'\n");
+}
+```
+
+Selected output of `$ objdump -d compiledBinary`:
+```
+08049182 <main>:
+   8049182: 55                      push   %ebp
+   8049183: 89 e5                   mov    %esp,%ebp
+   8049185: 83 e4 f0                and    $0xfffffff0,%esp
+   ...
+   8049197: b8 00 00 00 00          mov    $0x0,%eax
+   804919c: c9                      leave
+   804919d: c3                      ret
+0804919e <processData>:
+   804919e: 55                      push   %ebp
+   804919f: 89 e5                   mov    %esp,%ebp
+   80491a1: 53                      push   %ebx
+   ...
+   8049243: 8b 5d fc                mov    -0x4(%ebp),%ebx
+   8049246: c9                      leave
+   8049247: c3                      ret
+08049248 <secret>:
+   8049248: 55                      push   %ebp
+   8049249: 89 e5                   mov    %esp,%ebp
+   804924b: 53                      push   %ebx
+   ...
+   804926e: 8b 5d fc                mov    -0x4(%ebp),%ebx
+   8049271: c9                      leave
+   8049272: c3                      ret
+```
+
+=== Question 8 ===
+[6 marks]
+In the weekly format string exercises, you were asked to read information that you should not have been able to under normal program execution. Was this information limited to data from the local stack frame?
+In 25-125 words:
+- If yes, why is this?
+- If no, is there anything that could limit what you could read?
+
+
+As a developer, what are 3 things you should do to defend against format string attacks specifically?
+1. 
+2. 
+3. 
+
+Why would each of these help?
+1. 
+2. 
+3. 
+
+## Practical Section
+For each question in this section, half of the indicated marks are for achieving the flag, the other half are for describing the method you used to do so (such that we can recreate your method).
+If you do not get the flag, describe what you think the vulnerability is and how you think it should be exploited for partial marks.
+=== Question 9 ===
+[15 marks]
+There is a challenge hosted at http://xss.comp6441.online. Your task is to gain the admins cookie, which contains the flag for this challenge.
+When you have done so enter the flag below and explain your method.
+
+Flag:
+
+Explanation of Process:
+
+
+=== Question 10 ===
+[15 marks]
+Located at http://sqli.comp6441.online is a login page as well as the source code for that page. Your task is to login and access the flag stored in the SQL database.
+When you have done so enter the flag below and explain your method.
+
+Flag:
+
+Explanation of Process:

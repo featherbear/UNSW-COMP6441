@@ -1,0 +1,577 @@
+= UNSW Security Engineering COMP6441 and COMP6841 Final Theory Exam: 2020t1 =
+=== 6441 -> 180 marks + 5 bonus marks / 4 hours ===
+=== 6841 -> 120 marks + 5 bonus marks / 4 hours ===
+v1.5
+
+There is a 5 mark bonus if you correctly follow all exam instructions.  
+
+There are 14 questions, all worth equal marks, but don't answer them all:
+COMP6441 students only answer 12 questions.
+COMP6841 students only answer 8 questions.  
+
+=== Extra note for 6841 students ===
+6841 students also complete a 60 mark technical exam (sent to you one hour into the exam 
+in a separate document) which runs concurrently with this exam.  You will need to allocate 
+your time between the two exams yourself.  Both start and finish at the same time.
+=== end 6841 note ===
+
+If you are doing a pen and paper version of the exam write your name and student number below and sign.  If you are doing the exam electronically type in your details and sign the affirmation by typing your name where indicated.
+
+{{{
+          Name: NOT ANSWERED
+Student Number: NOT ANSWERED
+  Which course: NOT ANSWERED  [COMP6441 or COMP6841]
+   I assert this work is wholly my own work except where I have explicitly acknowledged.  I have not contacted any other person about this exam during the exam period.  I will keep the exam confidential until Sunday 8pm.
+ Sign/Type your name: NOT ANSWERED
+}}}
+
+
+If you are not answering a question write NOT ANSWERED in the answer area(s). We think the earlier questions are easier than the later ones so we suggest you choose to answer those questions but it is entirely up to you.  Do not answer more than the required number of questions.  If you answer more than the required number of questions then we will ONLY mark the FIRST questions you answered.  
+
+DO NOT edit/add/delete ANY text ANWHERE outside of the answer areas indicated.  That will muck up poor Lachlan having to split up and extract your answers for marking using scripts.  You will lose the bonus marks for following instructions if you do this.
+
+Make frequent backup copies of your completed exam paper as you go so if anything goes wrong you do not lose much work.  There are no time extensions for accidentally deleting work - that is a foreseeable and mitigable risk for security professionals.
+
+Type/write your answers into the indicated areas and submit via give using the instructions on the exam central page. You must use a text editor (eg NOT Microsoft Word) and submit a text only file.  We cannot mark an answer file with formatting like italics or containing non-ascii characters etc.  You may submit your answer file as many times as you like over the duration of the exam. The last submission ONLY will be marked.  If you have problems submitting you can email your exam answer paper (in text only format) to cs6441@cse.unsw.edu.au.
+
+This is a logged open book exam.  You may READ anything you like on the internet or in books etc but you must disclose what you have read.  Below paste the titles of any books you consult and the urls of any documents/webpages you consult:  
+
+
+Books I consulted:
+<insert book names here the first time you consult each book>
+NOT ANSWERED
+
+Web pages I read:
+<insert URLs here each time you consult a web page>
+NOT ANSWERED
+
+You may not WRITE or SHARE anything on the internet or with any other person during this exam with the exception for asking questions described below.  You cannot communicate with any other person or share any information including the exam paper. This includes making comments on the course web pages or make any comments anywhere including sms, texts, on social media / chats etc.  You cannot make or answer phone calls.  Violating these read-only restrictions is regarded as cheating and will result in 0 fail and possible charges of academic misconduct and even more serious penalties.  But mainly it’s not the honourable thing to do.
+
+
+Permitted Communication 
+(start at the top of the list and only move down if needed)
+      
+You are permitted to contact the exam supervisor in the following ways:
+1. 
+You can ask about the process of the exam and ask for clarification about rules or typos in the question wording (but do not give any hints about answer content) by making comments on the Exam-Live page.  THIS IS THE ONLY PAGE YOU CAN MAKE COMMENTS ON DURING THE EXAM PERIOD. The URL for the Exam-Live page is 
+
+      https://www.openlearning.com/unswcourses/courses/sec-2020/exam-live/
+
+2. You can also email cs6441@cse.unsw.edu.au with question but that may not be noticed as quickly as comments.  
+3. In case of last resort you can call or message us on the exam mobile phone number which we will tell you on the morning of the exam.  
+
+Updates on the exam will be posted on the Exam-Live page.  Keep the page open all exam and refresh it regularly for updates.  
+
+If you are unsure about anything ask the supervisor.
+
+Please do not discuss the exam or content at all with anyone until Sunday 8pm or reveal anything about the questions. There are a number of people around the world doing the exam at later times – they will all be finished by Sunday 8pm Sydney time.  You can write a indication of joy/relief/support on the Exam-Live page at the end of the exam if you are happy that you finished, but please no more until Sunday 8pm.  Examples below:
+
+Good examples (permitted)
+Yay!  
+So glad I am now free and can relax unlike Richard and the other markers who now have to work without pause for a week.  Mwahahaha!
+Now I will sleep for days
+
+Bad examples (not permitted before sunday 5pm,as they reveal something about the exam itself)
+That was easy
+That was hard
+I am so glad there was no question about sony playstations
+It's unfair there was a question about Apollo 13!  I didn't realise the case studies were examinable.
+
+The use of Top Men, misdirection, or unauthorised social engineering is prohibited.
+
+If you think a question is ambiguous, answer the most likely interpretation and state what you have done. Where two or more different answers are possible give the answer which best answers the question. If you need to make assumptions state them. Keep answers brief and clear.  Stick to the word limits.  When you order things put the most important things first.  Make sure you explain your thinking to demonstrate your analysis where ever asked.
+
+Have fun.  Be yourself.  You are a great thinker I can't wait to see what you come up with.
+
+
+{{{
+This part consists of twelve 15-mark questions.  Do not answer all the questions.
+Suggestion: Aim to spend 15 minutes per question.  That will leave you a spare hour at the end.
+}}}
+
+
+=== Question 1 ===
+(15 Marks)
+List the top six instances in the film "The China Syndrome" which show examples of human error.  
+For each identify what happened and the contribution it made to both the potential 
+likelihood and the potential impact of a catastrophe.  
+List the most signifiant instances first.
+
+1. Instance [5-10 words]
+NOT ANSWERED
+What Happened [5-25 words]
+NOT ANSWERED
+Contribution to potential likelihood [25-125 words]
+NOT ANSWERED
+Contribution to potential impact [25-125 words]
+NOT ANSWERED
+
+2. 
+Instance [5-10 words]
+NOT ANSWERED
+What Happened [5-25 words]
+NOT ANSWERED
+Contribution to potential likelihood [25-125 words]
+NOT ANSWERED
+Contribution to potential impact [25-125 words]
+NOT ANSWERED
+
+3. 
+Instance [5-10 words]
+NOT ANSWERED
+What Happened [5-25 words]
+NOT ANSWERED
+Contribution to potential likelihood [25-125 words]
+NOT ANSWERED
+Contribution to potential impact [25-125 words]
+NOT ANSWERED
+
+4. 
+Instance [5-10 words]
+NOT ANSWERED
+What Happened [5-25 words]
+NOT ANSWERED
+Contribution to potential likelihood [25-125 words]
+NOT ANSWERED
+Contribution to potential impact [25-125 words]
+NOT ANSWERED
+
+5. 
+Instance [5-10 words]
+NOT ANSWERED
+What Happened [5-25 words]
+NOT ANSWERED
+Contribution to potential likelihood [25-125 words]
+NOT ANSWERED
+Contribution to potential impact [25-125 words]
+NOT ANSWERED
+
+6. 
+Instance [5-10 words]
+NOT ANSWERED
+What Happened [5-25 words]
+NOT ANSWERED
+Contribution to potential likelihood [25-125 words]
+NOT ANSWERED
+Contribution to potential impact [25-125 words]
+NOT ANSWERED
+
+=== Question 2 ===
+(15 Marks)
+Suppose a data breech has just been announced at Melbourne University and you have been approached by the communications team at Random University to comment on a letter they would like to send to all staff and students  (PDF attached)
+
+How useful is this email likely to be? Analyse its strengths and weaknesses, and draft (in point form) an alternative email you suggest they send instead.
+ 
+How useful:  [1 number between 0 and 10, 0 meaning not at all useful and 10 being incredibly useful]
+ NOT ANSWERED
+Strengths: [50-250 words]
+  NOT ANSWERED
+Weaknesses: [50-250 words]
+ NOT ANSWERED
+Your alternative email:  [100-500 words] 
+(bullet points are fine no need to write the whole thing just let us know what it contains)
+ NOT ANSWERED
+Explain the main differences about your email: [50-250 words]
+ NOT ANSWERED
+
+
+=== Question 3 ===
+You are applying for the role of Director of Security Operations at a major international airline.  Your first task will be to oversee the design, build, and operation of a new Operation Center to detect and co-ordinate response to security incidents and emergencies.  (For simplicity assume that this is an entirely new setup and you will not have to worry about security in the period until the center goes live in 12 months time - in the interim the Interim director will be operating the old center.)
+
+The interviewers ask you to outline what insights the Apollo 13 Mission provides you in the three sub-questions below
+
+
+Q3.1 Should there be a seperate Cyber Operations Center or should there be one combined center for all incident and emergency response? [1 word SEPERATE or COMBINED]
+ NOT ANSWERED
+Justify your decision [15-75 words]
+ NOT ANSWERED
+List and explain any insight(s) from Apollo 13 Mission which contributed to your decision above [25-125 words]
+ NOT ANSWERED
+
+
+
+Q3.2 What are the 3 main insights that the Apollo13 Mission provides which are relevant to how you will DESIGN the center? Most significant insights first. Don't repeat insights already given in Q3.1 above.
+
+1.
+Insight [10-75 words]
+ NOT ANSWERED
+How it affects the design [20-100 words]
+ NOT ANSWERED
+  
+2.
+Insight [10-75 words]
+ NOT ANSWERED
+How it affects the design [20-100 words]
+ NOT ANSWERED
+  
+3.
+Insight [10-75 words]
+ NOT ANSWERED
+How it affects the design [20-100 words]
+ NOT ANSWERED
+ 
+ 
+  
+Q3.3 What are the 3 main insights that the Apollo13 Mission provides which are relevant to how you will OPERATE the center? Most significant insights first. Don't repeat insights already given in Q3.1 above.
+
+1.
+Insight [10-75 words]
+ NOT ANSWERED
+How it affects the operation [20-100 words]
+ NOT ANSWERED
+  
+2.
+Insight [10-75 words]
+ NOT ANSWERED
+How it affects the operation [20-100 words]
+ NOT ANSWERED
+
+  
+3.
+Insight [10-75 words]
+ NOT ANSWERED
+How it affects the operation [20-100 words]
+ NOT ANSWERED
+
+ 
+  
+
+=== Question 4 ===
+
+Yahoo logs and tracks users of its services and websites and those of its affiliates.  By one measure it is estimated to generate over 2,500 records per month for each of its visitors.  
+
+In October 2016, Reuters reported that Yahoo! had created software to search their customers e-mail at the request of the NSA or FBI.  Also, according to the Washington Post in 2013 the NSA tapped Yahoo's internal optical fibre network and in the previous 30 days had "intercepted" and recorded 181 million new records from Google and Yahoo! internal networks.
+
+You use Yahoo for email. If you didn't trust Yahoo to secure the data it collects on you, to what extent would encrypting your emails before you sent them solve this problem?
+
+[A] It would completely solve the problem
+[B] It would largely, but not entirely, solve the problem
+[C] It would have a small impact, but the problem would remain largely unsolved
+[D] It would not be of any help whatsoever
+
+To what extent?  [one letter, A or B or C or D - see above for meaning]
+ NOT ANSWERED
+
+Justify your answer: [60-300 words]
+ NOT ANSWERED 
+
+
+
+=== Question 5 ===
+This question involves devising (but not executing) a way to effectively and realistically perform social engineering on UNSW's CISO.  You must not do anything illegal rude disrespectful or invasive in the real world in preparing for this question, or inconvenience or annoy or alarm the CISO or anyone who works for or with or knows them.  Most importantly you are not to invade the privacy of their family or personal life in any way.  You are restricted to looking at publicly available information and otherwise using entirely passive methods.
+
+What is the name of the UNSW CISO? [0-2 words]
+ NOT ANSWERED 
+Name one significant (but not personal or intrusive) thing about the UNSW CISO you learned in your recon? [0-75 words]
+ NOT ANSWERED 
+Clearly explain a simple and safe social engineering strategy an an attacker could follow to have the CISO visit a webpage they control.  (To be clear - don't actually do this in the real world - you could face charges and/or be expelled from uni).  Assume the attacker has roughly the same access and resources that you yourself have available to you. [80-400 words]
+ NOT ANSWERED 
+
+
+All marks for the strategy response, none for the recon responses. You'll be assessed on how realistic, specific, simple, effective, non-risky, time consuming (sooner is better than later!) your strategy is, and how likely the attacker is to be successful.
+
+
+=== Question 6 ===
+This question consists of three quick mini-questions.  5 marks each.
+
+6.1 How would you reply to the following (good) posted question?
+"Hi Richard, a friend accidentally clicked show contents (images) in a spam email, would my friends device or account be at risk?"
+
+Your response post: [60-300 words]
+ NOT ANSWERED 
+
+
+
+6.2 After noticing how easily SECedu student Brian was able to brute force decrypt the sample encrypted exam we sent out on Wednesday (see image BriansBrain.png) I thought of a different way (described below as method B) that we could arrange the protection of the exam paper which might provide extra security. Although it is too late to implement method B in time for the exam this year, we could use it next year - should we?  
+
+The proposed new method B: 
+ * Zip all the exam files into an archive, and use the zip program's own aes feature to encrypt the archived files using a passphrase.  
+ * Then use openssl to further encrypt the encrypted zip file using a second passphrase and something like 
+       openssl enc -aes-256-cbc -in examfiles.zip -out examfiles.zip.enc -md sha256 
+ * mail everyone the file examfiles.zip.enc
+ * at the start of the exam: email both passphrases to everyone.  
+ 
+Having two layers of encryption should provide more security than just having one.
+
+Should we use Method B next year?  (yes/no)  [1 word]
+ NOT ANSWERED 
+
+Why? [60-300 words]
+ NOT ANSWERED 
+
+
+
+6.3  Puzzle
+One of the rabbits in the accompanying file Rabbit.png doesn't have a twin.  Can you spot it?  OK you can't get a uni degree for that.  But suppose the problem was made a bit harder and scaled up in some way(s). eg more rabbits, more features, triplets not twins, ...  
+
+Describe how you solved the problem (or how you would solve the scaled up problem if that would be different) [60-300 words]
+ NOT ANSWERED 
+
+OK which bunny was it? [5-25 words]
+ NOT ANSWERED 
+
+(PS I love the work of the creator of this puzzle - you could spend your post exam isolation time basking in his awesome website at http://thedudolf.blogspot.com/)
+
+
+=== Question 7 ===
+
+The police have asked your advice.  A company is offering them an app for their smart phones which, if they point the phone's camera at someone, identifies them instantly and displays their corresponding drivers licence number. Each state already kindly provides the police with all the Australian Drivers License photos and numbers in real time. 
+
+Obviously that amount of data is too big to download onto police phones so the service that this company offers is that the company analyses the set of Australian photos each night by running a super secret AI training algorithm.  The algorithm generates a database which stores for each person a facial hash of some sort and their driver's licence number.  The database is quite small, X bytes say, and the lastest version can be dowloaded onto phones each day.
+
+The police ask you if this sounds plausible to you?  Is it possible the database could just be X bytes in size?
+
+Answer the question assuming X is 10,000,000.
+Is it possible for the App to work as promised if the database was just 10 Megabytes in size?  [One word - YES or NO]
+NOT ANSWERED
+Justify your answer, include calculations [25-125 words]
+NOT ANSWERED
+
+What is the switchover value?  How small could X be and have it be possible that their App could work as promised?  [one number]
+NOT ANSWERED
+Justify your answer, include calculations [75-750 words]
+NOT ANSWERED
+
+
+=== Question 8 ===
+A friend tells you about a problem her dad has, and asks you for your advice.
+
+He is a retired medical expert who has been making public comments critical of some other country's response to the Corona pandemic, and he has been getting a small online following.  A few days ago he woke to found abusive posts made under his name on his social media accounts - but he had not made them.  At the same time his website was defaced with some nationalistic content and remarks threatening him for telling lies about that country.  
+
+He is very worried that he has been hacked. 
+
+What should he do?  Buy new computers?  Start over from scratch? 
+
+List your recommendations about what he should do? [100 - 500 words]
+NOT ANSWERED
+
+Explain your reasoning behind making these recommendations. [160-800 words]
+NOT ANSWERED
+
+
+****************************************************************
+******************* You have reached 8 Questions ***************
+****************************************************************
+Suggest you submit your current set of answers now, now just to be safe. 
+(recall: you can and should submit multiple times - we'll mark the last submission you make)
+
+If you are doing 6841 and have answered all the questions so far then you can stop now - Well done! You have answered the right number of questions.  Suggest you go back and revise and chew over and improve your answers and then start the 6841 prac exam.  Don't accidentally answer more than 8 questions!  
+
+COMP6441 students: keep going - if you have answered all the questions so far you have just 4 more questions left to answer
+****************************************************************
+****************************************************************
+
+
+=== Question 9 ===
+
+Suppose internet giant Gitzon is considering having its new authentication system store password hashes produced by a custom secret hash function (so that existing public rainbow tables can't be used to crack passwords).
+
+Do you recommend that they adopt this new approach? [1 word YES or NO]
+ NOT ANSWERED 
+
+Briefly justify your answer [60-300 words]
+ NOT ANSWERED 
+
+  
+Suppose Gitzon adopts this new authentication system, and suppose you are advising the Prime Minister who uses Gitzon is worried that some attacker may target him and break into his personal account.  To what extent would it be harder for the attacker to find his password if Gitzon stored salted hashes instead of just storing the hash directly?
+
+[A] It would make it much harder for them to find his password 
+[B] It would not make it much harder for them to find his password 
+To what extent?  [1 letter, A or B as described above]
+ NOT ANSWERED 
+
+Briefly justify your answer [60-300 words]
+ NOT ANSWERED 
+
+
+
+
+
+=== Question 10 ===
+Lachlan and I are going to use going to use Merkle Puzzles to securely discuss the exam questions the day before the exam runs (because he loves Merkle Puzzles).  I'll send him 1,000,000 encrypted mini-messages of the form:
+
+{{{
+   ...
+   ...
+   This is puzzle two hundred thousand and seventeen, the key is jHg4t5ct&rqSg
+   This is puzzle two hundred thousand and eighteen, the key is 3pojygv3x%wD?
+   ...
+   ...
+}}}
+
+Each mini-message is encrypted/hashed separately, with a different key.  For each of the following ciphers/hashes state whether or not it would be suitable to use to encrypt/hash the mini-messages in these circumstances, and give a brief reason for your answer:
+
+YES It would be suitable to use this
+ NO It would not be suitable to use this
+
+10.1 One Time Pad 
+Suitable? [1 word, YES or NO as described above]
+ NOT ANSWERED 
+Why? [30-150 words]
+ NOT ANSWERED 
+ 
+ 
+10.2 Ceasar Cipher
+Suitable? [1 word, YES or NO as described above]
+ NOT ANSWERED 
+Why? [30-150 words]
+ NOT ANSWERED 
+
+
+10.3 Vigenere
+Suitable? [1 word, YES or NO as described above]
+ NOT ANSWERED 
+Why? [30-150 words]
+ NOT ANSWERED 
+
+
+10.4 RSA (encrypted using a 512 bit public key)
+Suitable? [1 word, YES or NO as described above]
+ NOT ANSWERED 
+Why? [30-150 words]
+ NOT ANSWERED 
+
+
+10.5 SHA256
+Suitable? [1 word, YES or NO as described above]
+ NOT ANSWERED 
+Why? [30-150 words]
+ NOT ANSWERED 
+
+
+
+
+=== Question 11 ===
+
+This question refers to the film "The China Syndrome" we watched in week 8, and the place and the time and the situations depicted in that film.  Suppose you were the security advisor to the President of the United States at the time.
+
+{{{
+	Kimberly: We could have been killed.
+   Executive: Isn't that stretching it a bit?
+    Kimberly: You think so?
+   Executive: They say you were never in danger
+
+   PR guy: I have an announcement. 
+           A few minutes ago, the situation was resolved.
+           The Ventana nuclear plant is secure.
+           I stress that the public was never in any danger.
+ Reporter: Was there any damage?
+   PR guy: Yes, but it was totally contained. A disturbed 
+           employee was humoured, so that we could regain control.
+ Reporter: Had he been drinking?
+   PR guy:  Yes, we think so.
+}}}
+
+Although there were two potentially catastrophic incidents neither led to a catastrophe occurring.  If it hadn't been for the particular character and actions of the operator Jack, and the co-incidental presence of Kimberly and her camera crew it is likely that the public would never even have known of the risk they had been in.  
+
+The President is horrified and askes you "Is it likely there are other catastrophic risks known to some people but of which I am not aware?  How can this be? What can be done to improve this situation, so I know the important things I need to know."
+
+Draft your reply (use bullet points and keep it brief - the US President is very busy!)
+
+Is it likely? [1-10 words]
+ NOT ANSWERED 
+ 
+How can this be? [25-125 words]
+ NOT ANSWERED 
+
+What can be done? [100-500 words]
+ NOT ANSWERED 
+
+
+=== Question 12 ===
+Each of the numbers in the crossword grid image supplied (Crossword.png) stands for a particular letter.  
+
+Each vertical and horizontal line of letters is a valid English word.  
+Can you work out what letter each number stands for?
+
+Hint: 
+9 stands for T;
+11 stands for O; and 
+15 stands for N
+
+You don't need the two extra hints below - but they might be fun:
+
+Superflous hint: How cool are hacker movies?
+Superflous hint: What do hackers do?
+ 
+ Write one letter next to each number below [one letter per line]
+NOT ANSWERED
+ 
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9 T
+10
+11 O
+12
+13
+14
+15 N
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+  
+****************************************************************
+******************* You have reached 12 Questions ***************
+****************************************************************
+
+If you are doing 6441 and have answered all the questions so far then you can stop now - Well done! You have answered the right number of questions.  Suggest you go back and revise and chew over and improve your answers. Don't accidentally answer more than 12 questions!  Also maybe do a submission now, just to be safe. 
+
+****************************************************************
+****************************************************************
+
+
+
+=== Question 13 ===
+Every year serious data breaches keep being reported.  For example Fortnite, Ascension, Dunkin' Donuts, Facebook, Microsoft, Canva...  Who else will be breached?
+
+Make a prediction: Who do you predict is most likely to be in the news over the remainder of this year with a major and "unexpected" data breach? No marks for any breach predictions already made on the class website.
+
+Who, and What data [5-25 words]  (be specific, don't say the government say the department of X's data on citizen hair colours)
+ NOT ANSWERED 
+
+Justify your prediction [100-500 words]
+ NOT ANSWERED 
+
+No marks for who, all marks for justify. 
+
+For fame and glory after the exam: If your prediction comes true contact us to let us know after the exam.  A BONUS 10 EXAM MARKS(!!) if it is first reported in the media after the day you sit the exam and before the day that results are submitted. If it comes true this year, but after marks are submitted then still an ice cream and glory for you!
+
+* Offer does not apply to employees or their families, or if you are involved in the breach.  Accessories not included.
+
+
+=== Question 14 ===
+
+Even when we use computer systems to replace trusted third parties we still have to trust the humans who build and design them.  Cite a well known / widely reported example from history or recent news which demonstrates this issue.
+
+Name the example and roughly when it happened [10-50 words]
+ NOT ANSWERED 
+
+Briefly describe what happened [25-125 words]
+ NOT ANSWERED 
+
+Briefly state how this demonstrates the issue [60-300 words]
+ NOT ANSWERED 
+
+Briefly state what are the lessons learned [60-300 words]
+ NOT ANSWERED 
+
+
+If the news story was not so well known give a URL of a news story or web page about the incident. [1 url]
+ NOT ANSWERED 
+
+
+

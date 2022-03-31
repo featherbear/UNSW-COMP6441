@@ -1,0 +1,487 @@
+= COMP6441 and COMP6841 Practice Theory Exam: 2018 =
+
+There is an further prac exam "Part C" for 6841 students only, which will be given at the end of this exam.  6441 students do not sit that exam.  
+
+If you think a question is ambiguous, answer the most likely interpretation and state what you have done.  Where two or more different answers are possible give the answer which best answers the question.  Getting stuck: We suggest you don't spend more than 8 minutes on any of the questions in Part A. Instead move on and come back at the end in any spare time. Keep answers brief and clear. 
+
+There is one bonus mark for following the examination instructions for each paper.
+
+Questions A.1, A.2, A.8 and B.2 will be used to calculate your alternative fall-back mark for the mid-semester exam and have been marked with *MIDSEM FALLBACK QUESTION*.
+
+v released 1.0
+
+= Part A =
+
+All questions worth 10 marks
+
+
+=== Question A.1 ===
+*MIDSEM FALLBACK QUESTION*
+
+The largest of the Yahoo data breaches occurred in late 2013.  According to the latest information which we know about it (based on a public announcement by Yahoo in late 2017) how many user accounts were potentially affected by the breach?
+
+A. 3 billion
+B. 1 billion 
+C. 100 million
+D. 10 million
+E. 23 
+
+For this data breach Yahoo reported: "...the stolen user account information may have included names, email addresses, telephone numbers, dates of birth, hashed passwords (using MD5) and, in some cases, encrypted or unencrypted security questions and answers. The investigation indicates that the stolen information did not include passwords in clear text"
+
+However, hackers were able to find many plain text passwords.  A newspaper reporter is interested in how hackers could have found the plaintext passwords if Yahoo only stored hashed passwords and asks you if using MD5 was the problem.  
+
+What would have the impact on the ability of hackers to find plaintext passwords if Yahoo had used a more recent hash algorithm, SHA256, rather than MD5?
+
+A. It would completely solve the problem
+B. It would largely, but not entirely, solve the problem
+C. It would have a small impact, but the problem would remain largely unsolved
+D. It would not be of any help whatsoever
+
+Justify your answer:
+_________________________________________
+_________________________________________
+
+
+=== Question A.2 ===
+*MIDSEM FALLBACK QUESTION*
+
+After the breach Yahoo considered transitioned to using the following password hashing scheme, rather than MD5, to hash its users' passwords.
+
+The proposed scheme involved giving each user a public "salt", and then encrypting a standard and publicly known IV using the user's password, and then encrypting that state using the user's salt, and then repeating those two steps over and over again, repeatedly re-encrypting the output of the previous encryption using the same password and the same salt over and over again, 2^n times.
+
+The salt, n, and the final hash output are stored.  The password is not stored.  When users supply a password to be validated the process is repeated for the supplied password and the output of the process is compared with the stored final hash output to see if they match.
+
+Explain the likely purpose of the salt and the large number of repetitions.
+
+Salt
+_________________________________________
+_________________________________________
+
+Large number of repetitions
+_________________________________________
+_________________________________________
+
+
+
+=== Question A.3 ===
+
+In this question there are no marks for selecting a concept - marks are for the explanation you provide.
+
+
+The film The Usual Suspects provides an effective demonstration of which of the following security concepts:
+
+.A Defence in depth
+.B Dual Control systems
+.C Man in The Middle
+.D Type I / Type II error trade-off
+.E Zero-Knowledge Protocols
+
+Explain how it effectively demonstrates this concept.
+
+__________________________________________
+__________________________________________
+__________________________________________
+
+
+=== Question A.4 ===
+Recently there have been many widely publicised data breaches for example CBA, Equifax, and Ticketfly.  Who else will be breached?
+
+Make a prediction: Who do you predict is most likely to be in the news over the remainder of this year with a major and "unexpected" data breach?
+
+Who 
+____________________________
+
+
+Justify your prediction
+____________________________
+____________________________
+____________________________
+
+
+No marks for who, all marks for justify EXCEPT* a bonus 10 exam marks if your prediction comes true between after the exam and before the day that results are submitted.  If it comes true this year but after marks are submitted then an ice cream for you!
+
+* Offer does not apply to employees or their families, or if you are involved in the breach.  Accessories not included.
+
+
+
+
+=== Question A.5 ===
+
+
+Give an example of recent widely reported news story which has involved Type I and Type II errors, where the reportage predominantly focussed on one of the types of error and tended to overlook the other.
+
+What was the news story?
+_______________________ 
+When was the news story?
+_______________________
+
+If the news story was not so well known give some keywords so we can search for it on Google for partial marks:
+
+Fall-back keywords (partial marks only if the story is on the first page of search results returned)
+_______________________
+
+
+Explain the error that was predominantly reported
+_______________________
+_______________________
+
+Explain the error that was not so predominantly reported
+_______________________
+_______________________
+
+
+
+The next two questions relate to the Dimension Data 2018 Global Threat Intelligence Report Executive Guide for Australia that you have previously read - a copy is also available on your desktop if you would like to read it again.
+
+=== Question A.6 ===
+
+You are contacted by a reporter who writes for an education news blog, who is confused by the 2018 Dimension Data report.  She asks you to simply and clearly explain:
+
+a) What is supply chain risk and how can companies defend against it?
+
+_________________
+_________________
+_________________
+
+
+She also asks you to comment on how significant and accurate each of the following two claims quoted from the report is likely to be, and how significant they are for her readers:
+
+b) 
+{{{
+   While Australia is a frequent target, it’s also a major source of attacks. In the last year, 57% of cyberattacks in the Asia Pacific (APAC) region originated from Australia, the USA, and China. A staggering 66% of attacks on the financial sector in APAC originate from Australia.
+ }}}
+
+Is this statistic important for me to tell my readers about?
+.Highly
+.Maybe
+.Probably not
+
+How accurate is this claim likely to be?
+.Likely
+.Possible
+.Unlikely
+
+Justify these opinions (all marks are for the justification)
+______________________
+______________________
+______________________
+
+
+
+c) 
+{{{
+Figure 2: Types of attacks most commonly perpetrated in Australia
+...
+Baiting / social engineering 0%
+}}}
+
+Is this statistic important for me to tell my readers about?
+.Highly
+.Maybe
+.Probably not
+
+How accurate is this claim likely to be?
+.Likely
+.Possible
+.Unlikely
+
+Justify these opinions (all marks are for the justification)
+______________________
+______________________
+______________________
+
+=== Question A.7 ===
+
+You are a security engineer consulting to the government, who is alarmed by the 2018 Dimension Data report.  The Office of the Minister for Education tells you that the minister wants to call you in an hour and ask you how seriously she should take the claims in the report that educational institutions are the top targets for cyber-attacks in Australia, why would criminals want to attack educational institutions, and what is the appropriate response for the government to make?
+
+What would you say?  You'll only have 5 minutes on the phone with the minister to respond - so keep it short and clear, and make sure you justify your conclusions and recommendations.
+
+
+a) How seriously should she should take the claims in the report that educational institutions are the top targets for cyber-attacks in Australia?
+______________________
+______________________
+______________________
+______________________
+
+
+b) Why would attackers want to attack educational institutions?
+______________________
+______________________
+______________________
+______________________
+
+
+c) What is the appropriate response from the government?
+______________________
+______________________
+______________________
+______________________
+
+
+
+=== Question A.8 ===
+*MIDSEM FALLBACK QUESTION*
+
+a) (4 Marks) 
+Attached are some pictures of the inside of a cheap 3-disc combination padlock.  Suppose an attacker has a disassembled lock in their possession to study.  They want to manipulate open another (non-disassembled) lock of identical make but with a different 3-digit combination - but they don't know the combination.
+
+Suppose that, like for Master combination padlocks, by putting tension on the shackle you can discover the first number of the combination, and further suppose that the lock automatically makes a sound when all 3 notches line up correctly (i.e. when the combination is correct.)  
+
+If turning the wheel in one smooth motion up to one full revolution is 1 unit of work, estimate how many bits of security the padlock provides.
+
+___ bits of security
+
+(optional - we'll look at this for unexpected answers) briefly explain your reasoning
+____________________________________
+____________________________________
+____________________________________
+
+
+The following sub-questions relate to a Yale style pin tumbler cylindrical lock of the quality and sort typical in residential house front door locks.  
+
+b) (2 Marks) Suppose an attacker was going to try to brute force over all possible keys by trying one key at a time, and suppose trying a key is one unit of work. 
+
+How many bits of security would the lock provide against this attack on average?
+
+(optional - we'll look at this for unexpected answers) briefly explain your reasoning
+____________________________________
+
+
+___ bits of security
+
+
+c)  (2 Marks) Suppose the lock could be bumped, and suppose each striking of the bump key is one unit of work. 
+
+How many bits of security would the lock provide against this attack on average?
+
+(optional - we'll look at this for unexpected answers) briefly explain your reasoning
+____________________________________
+
+
+___ bits of security
+
+d)  (2 Marks) Suppose the lock can be picked, and suppose lifting a pin smoothly up and down is one unit of work.
+
+How many bits of security would the lock provide against this attack on average?
+
+___ bits of security
+
+(optional - we'll look at this for unexpected answers) briefly explain your reasoning
+____________________________________
+
+
+
+
+
+=== Question A.9 ===
+What you are advised prior to the exam:
+
+This question involves devising a way to effectively and realistically perform social engineering on the UNSW Deputy Vice-Chancellor (Academic).  You must not do anything illegal rude disrespectful or invasive in the real world in preparing for this question, or inconvenience or annoy or alarm him or anyone who works for or with him or knows him.  Most importantly you are not to invade the privacy of his family or personal life in any way.  You are restricted to looking at publicly available information and entirely passive methods.
+
+The exam question:
+
+What is the name of the UNSW Deputy Vice Chancellor (Academic)?
+______________________
+
+
+In the DVC(A)'s office there is a displayed a framed photograph of a group of UNSW students.  Clearly explain a simple and safe social engineering strategy you yourself could follow to find out who is in that photo.
+______________________
+______________________
+______________________
+______________________
+______________________
+______________________
+______________________
+______________________
+______________________
+______________________
+______________________
+______________________
+
+
+You'll be assessed on how realistic, simple, effective, non-risky, time consuming (sooner is better than later!) your method is and how you are likely to be able to learn the required information.
+
+
+= Part B =
+
+The questions in this part oare worth 25 marks
+
+=== Question B.1 ===
+The union and the university have asked you as an independent expert to comment on the security of the online election process they follow for union votes.  
+
+A vote (called a Protected Ballot) is called whenever the union is contemplating a strike - it is the first step needed under law before the union can eventually strike.  In general, the university does not want the union to strike and would always welcome the No votes winning, and the union organisation is keen to be permitted to strike and would always welcome the Yes votes winning.
+
+The software vendor (who also runs the election) explains that their electronic voting system is secret valuable intellectual property and the they will only let you view the source code and/or operation of the system if you sign an extremely restrictive Non-Disclosure Agreement (NDA) which would then require you to show them in advance anything you might write or say about the system and means that you would require their explicit written consent before you can discuss or publish anything about the system.  There is nothing in the contracts that the union and the university have with the vendor which prevents the vendor from imposing this secrecy requirement on you. 
+
+The only public data about the system you can obtain is an email (reproduced below) sent to a member of the union for the previous protected ballot - advising them of the need to vote and giving instructions on how they do that.  
+
+
+
+{{
+PROTECTED ACTION BALLOT OF MEMBERS OF THE NATIONAL TERTIARY EDUCATION UNION
+WHO ARE EMPLOYEES OF THE UNIVERSITY OF NEW SOUTH WALES DESCRIBED IN ORDER
+(B2018/334) 
+
+
+PROTECTED ACTION BALLOT - VOTING INSTRUCTIONS
+
+Online internet voting in this Protected Action Ballot OPENS at 9:00am AEST
+on Wednesday 16 May, 2018 and CLOSES at 10:00am AEST on Thursday 24 May, 2018.
+
+To cast your vote using the Internet:
+
+Go to the URL: https://evote.electionz.com/e/NTEU  by either clicking the link or copying the link into your internet browser's address area (usually top left of screen).
+
+You will then be presented with a screen that allows you to "Login" by
+entering your NTEU Membership Number and a four (4) digit random personal Password. If your membership number has any zeros at the beginning, these will need to be omitted.
+
+Your Password is 1337
+
+You will then be asked to cast your vote. 
+
+You may indicate your preference by marking one (1) of the following options:
+
+    "YES" - (I approve of this action) 
+    "NO" - (I do not approve of this action) 
+
+To vote "YES", click in the "YES" box; or
+To vote "NO", click in the "NO" box. 
+
+Click the "Next" button. 
+
+You will then be asked to confirm your vote. 
+    To confirm your vote selection(s), click the "Submit" button; or 
+    To amend your vote selection(s), click the "Back" button and then
+change your vote. 
+
+Click the &#195;c&#226;&#130;&#172;&#197;"Close" button to end your voting session and return to the "Welcome" screen.
+
+Once you have confirmed your vote selection(s), your Password will be
+"consumed" and you will not be able to vote again.
+
+Your vote selections will be electronically detached from your record immediately upon confirmation so your vote is guaranteed to be completely secret and confidential. 
+
+Australian Election Company
+Ballot Agent
+
+Email: help@austelection.com or jkidz@austelection.com
+Phone: 1800 124 421 
+}}}
+
+
+Write brief responses to the questions below based on the email above from the previous ballot, and making any other reasonable assumptions needed (explicitly state any other assumptions you have made).
+
+Would you sign the Non-Disclosure Agreement?  
+.Yes
+.No
+
+Briefly justify your answer (2 marks)
+_____________________________
+_____________________________
+
+
+What are your four main concerns about this electronic voting system? Rank them with the main concern first down to the least main concern last. (5 marks)
+1 _____________________________
+2 _____________________________
+3 _____________________________
+4 _____________________________
+
+
+
+
+What are the three most significant ways it could be attacked or fail? (3 marks)
+1 _____________________________
+2 _____________________________
+3 _____________________________
+
+
+The following question refers to the film "The Towering Inferno" and the city and the time and the situations depicted in the film.
+
+=== Question B.2 ===
+
+The Towering Inferno was made in 68 (4.1 stars on Amazon).  However it demonstrates vulnerabilities still relevent today. 
+
+At the end of the film the Fireman has the following conversation with the Architect:
+{{{
+	Fireman:
+
+	And I'll keep eating smoke and bringing out bodies...
+
+    ...until somebody asks us...
+
+    ...how to build them.
+
+    Architect:
+
+    Okay. I'm asking.
+
+    Fireman:
+
+    You know where to reach me.
+
+    So long, Architect.
+
+}}}
+
+Suppose you are the Fireman.
+
+The Architect comes to you asking for your advice.  List and briefly justify the main four weaknesses in the design of the tower revealed by the events in the film and make recommendations for how to design safer towers in the future. 
+__________________________
+__________________________
+
+__________________________
+__________________________
+
+__________________________
+__________________________
+
+__________________________
+__________________________
+
+
+
+
+The Mayor comes to you asking for your advice.  List the main four actions he should take to ensure that citizens in the city are safer from tower fires.  (You don't need to repeat anything you have already recommended above to the architect)
+
+__________________________
+__________________________
+
+__________________________
+__________________________
+
+__________________________
+__________________________
+
+__________________________
+__________________________
+
+
+
+=== Question B.2 ===
+*MIDSEM FALLBACK QUESTION*
+
+On the Python mailing list Paul Rubin shared code for a general purpose cyptographic library he had written. It generated some discussion. Draft brief responses to the two questions asked below (Edited extract from http://mail.python.org/pipermail/python-list/2002-April/100319.html):
+
+{{{
+Richard Parker <richard@electrophobia.com> writes:
+> I just took a quick look at your Python code.  I’d encourage you to not use
+> the secret prefix method to construct a MAC from a hash function, i.e.
+> MAC(x) = H(K || x).  This method is generally considered to be insecure.
+> Use the HMAC construction instead.
+}}}
+
+Could you explain the problem here and how it is solved by HMAC?
+
+____________________________________
+____________________________________
+
+
+Do you think [this insecuity] matters in practice, given that this is running
+in an interpreted language on a general purpose PC?  Practical attacks probably
+involve computer viruses peeking at memory rather than cryptanalysing SHA.
+
+____________________________________
+____________________________________
+____________________________________
+____________________________________
+

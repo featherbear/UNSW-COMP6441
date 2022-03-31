@@ -1,0 +1,402 @@
+LAWS3040 Regulation for Cyber Security
+Exam T1 2021
+
+Rules:
+* Exam done on your own device at home
+* Write the answers in this file using a Text Editor (i.e. not Word)
+* You can look up any file on your computer; you can access any site on the web; you can look at any paper notes or texts. Please list all sources at the beginning of the exam in the marked area.
+* You may not WRITE or SHARE anything on the internet or with any other person during this exam with the exception for asking questions described below.  You cannot communicate with any other person (except the exam supervisor, Lyria) or share any information including the exam paper. This includes making comments on the course web pages or make any comments anywhere including sms, texts, on social media / chats etc.  You cannot make or answer phone calls (except to call the exam supervisor).  Violating these read-only restrictions is regarded as cheating and will result in 0 fail and possible charges of academic misconduct and even more serious penalties.  But mainly it's not the honourable thing to do.
+* Answer the questions on this exam paper in between
+<<<start answer>>> and <<<end answer>>>.
+Save the file in TEXT format, call it YOURZID-YOURNAME.txt and submit through Moodle.
+* The exam should take 3 hours (with one mark per minute), but you have four hours to finalise and submit.
+* DO NOT edit/add/delete ANY text ANYWHERE outside of the answer areas indicated.  That will muck up poor Lachlan having to split up and extract your answers for marking using scripts.
+* Make frequent backup copies of your completed exam paper as you go so if anything goes wrong you do not lose much work.  There are no time extensions for accidentally deleting work - that is a foreseeable and mitigable risk
+* You may contact the exam supervisor by email (lyria@unsw.edu.au) or phone (REDACTED)
+* Please do not discuss the exam or content at all with anyone until after the day of the exam or reveal anything about the questions. There are a number of people around the world doing the COMP exam (with overlapping questions) at later times - they will all be finished by Wednesday Sydney time.  You can write a indication of joy/relief/support on the Exam-Live page at the end of the exam if you are happy that you finished, but please no more until Wednesday.  Examples below:
+
+Good examples (permitted)
+Yay!
+So glad I am now free and can relax unlike Richard and the other markers who now have to work without pause for a week.  Mwahahaha!
+Now I will sleep for days
+
+Bad examples (not permitted before Wednesday,as they reveal something about the exam itself)
+That was easy
+That was hard
+I am so glad there was no question about sony playstations
+It's unfair there was a question about Apollo 13!  I didn't realise the case studies were examinable.
+
+The use of Top Men, misdirection, or unauthorised social engineering is prohibited.
+
+If you think a question is ambiguous, answer the most likely interpretation and state what you have done. Where two or more different answers are possible give the answer which best answers the question. If you need to make assumptions state them. Keep answers brief and clear.  Stick to the word limits where applicable.  When you order things put the most important things first.  Make sure you explain your thinking to demonstrate your analysis where ever asked.
+
+Have fun.  Be yourself.  You have the capacity to ace this!
+
+
+Name:
+Student Number:
+I assert this work is wholly my own work except where I have explicitly acknowledged.  I have not contacted any other person about this exam during the exam period.  I will keep the exam confidential until Sunday 8pm.
+
+SOURCES I have used (books, URLs, etc):
+
+
+
+
+Part A
+Questions worth 15 marks each (out of 180 marks).
+Answer 6 of the following 8 questions (do NOT answer more or you will be allocated marks based on your worst performance):
+
+=== Question A1 === [15 Marks]
+
+A friend gave their 12 year old daughter a laptop for her birthday - she needs one for school next year but your friend wanted to get her a really fancy one as a surprise.  It has some strong security features, including full hard disk encryption and optional voice recognition authentication.  They ask your advice about whether she (the daughter) should activate the biometric voice recognition MFA (multi-factor authentication) feature.  If the feature on then on login (and once a day after that for as long as the machine is left logged in) the machine requires the user to authenticate themselves using a spoken voice code as well as typing in their password.
+
+What is your recommendation?  Should the daughter turn this feature on?
+Answer YES or NO
+
+<<<start answer>>>
+
+
+<<<end answer>>>
+
+Briefly give reasons explaining your recommendation including any assumptions you have made [15-75 words]
+
+<<<start answer>>>
+
+
+<<<end answer>>>
+
+Are there any plausible circumstances under which you would have given the opposite YES/NO answer?  If so explain them and your reasons, or if not then explain why not. [15-75 words]
+
+<<<start answer>>>
+
+
+<<<end answer>>>
+
+=== Question A2 === [15 Marks]
+
+You have been asked to advise an insurance company about its Corporate Directors and Officers Insurance Policy. Such policies insure directors against the cost of actions against them personally for breach of directors’ and fiduciary duties. Some of its customers have asked whether they can include cyber risk in their policy.
+
+(a) Why might some directors seek insurance against personal liability for cyber risk? [1-2 paragraphs]
+
+<<<start answer>>>
+
+
+<<<end answer>>>
+
+(b) If the insurance company includes cyber risk in its policy, what customer factors would likely have the most significant impact on pricing? [For example, health insurance premiums may change depending on whether the insured smokes]. List 3 factors with brief (less than a sentence) reasons (list the most significant factor first, etc).
+
+<<<start answer>>>
+
+
+<<<end answer>>>
+
+=== Question A3 === [15 Marks]
+
+This question relates to the photographed scene in the image: CarSnapshot.png
+Answer the questions below and briefly describe how you worked out the answers.
+
+What day of the week was it (eg Monday-Sunday)?  [1 Word]
+<<<start answer>>>
+
+
+
+<<<end answer>>>
+
+
+How did you work this out? [5-25 words]
+<<<start answer>>>
+
+
+
+<<<end answer>>>
+
+
+Was it Morning, Afternoon, or Nighttime? [1 Word]
+<<<start answer>>>
+
+
+
+<<<end answer>>>
+
+
+How did you work this out? [5-25 words]
+<<<start answer>>>
+
+
+
+<<<end answer>>>
+
+ What two big letters were written on the front of the police car? [2 Letters]
+<<<start answer>>>
+
+
+
+<<<end answer>>>
+
+
+How did you work this out? [5-25 words]
+<<<start answer>>>
+
+
+
+<<<end answer>>>
+
+
+ What street sign(s) are hidden behind the man? [2-20 words]
+<<<start answer>>>
+
+
+
+<<<end answer>>>
+
+
+How did you work this out? [5-25 words]
+<<<start answer>>>
+
+
+
+<<<end answer>>>
+
+
+
+=== Question A4 === [15 Marks]
+
+This question involves devising a way to effectively and realistically perform social engineering on a former world leader (still living).  For example you could pick Donald Trump, Malcolm Turnbull or Mahathir bin Mohamad for example.  You must not do anything illegal rude disrespectful or invasive in the real world in preparing for this question, or inconvenience or annoy or alarm your selected target or anyone who works for or with them or knows them.  Most importantly you are not to invade the privacy of their family or personal life in any way.  You are restricted to looking at publicly available information and using entirely passive methods.
+
+PS Please write the answer in English even if the social engineering attack might not be
+
+The exam question:
+
+What is the name, age, and country of the former leader you have picked ?
+
+<<<start answer>>>
+
+
+<<<end answer>>>
+
+What cognitive vulnerability are you mainly targeting?
+
+<<<start answer>>>
+
+
+<<<end answer>>>
+
+Context: Identify some significant (but not personal or intrusive) things about them which will help you carry out your social engineering
+
+<<<start answer>>>
+
+
+<<<end answer>>>
+
+Clearly explain a simple and safe social engineering strategy an attacker could follow to learn the former leader's personal mobile phone number.  (to be clear - don't actually do this in the real world - you could be arrested, go to gaol, and/or be expelled from uni).  Assume the attacker has roughly the same access and resources that you yourself have available to you.
+
+<<<start answer>>>
+
+
+<<<end answer>>>
+
+
+You'll be assessed on how realistic, specific, simple, effective, non-risky, time consuming (sooner is better than later!) your strategy is, and how likely the attacker is to be able to learn the required information.
+
+=== Question A5 === [15 Marks]
+
+You are advising an Australian university that has been approached by the Australian Federal Police to invite students to join in a hackathon. (The information pack and application form is attached as hackathon.pdf; there is a customised version for each state this is the NSW version). Students will be given fictional scenarios and then asked to work in teams to brainstorm solutions.
+
+
+a) Would you encourage the university to share this opportunity with its students? Why or why not?
+
+<<<start answer>>>
+
+
+<<<end answer>>>
+
+b) Does the request comply with the AFP's obligations under the Privacy Act 1988 (Cth)? Give a brief explanation (one short paragraph)
+
+<<<start answer>>>
+
+
+<<<end answer>>>
+
+
+=== Question A6 === [15 Marks]
+
+A contract between a university researcher and a company agreeing to ask its employees to complete a survey about their experiences working from home in the context of COVID specifies that “All survey data collected will be owned by the university”. Does this work to allocate responsibility for data governance and data security? On behalf of the company, propose a better clause to require the university to take appropriate precautions. Be specific.
+
+<<<start answer>>>
+
+
+
+
+<<<end answer>>>
+
+
+STOP! Do not answer the questions A7 and A8 below if you have already answered 6 questions in this Part.
+
+=== Question A7 === [15 Marks]
+
+Throughout the course, we have discussed ways in which law (broadly conceived) can create incentives for organisations to improve their cyber security practices. Provide three examples (one sentence each). For *one* of these, explain how the law drives incentives and provide a concrete (real or hypothetical) example of how it has or might affect an organisation’s practices (one short paragraph each).
+
+<<<start answer>>>
+
+
+<<<end answer>>>
+
+=== Question A8 === [15 Marks]
+
+You act for a company that distributes and installs internet connected home lighting systems. They have some statements they want to include on their website and advertising and ask for your advice. This includes:
+
+- “Secure communication between your home and your mobile device”
+- “Installing our lighting products will enhance the security of your home by allowing you to control your lights while away on holiday”.
+
+What legal risk is incurred in making these statements? Give an example of a scenario in which the company could be exposed to legal liability.
+
+<<<start answer>>>
+
+
+<<<end answer>>>
+
+Part B
+Questions worth 30 marks each (out of 180 marks).
+Answer 3 of the following 4 questions (do NOT answer more or you will be allocated marks based on your worst performance):
+
+=== Question B1 === [30 Marks]
+
+
+You are the Managing Partner for a large law firm.  Law firms have a critical obligation to keep clients’ information, including communications with the client, confidential. Due to a global pandemic, all the lawyers in the firm need to work from home from tomorrow for an indefinite period. Today is the last day in the office. Write an email to the firm's lawyers setting out the most essential cyber security measures to take once they start working from home.
+
+a) Write the actual body of email (don't worry about the greeting preamble or formal close, just the meat) [100-300 words]
+
+<<<start answer>>>
+
+
+<<<end answer>>>
+
+b) Briefly explain the features of the email you wrote which make it more likely that your advice will be understood and followed [40-200 words]
+
+<<<start answer>>>
+
+
+<<<end answer>>>
+
+=== Question B2 === [30 Marks]
+
+Should there be an exception to *criminal* liability for companies and their employees that wish to *access* computer systems they believe are involved in cyber-attacks against them in order to gather information?
+
+Write a short submission (try for less than one page) on just this issue to a (hypothetical) parliamentary committee reviewing the Commonwealth Criminal Code. No need for letter formalities; just the body of the submission.
+
+<<<start answer>>>
+
+
+<<<end answer>>>
+
+
+=== Question B3 === [30 Marks]
+
+According to the New Yorker (https://www.newyorker.com/magazine/2021/04/26/the-incredible-rise-of-north-koreas-hacking-army, but you do not have to read it to answer the question), North Korea has been using cyber crime to raise money (allegedly $US 2 billion dollars) for its military. This allegedly includes deployment of ransomware (where files are encrypted and money is demanded as a condition of restoration). Assuming this could be proven (North Korea denies involvement), could it constitute an act of war against those countries whose citizens or corporations are affected? In other words, assuming allegatinos are true, has North Korea started an 'armed conflict' for the purposes of international law? Discuss, with reference to debates in international law.
+
+<<<start answer>>>
+
+
+<<<end answer>>>
+
+
+STOP! Do not answer the question below if you have already answered 3 questions in this Part.
+
+=== Question B4 === [30 Marks]
+
+This question refers to the situation and events depicted in the film Apollo13 (1983)
+
+Scenario: Suppose we are in the world and time of that film, and the events depicted in the film were about a month or so ago and were accurate.
+
+You: You are advising ASA (the newly announced "Australian Space Agency" which will be set up over the next 12 months)
+
+You have been asked carry out a form of root cause analysis - but rather than analysing what were the root causes of the ACCIDENT happening, instead you have been asked to analyse the root causes of the SUCCESS of the Apollo13 Mission.  ASA wants you to advise them what were the underlying reasons that facilitated the safe return of the astronauts.   ASA is keen to learn from the incident so that future Australian astronauts can themselves be equally successful in future problem situations like that.
+
+Remember this is a root cause analysis - so don't simply identify the immediate proximate causes and/or actions of individuals, but instead keep asking "why" until you find the underlying fundamental organisational features which helped lead to success.
+
+List the four main underlying organisational features which led to the successful return of the astronauts which were revealed in the film (most important first) and briefly state for each the role it played and why you think it was a successful feature, and make a clear recommendation about how ASA can be set up and organised in order to ensure that it too will have that feature. [max 320 words in total]
+
+
+1. [max 80 words in total]
+Cause:
+<<<start answer>>>
+
+<<<end answer>>>
+
+Where/When it was depicted in the film:
+<<<start answer>>>
+
+<<<end answer>>>
+
+Role played/why it was a successful feature:
+<<<start answer>>>
+
+<<<end answer>>>
+
+Recommendation:
+<<<start answer>>>
+
+<<<end answer>>>
+
+2. [max 80 words in total]
+Cause:
+<<<start answer>>>
+
+<<<end answer>>>
+
+Where/When it was depicted in the film:
+<<<start answer>>>
+
+<<<end answer>>>
+
+Role played/why it was a successful feature:
+<<<start answer>>>
+
+<<<end answer>>>
+
+Recommendation
+<<<start answer>>>
+
+<<<end answer>>>
+
+3. [max 80 words in total]
+Cause:
+<<<start answer>>>
+
+<<<end answer>>>
+
+Where/When it was depicted in the film:
+<<<start answer>>>
+
+<<<end answer>>>
+
+Role played/why it was a successful feature:
+<<<start answer>>>
+
+<<<end answer>>>
+
+Recommendation
+<<<start answer>>>
+
+<<<end answer>>>
+
+4. [max 80 words in total]
+Cause:
+<<<start answer>>>
+
+<<<end answer>>>
+
+Where/When it was depicted in the film:
+<<<start answer>>>
+
+<<<end answer>>>
+
+Role played/why it was a successful feature:
+<<<start answer>>>
+
+<<<end answer>>>
+
+Recommendation
+<<<start answer>>>
+
+<<<end answer>>>

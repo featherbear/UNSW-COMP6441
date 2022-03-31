@@ -1,0 +1,434 @@
+= UNSW COMP6441 and COMP6841 Final Theory Exam: 2019t2 =
+=== 6441->170 marks + 1 bonus mark / 180 minutes plus 10 minutes reading time ===
+=== 6841->140 marks + 1 bonus mark / 140 minutes plus 10 minutes reading time ===
+
+=== 6841 students also sit a 30 minute Prac exam "PartC" which will run immediately after the conclusion of this 140 minute Theory exam ===
+
+{{{
+Name:
+Student Number:
+Which course: COMP6441/COMP6841 (cross out the wrong one)
+Signature:
+}}}
+
+All students answer all 11 questions in Part A.
+COMP6441 students answer both questions in Part B.
+COMP6841 students only answer ONE question in Part B.
+
+If you are doing a pen and paper version of the exam write your name and student number above and sign it
+
+If you are doing the exam on a terminal your answers can be submitted by pressing save on this application. You may submit your solutions as many times as you like. The last submission ONLY will be marked.
+
+Write your name and student number on the top of each sheet of any rough working paper you use, this will not be marked, and write your answers in the computer files as directed in the exam instructions. You must hand in ALL writing paper at the end of the exam.
+
+You may not leave the exam in the first 30 minutes or the last 15 minutes of the exam.
+
+You may only use the exam and textbook viewers, GUI calculator, and text editor for rough working. Other programs including scripting or interpreted languages may not be used. We are logging all activity and use of other software etc will result in 0 fail. If you are unsure ask the supervisor.
+
+Phones must be turned off and not visible, either left outside the room in your bag or sealed in an opaque bag placed under your seat.
+
+Strict exam conditions apply, including that you may not attempt to communicate with any other person, or access other computers or external data/information or any internet resources.
+
+If you do not follow these instructions you will get zero marks for the exam and a possible zero marks for the course or a charge of academic misconduct.
+
+The use of Top Men, misdirection, or social engineering is prohibited.
+
+If you think a question is ambiguous, answer the most likely interpretation and state what you have done. Where two or more different answers are possible give the answer which best answers the question. Keep answers brief and clear.
+
+There is one bonus mark for following the examination instructions.
+
+Part A will used to calculate your alternative fall-back mark for the mid-term exam. Your mid-term result will be calculated as being the whichever is better of:
+
+ * the mark you got in the mid-term exam; and
+
+ * the mark you get in Part A of this exam.
+
+v1.2s
+
+Changelog:
+
+    1.2 (24 Aug): calculation of mid-term exam fallback mark simplified (many students were confused) and wording improved.  Clarified reference to Part C prac exam for 6841 students.
+
+
+<<BR>>
+<<BR>>
+= Part A =
+
+{{{
+This part consists of eleven 10-mark questions. Answer all questions.
+Suggestion: Aim to spend 9 minutes per question maximum.
+}}}
+
+=== Question A.0 ===
+
+Question about one of the CIA properties
+
+_________________________________________
+_________________________________________
+
+
+=== Question A.1 ===
+
+In this question there are no marks for selecting a REDACTED - marks are for the explanation you provide.
+
+Recall in class we twice watched the opening sequence to the film "War Games" (set in the underground nuclear missile launch silo).
+
+Pick the colour you think best fits:
+
+.[A] Red
+.[B] Green
+.[C] Blue
+.[D] Orange
+
+ 
+
+Justify your answer.
+
+__________________________________________
+__________________________________________
+__________________________________________
+
+
+=== Question A.2 ===
+
+A question about cyber attacks in the real world
+
+____________________________
+____________________________
+____________________________
+
+
+=== Question A.3 ===
+
+Pizza is delicious. Cite a well known / widely reported example from history or recent news (not in the tetbook) which demonstrates this fact.
+
+Name the example and roughly when it happened
+_______________________
+
+
+Briefly describe what happened
+_________________________________
+
+
+Briefly state how this demonstrates how delicious pizza is.
+___________________________________
+___________________________________
+
+
+If the news story was not so well known give some keywords so we can search for it on Google for partial marks:
+
+Fall-back keywords (partial marks but only if the story is on the first page of search results returned)
+_______________________
+_______________________
+
+
+=== Question A.4 ===
+What you are advised prior to the exam:
+
+This question involves devising a way to effectively and realistically perform social engineering on the UNSW's Deputy Vice-Chancellor (Academic) (abbreviated as DVC(A)). You must not do anything illegal rude disrespectful or invasive in the real world in preparing for this question, or inconvenience or annoy or alarm him or anyone who works for or with him or knows him. Most importantly you are not to invade the privacy of his family or personal life in any way. You are restricted to looking at publicly available information and using entirely passive methods.
+
+The exam question:
+
+What is the name of the UNSW DVC(A)?
+______________________
+
+
+Clearly explain a simple and safe social engineering strategy an attacker could follow to have the DVC(A) sing at your birthday party. (to be clear - don't actually do this in the real world - you could be arrested, go to gaol, and/or be expelled from uni). Assume the attacker has roughly the same access and resources that you yourself have available to you.
+______________________
+______________________
+______________________
+______________________
+______________________
+______________________
+______________________
+______________________
+______________________
+______________________
+______________________
+______________________
+
+
+You'll be assessed on how realistic, specific, simple, effective, non-risky, time consuming (sooner is better than later!) your strategy is, and how likely it is to work.
+
+
+=== Question A.5 ===
+
+{{{ ABCDEFGHIJKLMNOPQRSTUVWXYZ }}}
+
+You are spying on someone who is enciphering English plaintext messages using top men.
+
+You intercept 4 ciphertexts: C1, C2, C3 and C4. You can decipher one of them. Which? Decode the first 3 words of the plaintext message - what are they?
+
+(PS I dont think there is enough information in this skeleton version of the exam to decode these, also I changed some of the cipher text letters below)
+{{{
+C1 VSAJXWUZJAIHXAWODYQPXKJECVJBLWFYUTIICTSX
+C2 SLIGAHXFSFLSCXBXUWPUURZVLZCBHVUPOJKURQBJ
+C3 YILFOLNVUKVQAGVCDTTPYRICRNMXJGZBNOUSANDW
+C4 UVBDAXAIWRCECRVCMFBUAJEAXRQASSSOKTZWWVLO
+}}}
+
+Which ciphertext can you decipher:
+.[A] C1
+.[B] C2
+.[C] C3
+.[D] C4
+
+What are the first 3 words of the deciphered plaintext?
+___________________________
+
+
+=== Question A.6 ===
+
+Someone asks you something about hashing or encrypting.
+
+
+Do you recommend that they adopt this new approach?
+.[A] Yes
+.[B] No
+
+Briefly justify your answer
+_____________________________
+_____________________________
+_____________________________
+
+Suppose you are the Prime Minister and are worried that someone is trying to get you to sing at their birthday party - to what extent would it be harder for them to REDACTED if REDACTED?
+
+.[A] It would make it much harder
+.[B] It would not make it much harder
+
+Briefly justify your answer
+_____________________________
+_____________________________
+_____________________________
+
+
+=== Question A.7 ===
+
+Suppose a protocol which uses an (as yet unbroken) 100 bit cryptographic hash function is REDACTED
+
+Describe how you would REDACTED to break the protocol.
+_____________________________
+_____________________________
+_____________________________
+
+
+How might REDACTED? Briefly descibe one way such a scheme might work.
+_____________________________
+_____________________________
+_____________________________
+
+ 
+
+=== Question A.8 ===
+Something about public key cryptography
+
+REDACTED
+.[Yes] It would be work
+.[No] It would not work
+
+Justify your answer
+___________________________________________
+
+ 
+
+=== Question A.9 ===
+
+Consider the case of the exploding ship at Halifax in 1917 which we discussed in week one lectures. This question is about the judicial inquiry which was held immediately afterwards.
+(If you can't recall the findings of the actual inquiry just make a reasonable guess what they likely were.)
+
+State something
+___________________
+
+State two reasons that SOMETHING?
+
+Reason 1
+____________________
+____________________
+
+
+Reason 2
+____________________
+____________________
+
+
+Give the top four REDACTED.
+
+REDACTED 1
+____________________
+____________________
+
+REDACTED 2
+____________________
+____________________
+
+REDACTED 3
+____________________
+____________________
+
+REDACTED 4
+____________________
+____________________
+
+ 
+
+
+=== Question A.10 ===
+
+In Week 9 we asked you to learn about one famous accident (other than 3 Mile Island which we covered in class) in your private study time.
+eg Chernobyl, Bhopal, Challenger
+
+Which accident did you learn about in your study?
+
+___________________
+
+
+Say something?
+_____________________________
+_____________________________
+_____________________________
+_____________________________
+
+
+Say something else?
+
+_____________________________
+_____________________________
+
+_____________________________
+_____________________________
+
+_____________________________
+_____________________________
+
+ 
+
+ 
+
+ 
+
+ 
+
+<<BR>>
+<<BR>>
+= Part B =
+{{{
+This part consists of two 30-mark questions.
+
+COMP6441 students: Answer both of the questions in this part.
+
+COMP6841 students: Answer ONLY ONE of the questions in this part. If you answer both question by mistake you will be given the higher mark.
+
+Suggestion: Spend 25 minutes per question.
+}}}
+
+=== Question B.0 ===
+
+Suppose you are the chief privacy and data security officer for SOMEONE.
+
+REDACTED
+
+What are the five main risks you are concerned about?
+
+Risk 1
+____________________________________
+
+Risk 2
+____________________________________
+
+Risk 3
+____________________________________
+
+Risk 4
+____________________________________
+
+Risk 5
+____________________________________
+
+
+What REDACTED? (list them below, order them to put the most important first etc)
+
+____________________________________
+____________________________________
+____________________________________
+____________________________________
+____________________________________
+____________________________________
+____________________________________
+____________________________________
+____________________________________
+____________________________________
+____________________________________
+____________________________________
+
+
+Any comments about REDACTED?
+
+____________________________________
+____________________________________
+____________________________________
+
+
+=== Question B.1 ===
+Note: COMP6841 students only answer ONE question in Part B.
+
+This question refers to the film "The China Syndrome" and the place and the time and the situations depicted in the film.
+
+{{{
+Some quoted dialog from the film
+}}}
+
+Who are the 5 best actors in the film?
+
+Best Actor 1
+__________________________
+__________________________
+
+Best Actor 2
+__________________________
+__________________________
+
+Best Actor 3
+__________________________
+__________________________
+
+Best Actor 4
+__________________________
+__________________________
+
+Best Actor 5
+__________________________
+__________________________
+
+
+List your three best friends:
+
+__________________________
+__________________________
+
+__________________________
+__________________________
+
+__________________________
+__________________________
+
+
+{{{
+Some quoted dialog from the film
+}}}
+
+ 
+
+The Prime Minister asks you: "Why can't I sing at your birthday party?"
+
+Draft your reply (keep it brief - the Prime Minister is very busy!)
+
+_____________________________________________________
+_____________________________________________________
+_____________________________________________________
+_____________________________________________________
+_____________________________________________________
+_____________________________________________________
+_____________________________________________________
+_____________________________________________________
+
+ 
